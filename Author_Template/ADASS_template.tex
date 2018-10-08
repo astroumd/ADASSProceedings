@@ -1,4 +1,4 @@
-% This is the ADASS_template.tex LaTeX file, 26th August 2016.
+% This is the ADASS_template.tex LaTeX file, 12th August 2017.
 % It is based on the ASP general author template file, but modified to reflect the specific
 % requirements of the ADASS proceedings.
 % Copyright 2014, Astronomical Society of the Pacific Conference Series
@@ -12,7 +12,7 @@
 
 \documentclass[11pt,twoside]{article}
 
-% Do not use packages other than asp2014. 
+% Do NOT use ANY packages other than asp2014. 
 \usepackage{asp2014}
 
 \aspSuppressVolSlug
@@ -24,14 +24,16 @@
 % See ManuscriptInstructions.pdf for more details
 \bibliographystyle{asp2014}
 
+% The ``markboth'' line sets up the running heads for the paper.
 % 1 author: "Surname"
 % 2 authors: "Surname1 and Surname2"
 % 3 authors: "Surname1, Surname2, and Surname3"
 % >3 authors: "Surname1 et al."
+% Replace ``Short Title'' with the actual paper title, shortened if necessary.
 % Use mixed case type for the shortened title
 % Ensure shortened title does not cause an overfull hbox LaTeX error
 % See ASPmanual2010.pdf 2.1.4  and ManuscriptInstructions.pdf for more details
-\markboth{Author1, Author2, and Author3}{Author's Final Checklist}
+\markboth{Author1, Author2, and Author3}{Short Title}
 
 \begin{document}
 
@@ -56,8 +58,15 @@
 \paperauthor{Sample~Author3}{Author3Email@email.edu}{ORCID_Or_Blank}{Author3 Institution}{Author3 Department}{City}{State/Province}{Postal Code}{Country}
 
 \begin{abstract}
-This is the ADASS 2016 author template file.  This is based on the Astronomical Society of the Pacific (ASP) 2014 template, but has been modified to reflect the specific ADASS requirements.
+This is the ADASS 2017 author template file.  This is based on the Astronomical Society of the Pacific (ASP) 2014 template, but has been modified to reflect the specific ADASS requirements.
 \end{abstract}
+
+% These lines show examples of subject index entries. At this stage these have to commented
+% out, and need to be on separate lines. Eventually, they will be automatically uncommented
+% and used to generate entries in the Subject Index at the end of the Proceedings volume.
+% Don't leave these in! - replace them with ones relevant to your paper.
+%\ssindex{conference!ADASS 2017}
+%\ssindex{organisations!ASP}
 
 \section{The Template}
 To fill in this template, make sure that you read and follow the ASPCS Instructions for Authors and Editors available for download online. Further hints and tips for including graphics, tables, citations, and other formatting helps are available there. With this template, you should have received a copy of the specific ADASS manuscript instructions, and you should also read these.
@@ -172,7 +181,7 @@ There are also the landscape versions \verb"\articlelandscapefigure" and \\
 
 \section{References}
 References must be provided in BibTeX format, in a .bib file, and should usually be referenced using \verb"\citet" or \verb"\citep". The file example.bib supplied with this template is taken from an ADASS 2015 paper, and includes references to previous ADASS proceedings 
-\citep[such as][]{1999ASPC..172..487P} and to papers in what was then the current 2015 proceedings (e.g.\ \citet{O11-4_adassxxv}). Note that the `TBD' entries that appear for papers in the current proceedings will be dealt with by the ADASS editors when the final volume is produced. The example .bib file has a large number of references unused by this template file; such unused references have been left in as example, but should be removed before a paper is submitted.
+\citep[such as][]{1999ASPC..172..487P} and to papers in what was then the current 2015 proceedings (e.g.\ \citet{O11-4_adassxxv}). Note that the `TBD' entries that appear for papers in the current proceedings will be dealt with by the ADASS editors when the final volume is produced. The example .bib file has a large number of references unused by this template file; such unused references have been left in as an example, but should be removed before a paper is submitted.
 
 \acknowledgements The ASP would like to thank the dedicated researchers who are publishing with the ASP.  It will make things a lot easier if you keep this text on the same line as the \verb"\acknowledgements" command.
 

@@ -1,6 +1,8 @@
 % This is the asp2014.sty LaTeX style file -- DO NOT CHANGE THIS FILE
 % Copyright 2014, Astronomical Society of the Pacific Conference Series
 % Revision:  17 September 2015
+% 9/7/2017 Removed hidelinks=true options from bookmarks and dvipdfm usepacksge
+%                lines. Prevents a warning with recent LaTeX releases. KS.
 
 % Some parts of this file originate from newpasp.sty.
 % For questions contact ASP Conference Series, www.aspbooks.org.
@@ -24,9 +26,9 @@
 %\usepackage{url}
 \usepackage{ifpdf}
 \ifpdf
-  \usepackage[bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,colorlinks=false,pagebackref=false,hidelinks=true,pdfauthor={ASP Conference Series},pdftitle={ASPCS}]{hyperref}
+  \usepackage[bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,colorlinks=false,pagebackref=false,pdfauthor={ASP Conference Series},pdftitle={ASPCS}]{hyperref}
 \else
-  \usepackage[dvipdfm,bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,colorlinks=false,pagebackref=false,hidelinks=true,pdfauthor={ASP Conference Series},pdftitle={ASPCS}]{hyperref}
+  \usepackage[dvipdfm,bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,colorlinks=false,pagebackref=false,pdfauthor={ASP Conference Series},pdftitle={ASPCS}]{hyperref}
 \fi
 %\usepackage{breakurl}
 \usepackage{ncccropmark}   % For Proofing:  Use this line to show margin guides

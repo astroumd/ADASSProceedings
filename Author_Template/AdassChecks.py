@@ -3,46 +3,68 @@
 #
 #  This is the code for a module that contains a number of checking
 #  routines that are potentially used by a number of scripts involved in
-#  editing the ADASS proceedings.
+#  editing the ADASS proceedings. Over time the interfaces to these routines
+#  have evolved to make the routines more flexible, generally through the
+#  addition of optional parameters. A number of these routines take one or more
+#  of a fairly standard set of optional parameters.
 #
-#  VerifyRefs (Paper)  
+#  Common optional parameters:
+#     TexFileName can be used to supply the name of the .tex file, instead
+#                 of assuming it will be the paper name with a .tex extension.
+#     BatchMode   can be set true to indicate the routine is being called from
+#                 a batch program and should not print out diagnostics as it
+#                 might if it were run more interactively. Usually, if BatchMode
+#                 is true, diagnostics can be appended to a list such as
+#                 Problems, also passed as an optional argument.
+#     Problems    can be used to pass a list of strings, to which the routine
+#                 can add descriptions of any problems it encounters.
+#     Warnings    can be used to pass a list of strings, to which the routine
+#                 can add warnings about any questionable issues it encounters.
+#
+#
+#  VerifyRefs (Paper,AllowBibitems = True,TexFileName = "",BibFileName = "",
+#                                       Problems = None, Warnings = None)
 #     Checks that the references used in the main .tex file and those
 #     in the .bib file are consistent. It accepts references defined in the
 #     .tex file using \bibitem for purposes of consistency checking, but
-#     warns about these.
+#     warns about these. This can be controlled using the optional parameter
+#     AllowBibItems. BibFileName can optionally be used to explicitly specify
+#     the name of the .bib file.
 #
-#  VerifyEps (Paper)
+#  VerifyEps (Paper,TexFileName = "",Problems = None,Warnings = None)
 #     Checks that any graphics files used in the main .tex file are
 #     supplied, and that any graphics files supplied are used by the
 #     main .tex file.
 #
-#  CheckPackages (Paper)
+#  CheckPackages (Paper,TexFileName = "",Problems = None)
 #     Checks any packages used by the main .tex file, and notes the use of
 #     any standard packages - these can be included, but it's unnecessary -
 #     and warns about any non-standard packages.
 #
-#  GetBibFileRefs (BibFileName)
+#  GetBibFileRefs (BibFileName,BatchMode = False)
 #     Returns a list of strings giving the names of the various references
 #     defined in the named .bib file.
 #
-#  TrimBibFile (Paper)
+#  TrimBibFile (Paper,Keep = True)
 #     Looks in the .bib file used by the main .tex file and comments out
 #     any unused references. It assumes the .bib file has the same name as
-#     the common .bib file returned by GetBibFileName().
+#     the common .bib file returned by GetBibFileName(). If the optional
+#     Keep argument is False, the unused references are deleted rather than
+#     just commented out.
 #
-#  GetAuthors (Paper,Notes)
+#  GetAuthors (Paper,Notes,TexFileName = "")
 #     Looks in the main .tex file and generates a list of the authors
 #     suitable for generating \aindex entries.
 #
-#  FixCharacters (Line,LineNumber)
+#  FixCharacters (Line,LineNumber,Encoding = "Latin1")
 #     Replaces any of the common non-printable accented characters in a line
 #     with the LaTeX equivalent sequence and returns the corrected line.
 #
-#  CheckCharacters (Line,LineNumber)
+#  CheckCharacters (Line,LineNumber,Problems = None,Encoding = "Latin1")
 #     Is a version of FixCharacters that only checks for non-printable
-#     characters rather than actually fixing them..
+#     characters rather than actually fixing them.
 #
-#  CheckRunningHeads (Paper)
+#  CheckRunningHeads (Paper,TexFileName = "",Problems = None)
 #     Checks for a number of common errors in the way the running heads
 #     for the paper are specified using \markboth.
 #
@@ -50,9 +72,11 @@
 #     Looks in the specified path for any archive file that might be being
 #     used for the specified paper and returns a list of such files.
 #
-#  GetArchiveTime (Filename) returns the latest modification date (as a time
-#     in seconds since the epoch) of any file contained in the named archive
-#     file.
+#  GetArchiveTime (Filename,FileList = None)
+#     Returns the latest modification date (as a time in seconds since the
+#     epoch) of any file contained in the named archive file. If passed an
+#     optional list, it will add the names of all the files it finds to that
+#     list.
 #
 #  GetBibFileName() returns a string giving the name of the common .bib
 #     file used for all the papers, eg "adassXXVreferences.bib".
@@ -68,6 +92,13 @@
 #
 #  GetVolume() returns the number of the current ADASS volume - the ASP
 #     volume number, as needed by a .bib file entry.
+#
+#  CheckCite (Paper,TexFileName = "",Problems = None)
+#     Checks to see if the specified paper is using any \cite commands
+#     instead of the preferred comamnds \citep, \citet etc.
+#
+#  GetFileEncoding (TexFileName,Result,Report)
+#     Returns a list of possible character encodings used by the .tex file.
 #
 #  History:
 #     16th Feb 2016. Now checks for all natbib \cite options. KS.
@@ -127,6 +158,83 @@
 #                    CheckCite(). KS.
 #     23rd Sep 2016. Check on author names now no longer complains about
 #                    the capital in Scottish names like MacDonald. KS.
+#     23rd Nov 2016. Modified the conference details so they apply to the
+#                    2016 Trieste conference. KS.
+#     27th Nov 2016. GetArchiveTime() now allows for spaces and quotes in the
+#                    names of archive files or their directories. Also now 
+#                    ignores __MACOSX files when counting files to see if there
+#                    is just a single sub-directory at top level. KS.
+#      9th Dec 2016. Added support for 'batch mode' operation - eg when
+#                    used by PaperCheckBatch.py - to VerifyRefs() and to
+#                    VerifyEps(), CheckCharacters(), CheckPackages(),
+#                    CheckCite(), GetTexFileRefs() and CheckRunningHeads(). KS.
+#     10th Dec 2016. CheckPackages() now allows "./asp2014". KS.
+#     19th Dec 2016. GetArchiveTime() can now optionally return a list of the
+#                    files in the archive and ignores the dates on any files
+#                    that are directories. (It really ought to do a proper
+#                    recursive search through the file structure.) KS.
+#     18th Feb 2017. Changed the mapping of the unprintable character 0xd5.
+#                    See comments to FixCharacters{} for more detail. KS.
+#     25th Mar 2017. VerifyRefs() and TrimBibFile() now use the new routine
+#                    FindBibFile() to fall back on <paper>.bib as the name
+#                    for the .bib file if the standard .bib file cannot be
+#                    found. KS.
+#     14th Jul 2017. VerifyEps() now checks for file names that match but only
+#                    if case is ignored. KS.
+#     16th Jul 2017. RunningHeadsCallback() now checks the running title against
+#                    that from the current template and the older template. KS.
+#     17th Jul 2017. VerifyEps() now checks subdirectories as well as the
+#                    default directory for graphics files. If graphics files
+#                    are in subdirectories, it regards this as a problem. The
+#                    highlighting used for problem logging in this routine is
+#                    now a little more consistent. KS.
+#     24th Jul 2017. GetBibFileRefs() now checks for - and ignores - unexpected
+#                    entry types. Updated the routine descriptions at the start
+#                    of this file to include the various optional parameters
+#                    that have been added over time. VerifyEps() now checks for
+#                    files specified in the .tex file with leading "./", and
+#                    now checks for image files used more than once in the
+#                    .tex file. Improved the way VerifyRefs() handles the case
+#                    where a .bib file is supplied, but the .tex file has a
+#                    \bibliography entry that specifies the wrong name. KS.
+#     25th Jul 2017. Improved VerifyRefs() diagnostics where a .tex file has
+#                    no citations at all. Discovered BibTeX doesn't ignore
+#                    unexpected entry types, so now GetBibFileRefs() only warns
+#                    about them. The original problem ignoring them was supposed
+#                    to solve is now solved by resetting the parser on lines
+#                    that start with '@'. KS.
+#     26th Jul 2017. Corrected spacing in "will default to .eps" message. Now
+#                    tries to pick the case where an author name has been given
+#                    with the surname first instead of last. FindBibFile() now
+#                    looks for any .bib file in the directory if it cannot find
+#                    the one it expects, and reports on what it found. The
+#                    code that checks author names now allows 'da' as part of
+#                    a surname - eg "da Silva". KS.
+#      9th Aug 2017. TrimBibFile() was putting out a misleading message when
+#                    deleting (not commenting) unused entries. Fixed. KS.
+#     10th Aug 2017. The code handling author names now allows 'di' as part of
+#                    a surname - eg "di Marco". KS.
+#     13th Aug 2017. Added GetFileEncoding(). Substantial changes to the code
+#                    for FixCharacters() and CheckCharacters() to support the
+#                    use of UTF-8 Unicode characters and the old Mac OS Roman
+#                    encodings as well as the original ASCII with LATIN-1
+#                    extended characters. (I now understand the problem with
+#                    the 0xd5 character - see 18th Feb 2017. The files using
+#                    this as an apostrophe were using Mac Roman encoding.) KS.
+#     15th Aug 2017. Converted to run under Python3, using 2to3 and some minor
+#                    reformatting of lines to keep to 80 characters. Added
+#                    the importing of items from __future__ to allow this to
+#                    run under either Python2 or Python3. Had to modify the code
+#                    in VerifyEps() that used os.path.walk (deprecated under
+#                    Python 3) to use os.walk instead. Tested under 2.7 and
+#                    under 3.6. KS.
+#     18th Aug 2017. Modified the Unicode equivalence dictionary so all Greek
+#                    letters - which are math mode in LaTeX - are enclosed in
+#                    $..$ symbols. Realised GetArchiveList() also used
+#                    os.path.walk() and needed re-working for Python 3. KS.
+
+
+from __future__ import (print_function,division,absolute_import)
 
 import sys
 import string
@@ -140,11 +248,15 @@ import TexScanner
 #                 A d a s s  C o n f e r e n c e  D e t a i l s
 #
 #  These should be the only items in the ADASS proceedings Python modules that
-#  needs to be changed from year to year.
+#  needs to be changed from year to year. (Note that these are not used by the
+#  PaperCheck.py script distributed with the manuscript instructions. They are
+#  used by the various utility scripts used in the editing process for the
+#  proceedings.)
 
-__AdassConference__ = "XXV"
+__AdassConference__ = "XXVI"
 
-__AdassEditors__ = "Lorente, N.~P.~F. and Shortridge,~K. and Wayth,~R."
+__AdassEditors__ = \
+             "Pasian,~F. and Molinaro,~M. and Mansutti,~O. and Shortridge,~K."
 
 __AdassVolume__ = "TBD"
 
@@ -221,7 +333,7 @@ def ExtractRefs (Words) :
 #   Looks in the current directory for the  specified .bib file, and
 #   returns a list of all the references it defines.
 
-def GetBibFileRefs (BibFileName):
+def GetBibFileRefs (BibFileName,BatchMode = False):
 
    #  Later versions of Python have better support for enums, but this
    #  works on old versions too.
@@ -255,6 +367,12 @@ def GetBibFileRefs (BibFileName):
    
    States = enum(NEED_AT = 0, NEED_BRACE = 1, NEED_COMMA = 2)
    
+   #  The set of expected entry types
+   
+   ExpectedTypes = ["article","book","booklet","conference","inbook",
+                  "incollection","inproceedings","manual","mastersthesis",
+                  "misc","phdthesis","proceedings","techreport","unpublished"]
+   
    BibFileRefs = []
    State = States.NEED_AT
    Found = False
@@ -263,22 +381,43 @@ def GetBibFileRefs (BibFileName):
       
       for BibFileLine in BibFile :
       
+         #  There are some odd .bib fies around that this code doesn't parse
+         #  properly, and we can end up still looking for something in a
+         #  reference definition when we hit a line that starts with '@'.
+         #  It's more likely that we've mis-parsed the file than that
+         #  there is such a line in the middle of a legitimate reference,
+         #  so we restart at this point.
+         
+         if (BibFileLine.strip().startswith('@')) : State = States.NEED_AT
+      
          #  In most cases, we'll be looking for the '@' that starts a
          #  reference definition, and will find all we need on the one line.
          #  If not, we end up in one of the intermediate states.
          
          if (State == States.NEED_AT) :
-            if (BibFileLine.strip().startswith("@")) :
+            BibFileLine = BibFileLine.strip().rstrip("\r\n")
+            if (BibFileLine.startswith("@")) :
                State = States.NEED_BRACE
                Brace = BibFileLine.find("{")
                if (Brace > 0) :
+                  EntryType = BibFileLine[1:Brace]
                   State = States.NEED_COMMA
                   Comma = BibFileLine.find(",")
                   if (Comma > 0) :
                      Ref = BibFileLine[Brace + 1:Comma].strip()
                      State = States.NEED_AT
                      BibFileRefs.append(Ref)
-                     
+               else :
+                  EntryType = BibFileLine[1:]
+      
+               #  Check the entry type and warn about any non-standard types.
+               
+               if (not (EntryType.lower().strip() in ExpectedTypes)) :
+                  Problem = "Unexpected .bib file entry '" + EntryType + \
+                                                 "' - will default to 'MISC'"
+                  if (not BatchMode) : print("*",Problem,"*")
+                  State = States.NEED_AT
+      
          else :
          
             #  If we need a brace, look for it and if we have one, we then
@@ -307,7 +446,7 @@ def GetBibFileRefs (BibFileName):
          
       BibFile.close()
    else:
-      print "No bib file called",BibFileName,"found"
+      if (not BatchMode) : print("**No bib file called",BibFileName,"found**")
       
    return BibFileRefs
 
@@ -318,9 +457,11 @@ def GetBibFileRefs (BibFileName):
 #   Looks in the current directory for the specified .tex file, and
 #   adds the identifiers of all the references it cites to the list
 #   passed as TexFileRefs, and adds any bibitems it finds to the list
-#   passed as BibItemRefs.
+#   passed as BibItemRefs. The final optional Problems argument allows this to
+#   be used in batch mode, where direct output from this routine is suppressed
+#   and instead a set of report lines are added to the list of problems passed.
 
-def GetTexFileRefs (TexFileName,TexFileRefs,BibItemRefs):
+def GetTexFileRefs (TexFileName,TexFileRefs,BibItemRefs,Problems = None):
 
    TexFile = open(TexFileName,mode='r')
    TheScanner = TexScanner.TexScanner()
@@ -332,13 +473,76 @@ def GetTexFileRefs (TexFileName,TexFileRefs,BibItemRefs):
    #  using \bibitem to BibItemRefs.
 
    Finished = False
+   Refs = (TexFileRefs,BibItemRefs)
    while (not Finished) :
-      Finished = TheScanner.GetNextTexCommand(RefsScanCallback,\
-                                        TexFileRefs,BibItemRefs)
+      Finished = TheScanner.GetNextTexCommand(RefsScanCallback,Refs,Problems)
 
    TexFile.close()
 
+# ------------------------------------------------------------------------------
 
+#                        F i n d  B i b  F i l e
+#
+#   Looks in the current directory for the .bib file associated with the
+#   specified paper. This should either be the standard .bib file used by
+#   all the papers when in their final form, as returned by GetBibFileName(),
+#   or it should have the same name as the main paper but with a .bib
+#   extension, eg O1-3.bib. This routine looks first for the standard .bib
+#   file, and if cannot find that, looks for the one with the same name as
+#   the paper. It returns the first of these that it finds. If neither
+#   exists, it looks for any .bib file in the directory. If it finds none, it
+#   returns blank.
+#
+#   Note that it is possible that the .tex file is using a .bib file with
+#   neither of these names, eg with a \bibliography{example} directive. This
+#   routine could check for that, but at the moment it doesn't.
+#
+#   The optional Details parameter can be a list of strings to which this
+#   routine will append a description of the file it is using.
+
+def FindBibFile (Paper,Details = None) :
+
+   BatchMode = False
+   if (Details != None) : BatchMode = True
+   
+   Found = False
+   BibFileName = GetBibFileName()
+   if (BibFileName != "") : Found = os.path.exists(BibFileName)
+   if (Found) :
+      Report = "Using standard .bib file " + BibFileName
+      if (BatchMode) :
+         Details.append(Report)
+      else :
+         print(Report)
+   else :
+      BibFileName = Paper + ".bib"
+      Found = os.path.exists(BibFileName)
+      if (Found) :
+         Report = "Using .bib file " + BibFileName + " (based on paper name)"
+         if (BatchMode) :
+            Details.append(Report)
+         else :
+            print(Report)
+      else :
+         BibFileCount = 0
+         FileList = os.listdir(".")
+         for File in FileList :
+            if (File.endswith(".bib")) :
+               if (BibFileCount == 0) : BibFileName = File
+               BibFileCount = BibFileCount + 1
+               Found = True
+         if (Found) :
+            Report = "Using .bib file " + BibFileName
+            if (BibFileCount > 1) :
+               Report = Report + " (first of " + str(BibFileCount) + \
+                                                   " .bib files found)"
+            if (BatchMode) :
+               Details.append(Report)
+            else :
+               print(Report)
+   if (not Found) : BibFileName = ""
+
+   return BibFileName
 
 # ------------------------------------------------------------------------------
 
@@ -348,7 +552,8 @@ def GetTexFileRefs (TexFileName,TexFileRefs,BibItemRefs):
 #   Paper.tex (where Paper will be a string such as "O1-4"), assuming
 #   this is the main .tex file for the paper, and also looks for the
 #   file called "adass<conf>references.bib" which it assumes contains the
-#   BibTeX references for the paper. It checks that all the references in
+#   BibTeX references for the paper. If this file cannot be found, it will
+#   check for a file called Paper.bib. It checks that all the references in
 #   the .bib file are used by the .tex file, and that all the references
 #   used by the .tex file are defined in the .bib file (or, being tolerant,
 #   defined using \bibitem directives in the .tex file, although it warns
@@ -359,16 +564,25 @@ def GetTexFileRefs (TexFileName,TexFileRefs,BibItemRefs):
 #   initial verification code, where the paper name and the bib file name
 #   may not be the standard names expected, and allow control over whether
 #   or not we allow the use of \bibitem entries or not. It also now returns
-#   True if no problems were found, False otherwise.
+#   True if no problems were found, False otherwise. The final optional
+#   Problems and Warnings arguments allow this to be used in batch mode, where
+#   direct output from this routine is suppressed and instead a set of report
+#   lines are added to the list of problems passed.
 
-def VerifyRefs (Paper,AllowBibitems = True,TexFileName = "",BibFileName = "") :
+def VerifyRefs (Paper,AllowBibitems = True,TexFileName = "",BibFileName = "", \
+                                            Problems = None, Warnings = None) :
 
    ReturnOK = True
+   
+   BatchMode = False
+   if (Problems != None and Warnings != None) : BatchMode = True
    
    if (TexFileName == "") : TexFileName = Paper + ".tex"
    TexFileName = os.path.abspath(TexFileName)
    if (not os.path.exists(TexFileName)) :
-      print "Cannot find main .tex file",TexFileName
+      Problem = "Cannot find main .tex file: " + TexFileName
+      if (BatchMode) : Problems.append(Problem)
+      else : print(Problem)
       ReturnOK = False
    else :
 
@@ -377,39 +591,50 @@ def VerifyRefs (Paper,AllowBibitems = True,TexFileName = "",BibFileName = "") :
       #  contains so we can see what soft of naming convention is used,
       #  and so we can check them against the references in the .tex file.
 
-      if (BibFileName == "") : BibFileName = GetBibFileName()
-      BibFileRefs = GetBibFileRefs(BibFileName)
-      print ""
-      print "References in",BibFileName," :"
-      for BibRef in BibFileRefs :
-         print "   ",BibRef
-      print ""
+      LookForBibFile = False
+      if (BibFileName == "") :
+         LookForBibFile = True
+      else :
+         if (not os.path.exists(BibFileName)) : LookForBibFile = True
+      if (LookForBibFile) : BibFileName = FindBibFile(Paper)
 
-      #  Now, look at the actual .tex file. We run through it and do a
-      #  couple of checks that can help pick a file that was replaced
-      #  round the back of the Setup script.
+      if (BibFileName == "") :
+         BibFileRefs = []
+      else :
+         BibFileRefs = GetBibFileRefs(BibFileName,BatchMode)
+         if (not BatchMode) :
+            print("")
+            print("References in",BibFileName," :")
+            for BibRef in BibFileRefs :
+               print("   ",BibRef)
+            print("")
 
-      Warn = False
-      TexFile = open(TexFileName,mode='r')
-      for TexFileLine in TexFile :
-         if (not TexFileLine.startswith("%")) :
-            if (TexFileLine.find("\\usepackage{./asp2014}") >= 0) :
-               print "** .tex file has \\usepackage{./asp2014} directive **"
-               Warn = True
-            Index = TexFileLine.find("\\bibliography{")
-            if (Index >= 0) :
-               Right = TexFileLine[Index:].find("}")
-               if (Right > 0) :
-                  OldBib = TexFileLine[Index:Index + Right + 1]
-                  BibFileBase = os.path.splitext(BibFileName)[0]
-                  if (OldBib != "\\bibliography{" + BibFileBase + "}" and \
-                       OldBib != "\\bibliography{" + BibFileName + "}") :
-                     print "** Note: Tex file includes",OldBib,"directive **"
-                     Warn = True
-      TexFile.close()
-      if (Warn) :
-         print ".tex file directives may need correcting"
-         ReturnOK = False
+      #  The .bib file name we've ended up with may not be the one specified
+      #  in the .tex file, and we check for that.
+
+      if (not BatchMode) :
+         Warn = False
+         TexFile = open(TexFileName,mode='r')
+         for TexFileLine in TexFile :
+            if (not TexFileLine.startswith("%")) :
+               if (TexFileLine.find("\\usepackage{./asp2014}") >= 0) :
+                  print("** .tex file has \\usepackage{./asp2014} directive **")
+                  Warn = True
+               Index = TexFileLine.find("\\bibliography{")
+               if (Index >= 0) :
+                  Right = TexFileLine[Index:].find("}")
+                  if (Right > 0) :
+                     OldBib = TexFileLine[Index:Index + Right + 1]
+                     BibFileBase = os.path.splitext(BibFileName)[0]
+                     if (OldBib != "\\bibliography{" + BibFileBase + "}" and \
+                          OldBib != "\\bibliography{" + BibFileName + "}") :
+                        print("** Note: Tex file includes",OldBib,\
+                                                             "directive **")
+                        Warn = True
+         TexFile.close()
+         if (Warn) :
+            print("** .tex file directives may need correcting **")
+            ReturnOK = False
 
       #  Now get a list of the \citet and \citep commands in the .tex file
       #  We also see if there are any \bibitem definitions, although people
@@ -418,28 +643,37 @@ def VerifyRefs (Paper,AllowBibitems = True,TexFileName = "",BibFileName = "") :
       TexFileRefs = []
       BibItemRefs = []
 
-      print "References cited in",TexFileName,":"
-      
-      GetTexFileRefs(TexFileName,TexFileRefs,BibItemRefs)
-      
-      for TexRef in TexFileRefs :
-         print "    ",TexRef.strip()
-      print " "
+      GetTexFileRefs(TexFileName,TexFileRefs,BibItemRefs,Problems)
+
+      if (not BatchMode) :
+         if (len(TexFileRefs) > 0) :
+            print("References cited in",TexFileName,":")
+            for TexRef in TexFileRefs :
+               print("   ",TexRef.strip())
+            print(" ")
       BibItemCount = len(BibItemRefs)
       if (BibItemCount > 0) :
-         print "** Note: Tex file has",BibItemCount,"\\bibitem directives **"
-         for BibItem in BibItemRefs :
-            print "    ",BibItem.strip()
-         if (not AllowBibitems) :
-            ReturnOK = False
-            print "** These need to be replaced by a .bib file", \
-                                                     "with BibTex entries **"
+         if (BatchMode) :
+            if (not AllowBibitems) :
+               Problems.append( \
+                        "Tex file has the following \\bibitem directives:")
+               for BibItem in BibItemRefs :
+                  Problems.append(BibItem.strip())
+         else :
+            print("** Note: Tex file has",BibItemCount,\
+                                                    "\\bibitem directives **")
+            for BibItem in BibItemRefs :
+               print("    ",BibItem.strip())
+            if (not AllowBibitems) :
+               ReturnOK = False
+               print("** These need to be replaced by a .bib file", \
+                                                     "with BibTex entries **")
 
       #  See if all the references defined in the .bib file are used
       #  in the .tex file.
 
       if (len(BibFileRefs) == 0) :
-         print "No Bib file references supplied"
+         if (not BatchMode) : print("No Bib file references supplied")
       else :
          AllUsed = True
          for BibRef in BibFileRefs :
@@ -457,13 +691,19 @@ def VerifyRefs (Paper,AllowBibitems = True,TexFileName = "",BibFileName = "") :
                   Found = True
                   break
             if (not Found) :
-               print "Bib file reference",BibRef,"not used in .tex file"
+               Warning = "Bib file reference " + BibRef + \
+                                                    " not used in .tex file"
+               if (BatchMode) : Warnings.append(Warning)
+               else : print(Warning)
                AllUsed = False
             if (Found and (not CaseCheck)) :
-               print "Bib file reference",BibRef,\
-                                   "used with different case in .tex file"
-         if (AllUsed) : 
-            print "All Bib file references used in .tex file"
+               Problem = "Bib file reference " + BibRef + \
+                                   " used with different case in .tex file"
+               if (BatchMode) : Problems.append(Problem)
+               else : print(Problem)
+         if (AllUsed) :
+            if (not BatchMode) :
+               print("All Bib file references used in .tex file")
          else :
             ReturnOK = False
 
@@ -481,10 +721,14 @@ def VerifyRefs (Paper,AllowBibitems = True,TexFileName = "",BibFileName = "") :
                   Found = True
                   break
             if (not Found) :
-               print "\\bibitem reference",BibItem,"not used in .tex file"
+               Problem = "\\bibitem reference " + BibItem + \
+                                             " not used in .tex file"
+               if (BatchMode) : Problems.append(Problem)
+               else : print(Problem)
                AllUsed = False
          if (AllUsed) :
-            print "All \\bibitem references used in .tex file"
+            if (not BatchMode) :
+               print("All \\bibitem references used in .tex file")
          else :
             ReturnOK = False
 
@@ -493,7 +737,7 @@ def VerifyRefs (Paper,AllowBibitems = True,TexFileName = "",BibFileName = "") :
       #  that we approve of those).
 
       if (len(TexFileRefs) == 0) :
-         print "No citations found in tex file"
+         if (not BatchMode) : print("No citations found in tex file")
       else :
          AllFound = True
          for TexRef in TexFileRefs :
@@ -524,21 +768,27 @@ def VerifyRefs (Paper,AllowBibitems = True,TexFileName = "",BibFileName = "") :
                      AsBibItem = True
                      break
             if (not Found) :
-               print ".tex file reference",TexRef,"undefined"
+               Problem = ".tex file reference " + TexRef + " undefined"
+               if (BatchMode) : Problems.append(Problem)
+               else : print(Problem)
                AllFound = False
             if (Found and (not CaseCheck)) :
-               print ".tex file reference",TexRef,\
-                                     "defined but with different case"
+               Problem = ".tex file reference " + TexRef + \
+                                     " defined but with different case"
+               if (BatchMode) : Problems.append(Problem)
+               else : print(Problem)
             if (Found and AsBibitem and not AllowBibitems) :
-               print ".tex file reference",TexRef,\
-                                     "defined but as a \\bibitem entry **"
-            
+               Problem = ".tex file reference " + TexRef + \
+                                     " defined but as a \\bibitem entry"
+               if (BatchMode) : Problems.append(Problem)
+               else : print(Problem)
+      
          if (AllFound) :
-            print "All .tex file citations defined"
+            if (not BatchMode) : print("All .tex file citations defined")
          else :
             ReturnOK = False
          
-   print ""
+   print("")
    
    return ReturnOK
    
@@ -550,12 +800,23 @@ def VerifyRefs (Paper,AllowBibitems = True,TexFileName = "",BibFileName = "") :
 #   the .tex file for citations to references that should be in the .bib
 #   file. Also scans for references defined within the .tex file using
 #   \bibitem entries. Words are the components of a LaTeX directive parsed 
-#   by the TexScanner. If this is a recognised citation, the cited references
-#   are added to TexFileRefs. If it is a \bibitem entry, the name of the 
-#   reference is added to BibItemRefs. TexFileRefs and BibItemRefs are both
-#   lists of strings.
+#   by the TexScanner. The second argument, Refs, should be a list of two
+#   lists, the first being TexFileRefs (a list of cited references in the file)
+#   and the second being BibItemRefs (a list of any \bibitem entries in the
+#   file - which we don't approve of, but need to know about). If this is a
+#   recognised citation, the cited references are added to TexFileRefs. If it
+#   is a \bibitem entry, the name of the reference is added to BibItemRefs.
+#   TexFileRefs and BibItemRefs are both lists of strings. The final optional
+#   Problems argument allows this to be used in batch mode, where direct output
+#   from this routine is suppressed and instead a set of report lines are added
+#   to the list of problems passed.
 
-def RefsScanCallback (Words,TexFileRefs,BibItemRefs) :
+def RefsScanCallback (Words,Refs,Problems = None) :
+   
+   TexFileRefs = Refs[0]
+   BibItemRefs = Refs[1]
+   
+   BatchMode = (Problems != None)
 
    if (len(Words) > 0) :
    
@@ -581,8 +842,10 @@ def RefsScanCallback (Words,TexFileRefs,BibItemRefs) :
             #  Check the upper case options \citexxx
             
             if (len(Words[0]) == 5) :
-               print "** Note use of \cite for reference '" + Refs + \
-                                                        "' in .tex file **"
+               Problem = "Note use of \cite for reference '" + Refs + \
+                                                        "' in .tex file"
+               if (BatchMode) : Problems.append(Problem)
+               else : print("**",Problem,"**")
                Match = True
             else :
                LowerCaseOptions = ["t","p","t*","p*","alt","alt*","alp","alp*",\
@@ -605,7 +868,9 @@ def RefsScanCallback (Words,TexFileRefs,BibItemRefs) :
                      Match = True
                      break
          if (not Match) :
-            print "** Note: use of",Words,"in .tex file **"
+            Problem = "Note: use of " + ' '.join(Words) + " in .tex file"
+            if (BatchMode) : Problems.append(Problem)
+            else : print("**",Problem,"**")
          else :
          
             #  If we found one of the \cite commands, get the references from
@@ -615,7 +880,10 @@ def RefsScanCallback (Words,TexFileRefs,BibItemRefs) :
                RefList = Refs.split(",")
                TexFileRefs.extend(RefList)
             else :
-               print "** Note: no reference list in",Words,"in .tex file **"
+               Problem = "Note: no reference list in " + ' '.join(Words) + \
+                                                            " in .tex file"
+               if (BatchMode) : Problems.append(Problem)
+               else : print("**",Problem,"**")
 
       #  Finally, pick up any \bibitem entries, while we're at it.
       
@@ -624,8 +892,11 @@ def RefsScanCallback (Words,TexFileRefs,BibItemRefs) :
          if (Refs != "") :
             BibItemRefs.append(Refs.strip("{}"))
          else :
-            print "** Note: no reference list in",Words,"in .tex file **"
-            
+            Problem = "Note: no reference list in " + ' '.join(Words) + \
+                                                            "in .tex file"
+            if (BatchMode) : Problems.append(Problem)
+            else : print("**",Problem,"**")
+
 # ------------------------------------------------------------------------------
 
 #                            V e r i f y  E p s
@@ -640,19 +911,41 @@ def RefsScanCallback (Words,TexFileRefs,BibItemRefs) :
 #   also checks that there are no additional .eps files that are unused.
 #   To allow this to be used for preliminary checking, where the main .tex
 #   file has been misnamed, the actual .tex file name can be supplied as
-#   an optional argument.
+#   an optional argument. The final optional Problems and Warnings arguments
+#   allow this to be used in batch mode, where direct output from this routine
+#   is suppressed and instead a set of report lines are added to the lists of
+#   problems and warnings passed.
 #
 #   This routine returns True if everything looks OK, False otherwise.
 
 
-def VerifyEps (Paper,TexFileName = "") :
+def VerifyEps (Paper,TexFileName = "",Problems = None,Warnings = None) :
 
+   #  Originally, for early versions of Python 2, CalledFromWalk() was a
+   #  function passed to os.path.walk() in order to build up a full list of the
+   #  files in the current directory. Now it is called more directly from the
+   #  main code for each directory found by os.walk(). Each file found is added
+   #  to FileList. We strip off any leading './' as this is (we assume) not
+   #  going to be included when the .tex file refers to the file.
+   
+   def CalledFromWalk(FileList,DirPath,Namelist) :
+      if (DirPath.find("__MACOSX") < 0) :
+         for Name in Namelist :
+            Path = os.path.join(DirPath,Name)
+            if (Path.startswith("./")) : Path = Path[2:]
+            FileList.append(Path)
+   
    ReturnOK = True
+   
+   BatchMode = False
+   if (Problems != None and Warnings != None) : BatchMode = True
    
    if (TexFileName == "") : TexFileName = Paper + ".tex"
    TexFileName = os.path.abspath(TexFileName)
    if (not os.path.exists(TexFileName)) :
-      print "Cannot find main .tex file",TexFileName
+      Problem = "Cannot find main .tex file: " + TexFileName
+      if (BatchMode) : Problems.append(Problem)
+      else : print("**",Problem,"**")
       ReturnOK = False
    else :
 
@@ -675,16 +968,37 @@ def VerifyEps (Paper,TexFileName = "") :
                                                          
       TexFile.close()
 
-      #  Get a list of all the files in the directory.
+      #  See if any of the graphics files are in sub-directories. They shouldn't
+      #  be, but people often do put them there.
       
-      FileList = os.listdir(".")
+      DirListFromTex = []
+      for FileName in FileListFromTex :
+         DirName = os.path.dirname(FileName)
+         if (DirName != "") :
+            if (not (DirName in DirListFromTex)) :
+               DirListFromTex.append(DirName)
+
+      #  Get a list of all the files in the directory and its subdirectories.
+      #  (os.walk() returns details for each directory found, and we pass the
+      #  directory name and its list of files to CalledFromWalk() - defined
+      #  above - and this adds the paths for all files - minus any leading './'
+      #  - to FileList.)
+      
+      FileList = []
+      for Details in os.walk('.') :
+          CalledFromWalk(FileList,Details[0],Details[2])
 
       #  First, simply list all the graphics files specified by the .tex file.
       
       if (len(FileListFromTex) > 0) :
-         print "Graphics files used by",TexFileName,":"
-         for FileName in FileListFromTex :
-            print "    ",FileName
+         if (not BatchMode) :
+            print("Graphics files used by",TexFileName,":")
+            for FileName in FileListFromTex :
+               print("    ",FileName)
+         if (len(DirListFromTex) > 0) :
+            Problem = "Some graphics files are in sub-directories"
+            if (BatchMode) : Problems.append(Problem)
+            else : print("**",Problem,"**")
          
          #  Now run through them again, checking for files with .eps extensions.
          #  If so, see if they were supplied. 
@@ -711,34 +1025,51 @@ def VerifyEps (Paper,TexFileName = "") :
                            EpsMatch = True
                   if (len(MatchedFiles) != 1) : ReturnOK = False;
                   if (len(MatchedFiles) > 1) :
-                     print "**",FileName,"may default to any of:"
+                     Problem = FileName + " may default to any of:"
+                     if (BatchMode) : Problems.append(Problem)
+                     else : print("**",Problem,"**")
+                     Files = ""
                      for Match in MatchedFiles :
-                        print "    ",Match
+                        Files = Files + Match + " "
+                     if (BatchMode) : Problems.append(Files)
+                     else : print("    ",Files)
                      if (EpsMatch) :
-                        print "* only one of which is an eps file *"
+                        Problem = "Only one of which is an eps file"
                      else :
-                        print "** None of which seem to be suitable **"
+                        Problem = "None of which seem to be suitable"
+                        if (BatchMode) : Problems.append(Problem)
+                        else : print("**",Problem,"**")
                   elif (len(MatchedFiles) == 1) :
                      if (EpsMatch) :
-                        print "(",FileName,"will default to .eps )"
+                        Note = "(Note: " + FileName + \
+                                                      " will default to .eps )"
+                        if (not BatchMode) : print(Note)
                      else :
-                        print "**",FileName,"will default to the non-eps file",\
-                                                  MatchedFiles[0],"**"
+                        Problem = FileName + \
+                         " will default to the non-eps file " + MatchedFiles[0]
                         ReturnOK = False
+                        if (BatchMode) : Problems.append(Problem)
+                        else : print("**",Problem,"**")
                   else :
-                     print "** No files match",FileName,"**"
+                     Problem = "No files match " + FileName
+                     if (BatchMode) : Problems.append(Problem)
+                     else : print("**",Problem,"**")
 
                else :
                
                   #  A non-eps extension needs to be noted. See if the
                   #  file exists and if not warn about that as well.
                   
-                  print "**",FileName,"does not have a .eps extension **"
+                  Problem = FileName + " does not have a .eps extension"
+                  if (BatchMode) : Problems.append(Problem)
+                  else : print("**",Problem,"**")
                   if (not os.path.exists(FileName)) :
-                     print "**",FileName,"is not supplied **"
+                     Problem = FileName + " has not been supplied"
+                     if (BatchMode) : Problems.append(Problem)
+                     else : print("**",Problem,"**")
                   ReturnOK = False
                      
-         print " "
+         print(" ")
       
       #  List all the .eps files in the current directory.
       
@@ -746,16 +1077,17 @@ def VerifyEps (Paper,TexFileName = "") :
       for File in FileList :
          if (not File.startswith('.')) :
             if (File.endswith(".eps")) : EpsFileList.append(File)
-      print ".eps files supplied:"
-      if (len(EpsFileList) > 0) :
-         for FileName in EpsFileList :
-            print "    ",FileName.strip()
-         print " "
+      if (not BatchMode) :
+         print(".eps files supplied:")
+         if (len(EpsFileList) > 0) :
+            for FileName in EpsFileList :
+               print("    ",FileName.strip())
+            print(" ")
       
       #  See if all the .eps files are used by the .tex file.
       
       if (len(EpsFileList) == 0) :
-         print "No .eps files found"
+         if (not BatchMode) : print("No .eps files found")
       else :
          AllFound = True
          for EpsFile in EpsFileList :
@@ -764,27 +1096,52 @@ def VerifyEps (Paper,TexFileName = "") :
                if (GraphicsFile == EpsFile) :
                   Found = True
                   break
+               if (GraphicsFile.lower() == EpsFile.lower()) :
+                  Found = True
+                  CaseProblems = True
+                  Problem = GraphicsFile + " matches " + EpsFile + \
+                                                       " but has different case"
+                  if (BatchMode) : Problems.append(Problem)
+                  else : print("**",Problem,"**")
+                  break
                if (GraphicsFile.find('.') < 0) :
                   if (GraphicsFile + ".eps" == EpsFile) :
                      Found = True
                      break
+                  if (GraphicsFile.lower() + ".eps" == EpsFile.lower()) :
+                     Found = True
+                     CaseProblems = True
+                     Problem = GraphicsFile + " matches " + EpsFile + \
+                                                      " but has different case"
+                     if (BatchMode) : Problems.append(Problem)
+                     else : print("**",Problem,"**")
+                     break
             if (not Found) :
-               print "**",EpsFile,"is not used in the .tex file **"
+               Warning = EpsFile + " is not used in the .tex file"
+               if (BatchMode) : Warnings.append(Warning)
+               else : print("*",Warning,"*")
                AllFound = False
          if (AllFound) :
-            print "All .eps files in the directory are used by the .tex file"
+            if (not BatchMode) :
+               print( \
+                   "All .eps files in the directory are used by the .tex file")
          else :
             ReturnOK = False
       
       #  See if all the files used by the .tex file are in the directory.
       #  At this point, we assume that if no extension was specified, it
-      #  will default to .eps.
+      #  will default to .eps. Note that if we are running on a file system that
+      #  is case-insensitive (eg OS X in most cases), you can get away with case
+      #  errors in the file names that will cause problems on other systems.
+      #  File names should match properly, but we don't want to flag a file as
+      #  missing just because of a case error.
       
       if (len(FileListFromTex) == 0) :
-         print "No graphics files used by the .tex file"
+         if (not BatchMode) : print("No graphics files used by the .tex file")
       else :
          AllFound = True
          AllEps = True
+         CaseProblems = False
          for GraphicsFile in FileListFromTex :
             if (os.path.splitext(GraphicsFile)[1] == "") :
                GraphicsFile = GraphicsFile + ".eps"
@@ -793,21 +1150,55 @@ def VerifyEps (Paper,TexFileName = "") :
                if (EpsFile == GraphicsFile) :
                   Found = True
                   break
+               if (EpsFile.lower() == GraphicsFile.lower()) :
+                  Found = True
+                  CaseProblems = True
+                  Problem = EpsFile + " matches " + GraphicsFile + \
+                                                       " but has different case"
+                  if (BatchMode) : Problems.append(Problem)
+                  else : print("**",Problem,"**")
+                  break
             if (not Found) :
                for File in FileList :
                   if (File == GraphicsFile) :
                      Found = True
                      AllEps = False
                      break
+                  if (File.lower() == GraphicsFile.lower()) :
+                     Found = True
+                     AllEps = False
+                     CaseProblems = True
+                     Problem = File + " matches " + GraphicsFile + \
+                                                       " but has different case"
+                     if (BatchMode) : Problems.append(Problem)
+                     else : print("**",Problem,"**")
+                     break
             if (not Found) :
-               print "**",GraphicsFile,"is missing from the directory **"
+               Problem = GraphicsFile + " is missing from the directory"
+               if (BatchMode) : Problems.append(Problem)
+               else : print("**",Problem,"**")
                AllFound = False
                ReturnOK = False
          if (AllFound) :
-            print "All graphics files used by the .tex file are supplied"
+            if (not BatchMode) :
+               print("All graphics files used by the .tex file are supplied")
             if (not AllEps) :
-               print "** But not all are encapsulated postscript files **"
+               Problem = "Not all graphics files are .eps files"
+               if (BatchMode) : Problems.append(Problem)
+               else : print("**",Problem,"**")
                ReturnOK = False
+            if (len(DirListFromTex) > 0) :
+               Problem = "Graphics files should not be in subdirectories"
+               if (BatchMode) : Problems.append(Problem)
+               else : print("**",Problem,"**")
+               ReturnOK = False
+
+         if (CaseProblems) :
+            Problem = \
+                 "Some graphics files names have problems with upper/lower case"
+            if (BatchMode) : Problems.append(Problem)
+            else : print("**",Problem,"**")
+            ReturnOK = False
 
    return ReturnOK
                
@@ -821,9 +1212,14 @@ def VerifyEps (Paper,TexFileName = "") :
 #   this is a recognised graphics command, the specified file name will be
 #   added to FileListFromTex, which is a list of strings. TexScanner supplies
 #   an additional argument when it makes the callback, but this is unused here.
+#   File names already in the list are not added to it - some .tex files use
+#   the same image more than once. Any leading "./" characters are removed from
+#   the file names; I don't think they should really be there, but this makes
+#   things consistent with the way the files found in the directory are handled
+#   when the two are compared by VerifyEps().
 
 def EpsScanCallback (Words,FileListFromTex,Unused) :
-   if (len(Words) > 0) : 
+   if (len(Words) > 0) :
       if (Words[0] == "\\includegraphics" or \
             Words[0] == "\\articlefigure" or \
                Words[0] == "\\articlefiguretwo" or \
@@ -844,7 +1240,10 @@ def EpsScanCallback (Words,FileListFromTex,Unused) :
                if (Word[0] == '{') :
                   FileCount = FileCount + 1
                   File = Word.strip("{}")
-                  FileListFromTex.append(File.strip())
+                  if (File.startswith("./")) : File = File[2:]
+                  File = File.strip()
+                  if (not File in FileListFromTex) :
+                     FileListFromTex.append(File)
                   if (FileCount >= MaxFiles) : break
                   
 # ------------------------------------------------------------------------------
@@ -875,13 +1274,13 @@ def EpsScanCallback (Words,FileListFromTex,Unused) :
 
 def TrimBibFile (Paper,Keep = True) :
 
-   BibFileName = GetBibFileName()
+   BibFileName = FindBibFile(Paper)
    BibFileRefs = GetBibFileRefs(BibFileName)
-   print ""
-   print "References in",BibFileName," :"
+   print("")
+   print("References in",BibFileName," :")
    for BibRef in BibFileRefs :
-      print "   ",BibRef
-   print ""
+      print("   ",BibRef)
+   print("")
    
    if (len(BibFileRefs) > 0) :
    
@@ -892,7 +1291,7 @@ def TrimBibFile (Paper,Keep = True) :
    
       TexFileName = os.path.abspath(Paper + ".tex")
       if (not os.path.exists(TexFileName)) :
-         print "Cannot find main .tex file",TexFileName
+         print("Cannot find main .tex file",TexFileName)
       else :
    
          GetTexFileRefs (TexFileName,TexFileRefs,BibItemRefs)
@@ -945,18 +1344,21 @@ def TrimBibFile (Paper,Keep = True) :
                         Ref = Ref.strip()
                         Used = False
                         if (Ref == "") :
-                           print "** Blank name in .bib file at line",\
-                                                              LineCount,"**"
+                           print("** Blank name in .bib file at line",\
+                                                              LineCount,"**")
                            ParsedOK = False
                            Used = True
                         for TexFileRef in TexFileRefs :
                            if (Ref == TexFileRef.strip()) :
                               Used = True
-                              print "Keeping reference",Ref
+                              print("Keeping reference",Ref)
                               break
                         if (not Used) :
                            BibFileLine = '%' + BibFileLine.replace('@',"_AT_")
-                           print "Commenting out unused reference",Ref
+                           if (Keep) :
+                              print("Commenting out unused reference",Ref)
+                           else :
+                              print("Deleting unused reference",Ref)
                            Changed = True
                            CommentingOut = True
                            ThisIsAComment = True
@@ -975,10 +1377,10 @@ def TrimBibFile (Paper,Keep = True) :
             os.unlink(ModBibFileName)
             
          if (not ParsedOK) :
-            print ""
-            print "** Problem parsing the file may mean an unused reference"
-            print "has been kept. Suggest running RefCheck and editing the"
-            print "file to fix the parsing problem if necessary **"
+            print("")
+            print("** Problem parsing the file may mean an unused reference")
+            print("has been kept. Suggest running RefCheck and editing the")
+            print("file to fix the parsing problem if necessary **")
 
 # ------------------------------------------------------------------------------
 
@@ -1119,8 +1521,8 @@ def AuthorScanCallback(Words,AuthorList,Notes) :
                         if (InMath) :
                            InMath = False
                            if (MathCount > 0 and Index < (Len - 1)) :
-                              Notes.append("Possible missing comma near" + \
-                                                        Authors[Posn:Index])
+                              Notes.append("Possible missing comma near '" + \
+                                               Authors[Posn:Index] + "'")
                            MathCount = MathCount + 1
                            Posn = Index
                         else :
@@ -1181,6 +1583,7 @@ def AuthorScanCallback(Words,AuthorList,Notes) :
                   
                   #  Now go through all of what should be individual authors.
                   
+                  OrderWarning = False
                   Len = len(AList)
                   for Index in range(Len) :
                   
@@ -1195,7 +1598,7 @@ def AuthorScanCallback(Words,AuthorList,Notes) :
                      #  the first characters from the others as the initials.
                      
                      #  To complicate things, we need to distinguish between
-                     #  "\~" (which we need to keep, it generates a diacritical
+                     #  "\~" (which we need to keep; it generates a diacritical
                      #  tilde, or virgulilla, for Spanish words) and '~' which
                      #  is just a space and which we want to drop. What's done
                      #  here is messy - turn "\~" into "\twiddle" and then
@@ -1304,7 +1707,9 @@ def AuthorScanCallback(Words,AuthorList,Notes) :
                                    PrevName.lower() == "den" or \
                                      PrevName.lower() == "von" or \
                                        PrevName.lower() == "le" or \
-                                         PrevName.lower() == "der") :
+                                          PrevName.lower() == "da" or \
+                                             PrevName.lower() == "di" or \
+                                                PrevName.lower() == "der") :
                               Surname = PrevName + ' ' + Surname
                               Multiple = True
                               NumNames = NumNames - 1
@@ -1333,6 +1738,21 @@ def AuthorScanCallback(Words,AuthorList,Notes) :
                            if (Letters > 1) :
                               Notes.append("Might '" + LastForename + ' ' \
                                              + Surname + "' be a surname?")
+                     
+                        #  If the surname is a single letter and the forename(s)
+                        #  are longer, this might be a case where the names
+                        #  have been given with the surname last instead of
+                        #  first.
+                        
+                        if (len(Surname) == 1) :
+                           if (NumNames > 0) :
+                              if (len(NameList[0]) > 1) :
+                                 if (not OrderWarning) :
+                                    Notes.append(
+                                       "Names should end with the surname")
+                                    OrderWarning = True
+                                 Notes.append("Might " + NameList[0] + ' ' + \
+                                    Surname + " have been given surname first?")
                         
                         #  Now reduce the forenames to initials.
                         
@@ -1387,6 +1807,7 @@ def AuthorScanCallback(Words,AuthorList,Notes) :
 #   possibly amiss that it comes across when processing the author list.
 
 
+
 def GetAuthors (Paper,Notes,TexFileName = "") :
 
    AuthorList = []
@@ -1394,7 +1815,7 @@ def GetAuthors (Paper,Notes,TexFileName = "") :
    if (TexFileName == "") : TexFileName = Paper + ".tex"
    TexFileName = os.path.abspath(TexFileName)
    if (not os.path.exists(TexFileName)) :
-      print "Cannot find main .tex file",TexFileName
+      print("Cannot find main .tex file",TexFileName)
    else :
 
       #  Now get a list of the authors from the .tex file.
@@ -1418,29 +1839,24 @@ def GetAuthors (Paper,Notes,TexFileName = "") :
 
 # ------------------------------------------------------------------------------
 
-#                         F i x  C h a r a c t e r s
+#                   C h a r a c t e r  E n c o d i n g s
 #
-#   This routine scans a Line read from a .tex file and checks for some of 
-#   the more common foreign accented characters that can cause problems for an
-#   English implementation of LaTeX. If it finds any that it recognises, it
-#   replaces them with the equivalent LaTeX sequence - for example, it will
-#   replace 0xe7 (the Ascii code for c-cedilla) with "\c{c}". If it makes no
-#   changes to the string, it will return None. Otherwise it returns the 
-#   modified string. The line number passed is used to output a message 
-#   describing any changes made. (Pass it as zero to suppress such messages.)
+#   Latin1_LaTeX_Chars is a dictionary giving LaTeX sequences equivalent to
+#   various characters in the LATIN-1 character set that are often seen in
+#   ADASS papers. The characters are given by their hex values. Note that
+#   these codes are also used for these characters in Unicode, so this can
+#   also be used to get the LaTeX sequences equivalent to this subset of
+#   Unicode characters (ones in the range U+00C0 to U+00FF). This is not a
+#   complete set, but it should include any likely to appear in ADASS papers.
 #
-#   LaTeX_Chars is a dictionary giving the LaTeX sequences equivalent to the
-#   accented unprintable ASCII characters (given as their hex values) recognised
-#   by FixCharacters().
-
-__LaTeX_Chars__ = \
+__Latin1_LaTeX_Chars__ = \
     { 0xc0:"\\`{A}", 0xc1:"\\'{A}", 0xc2:"\\^{A}", 0xc3:"\\~{A}", \
       0xc4:'\\"{A}', 0xc5:"\\.{A}", \
       0xc7:"\\c{C}", \
       0xc8:"\\`{E}", 0xc9:"\\'{E}", 0xca:"\\^{E}", 0xcb:"\\~{E}", \
       0xcc:"\\`{I}", 0xcd:"\\'{I}", 0xce:"\\^{I}", 0xcf:"\\~{I}", \
       0xd1:"\\~{N}", \
-      0xd2:"\\`{O}", 0xd3:"\\'{O}", 0xd4:"\\^{O}", 0xd5:"\\~{O}", \
+      0xd2:"\\`{O}", 0xd3:"\\'{O}", 0xd4:"\\^{O}", 0xd5:"\~{O}",  \
       0xd6:'\\"{O}', 0xd8:'\\o{O}', \
       0xd9:"\\`{U}", 0xda:"\\'{U}", 0xdb:"\\^{U}", 0xdc:'\\"{U}', \
       0xdd:"\\'{Y}", 0xdf:"{\\ss}", \
@@ -1453,10 +1869,90 @@ __LaTeX_Chars__ = \
       0xf2:"\\`{o}", 0xf3:"\\'{o}", 0xf4:"\\^{o}", 0xf5:"\\~{o}", \
       0xf6:'\\"{o}', 0xf8:'\\o{o}', \
       0xf9:"\\`{u}", 0xfa:"\\'{u}", 0xfb:"\\^{u}", 0xfc:'\\"{u}', \
-      0xfd:"\\'{y}", 0xff:'\\"{y}' }      
+      0xfd:"\\'{y}", 0xff:'\\"{y}' }
 
-def FixCharacters (Line,LineNumber) :
+#  Macintosh_LaTeX_Chars is another dictionary, like Latin1_LaTeX_Chars, this
+#  time giving the LaTeX sequences equivalent to various characters in the
+#  old Mac OS Roman character set. Files encoded in Mac OS Roman are relatively
+#  rare among ADASS papers, but are still seen from time to time, although
+#  generally very few of the characters are used. The em- and en-dashes are
+#  seen, as is the posessive apostrophe (at 0xd5, occasionally mis-converted
+#  into the Latin-1 upper case O with a tilde).
 
+__Macintosh_LaTeX_Chars__ = \
+   {  0x80:'\\"{A}', 0x81:"\\.{A}", 0x82:"\\c{C}", 0x83:"\\'{E}", \
+      0x84:"\\~{N}", 0x85:'\\"{O}', 0x86:'\\"{U}', 0x87:"\\'{a}", \
+      0x88:"\\`{a}", 0x89:"\\^{a}", 0x8a:'\\"{a}', 0x8b:"\\~{a}", \
+      0x8c:"\\.{a}", 0x8d:"\\c{c}", 0x8e:"\\'{e}", 0x8f:"\\`{e}", \
+      0x90:"\\^{e}", 0x91:'\\"{e}', 0x92:"\\'{i}", 0x93:"\\`{i}", \
+      0x94:"\\^{i}", 0x95:'\\"{i}', 0x96:"\\~{n}", 0x97:"\\'{o}", \
+      0x98:"\\`{o}", 0x99:"\\^{o}", 0x9a:'\\"{o}', 0x9b:"\\~{o}", \
+      0x9c:"\\'{u}", 0x9d:"\\`{u}", 0x9e:"\\^{u}", 0x9f:'\\"{u}', \
+      0xca:"~", \
+      0xcb:"\\`{A}", 0xcc:"\\~{A}", 0xcd:"\\~{O}", \
+      0xd0:"--",     0xd1:"---", \
+      0xd2:"``",     0xd3:"''",     0xd4:"`",      0xd5:"'", \
+      0xd8:'\\"{y}', 0xd9:'\\"{Y}',
+      0xe5:"\\^{A}", 0xe6:"\\^{E}", 0xe7:"\\'{A}", 0xe8:'\\"{E}', \
+      0xe9:"\\`{E}", 0xea:"\\'{I}", 0xeb:"\\^{I}", 0xec:'\\"{I}', \
+      0xee:"\\'{O}", 0xef:"\\^{O}", 0xf1:"\\`{O}", \
+      0xf2:"\\'{U}", 0xf3:"\\^{U}", 0xf4:"\\`{U}" }
+
+#  Unicode_LaTeX_Chars is yet another dictionary, this time for Unicode
+#  characters. It clearly doesn't cover the whole of the Unicode character
+#  set. Instead it covers those characters that have been seen to date in
+#  ADASS papers, together with some others that seem like plausible options.
+#  Note that Unicode and Latin-1 overlap, so characters in the U+80 to U+FF
+#  are covered by the Latin1 directory, in the same way that Unicode characters
+#  in the range U+00 to U+7F are standard ASCII characters. So if a character
+#  is not found in this dictionary, it might be in Latin1_LaTeX_Chars.
+#  The U+FFFD replacement character is rendered as '???' which is probably
+#  the best we can do.
+
+__Unicode_LaTeX_Chars__ = \
+   {  0x0391:"A",         0x0392:"B",           0x0393:"$\\Gamma$",  \
+      0x0394:"$\\Delta$", 0x0395:"E",           0x0396:"Z",      \
+      0x0397:"H",         0x0398:"$\\Theta$",   0x0399:"I",  \
+      0x039a:"K",         0x039b:"$\\Lambda$",  0x039c:"M", \
+      0x039d:"N",         0x039e:"$\\Xi$",      0x039f:"O",    \
+      0x03a0:"$\\Pi$",    0x03a1:"P",
+      0x03a3:"$\\Sigma$", 0x03a4:"T",           0x03a5:"$\\Upsilon$",
+      0x03a6:"$\\Phi$",   0x03a7:"X",           0x03a8:"$\\Psi$",
+      0x03a9:"$\\Omega$", \
+      0x03b1:"$\\alpha$", 0x03b2:"$\\beta$",    0x03b3:"$\\gamma$", \
+      0x03b4:"$\\delta$", 0x03b5:"$\\epsilon$", 0x03b6:"$\\zeta$", \
+      0x03b7:"$\\eta$",   0x03b8:"$\\theta$",   0x03b9:"$\\iota$",    \
+      0x03ba:"$\\kappa$", 0x03bb:"$\\lambda$",  0x03bc:"$\\mu$", \
+      0x03bd:"$\\nu$",    0x03be:"$\\xi$",      0x03bf:"$\\omicron$", \
+      0x03c0:"$\\pi$",    0x03c1:"$\\rho$",     0x03c2:"$\\varsigma$", \
+      0x03c3:"$\\sigma$", 0x03c4:"$\\tau$",     0x03c5:"$\\upsilon$", \
+      0x03c6:"$\\phi$",   0x03c7:"$\\chi$",     0x03c8:"$\\psi$", \
+      0x03c9:"$\\omega$", \
+      0x2010:"-",         0x2013:"--",          0x2014:"---",     0x2018:"`", \
+      0x2019:"'",         0x201c:"``",          0x201d:"''", \
+      0xfffd:"???" }
+
+
+#  Note: 0x03a2 is missing - there isn't an upper case equivalent of \varsigma,
+#  which is itself only used in Greek writing, so probably isn't going to
+#  turn up in many ADASS papers. Note that in LaTeX, Greek letters are all
+#  math symbols.
+
+# ------------------------------------------------------------------------------
+
+#                         F i x  C h a r a c t e r s
+#
+#   This routine scans a Line read from a .tex file and checks for some of 
+#   the more common foreign accented characters that can cause problems for an
+#   English implementation of LaTeX. If it finds any that it recognises, it
+#   replaces them with the equivalent LaTeX sequence - for example, it will
+#   replace 0xe7 (the Ascii code for c-cedilla) with "\c{c}". If it makes no
+#   changes to the string, it will return None. Otherwise it returns the 
+#   modified string. The line number passed is used to output a message 
+#   describing any changes made. (Pass it as zero to suppress such messages.)
+
+def FixCharacters (Line,LineNumber,Encoding = "Latin1") :
+   
    NewLine = None
    
    #  Quick pass to see if we have a problem
@@ -1469,22 +1965,443 @@ def FixCharacters (Line,LineNumber) :
    
    if (Problem) :
       NewLine = ""
-      for Char in Line :
+
+      LowEncoding = Encoding.lower()
+      UseLatin1 = (LowEncoding == "latin1")
+      UseMacRoman = (LowEncoding == "macroman")
+      UseUnicode = (LowEncoding == "utf-8")
+      
+      NChars = len(Line)
+      Index = 0;
+      while (Index < NChars) :
+      
+         Char = Line[Index]
          if (Char in string.printable) :
             NewLine = NewLine + Char
-         else :
+         else:
             Num = ord(Char)
-            Repl = __LaTeX_Chars__.get(Num)
+            Repl = None
+            Descrip = None
+            IndexWas = Index
+            if (UseLatin1) :
+               Repl = __Latin1_LaTeX_Chars__.get(Num)
+               Descrip = "Latin1 character (" + hex(Num) + ")"
+            elif (UseMacRoman) :
+               Repl = __Macintosh_LaTeX_Chars__.get(Num)
+               Descrip = "Mac Roman character (" + hex(Num) + ")"
+            elif (UseUnicode) :
+               (IsUnicode, Unicode, NewIndex) = \
+                                        CheckForUTF8Unicode(Line,Index,NChars)
+               Index = NewIndex
+               if (IsUnicode) :
+                  Descrip = "Unicode character U+" + hex(Unicode)[2:]
+                  Repl = __Unicode_LaTeX_Chars__.get(Unicode)
+                  if (Repl == None) :
+                     Repl = __Latin1_LaTeX_Chars__.get(Unicode)
+               else :
+                  Descrip = "Unexpected character (" + hex(Num) + \
+                                                 " - not valid UTF-8 Unicode)"
+            
             if (Repl == None) :
-               print "Unexpected unprintable character (" + hex(Num) + \
-                                         ") in .tex file at line",LineNumber
+               Text = Descrip + " in .tex file at line " + str(LineNumber) + \
+                                                  " : LaTeX equivalent unknown"
                NewLine = NewLine + Char
+               Index = IndexWas
             else :
-               print "Unprintable character (" + hex(Num) + \
-                  ") in .tex file at line",LineNumber,"replaced by",Repl
+               Text = Descrip + " in .tex file at line " + str(LineNumber) + \
+                                                         " replaced by " + Repl
                NewLine = NewLine + Repl
+            if (LineNumber != 0) : print(Text)
+         Index = Index + 1
+
+   return NewLine
+
+# ------------------------------------------------------------------------------
+
+#                    C h e c k  F o r  U T F  8  U n i c o d e
+#
+#   This utility routine is passed a byte string, which should be a line read
+#   from what is assumed to be a LaTeX source file, which might be encoded
+#   using UTF-8, together with the length of the line and an index into that
+#   line. It returns a tuple (IsUnicode, Unicode, NewIndex) where IsUnicode is
+#   true if a valid UTF-8 encoding of a Unicode character starts at the given
+#   index value, Unicode is the integer value of that Unicode character, and
+#   NewIndex is the index into of the last byte of that encoded Unicode
+#   character, allowing the caller to skip over it. If no Unicode character was
+#   found, NewIndex will simply be Index.
+#
+#   There may be ways of coding this up using Python modules designed to
+#   handle UTF-8, but I thought this gave me more control, and was less likely
+#   to have problems caused by the different ways strings are handled in
+#   Python 2 and Python 3. Maybe I just like doing things the hard way.
+
+def CheckForUTF8Unicode (Line,Index,Length) :
+
+   #  Default return values
+   
+   NewIndex = Index + 1
+   IsUnicode = False
+   Unicode = 0
+   
+   #  Look at the character indicated by Index. This will normally be an
+   #  ordinary ASCII (or possibly LATIN-1) single byte character. However,
+   #  it might be the start of an encoded Unicode character. The way UTF-8
+   #  encodes such characters in very clever, and quite complex. A good place
+   #  to look for the details is https://en.wikipedia.org/wiki/UTF-8.
+   #  UTF-8 encodes Unicode characters into an initial byte whose upper bits
+   #  fit one of four bit patterns and whose lower bits contain some of the
+   #  bits of the Unicode character. Depending on which of the four patterns
+   #  that first byte has, it may be followed by a number of continuation
+   #  bytes, all of which have the bit pattern 10xxxxxx where the 10 identifies
+   #  the byte as a continuation characteer and the six xxxxxx bits contain
+   #  more of the buts of the Unicode character.
+   #  If he byte indicated by Index is the start of a Unicode sequence, it must
+   #  fit one of the following bit patterns:
+   #  0xxxxxxx - the low 7 bits gives a Unicode character in the range
+   #             U+0000 to U+007F - these map directly onto ASCII characters
+   #             and we don't count these as Unicode characters - you can
+   #             treat this as an ordinary ASCII character.
+   #  110xxxxx - this will be followed by one continuation byte, and the two
+   #             specify a Unicode character in the range U+0080 to U+07FF.
+   #             Note that the 5 xxxxxx bits in the first byte and the six
+   #             xxxxxx bits in the continuation byte provide 11 bits, which
+   #             is enough to hold numbers in the hex range 0080 to 07FF.
+   #  1110xxxx - will be followed by two continuation bytes, and the three
+   #             specify a Unicode character in the range U+0800 to U+FFFF.
+   #             Note that the first byte supplies four xxxx bits, each of the
+   #             continuation bytes supplies six xxxxxx bits, making a total
+   #             of 16 bits, enough to hold numbers up to hex FFFF.
+   #  1111xxxx - will be followed by three continuation bytes. You should have
+   #             the idea by now. These four bytes specify a Unicode character
+   #             in the range U+10000 to U+10FFFF. The four xxxx bits from
+   #             the first byte and six xxxxxx bits from the three continuation
+   #             bytes make 21 bits, which is enough to hold hex 10FFFF.
+   #   So, we almost certainly have an encoded Unicode character if our first
+   #   byte fits one of those patterns. If it's the first, then we treat it as
+   #   an ordinary ASCII character. If it's one of the other three, then we
+   #   see if the proper number of subsequent bytes start with the 10xxxxxx
+   #   bit pattern that marks them as continuation bytes. If they do, then
+   #   we do the required bit shuffling to get the Unicode value out of the
+   #   various xxxx bits.
+   
+   Char = Line[Index]
+   Num = ord(Char)
+      
+   #  See if this character is in the range of any of those last three
+   #  patterns. If so, set ExtraBytes to the number of expected continuation
+   #  bytes.
+   
+   ExtraBytes = 0
+   if (Num >= 0xc0 and Num <= 0xdf) : ExtraBytes = 1
+   if (Num >= 0xe0 and Num <= 0xef) : ExtraBytes = 2
+   if (Num >= 0xF0 and Num <= 0xff) : ExtraBytes = 3
+   if (ExtraBytes > 0) :
+   
+      #  Build up in Bytes a list of the bytes that we expect to form the
+      #  encoded Unicode character. As we go, we check that any continuation
+      #  bytes match the expected 10xxxxxx pattern - mask off the top two
+      #  bits and the result should be 0x80. If this isn't true for any
+      #  continuation byte, this isn't a Unicode character. (There are
+      #  theoretical cases where a pattern of ordinary extended ASCII
+      #  characters could mimic an encoded Unicode character, but they're
+      #  extremely contrived and highly unlikely in practice.)
+      
+      Bytes = [Num]
+      LastIndex = Index + ExtraBytes
+      if (LastIndex < Length) :
+         IsUnicode = True
+         for I in range(ExtraBytes) :
+            Extra = Line[Index + I + 1]
+            NumExtra = ord(Extra)
+            if ((NumExtra & 0xc0) != 0x80) :
+               IsUnicode = False
+               break
+            Bytes.append(NumExtra)
+   
+      #  If it still looks like an encoded Unicode character, then we do the
+      #  bit twiddling needed to get the bits - those xxxxx bits - out of the
+      #  bytes that we now have in Bytes. Character values up to U+FFFF can
+      #  be held in two bytes (UByte0 and UByte1 here). Larger values - the
+      #  ones that needed three continuation bytes - will fit into three
+      #  bytes. This code pulls those two or three bytes of the final value
+      #  out of the encoded bytes, then combines them to get the final
+      #  Unicode value. (It could be done more directly, but the shifts
+      #  needed would be even harder to follow.) I believe I have these
+      #  right - at the time of writing I don't have any test files with
+      #  characters that need three continuation bytes.
+      
+      if (IsUnicode) :
+         if (ExtraBytes == 1) :
+            UByte0 = ((Bytes[0] & 0x1c) >> 2)
+            UByte1 = ((Bytes[0] & 0x03) << 6) | (Bytes[1] & 0x3f)
+            Unicode = (UByte0 << 8) | UByte1
+         elif (ExtraBytes == 2) :
+            UByte0 = ((Bytes[0] & 0x0f) << 4) | ((Bytes[1] & 0x3c) >> 2)
+            UByte1 = ((Bytes[1] & 0x03) << 6) | (Bytes[2] & 0x3f)
+            Unicode = (UByte0 << 8) | UByte1
+         elif (ExtraBytes == 3) :
+            UByte0 = ((Bytes[0] & 0x07) << 2) | ((Bytes[1] & 0x30) >> 4)
+            UByte1 = ((Bytes[1] & 0x0f) << 4) | ((Bytes[2] & 0x3c) >> 2)
+            UByte2 = ((Bytes[2] & 0x03) >> 6) | (Bytes[3] & 0x3f)
+            Unicode = (UByte0 << 16) | (UByte1 << 8) | UByte2
+         NewIndex = Index + ExtraBytes
+
+   return (IsUnicode, Unicode, NewIndex)
+
+# ------------------------------------------------------------------------------
+
+#                         G e t  F i l e  E n c o d i n g
+#
+#   ADASS papers are usually supplied in simple ASCII, using standard LaTeX
+#   sequences to get special characters such as accented letters or dashes
+#   of different lengths. However, some files turn up that have clearly been
+#   prepared using editors that insert extended character encodings for such
+#   characters. This makes sense for anyone writing in a language that makes
+#   use of such characters - many authors have names that need accents.
+#   However, not all LaTeX versions are able to handle such characters, and
+#   we may need to replace such characters with the standard sequences. The
+#   problem is that a number of incompatible extended character sets have been
+#   developed over the years, and it is not always obvious just what encoding
+#   has been used. This routine is passed the name of a file and attempts to
+#   determine which of a number of possible encodings it uses. It should also
+#   be passed a list (usually empty) to which this routine appends strings
+#   describing what it found in the file.
+#
+#   This routine should be able to pick the following:
+#   o A file using standard ASCII - the lowest common denominator.
+#   o A file using ASCII with the extended LATIN-1 set of characters.
+#   o A file using the old Mac OS Roman encoding.
+#   o A file with Unicode characters encoded using UTF-8.
+#
+#   There are a number of other possible encodings, but these cover those
+#   seen for recent ADASS papers.
+#
+#   The Result argument should be an empty list. This routine returns this as
+#   a list of strings, giving the encodings that the file might have. (Usually,
+#   we'd hope there's only be one item in the list, but there are ambiguous
+#   cases. In those cases, it's probaby worth outputting the full report.) The
+#   possible options returned are:
+#
+#   "ASCII"     File contains nothing but standard ASCII characters.
+#   "UTF-8"     File contains Unicode characters encoded using UTF-8.
+#   "MacRoman"  File contains characters encoded in Mac OS Roman.
+#   "Latin1"    File contains characters using the LATIN-1 extension.
+#
+#   If there is a problem opening the file, the list returned will be empty.
+#
+#   The function value returned by this routine is a measure of the certainty
+#   of its returned results, essentially a percentage certainly. If this is
+#   100, then the resut is perfectly clear. Any lesser value indicates that
+#   there is some uncertainty, best handled by the calling routine displaying
+#   the full Report that this routine also returns.
+
+def GetFileEncoding (TexFileName,Result,Report) :
+
+   Certainty = 100
+   
+   if (not os.path.exists(TexFileName)) :
+      Report.append("The file " + TexFileName + " does not exist")
+      Certainty = 0
+   
+   else :
+      HasUnicode = False       # File does contain Unicode characters
+      AllAscii = True          # All chars so fat are standard ASCII
+      HasMacRoman = False      # File has chars that could be Mac Roman
+      HasLatin1 = False        # File has chars that could be Latin1
+      HasAmbiguous = False     # File has chars that could be Mac or Latin1
+      HasUnknown = False       # File has chars that can't be classified
+      HasUFFFD = False         # File has the Unicode replacement character
+      
+      LineNumber = 0
+      TexFile = open(TexFileName,"r")
+      for Line in TexFile :
+         LineNumber = LineNumber + 1
+         Index = 0
+         LineLength = len(Line)
+         while (Index < LineLength) :
+
+            IsUnicode = False       # Almost certainly Unicode
+            IsLatin1 = False        # Probably Latin1
+            IsMacRoman = False      # Probably Mac Roman
+            IsAscii = False         # Definitely standard ASCII
+            IsUnknown = False       # Not Unicode, not a usual Latin or Mac char
+            IsAmbiguous = False     # Not Unicode, known in both Latin & Mac
+            
+            Char = Line[Index]
+            CharNum = ord(Char)
+            
+            #  First, an easy test. Any character in the range 0..7F is an
+            #  ordinary ASCII character.
+            
+            if (CharNum <= 0x7f) :
+               IsAscii = True
+            else :
+            
+               #  A character greater than 7F might be a Latin-1 character,
+               #  a Mac OS Roman character (and these can be hard to tell apart)
+               #  or it might be the start of a UTF-8 Unicode multi-byte
+               #  character. Such Unicode characters have a distinctive
+               #  signature, that CheckForUTF8Unicode() will spot pretty
+               #  unambiguously, so we check that next. If this is such a
+               #  character, we increment Index to skip over the rest of the
+               #  bytes that make up the multi-byte character.
+               
+               (IsUnicode, Unicode, NewIndex) = \
+                                 CheckForUTF8Unicode(Line,Index,LineLength)
+               if (IsUnicode) :
+               
+                  #  This is clearly Unicode. See if we can get the LaTeX
+                  #  equivalent for the report.
+                  
+                  Index = NewIndex
+                  Message = "Line " + str(LineNumber) + \
+                              " : has Unicode char U+" + hex(Unicode)[2:]
+
+                  #  Unicode U+FFFD is the Unicode replacement character. If the
+                  #  file has this, then it indicates that it has been read by
+                  #  another program and converted into Unicode, but that some
+                  #  characters could not be converted - probably becasue the
+                  #  program assumed the wrong input format. Some versions of
+                  #  TexWorks used to do this to files they read in different
+                  #  formats.
+                  
+                  if (Unicode == 0xfffd) :
+                     HasUFFFD = True
+                     Message = Message + " (the Unicode replacement character)"
+                  else :
+                  
+                     #  See if we canget the LaTeX equivalent string, and add
+                     #  that to the report.
+                     
+                     Repl = __Unicode_LaTeX_Chars__.get(Unicode)
+                     if (Repl == None) :
+                        Repl = __Latin1_LaTeX_Chars__.get(Unicode)
+                     if (Repl != None) :
+                        Message = Message + ' (LaTeX: "' + Repl + '")'
+                     else :
+                        Message = Message + ' (LaTeX: Unknown)'
+                  Report.append(Message)
+                  
+      
+               else :
+
+                  #  It wasn't a Unicode character. What we have now is a
+                  #  single character in the range 80..FF. This will usually be
+                  #  a LATIN-1 character, but it just might be Mac Roman.
+
+                  Message = "Line " + str(LineNumber) + " : has char " + \
+                                                         hex(CharNum)[2:]
+                  
+                  #  We see if this is a character we know how to convert
+                  #  into LaTeX in either of the encodings. (LATIN-1 doesn't use
+                  #  the range 80-9F, and we note that.) If we have a LaTeX
+                  #  equivalent for this character in either of the encodings,
+                  #  that's a pretty good hint as to which encoding is being
+                  #  used. However, some characters have encodings in both
+                  #  Latin-1 and Mac Roman. We use the LaTeX equivalents in
+                  #  the lines we generate for the reports.
+
+                  MacRepl = __Macintosh_LaTeX_Chars__.get(CharNum)
+                  if (MacRepl != None) :
+                     Message = Message + ' (LaTeX: "' + MacRepl + \
+                                                              '" if Mac Roman)'
+                  LatinRepl = __Latin1_LaTeX_Chars__.get(CharNum)
+                  if (LatinRepl != None) :
+                     Message = Message + ' (LaTeX: "' + LatinRepl + \
+                                                                 '" if Latin1)'
+                  if (CharNum >= 0x80 and CharNum <= 0x9F) :
+                     Message = Message + " (not used in Latin-1)"
+                  Report.append(Message)
+                  if (MacRepl == None and LatinRepl != None) :
+                     IsLatin1 = True
+                  elif (MacRepl != None and LatinRepl == None) :
+                     IsMacRoman = True
+                  elif (MacRepl == None and LatinRepl == None) :
+                     IsUnknown = True
+                  else :
+                     IsAmbiguous = True
+      
+
+            #  Now we've classified that character, how does that fit with what
+            #  we've seen so far?
+
+            if (not IsAscii) : AllAscii = False
+            if (IsUnicode) : HasUnicode = True
+            if (IsLatin1) : HasLatin1 = True
+            if (IsMacRoman) : HasMacRoman = True
+            if (IsAmbiguous) : HasAmbiguous = True
+            if (IsUnknown) : HasUnknown = True
+
+            Index = Index + 1
+
+      #  And once we've passed through the whole file, let's see what we've
+      #  got.
+
+      TexFile.close()
+
+      if (HasAmbiguous) :
+      
+         #  We had ambiguous characters. If we had any that were not ambiguous,
+         #  that pretty much tells us that the ambiguous characters must be
+         #  the same, and that ties down the encoing and we can drop the
+         #  'ambiguous' flag.
+   
+         if (HasMacRoman and not HasLatin1) :
+            HasAmbiguous = False
+            Report.append( \
+             "Assuming Mac Roman encoding, as not all characters are ambiguous")
+            Certainty = 80
+         if (HasLatin1 and not HasMacRoman) :
+            HasAmbiguous = False
+            Report.append( \
+                "Assuming Latin1 encoding, as not all characters are ambiguous")
+            Certainty = 80
+               
+      #  Finally, we set up the Result list, which we hope will only have
+      #  one entry, and add some final explantations to the Report. FIrst,
+      #  if everything was ASCII, that's easy.
+      
+      if (AllAscii) :
+         Result.append("ASCII")
+         Report.append( \
+                  "Assuming ASCII encoding - all characters are standard ASCII")
+      else :
+      
+         #  Otherwise, there were encoded characters. Put all the possible
+         #  encodings we found into the result list that we return.
          
-   return NewLine 
+         if (HasUnicode) : Result.append("UTF-8")
+         if (HasMacRoman or HasAmbiguous) : Result.append("MacRoman")
+         if (HasLatin1 or HasAmbiguous) : Result.append("Latin1")
+         
+         #  And now see if we can explain our final conclusions.
+         
+         if (len(Result) > 1) :
+            Report.append("File seems to have a mixture of possible encodings")
+            Certainty = 50
+         else :
+         
+            #  This is the happy case were, although there were non-standard
+            #  ASCII characters found, they were unambiguously encoded all
+            #  using the same encoding - as far as we can tell! But note the
+            #  proviso if the U_FFFD replacement character was spotted.
+            
+            if (HasUnicode) :
+               Report.append("File uses Unicode characters encoded using UTF-8")
+               if (HasUFFFD) :
+                  Certainty = 90
+                  Report.append("But appears to to be the result of a " + \
+                                                   "mis-conversion into UTF-8.")
+                  Report.append("An earlier program may have mis-identified" + \
+                                                      " the original encoding.")
+                  Report.append("Unfortunately, the original character value" \
+                                                      + " cannot be recovered.")
+            if (HasLatin1) :
+               Report.append("File uses ASCII with LATIN-1 extended characters")
+            if (HasMacRoman) :
+               Report.append("File uses ASCII with Mac OS Roman characters")
+
+   return Certainty
 
 # ------------------------------------------------------------------------------
 
@@ -1493,24 +2410,61 @@ def FixCharacters (Line,LineNumber) :
 #   This is a version of FixCharacters() that only checks to see there are
 #   any potential unprintable-character problems in the line it is passed.
 #   It returns True if there were such characters, False otherwise. If there
-#   is a known-fix for the problem character, it notes it.
+#   is a known-fix for the problem character, it notes it. The final optional
+#   Problems argument allows this to be used in batch mode, where direct output
+#   from this routine is suppressed and instead a set of report lines are added
+#   to the list of problems passed.
 #
 
-def CheckCharacters (Line,LineNumber) :
+def CheckCharacters (Line,LineNumber,Problems = None,Encoding = "Latin1") :
 
+   BatchMode = False
+   if (Problems != None) : BatchMode = True
+   LowEncoding = Encoding.lower()
+   UseLatin1 = (LowEncoding == "latin1")
+   UseMacRoman = (LowEncoding == "macroman")
+   UseUnicode = (LowEncoding == "utf-8")
+   
    Problem = False
-   for Char in Line :
+   NChars = len(Line)
+   Index = 0;
+   while (Index < NChars) :
+   
+      Char = Line[Index]
       if (not Char in string.printable) :
          Problem = True
          Num = ord(Char)
-         Repl = __LaTeX_Chars__.get(Num)
-         if (Repl == None) :
-            print "Unexpected unprintable character (" + hex(Num) + \
-                                      ") in .tex file at line",LineNumber
-         else :
-            print "Unprintable character (" + hex(Num) + \
-               ") in .tex file at line",LineNumber,"should be replaced by",Repl
+         Repl = None
+         Descrip = None
+         if (UseLatin1) :
+            Repl = __Latin1_LaTeX_Chars__.get(Num)
+            Descrip = "Latin1 character (" + hex(Num) + ")"
+         elif (UseMacRoman) :
+            Repl = __Macintosh_LaTeX_Chars__.get(Num)
+            Descrip = "Mac Roman character (" + hex(Num) + ")"
+         elif (UseUnicode) :
+            (IsUnicode, Unicode, NewIndex) = \
+                                     CheckForUTF8Unicode(Line,Index,NChars)
+            Index = NewIndex
+            if (IsUnicode) :
+               Descrip = "Unicode character U+" + hex(Unicode)[2:]
+               Repl = __Unicode_LaTeX_Chars__.get(Unicode)
+               if (Repl == None) :
+                  Repl = __Latin1_LaTeX_Chars__.get(Unicode)
+            else :
+               Descrip = "Unexpected character (" + hex(Num) + \
+                                              " - not valid UTF-8 Unicode)"
          
+         if (Repl == None) :
+            Text = Descrip + " in .tex file at line " + str(LineNumber) + \
+                                               " : LaTeX equivalent unknown"
+         else :
+            Text = Descrip + " in .tex file at line " + str(LineNumber) + \
+                                             " should be replaced by " + Repl
+         if (BatchMode) : Problems.append(Text)
+         else : print(Text)
+      Index = Index + 1
+   
    return Problem 
  
 # ------------------------------------------------------------------------------
@@ -1594,9 +2548,10 @@ def AuthorChars (Author) :
 #   GetArchiveTime() returns the latest modification date (as a time in seconds
 #   since the epoch) of any file contained in the named archive file, which
 #   can be a .tar, .tar.gz or a .zip file.  If it cannot determine the date
-#   it returns None.
+#   it returns None. Optionally, it can also be passed a list to which will
+#   be added the names of all the files in the archive.
 
-def GetArchiveTime (Filename) :
+def GetArchiveTime (Filename,FileList = None) :
 
    LatestTime = None
    if (Filename.endswith(".tar") or Filename.endswith(".tar.gz") or \
@@ -1607,6 +2562,8 @@ def GetArchiveTime (Filename) :
          
       OriginalDir = os.getcwd()
       AbsFilename = os.path.abspath(Filename)
+      AbsFilename = AbsFilename.replace("'","\\'")
+      AbsFilename = AbsFilename.replace(" ","\\ ")
       
       #  Create a temporary directory for the files in the archive, move
       #  to it and copy the archive files into it. (This is slower but more
@@ -1624,14 +2581,15 @@ def GetArchiveTime (Filename) :
       #  complication - the top level of the archive may be a single
       #  directory which itself holds the files. If so, we dive into that
       #  intermediate directory. (It would probably be better to do a 
-      #  recursive search through the whole of the directory.)
+      #  recursive search through the whole of the directory.) Also ignore
+      #  the __MACOSX files that sometimes end up in OS X archives.
       
       FilesInDir = os.listdir(".")
       FileCount = 0
       IntermediateDir = ""
       LastFile = ""
       for File in FilesInDir :
-         if (not File.startswith('.')) :
+         if (not File.startswith('.') and File != "__MACOSX") :
             LastFile = File
             FileCount = FileCount + 1
       if (FileCount == 1) :
@@ -1642,17 +2600,24 @@ def GetArchiveTime (Filename) :
             
       #  Now look at the modification dates of all the files. (The test for
       #  exists() is because a file may be a link to a file that does not
-      #  exist on this system.)
+      #  exist on this system.) And directories will have the current date,
+      #  and we don't expect them anyway.
               
       First = True
       for File in FilesInDir :
          if (os.path.exists(File)) :
-            FileTime = os.stat(File).st_mtime
-            if (First) : 
-               LatestTime = FileTime
-               First = False
-            else :
-               if (FileTime > LatestTime) : LatestTime = FileTime
+            if (not os.path.isdir(File)) :
+               FileTime = os.stat(File).st_mtime
+               if (First) :
+                  LatestTime = FileTime
+                  First = False
+               else :
+                  if (FileTime > LatestTime) : LatestTime = FileTime
+               
+      #  If the caller passed us a file list, add the file names to it.
+      
+      if (FileList != None) :
+         FileList.extend(FilesInDir)
          
       #  Cleaup up after outselves, and return to the directory we started from.
       
@@ -1677,7 +2642,10 @@ def GetArchiveList (Path,Paper) :
    #  the work. It's nested because that's the easiest way for it to get
    #  access to Paper. It gets called for each directory in Path with DirPath
    #  as the directory path and FileList a list of files in the directory. It
-   #  adds any candidate files to the list passed as ArchivePath.
+   #  adds any candidate files to the list passed as ArchivePath. (This
+   #  structure dates back to Python2 days, when this actually was a routine
+   #  called back from os.path.walk(). Now we use os.walk() instead, and the
+   #  structure could be rather simpler.)
     
    def ArchiveWalkCallback(ArchiveList,DirPath,FileList) :
       for File in FileList :
@@ -1716,10 +2684,13 @@ def GetArchiveList (Path,Paper) :
    
    #  This is the main body of GetArchiveList(). Walk through the supplied
    #  directory structure, calling ArchiveWalkCallback() for each directory 
-   #  it contains.
+   #  it contains. This used to use os.path.walk, but this was removed from
+   #  Python 3.
               
    ArchiveList = []
    os.path.walk(Path,ArchiveWalkCallback,ArchiveList)
+   for Details in os.walk(Path) :
+      ArchiveWalkCallback(ArchiveList,Details[0],Details[2])
    
    return ArchiveList
    
@@ -1752,7 +2723,7 @@ def PackageScanCallback(Words,StandardList,NonStandard) :
                Len = len(Packages)
                if (Len > 0) :
                   for Package in Packages :
-                     if (Package != "asp2014") :
+                     if (Package != "asp2014" and Package != "./asp2014") :
                         Standard = False
                         for StandardPkg in __StandardPackages__ :
                            if (Package == StandardPkg) :
@@ -1775,19 +2746,26 @@ def PackageScanCallback(Words,StandardList,NonStandard) :
 # 
 #   To allow this to be used for preliminary checking, where the main .tex
 #   file has been misnamed, the actual .tex file name can be supplied as
-#   an optional argument.
+#   an optional argument. The final optional Problems argument allows this to
+#   be used in batch mode, where direct output from this routine is suppressed
+#   and instead a set of report lines are added to the list of problems passed.
 #
 #   This routine returns True if everything looks OK, False otherwise.
 
 
-def CheckPackages (Paper,TexFileName = "") :
+def CheckPackages (Paper,TexFileName = "",Problems = None) :
    
    ReturnOK = True
+   
+   BatchMode = False
+   if (Problems != None) : BatchMode = True
    
    if (TexFileName == "") : TexFileName = Paper + ".tex"
    TexFileName = os.path.abspath(TexFileName)
    if (not os.path.exists(TexFileName)) :
-      print "Cannot find main .tex file",TexFileName
+      Problem = "Cannot find main .tex file: " + TexFileName
+      if (BatchMode) : Problems.append(Problem)
+      else : print(Problem)
       ReturnOK = False
    else :
 
@@ -1811,18 +2789,27 @@ def CheckPackages (Paper,TexFileName = "") :
       TexFile.close()
       
       if (len(StandardList) > 0) :
-         print ""
-         print "Note:",TexFileName,"includes the following standard package(s):"
-         for Package in StandardList :
-            print "   ",Package
-         print "this is OK, but unnecessary."
+         if (not BatchMode) :
+            print("")
+            print("Note:",TexFileName,\
+                                 "includes the following standard package(s):")
+            for Package in StandardList :
+               print("   ",Package)
+            print("this is OK, but unnecessary.")
       if (len(NonStandard) > 0) :
-         print ""
-         print "**",TexFileName,\
-                         "includes the following non-standard package(s):"
+         if (not BatchMode) : print("")
+         Problem = TexFileName + \
+                         " includes the following non-standard package(s):"
+         if (BatchMode) : Problems.append(Problem)
+         else : print("**",Problem)
+         Packages = ""
          for Package in NonStandard :
-            print "   ",Package
-         print "this may be a problem **"
+            Packages = Packages + Package + " "
+         if (BatchMode) : Problems.append(Packages)
+         else : print(Packages)
+         Problem = "this may be a problem"
+         if (BatchMode) : Problems.append(Problem)
+         else : print(Problem,"**")
          ReturnOK = False
 
    return ReturnOK
@@ -1869,6 +2856,9 @@ def RunningHeadsCallback(Words,Notes,Unused) :
                Problem = "Author list is blank"
                Notes.append(Problem)
             if (Title == "Author's Final Checklist") :
+               Problem = "Paper title is unchanged from an out-of-date template"
+               Notes.append(Problem)
+            if (Title == "Short Title") :
                Problem = "Paper title is unchanged from the template"
                Notes.append(Problem)
             if (Title.strip() == "") :
@@ -1889,7 +2879,10 @@ def RunningHeadsCallback(Words,Notes,Unused) :
 #   title), and checks for any problems with them. (A surprising number of
 #   ADASS papers leave the \markboth directive unchanged from the template, or
 #   manage to get it wrong in other ways. This routine spots some of the
-#   issues that have been seen.
+#   issues that have been seen. The final optional Problems argument allows
+#   this to be used in batch mode, where direct output from this routine is
+#   suppressed and instead a set of report lines are added to the list of
+#   problems passed.
 # 
 #   To allow this to be used for preliminary checking, where the main .tex
 #   file has been misnamed, the actual .tex file name can be supplied as
@@ -1898,14 +2891,19 @@ def RunningHeadsCallback(Words,Notes,Unused) :
 #   This routine returns True if everything looks OK, False otherwise.
 
 
-def CheckRunningHeads (Paper,TexFileName = "") :
+def CheckRunningHeads (Paper,TexFileName = "",Problems = None) :
    
    ReturnOK = True
+   
+   BatchMode = False
+   if (Problems != None) : BatchMode = True
    
    if (TexFileName == "") : TexFileName = Paper + ".tex"
    TexFileName = os.path.abspath(TexFileName)
    if (not os.path.exists(TexFileName)) :
-      print "Cannot find main .tex file",TexFileName
+      Problem = "Cannot find main .tex file: " + TexFileName
+      if (BatchMode) : Problems.append(Problem)
+      else : print(Problem)
       ReturnOK = False
    else :
 
@@ -1932,20 +2930,26 @@ def CheckRunningHeads (Paper,TexFileName = "") :
       #  which will be the author list and the title list.Anything else
       #  will be an error.
       
-      print ""
+      if (not BatchMode) : print("")
       if (len(Notes) == 2) :
-         print Notes[0]
-         print Notes[1]
+         if (not BatchMode) :
+            print(Notes[0])
+            print(Notes[1])
       else :
          ReturnOK = False
          if (len(Notes) == 0) :
-            print "**",TexFileName,"has no \\markboth directive **"
+            Problem = TexFileName + " has no \\markboth directive"
+            if (BatchMode) : Problems.append(Problem)
+            else : print("**",Problem,"**")
          else :
-            print "**",TexFileName, \
-             "has problems with the running heads specified using \\markboth **"
+            Problem = TexFileName + \
+             " has problems with the running heads specified using \\markboth:"
+            if (BatchMode) : Problems.append(Problem)
+            else : print(Problem)
             for Note in Notes :
-               print "    ",Note
-      print ""
+               if (BatchMode) : Problems.append(Note)
+               else : print("   ",Note)
+      if (not BatchMode) : print("")
 
    return ReturnOK
 
@@ -1976,19 +2980,26 @@ def CiteCallback (Words,CiteRefs,Unused) :
 # 
 #   To allow this to be used for preliminary checking, where the main .tex
 #   file has been misnamed, the actual .tex file name can be supplied as
-#   an optional argument.
+#   an optional argument. The final optional Problems argument allows this to
+#   be used in batch mode, where direct output from this routine is suppressed
+#   and instead a set of report lines are added to the list of problems passed.
 #
 #   This routine returns True if everything looks OK, False otherwise.
 
 
-def CheckCite (Paper,TexFileName = "") :
+def CheckCite (Paper,TexFileName = "",Problems = None) :
+   
+   BatchMode = False
+   if (Problems != None) : BatchMode = True
    
    ReturnOK = True
    
    if (TexFileName == "") : TexFileName = Paper + ".tex"
    TexFileName = os.path.abspath(TexFileName)
    if (not os.path.exists(TexFileName)) :
-      print "Cannot find main .tex file",TexFileName
+      Problem = "Cannot find main .tex file: " + TexFileName
+      if (BatchMode) : Problems.append(Problem)
+      else : print(Problem)
       ReturnOK = False
    else :
 
@@ -2010,10 +3021,17 @@ def CheckCite (Paper,TexFileName = "") :
       TexFile.close()
       
       if (len(CiteRefs) > 0) :
-         print "** The .tex file cites the following references using \cite:"
+         Problem = "The .tex file cites the following references using \cite:"
+         if (BatchMode) : Problems.append(Problem)
+         else : print("**",Problem,"**")
+         Refs = ""
          for Ref in CiteRefs :
-            print "   ",Ref
-         print "** These should be changed to use \citep or \citet **"
+            Refs = Refs + Ref + " "
+         if (BatchMode) : Problems.append(Refs)
+         else : print(Refs)
+         Problem = "These should be changed to use \citep or \citet"
+         if (BatchMode) : Problems.append(Problem)
+         else : print("**",Problem,"**")
          ReturnOK = False
 
    return ReturnOK

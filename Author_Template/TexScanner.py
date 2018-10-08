@@ -13,7 +13,14 @@
 #
 #  Parsing LaTeX files is tricky, and this code isn't perfect by any means.
 #  There are lots of constructs that will fool it, usually into missing
-#  commands that it ought to spot.
+#  commands that it ought to spot. If it manages to spot any problems, this
+#  can be checked using a call to ParsedOK() and details of any problem can
+#  be obtained by calling GetReport(). In testing, I have seen this parser
+#  complain about unclosed braces that turn out to be due to an unescaped
+#  comment character that LaTeX has not complained about. (Parsing problems
+#  often seem to be associated with the use of '{','[' and '%' in math
+#  expressions, and it may be that the parser needs to know about math mode.)
+#  This code would benefit from a proper review and possible reworking some day.
 #
 #  History:
 #     14th Jan 2016. Original version, KS.
@@ -44,7 +51,25 @@
 #      2nd May 2016. Fixed a parsing problem where a slightly unusual sequence
 #                    (involving a \newcommand definition on a single line} sent
 #                    the parser into infinite recursion. KS.
-#                    
+#     24th Jul 2017. Fixed a problem seen in a .tex file that had an equation
+#                    that involved an escaped brace '\{' character. This was
+#                    being treated as a delimiter, with unfortunate results.
+#                    WasEscaped now records if the last character, as returned
+#                    by GetNextChar(), was escaped, and GetNextWord() uses this
+#                    to ignore escaped braces and parentheses. KS.
+#     25th Jul 2017. Added a check for a parser runaway, and the routines
+#                    ParsedOK() and GetReport(). GetNextWordFromString{} now
+#                    has the same tests for escaped braces as used by
+#                    GetNextWord(). KS.
+#     15th Aug 2017. Converted to run under Python3, using 2to3. Added
+#                    the importing of items from __future__ to allow this to
+#                    run under either Python2 or Python3. (In actuality, this
+#                    code worked unchanged under Python3, and since it doesn't
+#                    use print, doesn't really need that future import, but it
+#                    seems to be good practice anyway.) KS.
+#
+
+from __future__ import (print_function,division,absolute_import)
 
 import os
 import sys
@@ -55,8 +80,11 @@ class TexScanner(object):
    def __init__(self):
       self.FileIdSet = False
       self.Escaped = False
+      self.WasEscaped = False
       self.LastChar = ""
       self.LastWord = ""
+      self.Line = 0
+      self.Problems = []
       
    def SetFile(self,FileId) :
    
@@ -65,7 +93,24 @@ class TexScanner(object):
       
       self.FileId = FileId
       self.FileIdSet = True
+      self.Line = 0
+      self.Problems = []
+   
+   def ParsedOK(self) :
+   
+      #  Returns True if the .tex file parsed without problems. If it returns
+      #  False, GetReport() can be called to get a description of what happened.
       
+      return (len(self.Problems) == 0)
+   
+   def GetReport(self) :
+   
+      #  If the file parsed with problems, this returns a list of strings that
+      #  describe what happened. If the file parsed OK, this returns an empty
+      #  list.
+      
+      return self.Problems
+   
    def GetNextChar(self) :
    
       #  Returns the next character from a .tex file. If a comment character
@@ -85,8 +130,11 @@ class TexScanner(object):
                while (True) :
                   Char = self.FileId.read(1)
                   if (Char == "\n" or Char == "") : break
+         self.WasEscaped = self.Escaped
          self.Escaped = (Char == "\\")
-         if (Char == "\n") : Char = " "
+         if (Char == "\n") :
+            Char = " "
+            self.Line = self.Line + 1
       return Char 
           
    def GetNextLine(self) :
@@ -97,7 +145,8 @@ class TexScanner(object):
       #  It does mean than a line that starts with a '%' is returned as a
       #  blank line - just a newline; it is not ignored completely. If the
       #  end of the file is reached, or the file is not open, this returns
-      #  an empty string.
+      #  an empty string. (Note that this routine isn't used any more by the
+      #  other routines in this file, although it was originally.)
       
       Result = ""
       while (True) :
@@ -134,19 +183,31 @@ class TexScanner(object):
          
          #  If the word started with a { or [, then we ignore blanks and
          #  keep going until we hit the corresponding closing character
-         #  (or the end of the file). Allow for nesting.
+         #  (or the end of the file). Allow for nesting. Note that when
+         #  GetNextChar() returns an empty string, that's the end of the file.
          
-         if (Char == "{" or Char == "[") :
+         Escaped = self.WasEscaped
+         if ((Char == "{" or Char == "[") and not Escaped) :
             Start = Char
             if (Start == "{") : End = "}"
             if (Start == "[") : End = "]"
             Nesting = 1
+            Line = self.Line + 1
             while (True) :
                Char = self.GetNextChar()
-               if (Char == "") : break
+               if (Char == "") :
+                  self.Problems.append(
+                          "The file appears to have an unclosed '" \
+                                            + Start + "' in line " + str(Line))
+                  self.Problems.append("The file may be missing a '" + End + \
+                                                    "' character or there may")
+                  self.Problems.append(
+                      "be a problem with nested braces or with '%' characters")
+                  break
+               Escaped = self.WasEscaped
                if (Char != '\n' and Char != '\r') : Word = Word + Char
-               if (Char == Start) : Nesting = Nesting + 1
-               if (Char == End) : 
+               if (Char == Start and not Escaped) : Nesting = Nesting + 1
+               if (Char == End and not Escaped) :
                   Nesting = Nesting - 1
                   if (Nesting <= 0) : break
             
@@ -159,9 +220,10 @@ class TexScanner(object):
 
             while (True) :
                Char = self.GetNextChar()
+               Escaped = self.WasEscaped
                if (Char == "") : break
                if (Char == " " or Char == '\r' or Char == '\n') : break
-               if (Char == "{" or Char == "[") :
+               if ((Char == "{" or Char == "[") and not Escaped) :
                   self.LastChar = Char
                   break
                Word = Word + Char
@@ -186,6 +248,9 @@ class TexScanner(object):
       #  through each argument, and will call the callback routine for each
       #  command found. To get every LaTeX command in the .tex file, this
       #  routine should continue to be called until it returns True.
+      #
+      #  Callback can be passed as None, in which case no callback is made -
+      #  this can be used for a quick check that the file can be parsed.
       
       Finished = True
       Command = []
@@ -221,7 +286,7 @@ class TexScanner(object):
             else :
                self.LastWord = Word
                break
-         Callback(Command,ClientData,ClientExtra)
+         if (Callback != None) : Callback(Command,ClientData,ClientExtra)
          Finished = False
       return Finished
      
@@ -250,6 +315,9 @@ class TexScanner(object):
       
       Word = ""
       Char = ""
+      Escaped = False
+      if (Posn > 0) :
+         Escaped = (String[Posn - 1] == '\\')
       
       #  Find the first non-blank character.
       
@@ -259,6 +327,7 @@ class TexScanner(object):
          Index = Index + 1
          if (Char != " ") : 
             Word = Word + Char
+            Escaped = (Char == '\\')
             break
       
       #  See if we found anything. If not, quit now.
@@ -279,11 +348,12 @@ class TexScanner(object):
                Index = Index + 1
                if (Char == "") : break
                Word = Word + Char
-               if (Char == Start) : Nesting = Nesting + 1
-               if (Char == End) : 
+               if ((Char == Start) and not Escaped) : Nesting = Nesting + 1
+               if ((Char == End) and not Escaped) :
                   Nesting = Nesting - 1
                   if (Nesting <= 0) : break
-            
+                  Escaped = (Char == '\\')
+      
          else :
 
             #  Otherwise, just keep going until we hit a blank or one of
@@ -292,12 +362,13 @@ class TexScanner(object):
             while (Index < len(String)) :
                Char = String[Index]
                if (Char == " ") : break
-               if (Char == "{" or Char == "[") : break
+               if ((Char == "{" or Char == "[") and not Escaped) : break
                Index = Index + 1
                Word = Word + Char
+               Escaped = (Char == '\\')
 
       if (Word == "") : Index = 0
-                
+      
       return (Word,Index)
 
    def GetNextTexCommandFromString(self,\
@@ -308,7 +379,9 @@ class TexScanner(object):
       #  to search the arguments of any command to see if they themselves
       #  contain more commands. Each time a command is found, the specified
       #  callback routine is called with the command details and the client
-      #  arguments, just as for GetNextTexCommand().
+      #  arguments, just as for GetNextTexCommand(). Callback can be passed
+      #  as None, in which case no callback is made - this can be used for a
+      #  quick check that the file can be parsed.
       
       Posn = 0
       More = True
@@ -356,5 +429,5 @@ class TexScanner(object):
                else :
                   More = True
                   break
-            Callback(Command,ClientData,ClientExtra)
+            if (Callback != None) : Callback(Command,ClientData,ClientExtra)
             
