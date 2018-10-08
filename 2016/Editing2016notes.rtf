@@ -1,0 +1,75 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0 \
+Some notes on the editing process for ADASS 2015 and for ADASS 2016.\
+\
+Essentially, there are three parts to the editing process.\
+\
+1) Collect all the submitted papers, allowing for the fact that authors will generally submit a number of versions of their papers, not always with a coherent naming scheme. \
+\
+2) Allocate a subset of the papers to each of the editors, and get them to edit the individual papers on their list. The result of this process will be a final version of the .tex file for each paper together with any .eps graphics files it may use, and (unless it cites no references at all) a .bib file. The resulting paper should meet the standards set by ASP for publication.\
+\
+3) Collect together all the final, edited, versions of the papers and combine them to produce the final volume, together with introduction, table of contents, author and subject indexes, conference photograph, etc, and send them to ASP.\
+\
+These notes are concerned mainly with the second of these parts, the editing of the individual papers.\
+\
+In principle, editing a paper should be a straightforward process:\
+o Get the latest version submitted by the author (as a .tar or .zip file) and unpack it into a separate directory.\
+o Check that references are given in a .bib fiile, not as \\bibitem entries.\
+o Check that all graphics files are supplied as .eps files, not .pdf or other formats.\
+o Because the final volume will use a master .bib file that contains all the references for all the individual papers, the \\bibliography\{\} command in the .tex file must be changed to use the name of the master .bib file (we used adassXXVreferences.bib\} and the .bib file supplied with the paper must be renamed accordingly.\
+o Run LaTeX and BibTeX on the supplied files and proofread the result, checking for:\
+  > LaTeX or BibTeX errors.\
+  > LaTeX warnings - there shouldn\'92t be any, and that includes overfull hboxes.\
+  > The right number of pages.\
+  > Author list is correct and presenting author is first.\
+  > Running headers are correct - authors on even numbered pages, title on odd numbered pages.\
+  > Illustrations are satisfactory (whatever that really means, given most access is electronic).\
+  > Paper has an abstract\
+  > References are cited properly, not using \\cite.\
+  > The .bib file does not have any unused entries.\
+  > Paper reads clearly, and is in good enough English.\
+  > No spelling mistakes - this needs a spell checker.\
+o Create commented-out \\aindex entries for the author index.\
+o Create commented-out \\ssindex entries for the subject index. These should be based as far as possible on a master set of index entries, to keep the index as coherent as possible.\
+o Finally, comment out the various LaTeX commands such as \\begin\{document\} that are needed to typeset the individual paper, but need to be removed to allow the master volume to be typeset.\
+ o Uncomment the \\aindex and \\ssindex enteres.\
+o Copy back the final .tex and .eps files into wherever the master volume files are being collected.\
+o Combine the paper\'92s .bib file with those for the papers edited so far to produce the master .bib file.\
+o Add any new subject index entries to the master list of subject entries so they can be used in other papers that may relate to the same subjects.\
+\
+A number of these steps can be performed automatically. As part of the process of editing the ADASS 2015 papers, we developed a number of Python scripts that can:\
+\
+o Locate the latest version of the .tar or .zip file for a paper by searching through all the submitted .tar and .zip files in a directory structure and unpack it into a new local directory.\
+o Check that the paper uses a .bib file properly, and rename that .bib file and modify the \\bibliography entry in the .tex file to match.\
+o Check that all figures use .eps files and that these are supplied.\
+o Remove unused references from the supplied .bib file.\
+o Generate \\aindex author index entries automatically from the \\author command in the .tex file.\
+o Search the master list(s) of subject entries for keywords and generate the required \\ssindex entries.\
+o Comment and uncomment commands in the final version of the .tex file as required for the final volume.\
+\
+With these to help, a paper where the author has done everything correctly and has written a clear and acceptable paper can be run through the editing process in less than half an hour. The editor has merely to check that the paper typesets properly, that it does indeed read properly, to run it through a spelling checker and finally to read through it and insert a suitable number of subject index entries. The only parts of this that should require much thought from the editor are the actual proofreading for clarity and use of English (which should be quick if no problems are found) and the selection of terms to use for subject index entries.  \
+\
+In practice, very few papers submitted to ADASS 2015 were that easy. Of the papers I edited, I think less that 4% needed no corrections at all, and some papers required substantial corrections. At this point, the editor has to decide between:\
+\
+o Making the corrections themselves, especially where the corrections needed are simple and obvious, without needing to consult the author.\
+o Making the changes and sending the paper back to the author for checking.\
+o Sending the paper back to the author with an explanation of where the paper needs work.\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 Note that ADASS papers are not being peer-reviewed for content, this is an editing process not a review process. However, where parts of a paper are unclear or contradictory we may need to ask the author just what they intend to say in their paper.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 \
+For ADASS 2015, I believe we ended up making too many of the changes ourselves. Partly this is because the most common problem we hit was the use of \\bibitem entries rather than .bib files, and we felt that the instructions to the authors had been insufficiently clear that .bib files were now mandatory. Also, it takes a lot of effort to explain to an author why a paper needs changing, and then further effort chasing up those authors who are slow to reply. And discussing changes with an author over e-mail can take a lot of time. One potentially time-consuming case is where the paper is too long, and the author has to be asked to decide what needs to be cut out.\
+\
+I believe that for ADASS 2016, we can try to make things happen much faster, and I think the following things are most important:\
+\
+o) Making sure that authors know what is expected from them, particularly for references. I hope that the revised manuscript instructions help here, and Nuria wants to emphasise this at some point in the conference as part of her remarks. Also, I hope that providing the Python script that checks papers for authors to use themselves will help.\
+o) Spotting problems with papers early. We started rather late on the editing process for ADASS 2015, and by the time we got to the end we were increasingly reluctant to get into long discussions trying to persuade authors about changes that were needed. If we can run initial checks on most papers very soon after they are submitted - automatically, if possible - this should help a lot. If we can respond quickly, for instance telling an author that they need to redo their references very soon after they submit their paper, we should be able to speed things up considerably.\
+\
+With editors in different institutions and even different countries, the mechanism used for providing distributed access to the various files needs to be decided well before the editing process starts.\
+}
