@@ -1,0 +1,87 @@
+This package of files is supplied to help prepare papers for submission in the
+Proceedings for the ADASS 2016 conference held in Trieste. (The Proceedings 
+will be published in 2017, which is why that date appears in places here.)
+
+It contains the following files:
+
+README                     - this file.
+
+ManuscriptInstructions.pdf - Guidelines for preparing an ADASS paper
+
+ADASS_template.tex         - an example template file for an ADASS 2016 paper.
+example.bib                - an example BibTeX file used by ADASS_template.tex
+example.eps                - an example graphics file used by ADASS_template.tex
+
+ADASS_template.pdf         - the result of running LaTeX on ADASS_template.tex
+
+asp2014.bst                - the required ASP bibliography style file.
+asp2014.sty                - the required ASP LaTeX style file.
+
+PaperCheck.py              - a Python script used to check an ADASS paper
+AdassChecks.py             - a Python module used by PaperCheck.py
+TexScanner.py              - a Python module used by AdassChecks.py
+
+manual2010.pdf             - The ASP "Instructions for Authors and Editors".
+copyrightform.pdf          - The ASP copyright form
+
+Preparing your manuscript:
+-------------------------
+
+Read the ManuscriptInstructions.pdf file.The ADASS_template.tex file gives you 
+a basic template for your ADASS paper. For additional details look in the 
+first section of the ASP's "Instructions for Authors and Editors", but note
+that this is now some years old and current requirements have changed slightly.
+In particular, ADASS papers that cite references MUST supply these references
+in a .bib BibTeX file like the example.bib file provided here.
+
+You will need to run LaTeX on your .tex file, then run BibTeX to process the
+references, and then will need to run LaTeX again up to three times to get all
+the cross-references right.
+
+Checking your manuscript
+------------------------
+
+Your paper should typeset without generating any LaTeX errors or warnings. 
+Overfull hbox warnings in particular need to be fixed. (In some cases underfull
+hbox and vbox warnings may be tolerable.)
+
+PaperCheck.py is a copy of a basic paper checking program that will be run by 
+the ADASS editors on all submitted papers. It looks for a number of common
+problems that have been found in submitted papers. You should run it on your
+paper before packaging it up for submission, and should fix any problems it 
+finds. The header comments in PaperCheck.py describe how to run it in detail,
+but essentially all you have to do is:
+
+PaperCheck.py Paper Author
+
+where Paper is the identifier for your paper, eg O10-3 or P8-2 etc, and
+Author is the surname of the first author of the paper.
+
+(PaperCheck is written for Python2, but can be converted for Python 3 using the
+2to3 Python utility if necessary. See its header comments.)
+
+Packaging and submitting your paper:
+-----------------------------------
+
+You should create a .tar file with a name based on the identifier for your paper
+e.g. example O10-3.tar. This should contain:
+
+The .tex LaTeX file
+The .bib file defining any cited references
+And .eps graphics files used by the paper
+The resulting .pdf file for the paper.
+A signed copyright form..
+
+(If there are problems typesetting your paper, your copy of the .pdf file for
+the paper will at least show the editors what you expected it to look like. If
+you have already supplied a paper copy of the copyright form, you do not need
+to include this. Note that electronic signatures are not acceptable - sign the
+form and scan it.)
+
+(Zip files are also acceptable, using the same naming convention, eg 10-3.zip.)
+
+Submit the .tar file as instructed on the ADASS 2016 web site. If you need to
+submit a revised version, submit ALL the required files in a new .tar file - do
+not just submit the modified files - and append a version number to the name,
+eg O10-3_v1.tar.
+

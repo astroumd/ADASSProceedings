@@ -1,0 +1,182 @@
+% This is the ADASS_template.tex LaTeX file, 26th August 2016.
+% It is based on the ASP general author template file, but modified to reflect the specific
+% requirements of the ADASS proceedings.
+% Copyright 2014, Astronomical Society of the Pacific Conference Series
+% Revision:  14 August 2014
+
+% To compile, at the command line positioned at this folder, type:
+% latex ADASS_template
+% latex ADASS_template
+% dvipdfm ADASS_template
+% This will create a file called aspauthor.pdf.}
+
+\documentclass[11pt,twoside]{article}
+
+% Do not use packages other than asp2014. 
+\usepackage{asp2014}
+
+\aspSuppressVolSlug
+\resetcounters
+
+% References must all use BibTeX entries in a .bibfile.
+% References must be cited in the text using \citet{} or \citep{}.
+% Do not use \cite{}.
+% See ManuscriptInstructions.pdf for more details
+\bibliographystyle{asp2014}
+
+% 1 author: "Surname"
+% 2 authors: "Surname1 and Surname2"
+% 3 authors: "Surname1, Surname2, and Surname3"
+% >3 authors: "Surname1 et al."
+% Use mixed case type for the shortened title
+% Ensure shortened title does not cause an overfull hbox LaTeX error
+% See ASPmanual2010.pdf 2.1.4  and ManuscriptInstructions.pdf for more details
+\markboth{Author1, Author2, and Author3}{Author's Final Checklist}
+
+\begin{document}
+
+\title{ADASS Author Template}
+
+% Note the position of the comma between the author name and the 
+% affiliation number.
+% Author names should be separated by commas.
+% The final author should be preceded by "and".
+% Affiliations should not be repeated across multiple \affil commands. If several
+% authors share an affiliation this should be in a single \affil which can then
+% be referenced for several author names.
+% See ManuscriptInstructions.pdf and ASPmanual2010.pdf 3.1.4 for more details
+\author{Sample~Author1,$^1$ Sample~Author2,$^2$ and Sample~Author3$^3$
+\affil{$^1$Institution Name, Institution City, State/Province, Country; \email{AuthorEmail@email.edu}}
+\affil{$^2$Institution Name, Institution City, State/Province, Country}
+\affil{$^3$Institution Name, Institution City, State/Province, Country}}
+
+% This section is for ADS Processing.  There must be one line per author.
+\paperauthor{Sample~Author1}{Author1Email@email.edu}{ORCID_Or_Blank}{Author1 Institution}{Author1 Department}{City}{State/Province}{Postal Code}{Country}
+\paperauthor{Sample~Author2}{Author2Email@email.edu}{ORCID_Or_Blank}{Author2 Institution}{Author2 Department}{City}{State/Province}{Postal Code}{Country}
+\paperauthor{Sample~Author3}{Author3Email@email.edu}{ORCID_Or_Blank}{Author3 Institution}{Author3 Department}{City}{State/Province}{Postal Code}{Country}
+
+\begin{abstract}
+This is the ADASS 2016 author template file.  This is based on the Astronomical Society of the Pacific (ASP) 2014 template, but has been modified to reflect the specific ADASS requirements.
+\end{abstract}
+
+\section{The Template}
+To fill in this template, make sure that you read and follow the ASPCS Instructions for Authors and Editors available for download online. Further hints and tips for including graphics, tables, citations, and other formatting helps are available there. With this template, you should have received a copy of the specific ADASS manuscript instructions, and you should also read these.
+
+\subsection{The Author Checklist}
+The following checklist should be followed when writing a submission to a conference proceedings to be published by the ASP for ADASS. The references are to sections in the ADASS manuscript instructions.\footnote{Most URLs should be in a footnote like this one.  In this case, you can download the online material from \url{http://www.adass.org}.} 
+
+\begin{itemize}
+\checklistitemize
+
+\item References must all use BibTeX entries in a .bib file. No use of \verb"\bibitem"! (Even though some older ASP templates have them.) (See References.)
+\item All references must be cited in the text, usually using \verb"\citet" or \verb"\citep".  Do not use \verb"\cite". (See References.)
+\item No LaTeX warnings. Particularly, no overfull hboxes or unresolved references. (See LaTeX warnings and errors.)
+\item No use of \verb"\usepackage" except for \verb"\usepackage{asp2014}". (See LaTeX packages and commands.)
+\item No use of \verb"\renewcommand" or \verb"\renewenvironment". (See LaTeX packages and commands.)
+\item Arguments to \verb"\citep" etc., should use ADS type references where possible, fall back on <author><year> or something suitably unique if not. (See References.)
+\item References in the text are all generated automatically (using \verb"\citep" etc), not put in explicitly as ordinary text that just looks like a generated reference. (See References.)
+\item Definitely no LaTeX errors. (See LaTeX warnings and errors.)
+\item Paper is the right length. References don't spill over into one more page. (See Length of Paper.)
+\item Paper has an abstract. (See Length of Paper.)
+\item References are to things that actually exist and can be expected to continue to exist. Not papers ``in preparation'' or URLs for blog items. (See References.)
+\item Graphics files have to be .eps encapsulated Postscript format. Yes they do! Sorry, but they do. (See Figures.)
+\item Name all the files properly:- figures are <paper>\_f<n>.eps, eg O1-3\_f1.eps. Paper names use dashes not periods, O1-3.tex not O1.3.tex. Posters now use the same naming convention as oral papers, e.g.\ P3-21. (See File names and Paper IDs.)
+\item Figure captions should make sense if the figure is printed in monochrome - because it will be! (See Figures.)
+\item Figures are legible at the size ADASS Proceedings volumes are printed, which is quite small. (See Figures.)
+\item Copyright forms signed and filled out - don't use electronic signatures. (See Miscellany.)
+\item Author lists follow the correct format: comma separated, with an `and' for the final author. (See Authors and Affiliations.)
+\item The first author of the paper must be the person who presented the paper at the conference. (See Authors and Affiliations.)
+\item No repetition of affiliations - list each organisation once, with multiple e-mail addresses if you really must. (See Authors and Affiliations.)
+\item Running heads should fit in the same horizontal space as the text does, not pushing the page numbers over to the right. (See LaTeX warnings and errors.)
+\item Run through a spelling checker. (I know that can be tricky with LaTeX.) (See Content and Typesetting.)
+\item Proofread, or have the text proofread, to check for proper English usage. In particular, note that ``allows to'' is not conventional English, and English uses articles (`a',`an',`the') in places where other languages, particularly Eastern European languages, don't have them. (See Content and Typesetting.)
+\end{itemize}
+
+\section{Text}
+Sometimes you just need to have different styles of fonts.  \emph{Sometimes you just need to have different styles of fonts.} \textbf{Sometimes you just need to have different styles of fonts.}
+
+Sometimes you just need to have different sizes of fonts.  {\small Sometimes you just need to have different sizes of fonts.} {\footnotesize Sometimes you just need to have different sizes of fonts.}  It would be very rare to require larger fonts within an ASP volume.
+
+Do \emph{not} reduce the size of the main text font to try to squeeze more content into the paper. It will be restored by the editors and the paper will be rejected as too long.
+
+\section{Math}
+Sometimes authors include formulas inside the main text which should always be enclosed within \$ signs.  Look at the Pythagorean Formula $a^2 + b^2 = c^2$.
+
+Sometimes authors include formulas on their own lines.  This example uses the \verb"displaymath" environment which does not include an equation number.  To include an equation number, use the \verb"equation" environment.
+\begin{displaymath}
+c = \sqrt{a^2 + b^2} \qquad \textrm{Pythagorean Theorem}
+\end{displaymath}
+
+\section{Table}
+Here is an example table that has three colums with various justification and row spacing.
+
+\begin{table}[!ht]
+\caption{Tables in \LaTeXe}
+\smallskip
+\begin{center}
+{\small
+\begin{tabular}{llc}  % l = left, c = centered
+\tableline
+\noalign{\smallskip}
+First Column & Second Column & Third Column:\\
+\noalign{\smallskip}
+\tableline
+\noalign{\smallskip}
+First Row, First Column & First Row, Second Column & First Row, Third Column \\
+Second Row, First Column & Second Row, Second Column & Second Row, Third Column \\
+Third Row, First Column & Third Row, Second Column & Third Row, Third Column \\
+\noalign{\smallskip}
+\tableline % Sometimes you just need a line between table rows
+\noalign{\smallskip}
+Fourth Row, First Column & ~ & Fourth Row, Third Column \\ % Sometimes you have empty cells
+\noalign{\smallskip} % Sometimes you just need space between table rows
+Fifth Row First Column & Fifth Row, Second Column & Fifth Row, Third Column\\ % No \\ if the last row
+\noalign{\smallskip}
+\tableline\
+\end{tabular}
+}
+\end{center}
+\end{table}
+\noindent These tables can get a little messy, but this format is the most common.
+
+\section{Lists}
+\label{ex_lists}
+There are a lot of ways to make lists including itemized lists with bullets, for which you use  (\verb"\begin{itemize}"), numbered lists (\verb"\begin{enumerate}"), and description lists (\verb"\begin{description}").  This is an example of an itemized list.
+
+\subsection{Itemized Lists}
+Here is an itemized list:
+\begin{itemize}
+\item Item 1
+\item Item 2
+\item Item 3
+\end{itemize}
+
+
+\section{Images}
+For some figures, see Figures \ref{ex_fig1}- \ref{ex_fig3}.
+
+\articlefigure{example.eps}{ex_fig1}{Welcome to 1953.}
+% It is possible to reduce the size of a figure among other changes (see the instructions).  Here is an example:
+% \articlefigure[width=.5\textwidth]{example.eps}{ex_fig1_reduced}{Welcome to 1953 a little smaller.}
+
+\articlefiguretwo{example.eps}{example.eps}{ex_fig2}{Now there are two of them.  \emph{Left:} An image from long ago.  \emph{Right:} The same exact thing.}
+% There is a figure command allowing for three figures:
+% \articlefigurethree{example.eps}{example.eps}{example.eps}{ex_fig1_triple}{Now there are three of them.}
+
+\articlefigurefour{example.eps}{example.eps}{example.eps}{example.eps}{ex_fig3}{Now four of them?}
+
+\clearpage % To force this stuff to happen by this point in the text, otherwise these will probably end up after the references.
+
+There are also the landscape versions \verb"\articlelandscapefigure" and \\
+\verb"\articlelandscapefiguretwo" which are further described in the instructions.
+
+\section{References}
+References must be provided in BibTeX format, in a .bib file, and should usually be referenced using \verb"\citet" or \verb"\citep". The file example.bib supplied with this template is taken from an ADASS 2015 paper, and includes references to previous ADASS proceedings 
+\citep[such as][]{1999ASPC..172..487P} and to papers in what was then the current 2015 proceedings (e.g.\ \citet{O11-4_adassxxv}). Note that the `TBD' entries that appear for papers in the current proceedings will be dealt with by the ADASS editors when the final volume is produced. The example .bib file has a large number of references unused by this template file; such unused references have been left in as example, but should be removed before a paper is submitted.
+
+\acknowledgements The ASP would like to thank the dedicated researchers who are publishing with the ASP.  It will make things a lot easier if you keep this text on the same line as the \verb"\acknowledgements" command.
+
+
+\bibliography{example}  % For BibTex
+
+\end{document}
