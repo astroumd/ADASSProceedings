@@ -11,13 +11,15 @@ http://www.adass.org/proceedings.html
         just tex files
 * 2015: Sydney (Lorente, Shortridge & Wayth) - Vol 512.
         some cloud tar file
-* 2016: Trieste
-* 2017: Santiago
+* 2016: Trieste (Pasian, Molinaro, Mansutti & Shortridge)
+* 2017: Santiago 
 * 2018: College Park
 * 2019: Groningen
+* 2020: ???
 
 
 ## Contents
 
 * 2016/Editing2016notes.rtf - 
-* 2016/Workflow.docx - 
+* 2016/Workflow.docx -
+* Author_Template
