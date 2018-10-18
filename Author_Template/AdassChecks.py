@@ -278,12 +278,11 @@ import TexScanner
 #  used by the various utility scripts used in the editing process for the
 #  proceedings.)
 
-__AdassConference__ = "XXVI"
+__AdassConference__ = "XXVIII"
 
-__AdassEditors__ = \
-             "Pasian,~F. and Molinaro,~M. and Mansutti,~O. and Shortridge,~K."
+__AdassEditors__    = "Teuben,~P. and Pound,~M. and Thomas,~B. and Warner,~E."
 
-__AdassVolume__ = "TBD"
+__AdassVolume__     = "TBD"
 
 # ------------------------------------------------------------------------------
 
