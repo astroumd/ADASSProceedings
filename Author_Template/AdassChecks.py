@@ -100,6 +100,8 @@
 #  GetFileEncoding (TexFileName,Result,Report)
 #     Returns a list of possible character encodings used by the .tex file.
 #
+#  Author(s): Keith Shortridge (keith@knaveandvarlet.com.au)
+#
 #  History:
 #     16th Feb 2016. Now checks for all natbib \cite options. KS.
 #     19th Feb 2016. Added GetAuthors() (and AuthorScanCallback()). KS.
@@ -232,7 +234,28 @@
 #                    letters - which are math mode in LaTeX - are enclosed in
 #                    $..$ symbols. Realised GetArchiveList() also used
 #                    os.path.walk() and needed re-working for Python 3. KS.
-
+#     31st Oct 2017. Code was not waiting properly for os.popen() commands to
+#                    complete. This only showed up when run under Python 3, and
+#                    has been fixed by adding the required close() calls. KS.
+#      2nd Nov 2017. Added ExtractArchive(), CollapseDir() and LocateTexFile(),
+#                    all of which are utilities useful for looking at unknown
+#                    archive files. KS.
+#      3rd Nov 2017. Added GetTitle(), AuthorSurname() and GetLatestFileDate().
+#                    Also added the RunCommand() utility routine. KS.
+#      5th Nov 2017. Added CheckPaperName(). KS.
+#     12th Nov 2017. VerifyRefs() was printing one blank line even in batch
+#                    mode. So was VerifyEps(). Fixed. FixCharacters() and
+#                    CheckCharacters() could fail if passed unprintable chars
+#                    in ASCII encoding. Also fixed. KS.
+#     24th Nov 2017. Trapped output coming from FindBibFile() when called from
+#                    VerifyRefs(), even in batch mode. KS.
+#     25th Nov 2017. Added CheckTemplateLines(). KS.
+#     28th Nov 2017. Added SubjectIndexEntries(). KS.
+#      1st Dec 2017. LocateTexFile() will now accept any .tex file that
+#                    contains the PaperID somewhere in its name. CollapseDir()
+#                    will now also expand intermediate archive files, and now
+#                    can return the names or removed directories and archives
+#                    if passed lists for this purpose. KS.
 
 from __future__ import (print_function,division,absolute_import)
 
@@ -240,6 +263,8 @@ import sys
 import string
 import os
 import tempfile
+import shutil
+import subprocess
 
 import TexScanner
 
@@ -253,10 +278,10 @@ import TexScanner
 #  used by the various utility scripts used in the editing process for the
 #  proceedings.)
 
-__AdassConference__ = "XXVIII"
+__AdassConference__ = "XXVI"
 
 __AdassEditors__ = \
-             "Teuben,~P. and Pound,~M. and Thomas,~B. and Warner,~E."
+             "Pasian,~F. and Molinaro,~M. and Mansutti,~O. and Shortridge,~K."
 
 __AdassVolume__ = "TBD"
 
@@ -590,13 +615,15 @@ def VerifyRefs (Paper,AllowBibitems = True,TexFileName = "",BibFileName = "", \
       #  the common reference .bib file. Get a list of all the references it
       #  contains so we can see what soft of naming convention is used,
       #  and so we can check them against the references in the .tex file.
+      #  If we have to fall back on FindBibFile(), any details it reports
+      #  should be treated as warnings.
 
       LookForBibFile = False
       if (BibFileName == "") :
          LookForBibFile = True
       else :
          if (not os.path.exists(BibFileName)) : LookForBibFile = True
-      if (LookForBibFile) : BibFileName = FindBibFile(Paper)
+      if (LookForBibFile) : BibFileName = FindBibFile(Paper,Warnings)
 
       if (BibFileName == "") :
          BibFileRefs = []
@@ -788,7 +815,7 @@ def VerifyRefs (Paper,AllowBibitems = True,TexFileName = "",BibFileName = "", \
          else :
             ReturnOK = False
          
-   print("")
+   if (not BatchMode) : print("")
    
    return ReturnOK
    
@@ -1069,7 +1096,7 @@ def VerifyEps (Paper,TexFileName = "",Problems = None,Warnings = None) :
                      else : print("**",Problem,"**")
                   ReturnOK = False
                      
-         print(" ")
+         if (not BatchMode) : print(" ")
       
       #  List all the .eps files in the current directory.
       
@@ -1970,7 +1997,8 @@ def FixCharacters (Line,LineNumber,Encoding = "Latin1") :
       UseLatin1 = (LowEncoding == "latin1")
       UseMacRoman = (LowEncoding == "macroman")
       UseUnicode = (LowEncoding == "utf-8")
-      
+      UseAscii = (LowEncoding == "ascii")
+
       NChars = len(Line)
       Index = 0;
       while (Index < NChars) :
@@ -1983,7 +2011,9 @@ def FixCharacters (Line,LineNumber,Encoding = "Latin1") :
             Repl = None
             Descrip = None
             IndexWas = Index
-            if (UseLatin1) :
+            if (UseAscii) :
+               Descrip = "ASCII character (" + hex(Num) + ")"
+            elif (UseLatin1) :
                Repl = __Latin1_LaTeX_Chars__.get(Num)
                Descrip = "Latin1 character (" + hex(Num) + ")"
             elif (UseMacRoman) :
@@ -2001,7 +2031,9 @@ def FixCharacters (Line,LineNumber,Encoding = "Latin1") :
                else :
                   Descrip = "Unexpected character (" + hex(Num) + \
                                                  " - not valid UTF-8 Unicode)"
-            
+            if (Descrip == None) :
+               Descrip = "Unexpected character (" + hex(Num) + \
+                            ") in unexpected encoding (" + Encoding + ")"
             if (Repl == None) :
                Text = Descrip + " in .tex file at line " + str(LineNumber) + \
                                                   " : LaTeX equivalent unknown"
@@ -2424,6 +2456,7 @@ def CheckCharacters (Line,LineNumber,Problems = None,Encoding = "Latin1") :
    UseLatin1 = (LowEncoding == "latin1")
    UseMacRoman = (LowEncoding == "macroman")
    UseUnicode = (LowEncoding == "utf-8")
+   UseAscii = (LowEncoding == "ascii")
    
    Problem = False
    NChars = len(Line)
@@ -2436,7 +2469,9 @@ def CheckCharacters (Line,LineNumber,Problems = None,Encoding = "Latin1") :
          Num = ord(Char)
          Repl = None
          Descrip = None
-         if (UseLatin1) :
+         if (UseAscii) :
+            Descrip = "ASCII character (" + hex(Num) + ")"
+         elif (UseLatin1) :
             Repl = __Latin1_LaTeX_Chars__.get(Num)
             Descrip = "Latin1 character (" + hex(Num) + ")"
          elif (UseMacRoman) :
@@ -2453,8 +2488,10 @@ def CheckCharacters (Line,LineNumber,Problems = None,Encoding = "Latin1") :
                   Repl = __Latin1_LaTeX_Chars__.get(Unicode)
             else :
                Descrip = "Unexpected character (" + hex(Num) + \
-                                              " - not valid UTF-8 Unicode)"
-         
+                                              ") - not valid UTF-8 Unicode)"
+         if (Descrip == None) :
+            Descrip = "Unexpected character (" + hex(Num) + \
+                            ") in unexpected encoding (" + Encoding + ")"
          if (Repl == None) :
             Text = Descrip + " in .tex file at line " + str(LineNumber) + \
                                                " : LaTeX equivalent unknown"
@@ -2535,12 +2572,94 @@ def AuthorChars (Author) :
                if (Char == '"') : Letter = Letter + 'e'
                Author = Author.replace(FullString,Letter)
                
-         #  And we quite once there are no LaTeX directives left.
+         #  And we quit once there are no LaTeX directives left.
          
          if (Author.find('\\') < 0): break
          
    return Author
-         
+
+# ------------------------------------------------------------------------------
+
+#                          R u n  C o m m a n d
+#
+#  RunCommand() is a utility that runs a single command, waiting for it
+#  to cpmplete. It ignores any output from the command, but returns an
+#  error string if the command terminates with bad status. Command should
+#  be a single string or a list of strings, but if it is a single string
+#  it will be split (using spaces as delimiters) into a list, rather than
+#  being passed to a shell to interpret.
+#
+#  This is packaged as a separate routine because it's actually tricky to
+#  get right, particularly using the subprocess module. (The recent routine
+#  subprocess.call() does most of this, but only dates from Python 3.5. Also
+#  note that a lot of the things this might be used for, like extracting
+#  archives using tar, can be done using ordinary python modules.)
+
+def RunCommand (Command) :
+
+   Status = None
+   
+   #  We don't want to use a shell to interpret the command, since that
+   #  has security implications (if Command is built up using outside input
+   #  nasty stuff can be embedded in it), so we need to pass Popen() an
+   #  argument list rather than a command. (Note: in Python 2 the test
+   #  should really be for basestring rather than str, as this misses
+   #  unicode strings, but basestring isn't defined in Python 3).
+   
+   if (isinstance(Command,str)) : CommandList = Command.split()
+   else : CommandList = Command
+   
+   #  Setting up stdout and stderr like this allows the output from the
+   #  subprocess to be absorbed. (You may not want to do this, in which
+   #  case you don't want this routine. It took a bit of experimenting
+   #  to get this sequence right - if I left stderr as None, unzip would
+   #  output the list of files, for example.)
+   
+   Proc = subprocess.Popen(CommandList,stdout=subprocess.PIPE, \
+                                                stderr=subprocess.STDOUT)
+   Output = Proc.communicate()
+   Proc.stdout.close()
+   Result = Proc.wait()
+   if (Result != 0) :
+      Status = "Error executing '" + Command + "'"
+
+   return Status
+
+# ------------------------------------------------------------------------------
+
+#                       E x t r a c t  A r c h i v e
+#
+#  ExtractArchive() is passed the name of an archive file - either a tar or
+#  a zip file - and extracts it into the current directory. If there are any
+#  problems, it returns a string describing the error. Normally, it returns
+#  None.
+
+def ExtractArchive (Filename) :
+
+   Status = None
+   if (Filename.endswith(".tar") or Filename.endswith(".tar.gz") or \
+           Filename.endswith(".zip") or Filename.endswith(".tgz")) :
+      
+      #  We're going to use a subprocess command to execute the extraction
+      #  command, so we need to handle any blanks or quote characters in the
+      #  filename. (Actually, this should use the Python archive modules.)
+      
+      AbsFilename = os.path.abspath(Filename)
+      AbsFilename = AbsFilename.replace("'","\\'")
+      AbsFilename = AbsFilename.replace(" ","\\ ")
+      
+      if (AbsFilename.endswith(".zip")) :
+         Command = "unzip " + AbsFilename
+      else :
+         Command = "tar -xf " + AbsFilename
+      Result = RunCommand(Command)
+      if (Result) : Status = Result
+   else :
+      Status = "Type of archive file " + Filename + " is unclear"
+
+   return Status
+
+
 # ------------------------------------------------------------------------------
 
 #                         G e t  A r c h i v e  T i m e
@@ -2555,7 +2674,7 @@ def GetArchiveTime (Filename,FileList = None) :
 
    LatestTime = None
    if (Filename.endswith(".tar") or Filename.endswith(".tar.gz") or \
-           Filename.endswith(".zip")) : 
+           Filename.endswith(".zip") or Filename.endswith(".tgz")) :
       
       #  Remember the current directory and the absolute path of the file
       #  we've been passed (which may have been a relative name)
@@ -2568,14 +2687,16 @@ def GetArchiveTime (Filename,FileList = None) :
       #  Create a temporary directory for the files in the archive, move
       #  to it and copy the archive files into it. (This is slower but more
       #  reliable than trying to interpret the output from commands like
-      #  "tar -tvf")
+      #  "tar -tvf") (This code should now use the newer ExtractArchive()
+      #  routine.)
       
       TempDir = tempfile.mkdtemp()
       os.chdir(TempDir)
       if (AbsFilename.endswith(".zip")) :
-         os.popen("unzip " + AbsFilename)
+         Proc = os.popen("unzip " + AbsFilename)
       else :   
-         os.popen("tar -xf " + AbsFilename)
+         Proc = os.popen("tar -xf " + AbsFilename)
+      Proc.close()
       
       #  Now we'll go through all the files looking at the dates. One
       #  complication - the top level of the archive may be a single
@@ -2621,7 +2742,9 @@ def GetArchiveTime (Filename,FileList = None) :
          
       #  Cleaup up after outselves, and return to the directory we started from.
       
-      if (TempDir != "") : os.popen("rm -rf " + TempDir)
+      if (TempDir != "") :
+         Proc = os.popen("rm -rf " + TempDir)
+         Proc.close()
       os.chdir(OriginalDir)
    return LatestTime
    
@@ -2693,7 +2816,224 @@ def GetArchiveList (Path,Paper) :
       ArchiveWalkCallback(ArchiveList,Details[0],Details[2])
    
    return ArchiveList
+
+# ------------------------------------------------------------------------------
+
+#                         C o l l a p s e  D i r
+#
+#  Often, an archive will turn out not to have all the files for a paper
+#  at the top level, but instead will have a single directory at top level
+#  which then contains the files for the paper. This is actually a sensible
+#  thing for the author to do, but it isn't quite what we're looking for,
+#  This routine looks to see if the current directory effectively contains
+#  only a single directory, and if so it moves the contents of that directory
+#  up to the top level and removes the directory, so producing the layout
+#  we expect. If the current directory effectively contains more than one file,
+#  this routine does nothing. (Note the word 'effectively' here - we don't
+#  count hidden files - ones beginning with '.', nor do we count the
+#  __MACOSX file that OS X systems often include in tar archives for their own
+#  purposes.)
+#
+#  This routine can also handle another case that has been seen occasionally.
+#  Sometimes, the archive file turns out to contain just one file, and
+#  that file is itself an archive file. In that case, this routine extracts
+#  the files from that archive, removes the archive, and then checks for
+#  a single directory at top level.
+#
+#  If DirList or ArchiveList are supplied, this routine adds the name of
+#  any removed intermediate directory or archive file to the appropriate
+#  list.
+
+def CollapseDir (DirList = None, ArchiveList = None) :
+
+   FilesInDir = os.listdir(".")
+   FileCount = 0
+   LastFile = ""
    
+   #  See how many files we have (effectively - see header comments)
+   
+   for File in FilesInDir :
+      if (not File.startswith('.') and File != "__MACOSX") :
+         LastFile = File
+         FileCount += 1
+
+   #  If we only have one file, and it is itself an archive file, expand
+   #  it into the current directory first, then call this routine again
+   #  recursively.
+
+   if (FileCount == 1) :
+      Filename = LastFile
+      if (Filename.endswith(".tar") or Filename.endswith(".tar.gz") or \
+                 Filename.endswith(".zip") or Filename.endswith(".tgz")) :
+         Status = ExtractArchive(Filename)
+         if (Status == None) :
+            os.remove(Filename)
+            if (ArchiveList != None) : ArchiveList.append(Filename)
+            CollapseDir (DirList,ArchiveList)
+
+   #  If we only have one file, and it is a directory, move its contents
+   #  up to the current directory and remove that now empty directory.
+   
+   if (FileCount == 1) :
+      IntermediateDir = os.path.abspath(LastFile)
+      if (os.path.isdir(IntermediateDir)) :
+         os.chdir(IntermediateDir)
+         Proc = os.popen("mv *.* ..")
+         Proc.close()
+         os.chdir("..")
+         shutil.rmtree(IntermediateDir,ignore_errors = True)
+         if (DirList != None) : DirList.append(LastFile)
+
+# ------------------------------------------------------------------------------
+
+#                       L o c a t e  T e x  F i l e
+#
+#  LocateTexFile() searches the current directory, assuming it contains the
+#  files for an ADASS paper, looking for the main .tex file for the paper.
+#  Ideally, we will know the PaperID for the paper in question, and can pass
+#  this to this routine, in which case the file should be PaperID.tex, eg
+#  O10-3.tex. If this file is found as expected, this routine returns its
+#  name. Authors are occasionally careless with their naming of files, or we
+#  may not know the PaperID (in which case it should be passed as None, which
+#  is the default). In this case, this routine attempts to do its best with
+#  what it has, which is just the file list. If there is only one .tex file,
+#  it will return that, for example. To allow for the possibility that more
+#  than one plausible candidate is found, this routine returns a list of
+#  files, although usually this will have only a single entry - or none, if
+#  no file can be found. If the caller wants to limit the returned list to
+#  just one file, passing the optional Single parameter as True will force
+#  this routine to return just the most recently modified of the files that
+#  would otherwise have been returned.
+
+def LocateTexFile (PaperID = None, Details = None, Single = False) :
+
+   Files = []
+   Found = False
+   Report = (Details != None)
+   
+   #  First, if we have a PaperID, see if we have the file we expect.
+   
+   if (PaperID) :
+      TexFileName = PaperID + ".tex"
+      if (os.path.exists(TexFileName)) :
+         Files.append(TexFileName)
+         Found = True
+         if (Report) : Details.append("Found " + TexFileName + " as expected")
+      else :
+         if (Report) :
+            Details.append("Expected file " + TexFileName + " not found")
+   if (not Found) :
+   
+      #  Not that easy. We need to look at the files we have. See how
+      #  many .tex files we have.
+      
+      FilesInDir = os.listdir(".")
+      TexFiles = 0
+      for File in FilesInDir :
+         if (File.endswith(".tex") and not File.startswith('.')) :
+            TexFiles += 1
+            LastTexFile = File
+
+      if (TexFiles == 0) :
+      
+         #  No .tex files at all. That's all we can do.
+         
+         if (Report) : Details.append("No .tex files found in directory")
+
+      elif (TexFiles == 1) :
+      
+         #  Just one .tex file. We'll settle for that.
+         
+         if (Report) :
+            Details.append("Only one .tex file (" + LastTexFile + \
+                                                ") found in directory")
+         Files.append(LastTexFile)
+      else :
+
+         #  Multiple .tex files. This gets tricky. See if any of them look
+         #  anything like a properly named ADASS .tex file.
+
+         #  First, try for any .tex file that has the paperID in its name
+         
+         if (PaperID) :
+            for File in FilesInDir :
+               if (File.endswith(".tex") and not File.startswith('.')) :
+                  LFile = File.lower()
+                  if (LFile.find(PaperID.lower()) >= 0) :
+                     Files.append(File)
+                     if (Report) :
+                        Details.append(File + " contains " + PaperID)
+                     Found = True
+         
+         if (not Found) :
+
+            #  Failing that, any file that seems to have a properly named
+            #  .tex file.
+            
+            for File in FilesInDir :
+               if (File.endswith(".tex") and not File.startswith('.')) :
+                  Paper = File[:-4]
+                  Problems = []
+                  if (CheckPaperName(Paper,Problems)) :
+                     Files.append(File)
+                     if (Report) :
+                        Details.append(File + " is a properly named .tex file")
+                     Found = True
+
+         if (Found) :
+            if (Report) : Details.append("Found " + str(len(Files)) + \
+                                          " plausibly named .tex file(s)")
+         else :
+         
+            #  There weren't any plausibly named files. All we can do is
+            #  include any .tex file we find.
+            
+            for File in FilesInDir :
+               if (File.endswith(".tex") and not File.startswith('.')) :
+                  Files.append(File)
+                  if (Report) :
+                     Details.append("Found .tex file " + File)
+            if (Report) : Details.append("Found " + str(len(Files)) + \
+                                                  " .tex files")
+               
+   #  If we end up with multiple .tex files, there is one more thing we can
+   #  do. We can see if any of them have an author list and a title. If only
+   #  one does, we can be reasonably sure it's what we're looking for. Even
+   #  if more than one does, this might remove some spurious files.
+   
+   if (len(Files) > 1) :
+      PaperFiles = []
+      for File in Files :
+         Ignore = []
+         Authors = GetAuthors(None,Ignore,File)
+         if (len(Authors) > 0) :
+            Surname = AuthorSurname(Authors[0])
+            Title = GetTitle(None,Ignore,File)
+            if (Title != "") :
+               if (Report) :
+                  Details.append("File " + File + " appears to be a paper by " \
+                                                                     + Surname)
+               PaperFiles.append(File)
+      if (len(PaperFiles) > 0) : Files = PaperFiles
+
+   #  Finally, if the Single parameter has been set to force us to return only
+   #  a single file, we can check the modification times of the files and
+   #  return just the most recently modified file.
+   
+   if (len(Files) > 1 and Single) :
+      TexFileName = Files[0]
+      LatestTexTime = os.stat(TexFileName).st_mtime
+      for File in Files[1:] :
+         FileTime = os.stat(File).st_mtime
+         if (FileTime > LatestTexTime) :
+            TexFileName = File
+            LatestTexTime = FileTime
+      Details.append("Using last modified .tex file: " + TexFileName)
+      Files = [TexFileName]
+
+   return Files
+
+
 # ------------------------------------------------------------------------------
 
 #                   P a c k a g e  S c a n  C a l l b a c k
@@ -2955,6 +3295,82 @@ def CheckRunningHeads (Paper,TexFileName = "",Problems = None) :
 
 # ------------------------------------------------------------------------------
 
+#                           T i t l e  C a l l b a c k
+#
+#   Used as the callback routine for the TexScanner when it is used to scan
+#   the .tex file for the \title directive used to supply the title for
+#   paper. Words are the components of a LaTeX directive parsed by the
+#   TexScanner. If this is a "\title" directive, this parses what should be
+#   the single argument to that directive and adds it to the Titles list. Titles
+#   should be a list of strings, initially set empty. Since any paper should
+#   only include one \title directive, after the paper has been scanned, Titles
+#   should just a single title string. If Titles is empty, no \title has been
+#   found.
+
+def TitleCallback(Words,Titles,Unused) :
+
+   NumberWords = len(Words)
+   if (NumberWords > 1) :
+      if (Words[0] == "\\title") :
+         Title = Words[1].strip('{}')
+         Titles.append(Title)
+
+# ------------------------------------------------------------------------------
+
+#                           G e t   T i t l e
+#
+#   This routine looks in the current directory for a file called
+#   Paper.tex (where Paper will be a string such as "O1-4"), assuming
+#   this is the main .tex file for the paper. It looks for the title of
+#   the paper and returns it as a string. Notes is a list to which this adds
+#   a brief description of anything possibly amiss that it comes across when
+#   searching for the title. If it doesn't find a title, for example, it will
+#   return an empty string and will say so in Notes. If it finds multiple
+#   titles, it will return the first and mention this in notes.
+
+def GetTitle (Paper,Notes,TexFileName = "") :
+
+   Title = ""
+   Titles = []
+   
+   if (TexFileName == "") : TexFileName = Paper + ".tex"
+   TexFileName = os.path.abspath(TexFileName)
+   if (not os.path.exists(TexFileName)) :
+      print("Cannot find main .tex file",TexFileName)
+   else :
+
+      #  Now get a list of any title entries from the .tex file.
+
+      TexFile = open(TexFileName,mode='r')
+      TheScanner = TexScanner.TexScanner()
+      TheScanner.SetFile(TexFile)
+      
+      #  GetNextTexCommand() will call TitleCallback for each command it
+      #  finds in the file, and TitleCallback will check the command
+      #  and add any title to Titles.
+      
+      Finished = False
+      while (not Finished) :
+         Finished =  TheScanner.GetNextTexCommand(TitleCallback,\
+                                                      Titles,None)
+      
+      TexFile.close()
+
+      NumberTitles = len(Titles)
+      if (NumberTitles == 1) :
+         Title = Titles[0]
+      elif (NumberTitles == 0) :
+         Notes.append("No title specified in the .tex file")
+      else :
+         Notes.append("The .tex file specifies multiple titles:")
+         Title = Titles[0]
+         for Entry in Titles :
+            Notes.append(Entry)
+
+   return Title
+
+# ------------------------------------------------------------------------------
+
 #                          C i t e  C a l l b a c k
 #
 #   Used as the callback routine for the TexScanner when it is used to scan
@@ -3035,5 +3451,361 @@ def CheckCite (Paper,TexFileName = "",Problems = None) :
          ReturnOK = False
 
    return ReturnOK
-              
+
+# ------------------------------------------------------------------------------
+
+#                          A u t h o r  S u r n a m e
+#
+#   Passed an author name, as it might be extracted by GetAuthors(), this
+#   routine extracts the surname, cleaning up any LaTeX constructions used
+#   to generate properly accented characters. The intent is to generate a
+#   reasonably clean name that can be used as part of the directory name for
+#   the paper. It does, of course, lose some of the detail of the name, and
+#   in an ideal world it would return a Unicode version of the name, but
+#   for the moment this simpler scheme works well enough. I apologise to
+#   authors whose accented names are mangled by this routine. Using this
+#   routine also provides a consistent way of handling author's names.
+
+def AuthorSurname (Author) :
+   Comma = Author.find(',')
+   if (Comma > 0) :
+      Surname = Author[:Comma]
+   else :
+      Surname = Author
+   Surname = Surname.replace("\\","").replace("'","").replace("`","") \
+                  .replace("{","").replace("}","")
+   Surname = Surname.replace('"u',"ue").replace('"o',"oe").replace(' ','')
+   Surname = Surname.replace('"','')
+   return Surname
+
+# ------------------------------------------------------------------------------
+
+#                    G e t  L a t e s t  F i l e  D a t e
+#
+#  This routine looks recursively at all the files in the current directory
+#  and any sub-directories, and returns a tuple with the date and name of the
+#  latest modified file that it finds. If it finds no files, it returns a date
+#  of zero and a null name. The time is in seconds past the epoch.
+
+def GetLatestFileDate () :
+
+   First = True
+   LatestFile = ""
+   LatestTime = 0
+
+   #  For each directory, os.walk returns the directory path, a list of
+   #  sub-directories, and a list of files.
+
+   for Details in os.walk('.',onerror = None) :
+      DirPath = Details[0]
+      
+      #  We ignore files in the special directories OS X inserts under some
+      #  circumstances.
+      
+      if (DirPath.find("__MACOSX") < 0) :
+         for Name in Details[2] :
+            File = os.path.join(DirPath,Name)
+            
+            #  We are also only interested in real files (not links to files
+            #  that are missing, and not directories)
+            
+            if (os.path.exists(File)) :
+               if (not os.path.isdir(File)) :
+                  FileTime = os.stat(File).st_mtime
+                  if (First) :
+                     LatestTime = FileTime
+                     LatestFile = File
+                     First = False
+                  else :
+                     if (FileTime > LatestTime) :
+                        LatestTime = FileTime
+                        LatestFile = File
+
+   #  I think file names look neater without a leading './'.
+
+   if (LatestFile.startswith("./")) : LatestFile = LatestFile[2:]
+   return (LatestTime,LatestFile)
+
+# ------------------------------------------------------------------------------
+
+#                        C h e c k  P a p e r  N a m e
+#
+#  Checks that the paper name specified follows the ADASS conventions. This
+#  adds a description of any problem to the Problems list it is passed, and
+#  returns True if the name is valid, False otherwise. The PaperName is the
+#  same thing as the PaperID often referred to, and should look like B3,
+#  O10-3, P8-37 etc.
+#
+#  This code looks quite messy, but so are the naming conventions for ADASS
+#  papers. Also, if in places some of the string handling doesn't look very
+#  Pythonesque, that's partly personal style, but its simple-minded scanning
+#  through the strings allows me to generate the error reports I felt I needed.
+#
+#  Note: This code was taken originally from the code used for the script
+#  PaperCheckBatch.py used for the Trieste proceedings. The use of 'X' as a
+#  prefix for papers whose paper ID could not be determined is a quirk of the
+#  Trieste processing, and has been left in here but disabled. The convention
+#  used for poster numbering for Trieste was also used for Santiago in 2017.
+
+def CheckPaperName(Paper,Problems) :
+
+   #  There is a suggestion Trieste may number posters the same way Oral
+   #  presentations are numbered, as P4-10, for example, rather than as
+   #  P045 for example. If so, TriestePosters needs to be set true.
+   #  This has been the convention now for both Trieste 2016 and Santiago
+   #  2018.
+   
+   TriestePosters = True
+   
+   #  Disable the use of 'X' as a prefix.
+   
+   XAllowed = False
+   
+   #  Some intital checks on the leading digit, which should be O for Oral,
+   #  I for Invited (also oral), B for BoF, F for Focus Demo, 'D' for
+   #  Demo booth or T for Tutorial.
+   
+   ValidSoFar = True
+   if (len(Paper) <= 0) :
+      Problem = "Paper name supplied is blank"
+      Problems.append(Problem)
+      ValidSoFar = False
+   
+   if (ValidSoFar) :
+      Letter = Paper[0]
+      if (not Letter in "IOBFPDT") :
+         if (Letter == 'X' and XAllowed) :
+            Problems.append(
+               "It seems that the paper ID could not be determined from the")
+            Problems.append("name used for the submitted .tar or .zip file")
+         else :
+            Problem = "'" + Letter + "' is not a valid prefix for a paper"
+            Problems.append(Problem)
+         ValidSoFar = False
+   
+   if (ValidSoFar) :
+      if (len(Paper) == 1) :
+         Problem = "Paper does not have a number"
+         Problems.append(Problem)
+         ValidSoFar = False
+
+   if (ValidSoFar) :
+   
+      #  Valid leading letter, now decode the number, and there are different
+      #  conventions for the different paper types.
+      
+      Number = Paper[1:]
+      NumChars = len(Number)
+
+      if (Letter == 'B' or Letter == 'F' or Letter == 'D' or Letter == 'T') :
+
+         #  BoFs, Focus Demos, Demo booths, and Tutorials just have a number,
+         #  with no leading zeros.
+
+         Leading = True
+         for Char in Number :
+            if (Leading) :
+               if (Char == '0') :
+                  Problem = "Paper number should not have leading zeros"
+                  Problems.append(Problem)
+                  ValidSoFar = False
+               Leading = False
+            Value = ord(Char) - ord('0')
+            if (Value < 0 or Value > 9) :
+               Problem = "Non-numeric character (" + Char + ") in paper number"
+               Problems.append(Problem)
+               ValidSoFar = False
+               break
+
+      if (Letter == 'P' and not TriestePosters) :
+      
+         #  This section checks for a valid poster number using the style in
+         #  use up to Trieste. This requires a poster number to be a 3 digit
+         #  number, with leading zeros if necessary.
+         
+         if (NumChars != 3) :
+            Problem = \
+             "Poster numbers must be three digits, with leading zeros if needed"
+            Problems.append(Problem)
+            ValidSoFar = False
+         else :
+            N = 0
+            for Char in Number :
+               Value = ord(Char) - ord('0')
+               if (Value < 0 or Value > 9) :
+                  Problem = "Non-numeric character (" + Char + \
+                                                       ") in paper number"
+                  Problems.append(Problem)
+                  ValidSoFar = False
+                  break
+               N = N * 10 + Value
+            if (ValidSoFar and N == 0) :
+               Problem = "Poster number cannot be zero"
+               Problems.append(Problem)
+               ValidSoFar = False
+
+      if (Letter == 'I' or Letter == 'O' or \
+                                   (Letter == 'P' and TriestePosters)) :
+         
+         #  Oral presentation numbers (and posters using the Trieste convention)
+         #  have the form S-N where S is the session and N the number. Go
+         #  through the digits, changing from session to number when a '-' is
+         #  found.
+         
+         S = 0
+         N = 0
+         Session = True
+         Leading = True
+         for Char in Number :
+            if (Leading) :
+               if (Char == '0') :
+                  if (Session) :
+                     Problem = "Session number should not have leading zeros"
+                  else :
+                     Problem = "Paper number should not have leading zeros"
+                  Problems.append(Problem)
+                  ValidSoFar = False
+                  break
+               Leading = False
+            if (Char == '.' or Char == '_') :
+               Problem = \
+                 "Use '-' instead of '_' or '.' to separate session and number"
+               Problems.append(Problem)
+               ValidSoFar = False
+               break
+            if (Char == "-") :
+               if (Session) :
+                  Session = False
+                  Leading = True
+               else :
+                  Problem = "Multiple '-' characters in paper number" + \
+                                                    ") in paper number"
+                  Problems.append(Problem)
+               continue
+            Value = ord(Char) - ord('0')
+            if (Value < 0 or Value > 9) :
+               Problem = "Non-numeric character (" + Char + \
+                                                    ") in paper number"
+               Problems.append(Problem)
+               ValidSoFar = False
+               break
+            if (Session) :
+               S = S * 10 + Value
+            else :
+               N = N * 10 + Value
+         if (ValidSoFar) :
+            if (S == 0 or N == 0) :
+               Problem = "Session or paper number cannot be zero"
+               Problems.append(Problem)
+               ValidSoFar = False
+   
+   if (not ValidSoFar) :
+      if (not (Paper[0] == 'X' and XAllowed)) :
+         Problem = "Paper name '" + Paper + "' is invalid"
+         Problems.append(Problem)
+
+   return ValidSoFar
+
+# ------------------------------------------------------------------------------
+
+#                  C h e c k  T e m p l a t e  L i n e s
+#
+#   This routine looks in the current directory for a file called
+#   Paper.tex (where Paper will be a string such as "O1-4") - or for a
+#   file called TexFileName, if this is not a null string - assuming
+#   this is the main .tex file for the paper. It checks each line in
+#   the file to see if it matches any of the strings passed in the
+#   list of TestStrings, in the sense of starting with that test string.
+#   It returns the number of matches it found. The idea is that the test
+#   strings will come from the template .tex file, and this gives an
+#   idea of the extent to which the .tex file in question is really just
+#   a lightly modified version of the template file.
+
+def CheckTemplateLines (Paper,TestStrings,TexFileName = "") :
+
+   Count = 0
+   
+   if (TexFileName == "") : TexFileName = Paper + ".tex"
+   TexFileName = os.path.abspath(TexFileName)
+   if (not os.path.exists(TexFileName)) :
+      print("Cannot find main .tex file",TexFileName)
+   else :
+   
+      #  Often all the test lines will be Latex directives, starting with
+      #  '\'. If so, we can speed up the tests considerably.
+      
+      AllSlash = True
+      for Chars in TestStrings :
+         if (not Chars.startswith('\\')) :
+            AllSlash = False
+            break
+
+      #  Now read through the .tex file, looking for any of the lines
+      #  we've been passed. Ignore comment lines, and, perhaps, lines
+      #  that don't begin with '/'.
+
+      TexFile = open(TexFileName,mode='r')
+      for Line in TexFile :
+         if (not Line.startswith('%')) :
+            if (AllSlash and not Line.startswith('\\')) : continue
+            for Chars in TestStrings :
+               if (Line.startswith(Chars)) :
+                  Count += 1
+                  break
+      TexFile.close()
+
+   return Count
+
+# ------------------------------------------------------------------------------
+
+#                  S u b j e c t  I n d e x  E n t r i e s
+#
+#   This routine looks in the current directory for a file called
+#   Paper.tex (where Paper will be a string such as "O1-4") - or for a
+#   file called TexFileName, if this is not a null string - assuming
+#   this is the main .tex file for the paper. It looks in the file for any
+#   \ssindex entries, and returns a list of all the entries it finds.
+#   Note that this includes entries that are commented out as well as
+#   those that are not - this is unusual, but \ssindex is not normally
+#   defined until the final stages when then full volume is created, and
+#   so these entries are normally commented out in the early stages. If
+#   IgnoreThese is specified, it should be a list of index entries that
+#   are to be ignored (these are usually those given as examples in the
+#   template file; these may still be present, but we don't generally
+#   want to include them).
+
+def SubjectIndexEntries (Paper,IgnoreThese = None,TexFileName = "") :
+
+   Entries = []
+   
+   if (TexFileName == "") : TexFileName = Paper + ".tex"
+   TexFileName = os.path.abspath(TexFileName)
+   if (not os.path.exists(TexFileName)) :
+      print("Cannot find main .tex file",TexFileName)
+   else :
+
+      #  Ideally, we'd use a TexScanner to parse subject index entries
+      #  properly, but unfortunately TexScanner ignores commented out lines,
+      #  and this is one case where we don't want to do this. Fortunately,
+      #  because of the commening aspects of these entries, they really
+      #  do have to be on separate lines, and \ssindex only takes one
+      #  argument, so parsing the file directly is fairly easy.
+
+      TexFile = open(TexFileName,mode='r')
+      for Line in TexFile :
+         Line = Line.strip()
+         if (Line.startswith("\\ssindex") or Line.startswith("%\\ssindex")) :
+            LBrace = Line.find('{')
+            if (LBrace > 0) :
+               RBrace = Line.find('}')
+               if (RBrace > LBrace) :
+                  Entry = Line[LBrace + 1:RBrace]
+                  if (IgnoreThese) :
+                     if (not Entry in IgnoreThese) :
+                        Entries.append(Entry)
+      TexFile.close()
+
+   return Entries
+
+
 

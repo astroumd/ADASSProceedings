@@ -122,7 +122,10 @@
 #     15th Aug 2017. Converted to run under Python3, using 2to3 and some minor
 #                    reformatting of lines to keep to 80 characters. Added
 #                    the importing of items from __future__ to allow this to
-#                    run under either Python2 or Python3.
+#                    run under either Python2 or Python3. KS.
+#     11th Nov 2017. Added note about replacing FindTexFile() with the now
+#                    available AdassChecks.LocateTexFile(). And a similar note
+#                    about CheckPaperName(). KS.
 #
 #  Python 2 and Python 3.
 #
@@ -149,6 +152,9 @@ import TexScanner
 #  directory. If it finds one that can be used, it returns its name. If not,
 #  it returns a nul string. A summary of any problems found is appened to
 #  the list passed as Problems.
+#
+#  Note: AdassChecks.LocateTexFile() should really be used instead, now
+#  that it is available.
 
 def FindTexFile (Paper,Problems) :
    TexFileName = Paper + ".tex"
@@ -415,7 +421,11 @@ def CheckBibFileUsage (TexFileName,Problems) :
 #  This code looks quite messy, but so are the naming conventions for ADASS
 #  papers. Also, if in places some of the string handling doesn't look very
 #  Pythonesque, that's partly personal style, but its simple-minded scanning
-#  through the strings allows me to generate the error reports I felt I needed. 
+#  through the strings allows me to generate the error reports I felt I needed.
+#
+#  Note: This could be completely replaced now by AdassChecks.CheckPaperName(),
+#  which is essentially the same routine, except for the printing of the
+#  problem descriptions.
 
 def CheckPaperName(Paper,Problems) :
 

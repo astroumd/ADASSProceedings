@@ -1,5 +1,5 @@
 This package of files is supplied to help prepare papers for submission in the
-Proceedings for the ADASS 2018 conference held in College Park.
+Proceedings for the ADASS 2018 conference held in College Park, Maryland.
 
 It contains the following files:
 
@@ -7,7 +7,7 @@ README                     - this file.
 
 ManuscriptInstructions.pdf - Guidelines for preparing an ADASS paper
 
-ADASS_template.tex         - an example template file for an ADASS 2016 paper.
+ADASS_template.tex         - an example template file for an ADASS 2018 paper.
 example.bib                - an example BibTeX file used by ADASS_template.tex
 example.eps                - an example graphics file used by ADASS_template.tex
 
@@ -21,6 +21,7 @@ Index.py                   - a Python script used to generate subject index entr
 AdassChecks.py             - a Python module used by PaperCheck.py
 TexScanner.py              - a Python module used by AdassChecks.py
 AdassConfig.py             - a Python module used by Index.py
+AdassIndex.py              - a Python module used by Index.py
 
 subjectKeywords.txt        - set of recent subject index entries, used by Index.py
 
