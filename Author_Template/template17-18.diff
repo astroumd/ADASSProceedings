@@ -1,0 +1,24 @@
+1c1
+< % This is the ADASS_template.tex LaTeX file, 18th Oct 2018.
+---
+> % This is the ADASS_template.tex LaTeX file, 12th August 2017.
+44d43
+< % Authors surnames should come after first names or initials, eg John Smith, or J. Smith.
+61,69d59
+< % There should be one \aindex line (commented out) for each author. These are used to
+< % build up the author index for the Proceedings. The surname must come first, followed by
+< % initials. Note the use of ~ before each initial to control spacing.
+< % The \author entries (see above) have surname last. These \aindex entries have
+< % surname first.
+< 
+< %\aindex{Author,~A.~N.}
+< %\aindex{Coauthor,~A.}
+< 
+71c61
+< This is the ADASS 2018 author template file.  This is based on the Astronomical Society of the Pacific (ASP) 2014 template, but has been modified to reflect the specific ADASS requirements.
+---
+> This is the ADASS 2017 author template file.  This is based on the Astronomical Society of the Pacific (ASP) 2014 template, but has been modified to reflect the specific ADASS requirements.
+78c68
+< %\ssindex{conference!ADASS 2018}
+---
+> %\ssindex{conference!ADASS 2017}
