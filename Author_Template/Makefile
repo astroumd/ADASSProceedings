@@ -1,55 +1,75 @@
 # Example makefile to help you compile your ADASS proceedings
+# but you really should read the ManuscriptInstructions.pdf
 #
-# proceeding contribution and version ## (1 before Sep 28, 2 before Oct 17)
-p = P2.17        
-v = 1
+# See also:  http://www.adass.org/instructions/ADASS2018.tar
+#            http://adass2018.umd.edu/ADASS2018.tar
+#
+# P = paper_id,   your proceedings contribution code
+# V = version,    your version # (1,2,..) since you can only upload unique files
 
-#FIGS = gmc1.eps  s3-ell-0.eps
-FIGS = 
-SCP = chara:/tmp
+P = P13-20                     # put your paper_id here
+                               # or find your template on http://www.astro.umd.edu/~teuben/adass/papers/
+P = ADASS_template             # for testing; comment this line for your production version
+V = 1                          # keep incrementing this after each upload of your $(P)
 
-POSTERFIGS = 
+#  variables for editors (don't modify, for export, not authors)
+YEAR   = 2018
+TMPDIR = ADASS$(YEAR)_author_template
+FILES  = AdassChecks.py AdassConfig.py AdassIndex.py ADASS_template.tex \
+	 asp2014.bst asp2014.sty copyrightform.pdf example.bib example.eps \
+	 Index.py manual2010.pdf ManuscriptInstructions.pdf PaperCheck.py \
+	 README subjectKeywords.txt TexScanner.py \
+	 Makefile
 
-PPP = 
+#  variables for authors
+FIGS = P1-2_f1.eps   P1-2_f2.eps   
+FIGS = example.eps
 
-all:	$(p).pdf tar
+#  probably don't change these either
+TAR_FILE  = $(P)_v$(V).tar.gz
+FILES4TAR = $(P).tex $(P).bib $(FIGS)
 
+all:	$(P).pdf tar
 
-$(p).pdf:  $(p).dvi $(FIGS)
-	dvipdf $(p)
+export:
+	mkdir $(TMPDIR)
+	cp -a $(FILES) $(TMPDIR)
+	echo Created on `date` by `whoami`  > $(TMPDIR)/VERSION
+	-git remote -v                     >> $(TMPDIR)/VERSION
+	-git branch                        >> $(TMPDIR)/VERSION
+	tar cf ADASS$(YEAR).tar $(TMPDIR)
 
-$(p).dvi:  $(p).tex $(p).bib
-	latex $(p)
-	bibtex $(p)
-	latex $(p)
-	latex $(p)
-	latex $(p)
+export_clean:
+	rm -rf $(TMPDIR)
 
-$(b).pdf:  $(b).dvi 
-	dvipdf $(b)
+# these targets are for most common unix systems, but YMMV. Modify if you need
+# let the editors know you have a better way for the next ADASS
+# e.g.    latex ADASS_template; latex ADASS_template; dvipdfm ADASS_template
 
-$(b).dvi:  $(b).tex $(b).bib
-	latex $(b)
-	bibtex $(b)
-	latex $(b)
-	latex $(b)
-	latex $(b)
+$(P).pdf:  $(P).dvi $(FIGS)
+	dvipdf $(P)
+
+$(P).bib:                                  # bootstrap if you don't have one
+	touch $(P).bib
+
+$(P).dvi:  $(P).tex $(P).bib
+	latex $(P)
+	bibtex $(P)
+	latex $(P)
+	latex $(P)
+	latex $(P)
 
 pdf:
-	pdflatex $(p)
-	bibtex $(p)
-	pdflatex $(p)
-	pdflatex $(p)
-
-test:
-	pdflatex $(p)
+	pdflatex $(P)
+	bibtex $(P)
+	pdflatex $(P)
+	pdflatex $(P)
 
 clean:
-	rm -f $(p).dvi $(p).bbl
-
+	rm -f $(P).dvi $(P).bbl $(P).pdf
 
 tar:
-	tar zcf $(p)_v$(v).tar.gz $(p).tex $(p).bib $(FIGS)
-	@echo ftp://ftp.astro.umd.edu/incoming/adass
-	# scp $(p)_v$(v).tar.gz  $(SCP)
+	tar zcf $(TAR_FILE) $(FILES4TAR)
+	@echo Submit to ftp://ftp.astro.umd.edu/incoming/adass
+	@echo e.g.   ncftpput ftp.astro.umd.edu  incoming/adass $(P)_v$(V).tar.gz 
 
