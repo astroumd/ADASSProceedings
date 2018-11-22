@@ -448,7 +448,7 @@ def CheckPaperName(Paper,Problems) :
       
    if (ValidSoFar) :
       Letter = Paper[0]
-      if (not Letter in "IOBFPDT") :
+      if (not Letter in "IOBFPDTH") :
          Problem = "'" + Letter + "' is not a valid prefix for a paper"
          print("**",Problem,"**")
          Problems.append(Problem)
