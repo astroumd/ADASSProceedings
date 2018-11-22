@@ -1,0 +1,5 @@
+# this is where you should define your macros, not in the Makefile
+#P = P13-20
+#V = 1
+#A = Teuben
+#FIGS = P13-20_*.eps

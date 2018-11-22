@@ -64,7 +64,7 @@ paper before packaging it up for submission, and should fix any problems it
 finds. The header comments in PaperCheck.py describe how to run it in detail,
 but essentially all you have to do is:
 
-PaperCheck.py Paper Author
+    PaperCheck.py Paper Author
 
 where Paper is the identifier for your paper, eg O10-3 or P8-2 etc, and
 Author is the surname of the first author of the paper.
@@ -79,7 +79,7 @@ e.g. example O10-3_v1.tar. This should contain:
 The .tex LaTeX file
 The .bib file defining any cited references
 And .eps graphics files used by the paper
-The resulting .pdf file for the paper.
+The resulting .pdf file for the paper, so we can see how you got it.
 A signed copyright form.
 
 (If there are problems typesetting your paper, your copy of the .pdf file for
@@ -95,3 +95,13 @@ submit a revised version, submit ALL the required files in a new .tar file - do
 not just submit the modified files - and append a version number to the name,
 eg O10-3_v2.tar.
 
+Using the Makefile:
+-------------------
+
+The added Makefile could help you as well, if you like that kind of
+thing.  The Makefile will read a "makedefs" file, where the macros
+P, A, V and FIGS can (and should) be overridden from the Makefile.
+This file is automatically included in your tar/zip file.
+
+
+      make pdf check tar
