@@ -5,6 +5,7 @@ It contains the following files:
 
 README                     - this file.
 Makefile                   - useful for those who like terminal commands
+makedefs                   - author macros to be included by the Makefile
 
 ManuscriptInstructions.pdf - Guidelines for preparing an ADASS paper
 
@@ -42,6 +43,9 @@ in a .bib BibTeX file like the example.bib file provided here.
 You will need to run LaTeX on your .tex file, then run BibTeX to process the
 references, and then will need to run LaTeX again up to three times to get all
 the cross-references right. The exact command on your OS may vary.
+
+Optionally in 2018 we have personalized templates, based on your abstract, in
+http://www.astro.umd.edu/~teuben/adass/papers/
 
 Adding subject index entries
 ----------------------------
