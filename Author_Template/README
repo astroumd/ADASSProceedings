@@ -64,7 +64,7 @@ paper before packaging it up for submission, and should fix any problems it
 finds. The header comments in PaperCheck.py describe how to run it in detail,
 but essentially all you have to do is:
 
-PaperCheck.py Paper Author
+    PaperCheck.py Paper Author
 
 where Paper is the identifier for your paper, eg O10-3 or P8-2 etc, and
 Author is the surname of the first author of the paper.
@@ -98,10 +98,10 @@ eg O10-3_v2.tar.
 Using the Makefile:
 -------------------
 
-The added Makefile could help you as well.  The Makefile will read the "makedefs" file,
-where the macros P, A, V and FIGS can (and should) be overridden from the Makefile.
+The added Makefile could help you as well, if you like that kind of
+thing.  The Makefile will read a "makedefs" file, where the macros
+P, A, V and FIGS can (and should) be overridden from the Makefile.
+This file is automatically included in your tar/zip file.
 
 
-make pdf
-make check
-make tar
+      make pdf check tar
