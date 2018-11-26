@@ -3,7 +3,7 @@
 # at least the README file. For some smart cookies the Makefile
 # should be sufficient too.
 #
-# Version 22-nov-2018   Peter Teuben
+# Version 23-nov-2018   Peter Teuben
 #
 # See also:  http://www.adass.org/instructions/ADASS2018.tar
 #            http://adass2018.umd.edu/ADASS2018.tar
@@ -32,6 +32,7 @@ FIGS = example.eps
 YEAR   = 2018
 TMPDIR = ADASS$(YEAR)_author_template
 FILES  = AdassChecks.py AdassConfig.py AdassIndex.py ADASS_template.tex \
+	 Aindex.py FixUnprintable.py \
 	 asp2014.bst asp2014.sty copyrightform.pdf example.bib example.eps \
 	 Index.py manual2010.pdf ManuscriptInstructions.pdf PaperCheck.py \
 	 README subjectKeywords.txt TexScanner.py \
@@ -88,6 +89,9 @@ clean:
 
 check:
 	PaperCheck.py $(P) $(A)
+
+aindex:
+	Aindex.py $(P)
 
 tar:
 	tar zcf $(TAR_FILE) $(FILES4AR)
