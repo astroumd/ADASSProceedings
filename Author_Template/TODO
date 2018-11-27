@@ -11,3 +11,6 @@
   %\ssindex{}     for subject index
   %\ooindex{}     for ASCL
 
+
+- primary author's page number in index should be boldfaced.
+  do we need a special \aindexbf{} for this?
