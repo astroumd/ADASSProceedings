@@ -6,3 +6,17 @@ overleaf instructions
 
 - url checker for the \url{} ?
 - need Finish.py
+
+- get email from the paper?
+
+- get author from the paper
+   (this was the makedefs file can be written)
+
+- the commented
+  %\aindex{}      for author index
+  %\ssindex{}     for subject index
+  %\ooindex{}     for ASCL
+
+
+- primary author's page number in index should be boldfaced.
+  do we need a special \aindexbf{} for this?
