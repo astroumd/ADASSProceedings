@@ -90,6 +90,10 @@ clean:
 check:
 	PaperCheck.py $(P) $(A)
 
+inc:
+	tex2inc.py $(P).tex > $(P)_inc.tex
+	@tail -1 $(P)_inc.tex
+
 aindex:
 	Aindex.py $(P)
 
