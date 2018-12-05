@@ -1,6 +1,10 @@
 #! /usr/bin/env python
 #
 # take a self-contained ADASS paper and output the embedable version
+#
+# TODO?
+# Should it produce toc entries for inclusion, e.g.
+#   \tocinsertentry[r]{ TITLE }{A.~Aloisi (Invited Speaker)}{authors/I1-2_inc} 
 
 import sys
 
