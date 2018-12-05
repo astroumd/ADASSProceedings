@@ -20,6 +20,8 @@ asp2014.sty                - the required ASP LaTeX style file.
 
 PaperCheck.py              - a Python script used to check an ADASS paper
 Index.py                   - a Python script used to generate subject index entries
+Aindex.py                  - a Python script used helping to ...
+FixUnprintable.py          - a Python script used helping to ...
 AdassChecks.py             - a Python module used by PaperCheck.py
 TexScanner.py              - a Python module used by AdassChecks.py
 AdassConfig.py             - a Python module used by Index.py
