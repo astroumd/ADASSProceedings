@@ -85,10 +85,13 @@ pdf2:
 	pdflatex $(P)
 
 clean:
-	rm -f $(P).dvi $(P).bbl $(P).pdf $(P).aux $(P).log $(P).out
+	rm -f $(P).dvi $(P).bbl $(P).pdf $(P).aux $(P).log $(P).out $(P)_inc.tex
 
 check:
 	PaperCheck.py $(P) $(A)
+
+fix:
+	FixUnprintable.py  $(P).tex
 
 inc:
 	tex2inc.py $(P).tex > $(P)_inc.tex
