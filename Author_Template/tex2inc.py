@@ -4,7 +4,7 @@
 #
 # TODO?
 # Should it produce toc entries for inclusion, e.g.
-#   \tocinsertentry[r]{ TITLE }{A.~Aloisi (Invited Speaker)}{authors/I1-2_inc} 
+#   \tocinsertentry[r]{ FULL_TITLE }{A.~Aloisi (Invited Speaker)}{authors/I1-2_inc} 
 
 import sys
 
@@ -17,29 +17,6 @@ def read1(filename):
     f.close()
     return lines
 
-test = """
-% test section
-\documentclass[11pt,twoside]{article}
-\usepackage{asp2014}
-
-\aspSuppressVolSlug
-\resetcounters
-
-\bibliographystyle{asp2014}
-
-\begin{document}
-
-The document...
-
-%\aindex{Author1}
-%\aindex{Coauthor2}
-
-bibliography{O5-3}
-
-\end{document}
-
-"""
-
 triggers = []
 triggers.append([True,"\\documentclass",   0])
 triggers.append([True,"\\usepackage",      0])
@@ -47,7 +24,6 @@ triggers.append([True,"\\begin{document}", 0])
 triggers.append([True,"\\end{document}",   0])
 triggers.append([False,"%\\aindex",        0])
 #triggers.append([True,"\\bibliography",   0])
-
 
 
 
@@ -82,7 +58,7 @@ for t in triggers:
     if t[2]==0:
         nbad = nbad + 1
         missing.append(t[1])
-    print("%%INC %d %s" % (t[2],t[1]))
+    print("%%TEX2INC %d %s" % (t[2],t[1]))
 if nbad > 0:
     print("%% Warning, missing items: %s" % str(missing))
 else:
