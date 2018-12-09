@@ -90,8 +90,10 @@ clean:
 check:
 	PaperCheck.py $(P) $(A)
 
+ENCODING =
+
 fix:
-	FixUnprintable.py  $(P).tex
+	FixUnprintable.py  $(P).tex $(ENCODING)
 
 inc:
 	tex2inc.py $(P).tex > $(P)_inc.tex
