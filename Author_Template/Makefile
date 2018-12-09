@@ -97,6 +97,9 @@ inc:
 	tex2inc.py $(P).tex > $(P)_inc.tex
 	@tail -1 $(P)_inc.tex
 
+dvi:
+	latex $(P)
+
 rsync: $(P).bib
 	rsync -av $(P)_inc.tex $(P).bib $(FIGS) ../../authors
 
