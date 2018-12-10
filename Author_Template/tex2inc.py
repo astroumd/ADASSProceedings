@@ -31,6 +31,8 @@ triggers.append([True,"\\usepackage",      0])
 triggers.append([True,"\\begin{document}", 0])
 triggers.append([True,"\\end{document}",   0])
 triggers.append([False,"%\\aindex",        0])
+triggers.append([False,"%\\ssindex",       0])
+triggers.append([False,"%\\ooindex",       0])
 #triggers.append([True,"\\bibliography",   0])
 
 
