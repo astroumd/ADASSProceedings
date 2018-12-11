@@ -105,6 +105,11 @@ inc:
 dvi:
 	latex $(P)
 
+aindex:
+	Aindex.py $(P)
+
+# below this are useful for the editors only
+
 asp1:
 	(cd ../..; $(MAKE) asp1 PID=$(P))
 	@echo xdg-open ../../authors/$(P).pdf
@@ -115,9 +120,6 @@ pdf2:   pdf asp1
 
 rsync: $(P).bib
 	rsync -av $(P)_inc.tex $(P).bib $(FIGS) ../../authors
-
-aindex:
-	Aindex.py $(P)
 
 tar:
 	tar zcf $(TAR_FILE) $(FILES4AR)
