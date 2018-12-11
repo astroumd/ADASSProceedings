@@ -81,7 +81,7 @@ $(P).dvi:  $(P).tex $(P).bib
 	latex $(P)
 
 # alternative method if latex fails
-pdf2:
+pdflatex:
 	pdflatex $(P)
 	bibtex $(P)
 	pdflatex $(P)
