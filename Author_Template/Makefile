@@ -3,7 +3,7 @@
 # at least the README file. For some smart cookies the Makefile
 # should be sufficient too.
 #
-# Version 23-nov-2018   Peter Teuben
+# Version 11-dec-2018   Peter Teuben
 #
 # See also:  http://www.adass.org/instructions/ADASS2018.tar
 #            http://adass2018.umd.edu/ADASS2018.tar
@@ -11,6 +11,7 @@
 # P = paper_id    your proceedings contribution code (the one with the dash, not dot)
 # V = version     your version # (1,2,..) since you can only upload unique files
 # A = 1stauthor   your last name, e.g. Teuben
+# E = email       your contact email
 
                     # put your paper_id here (with dash, not dot)
                     # or find your template on http://www.astro.umd.edu/~teuben/adass/papers/
@@ -19,13 +20,15 @@ P = ADASS_template
 V = 1
                     # First author (for Papercheck.py)
 A = Teuben
+                    # contact person email
+E = 
 
 #  variables for authors (comment out the ones you don't need)
 FIGS = P1-2_f1.eps   P1-2_f2.eps
 FIGS = 
 FIGS = example.eps
 
-# override P,V,A,FIGS with a "makedefs" file
+# override P,V,A,E,FIGS with a "makedefs" file
 -include makedefs
 
 #  variables for proceeding editors (don't modify, for export, not for authors)
@@ -101,6 +104,10 @@ inc:
 
 dvi:
 	latex $(P)
+
+asp1:
+	(cd ../..; $(MAKE) asp1 PID=$(P))
+	@echo xdg-open ../../authors/$(P).pdf
 
 rsync: $(P).bib
 	rsync -av $(P)_inc.tex $(P).bib $(FIGS) ../../authors
