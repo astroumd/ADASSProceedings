@@ -20,3 +20,8 @@ overleaf instructions
 
 - primary author's page number in index should be boldfaced.
   do we need a special \aindexbf{} for this?
+     XIV yes
+     XV yes
+     XVIII yes
+     XXI no
+     XXII no
