@@ -114,6 +114,9 @@ asp1:
 	(cd ../..; $(MAKE) asp1 PID=$(P))
 	@echo xdg-open ../../authors/$(P).pdf
 
+ascl:
+	(cd ../Author_Template; ascl.py ../$(P)/$(P).tex)
+
 pdf2:   pdf asp1
 	xdg-open $(P).pdf
 	xdg-open ../../authors/$(P).pdf
