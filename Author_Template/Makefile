@@ -115,7 +115,7 @@ asp1:
 	@echo xdg-open ../../authors/$(P).pdf
 
 ascl:
-	(cd ../Author_Template; ascl.py ../$(P)/$(P).tex)
+	(cd ../Author_Template; ascl.py ../../ADASSProceedings2018/papers/$(P)/$(P).tex)
 
 pdf2:   pdf asp1
 	xdg-open $(P).pdf
