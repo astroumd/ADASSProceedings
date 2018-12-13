@@ -22,13 +22,15 @@ PaperCheck.py              - a Python script used to check an ADASS paper
 Index.py                   - a Python script used to generate subject index entries
 Aindex.py                  - a Python script used helping to ...
 FixUnprintable.py          - a Python script used helping to ...
-tex2inc.py                 - a python script to process standalone tex to include version 
+tex2inc.py                 - a python script to process standalone tex to include version
+ascl.py                    - a python script to suggest ASCL entries
 AdassChecks.py             - a Python module used by PaperCheck.py
 TexScanner.py              - a Python module used by AdassChecks.py
 AdassConfig.py             - a Python module used by Index.py
 AdassIndex.py              - a Python module used by Index.py
 
 subjectKeywords.txt        - set of recent subject index entries, used by Index.py
+asclKeywords.txt           - list of ASCL codes for the ascl.py checker
 
 manual2010.pdf             - The ASP "Instructions for Authors and Editors".
 copyrightform.pdf          - The ASP copyright form
@@ -57,6 +59,20 @@ It will help the ADASS editors if you add subject index entries for important
 terms mentioned in your paper. The Index.py script can help to generate these,
 and full details can be found in an appendix in ManuscriptInstructions.pdf.
 
+In your document they should appear a commented \ssindex{} entries, e.g.
+
+   %\ssindex{foobar}
+
+Adding ASCL index entries
+-------------------------
+
+It will help the ADASS editors if you add ASCL index entries for codes that
+you are mentioning in your paper. The ascl.py script can help to generate these,
+but it known to give lots of false positives. Nonetheless, you can cut and paste
+the correct ones (as a latex comment) in your document, e.g.
+
+   %\ooindex{TOPCAT, ascl:1101.010}
+
 Checking your manuscript
 ------------------------
 
@@ -81,7 +97,7 @@ Packaging and submitting your paper:
 
 You should create a .tar file with a name based on the identifier for your paper and 
 including a version number, starting at 1.
-e.g. example O10-3_v1.tar. This should contain:
+e.g. example P10-3_v1.tar. This should contain:
 
 The .tex LaTeX file
 The .bib file defining any cited references
@@ -95,19 +111,31 @@ you have already supplied a paper copy of the copyright form, you do not need
 to include this. Note that electronic signatures are not acceptable - sign the
 form and scan it.)
 
-(Zip files are also acceptable, using the same naming convention, eg 10-3_v1.zip.)
+(Zip files are also acceptable, using the same naming convention, eg P10-3_v1.zip.)
 
 Submit the .tar file as instructed on the ADASS 2018 web site. If you need to
 submit a revised version, submit ALL the required files in a new .tar file - do
 not just submit the modified files - and append a version number to the name,
-eg O10-3_v2.tar.
+eg P10-3_v2.tar.
+
+To sum up, here is an example of the files (no directories please) that the editors
+like to see:
+
+   P1-2.tex
+   P1-2.bib
+   P1-2_f1.eps
+   P1-2_f2.eps
+   makedefs
+   P1-2.pdf
+
+you really don't need to send us *any* other type files. Save the electrons!
 
 Using the Makefile:
 -------------------
 
 The added Makefile could help you as well, if you like that kind of
 thing.  The Makefile will read a "makedefs" file, where the macros
-P, A, V and FIGS can (and should) be overridden from the Makefile.
+P, A, E, V and FIGS can (and should) be overridden from the Makefile.
 This file is automatically included in your tar/zip file.
 
 
