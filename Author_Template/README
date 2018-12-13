@@ -47,10 +47,15 @@ in a .bib BibTeX file like the example.bib file provided here.
 
 You will need to run LaTeX on your .tex file, then run BibTeX to process the
 references, and then will need to run LaTeX again up to three times to get all
-the cross-references right. The exact command on your OS may vary.
+the cross-references right. The exact command on your OS may vary, but the
+included Makefile may help you guide.
+
+Editing your paper in overleaf (https://www.overleaf.com/) is also known to work.
 
 Optionally in 2018 we have personalized templates, based on your abstract, in
-http://www.astro.umd.edu/~teuben/adass/papers/
+http://www.astro.umd.edu/~teuben/adass/papers/    The instructions within that
+template are even more terse than in ADASS_template.tex , so be warned if some
+of this material is new to you.
 
 Adding subject index entries
 ----------------------------
@@ -140,3 +145,17 @@ This file is automatically included in your tar/zip file.
 
 
       make pdf check tar
+
+Help
+----
+
+We realize that a lot of info is duplicated. From "too much" to "too litlle"
+you have the following files :
+
+   1. manual2010.pdf
+   2. ManuscriptInstructions.pdf
+   3. README                       (this file)
+   4. ADASS_template.tex
+   5. P1-2.tex                 (your personanlize template introduced in 2018)
+
+good luck!
