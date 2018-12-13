@@ -1,9 +1,9 @@
 # Example makefile to help you compile your ADASS proceedings
 # but you really should read the ManuscriptInstructions.pdf or
 # at least the README file. For some smart cookies the Makefile
-# should be sufficient too.
+# could be sufficient too.
 #
-# Version 11-dec-2018   Peter Teuben
+# Version 13-dec-2018   Peter Teuben
 #
 # See also:  http://www.adass.org/instructions/ADASS2018.tar
 #            http://adass2018.umd.edu/ADASS2018.tar
@@ -12,8 +12,9 @@
 # V = version     your version # (1,2,..) since you can only upload unique files
 # A = 1stauthor   your last name, e.g. Teuben
 # E = email       your contact email
+# FIGS = *eps     your EPS figures
 
-                    # put your paper_id here (with dash, not dot)
+                    # put your paper_id here (with dash, not dot), e.g. P10-2
                     # or find your template on http://www.astro.umd.edu/~teuben/adass/papers/
 P = ADASS_template
                     # keep incrementing this after each upload of your $(P)
@@ -21,14 +22,11 @@ V = 1
                     # First author (for Papercheck.py)
 A = Teuben
                     # contact person email
-E = 
-
-#  variables for authors (comment out the ones you don't need)
-FIGS = P1-2_f1.eps   P1-2_f2.eps
-FIGS = 
+E = teuben@gmail.com
+		    # your EPS figures (can be blank, and must be base-named with $(P)_*.eps
 FIGS = example.eps
 
-# override P,V,A,E,FIGS with a "makedefs" file
+# override P,V,A,E,FIGS with a "makedefs" file, this is where authors should edit, not Makefile
 -include makedefs
 
 #  variables for proceeding editors (don't modify, for export, not for authors)
@@ -39,6 +37,7 @@ FILES  = AdassChecks.py AdassConfig.py AdassIndex.py ADASS_template.tex \
 	 asp2014.bst asp2014.sty copyrightform.pdf example.bib example.eps \
 	 Index.py manual2010.pdf ManuscriptInstructions.pdf PaperCheck.py \
 	 README subjectKeywords.txt TexScanner.py \
+	 ascl.py asclKeywords.txt \
 	 adass2018.bib Makefile makedefs
 
 #  probably don't change these either (or notify the editors you have a special paper case)
@@ -49,8 +48,8 @@ FILES4AR  = $(P).tex $(P).bib $(FIGS) makedefs $(P).pdf # $(P)-copyrightform.pdf
 # ensure current directory is in the PATH
 export PATH := .:$(PATH)
 
-
 all:	pdf check tar
+
 
 # not for the user, for creator of the ADASS instruction tar file
 export:
@@ -63,13 +62,15 @@ export:
 	tar cf ADASS$(YEAR).tar $(TMPDIR)
 
 # these targets are for most common unix systems, but YMMV. Modify if you need
-# let the editors know you have a better way for the next 2019 ADASS team
-# e.g.    latex ADASS_template; dvipdfm ADASS_template
+# let the editors know you have a better way for the next ADASS team
+
+#                 pick dvipdfm or dvipdfmx if you like one with links and features
+DVIPDF = dvipdf
 
 pdf:	$(P).pdf
 
 $(P).pdf:  $(P).dvi $(FIGS)
-	dvipdf $(P)
+	$(DVIPDF) $(P)
 
 $(P).bib:                                  # bootstrap if you don't have one
 	touch $(P).bib
@@ -80,7 +81,7 @@ $(P).dvi:  $(P).tex $(P).bib
 	latex $(P)
 	latex $(P)
 
-# alternative method if latex fails
+# an alternative method (ASP does not recommend it)
 pdflatex:
 	pdflatex $(P)
 	bibtex $(P)
@@ -94,7 +95,6 @@ check:
 	PaperCheck.py $(P) $(A)
 
 ENCODING =
-
 fix:
 	FixUnprintable.py  $(P).tex $(ENCODING)
 
@@ -108,8 +108,18 @@ dvi:
 aindex:
 	Aindex.py $(P)
 
-# below this are useful for the editors only
+tar:
+	tar zcf $(TAR_FILE) $(FILES4AR)
+	@echo Submit to ftp://ftp.astro.umd.edu/incoming/adass
+	@echo e.g.   ncftpput ftp.astro.umd.edu  incoming/adass $(TAR_FILE)
 
+zip:
+	rm -f $(ZIP_FILE)
+	zip $(ZIP_FILE) $(FILES4AR)
+	@echo Submit to ftp://ftp.astro.umd.edu/incoming/adass
+	@echo e.g.   ncftpput ftp.astro.umd.edu  incoming/adass $(ZIP_FILE)
+
+# for editors
 asp1:
 	(cd ../..; $(MAKE) asp1 PID=$(P))
 	@echo xdg-open ../../authors/$(P).pdf
@@ -123,14 +133,3 @@ pdf2:   pdf asp1
 
 rsync: $(P).bib
 	rsync -av $(P)_inc.tex $(P).bib $(FIGS) ../../authors
-
-tar:
-	tar zcf $(TAR_FILE) $(FILES4AR)
-	@echo Submit to ftp://ftp.astro.umd.edu/incoming/adass
-	@echo e.g.   ncftpput ftp.astro.umd.edu  incoming/adass $(TAR_FILE)
-
-zip:
-	rm -f $(ZIP_FILE)
-	zip $(ZIP_FILE) $(FILES4AR)
-	@echo Submit to ftp://ftp.astro.umd.edu/incoming/adass
-	@echo e.g.   ncftpput ftp.astro.umd.edu  incoming/adass $(ZIP_FILE)
