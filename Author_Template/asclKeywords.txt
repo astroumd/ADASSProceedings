@@ -27,8 +27,11 @@ ascl:9911.004	CHIANTI
 ascl:9912.001	SPH_1D
 ascl:9912.002	FTOOLS
 # ascl:9912.003	RVSAO 2.0
+ascl:9912.003	RVSAO
 ascl:0003.001	GADGET-2
 # ascl:0003.002	SAOImage DS9
+ascl:0003.002	SAOImage
+ascl:0003.002	DS9
 ascl:0008.001	DDSCAT
 ascl:0008.002	RATRAN
 ascl:0011.001	StarFinder
@@ -58,7 +61,7 @@ ascl:1010.012	glafic
 ascl:1010.013	AstroGK
 ascl:1010.014	Athena
 # ascl:1010.015	Fyris Alpha
-ascl:1010.016	SpDust/SpDust.2
+ascl:1010.016	SpDust
 ascl:1010.017	AOFlagger
 # ascl:1010.018	Emu CMB
 ascl:1010.019	NBSymple
@@ -76,6 +79,7 @@ ascl:1010.030	CosmicEmu
 ascl:1010.031	DimReduce
 # ascl:1010.032	Extreme Deconvolution
 # ascl:1010.033	GALEV Evolutionary Synthesis Models
+ascl:1010.033	GALEV
 ascl:1010.034	iCosmo
 ascl:1010.035	SLR
 ascl:1010.036	Montage
@@ -84,6 +88,7 @@ ascl:1010.037	FastChi
 # ascl:1010.039	Parameter Estimation from Time-Series Data with Correlated Errors
 # ascl:1010.040	Cosmic String Simulations
 # ascl:1010.041	FASTLens (FAst STatistics for weak Lensing)
+ascl:1010.041	FASTLens
 ascl:1010.042	WeightMixer
 ascl:1010.043	FSPS
 ascl:1010.044	MAESTRO
@@ -100,6 +105,7 @@ ascl:1010.054	MagnetiCS.c
 ascl:1010.055	SYNOW
 ascl:1010.056	PHOENIX
 # ascl:1010.057	Tiny Tim
+ascl:1010.057	TinyTim
 ascl:1010.058	VINE
 ascl:1010.059	CESAM
 ascl:1010.060	Pencil
@@ -129,6 +135,7 @@ ascl:1010.083	MESA
 ascl:1010.084	WhiskyMHD
 # ascl:1010.085	Network Tools for Astronomical Data Retrieval
 # ascl:1011.001	Identikit 1
+ascl:1011.001	Identikit
 ascl:1011.002	DAOSPEC
 ascl:1011.003	ZPEG
 ascl:1011.004	MARS
@@ -153,6 +160,7 @@ ascl:1011.022	yt
 ascl:1011.023	HyRec
 # ascl:1101.001	Second-order Tight-coupling Code
 # ascl:1101.002	NDSPMHD Smoothed Particle Magnetohydrodynamics Code
+ascl:1101.002	NDSPMHD
 ascl:1101.003	IGMtransfer
 ascl:1101.004	InterpMC
 ascl:1101.005	CMHOG
@@ -167,6 +175,7 @@ ascl:1102.003	GRAVLENS
 ascl:1102.004	LENSTOOL
 ascl:1102.005	MRLENS
 # ascl:1102.006	NBODY Codes
+ascl:1102.006	NBODY
 ascl:1102.007	PixeLens
 ascl:1102.008	PMFAST
 ascl:1102.009	AHF
@@ -195,6 +204,7 @@ ascl:1103.003	S2PLOT
 ascl:1103.004	SPLASH
 ascl:1103.005	Splotch
 # ascl:1103.006	GLESP 2.0
+ascl:1103.006	GLESP
 ascl:1103.007	VisIt
 # ascl:1103.008	Parallel HOP
 ascl:1103.009	SPHRAY
@@ -220,6 +230,7 @@ ascl:1104.013	BEARCLAW
 ascl:1105.001	STILTS
 ascl:1105.002	PACCE
 # ascl:1105.003	The DTFE public software
+ascl:1105.003	DTFE 
 ascl:1105.004	SLiM
 ascl:1105.005	ChaNGa
 ascl:1105.006	SPARC
@@ -279,6 +290,8 @@ ascl:1107.019	PSRPOP
 ascl:1108.001	IMCAT
 ascl:1108.002	SHERA
 # ascl:1108.003	WCSLIB and PGSBOX
+ascl:1108.003	WCSLIB
+ascl:1108.003	PGSBOX
 ascl:1108.004	Galacticus
 ascl:1108.005	Gaepsi
 ascl:1108.006	STARLIGHT
@@ -362,6 +375,7 @@ ascl:1111.015	TIPSY
 ascl:1112.001	Eclipse
 ascl:1112.002	Funtools
 # ascl:1112.003	THERMINATOR 2
+ascl:1112.003	THERMINATOR
 ascl:1112.004	PHOX
 ascl:1112.005	GIDGET
 ascl:1112.006	PhAst
@@ -582,6 +596,7 @@ ascl:1302.011	GALA
 ascl:1302.012	ME(SSY)**2
 ascl:1302.013	NIFTY
 # ascl:1302.014	SYNMAG Photometry
+ascl:1302.014	SYNMAG
 ascl:1302.015	DisPerSE
 ascl:1302.016	XDQSO
 ascl:1302.017	ESO-MIDAS
@@ -718,6 +733,7 @@ ascl:1310.002	PyMSES
 ascl:1310.003	AIDA
 ascl:1310.004	AIRY
 # ascl:1310.005	ASPRO 2
+ascl:1310.005	ASPRO
 ascl:1310.006	AIPSLite
 ascl:1310.007	SMURF
 ascl:1310.008	SPECX
@@ -762,6 +778,7 @@ ascl:1402.002	Glue
 ascl:1402.003	astroplotlib
 ascl:1402.004	PyVO
 # ascl:1402.005	Aladin Lite
+ascl:1402.005	AladinLite
 ascl:1402.006	Munipack
 ascl:1402.007	SPLAT
 ascl:1402.008	SPLAT-VO
@@ -819,6 +836,8 @@ ascl:1403.024	GAIA
 ascl:1403.025	SLALIB
 ascl:1403.026	SOFA
 # ascl:1404.001	LTS_LINEFIT & LTS_PLANEFIT
+ascl:1404.001	LTS_LINEFIT
+ascl:1404.001	LTS_PLANEFIT
 ascl:1404.002	ZDCF
 ascl:1404.004	SAS
 ascl:1404.005	SER
@@ -837,6 +856,7 @@ ascl:1404.017	Spextool
 ascl:1405.001	LBLRTM
 ascl:1405.002	TelFit
 # ascl:1405.003	The Hammer
+ascl:1405.003	Hammer
 ascl:1405.004	Defringeflat
 ascl:1405.005	HIIPHOT
 ascl:1405.006	PROPER
@@ -873,6 +893,7 @@ ascl:1406.018	GAUSSCLUMPS
 ascl:1406.019	JCMTDR
 ascl:1406.020	STARMAN
 # ascl:1407.001	The Starfish Diagram
+ascl:1407.001	Starfish 
 ascl:1407.002	TWODSPEC
 ascl:1407.003	SPECDRE
 ascl:1407.004	MCMAC
@@ -988,6 +1009,7 @@ ascl:1501.011	transfer
 ascl:1501.012	Exorings
 ascl:1501.013	Molecfit
 # ascl:1501.014	GalPaK 3D
+ascl:1501.014	GalPaK
 ascl:1501.015	Exoplanet
 ascl:1501.016	Colossus
 # ascl:1502.001	RH 1.5D
@@ -1045,6 +1067,7 @@ ascl:1504.018	D3PO
 ascl:1504.019	LineProf
 ascl:1504.020	BGLS
 # ascl:1504.021	SOAP 2.0
+ascl:1504.021	SOAP
 ascl:1505.001	CALCEPH
 ascl:1505.002	ASteCA
 ascl:1505.003	caret
@@ -1082,6 +1105,7 @@ ascl:1505.034	dStar
 ascl:1506.001	pyKLIP
 ascl:1506.002	dmdd
 # ascl:1506.003	PLATO Simulator
+ascl:1506.003	PLATO
 ascl:1506.004	multiband_LS
 ascl:1506.005	PyMC
 ascl:1506.006	fsclean
@@ -1122,6 +1146,7 @@ ascl:1508.010	SHDOM
 ascl:1509.001	XSHPipelineManager
 ascl:1509.002	Tempo
 # ascl:1509.003	AFR (ASPFitsReader)
+ascl:1509.003	AFR
 ascl:1509.004	FalconIC
 ascl:1509.005	TRUVOT
 ascl:1509.006	FARGO3D
@@ -1167,6 +1192,7 @@ ascl:1512.005	ALFA
 ascl:1512.006	GPC
 ascl:1512.007	AstroBlend
 # ascl:1512.008	Bisous model
+ascl:1512.008	Bisous
 ascl:1512.009	DRACULA
 ascl:1512.010	CubeIndexer
 ascl:1512.011	ExoData
@@ -1210,6 +1236,7 @@ ascl:1602.007	FilTER
 ascl:1602.008	NuCraft
 ascl:1602.009	LensTools
 # ascl:1602.010	The Cannon
+ascl:1602.010	Cannon
 ascl:1602.011	Celestial
 ascl:1602.012	DELightcurveSimulation
 ascl:1602.013	TailZ
@@ -1247,6 +1274,7 @@ ascl:1604.005	Halotools
 ascl:1604.006	2-DUST
 ascl:1604.007	DNest3
 # ascl:1604.008	The Tractor
+ascl:1604.008	Tractor
 ascl:1604.009	CCSNMultivar
 ascl:1604.010	BEAMS
 ascl:1604.011	FDPS
@@ -1330,6 +1358,7 @@ ascl:1609.004	FISHPACK
 ascl:1609.005	FISHPACK90
 ascl:1609.006	SCIMES
 # ascl:1609.007	Weighted EMPCA
+ascl:1609.007	EMPCA
 ascl:1609.008	GRASP
 ascl:1609.009	NSCool
 ascl:1609.010	CuBANz
@@ -1343,6 +1372,7 @@ ascl:1609.017	spectral-cube
 ascl:1609.018	SIP
 ascl:1609.019	SuperBoL
 # ascl:1609.020	Askaryan Module
+ascl:1609.020	Askaryan
 ascl:1609.021	TIDEV
 ascl:1609.022	PyPHER
 ascl:1609.023	contbin
@@ -1374,6 +1404,7 @@ ascl:1611.007	GRASP2K
 # ascl:1611.008	Transit Clairvoyance
 ascl:1611.009	RHOCUBE
 # ascl:1611.010	Kapteyn Package
+ascl:1611.010	Kapteyn 
 ascl:1611.011	OXAF
 ascl:1611.012	EarthShadow
 ascl:1611.013	pyGMMis
@@ -1409,6 +1440,7 @@ ascl:1612.020	Grackle
 ascl:1612.021	BaTMAn
 ascl:1612.022	REPS
 # ascl:1701.001	The Joker
+ascl:1701.001	Joker
 ascl:1701.002	Vizic
 ascl:1701.003	Spectra
 ascl:1701.004	CosmoSlik
@@ -1516,6 +1548,7 @@ ascl:1708.016	pyLCSIM
 ascl:1708.017	LCC
 ascl:1708.018	CUTEX
 # ascl:1708.019	SINFONI Pipeline
+ascl:1708.019	SINFONI 
 ascl:1708.020	4DAO
 ascl:1708.021	KERTAP
 ascl:1708.022	Naima
@@ -1559,6 +1592,7 @@ ascl:1710.018	FITSFH
 ascl:1710.019	GASOLINE
 ascl:1710.020	PSPLINE
 # ascl:1710.021	OSIRIS Toolbox
+ascl:1710.021	OSIRIS 
 ascl:1710.022	galario
 ascl:1710.023	LIMEPY
 ascl:1710.024	pred_loggs
@@ -1698,6 +1732,7 @@ ascl:1805.024	ASTROPOP
 ascl:1805.025	GLACiAR
 ascl:1805.026	PySE
 # ascl:1805.027	MontePython 3
+ascl:1805.027	MontePython
 ascl:1805.028	SP_Ace
 ascl:1805.029	DeepMoon
 ascl:1805.030	PyCBC
