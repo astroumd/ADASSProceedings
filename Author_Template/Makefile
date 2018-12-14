@@ -108,6 +108,10 @@ dvi:
 aindex:
 	Aindex.py $(P)
 
+DETEX = detex
+words:
+	$(DETEX) $(P).tex | grep -o -E '\w+' | sort | uniq -c | sort -n
+
 tar:
 	tar zcf $(TAR_FILE) $(FILES4AR)
 	@echo Submit to ftp://ftp.astro.umd.edu/incoming/adass
@@ -123,6 +127,10 @@ zip:
 asp1:
 	(cd ../..; $(MAKE) asp1 PID=$(P))
 	@echo xdg-open ../../authors/$(P).pdf
+
+TERMS = 
+index:
+	(cd ../Author_Template; Index.py ../../ADASSProceedings2018/papers/$(P)/$(P).tex $(TERMS))
 
 ascl:
 	(cd ../Author_Template; ascl.py ../../ADASSProceedings2018/papers/$(P)/$(P).tex)
