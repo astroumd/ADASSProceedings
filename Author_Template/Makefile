@@ -3,7 +3,7 @@
 # at least the README file. For some smart cookies the Makefile
 # could be sufficient too.
 #
-# Version 13-dec-2018   Peter Teuben
+# Version 14-dec-2018   Peter Teuben
 #
 # See also:  http://www.adass.org/instructions/ADASS2018.tar
 #            http://adass2018.umd.edu/ADASS2018.tar
@@ -77,14 +77,14 @@ $(P).bib:                                  # bootstrap if you don't have one
 
 $(P).dvi:  $(P).tex $(P).bib
 	latex $(P)
-	bibtex $(P)
+	if [ -s $(P).bib ]; then bibtex $(P); fi
 	latex $(P)
 	latex $(P)
 
 # an alternative method (ASP does not recommend it)
 pdflatex:
 	pdflatex $(P)
-	bibtex $(P)
+	if [ -s $(P).bib ]; then bibtex $(P); fi
 	pdflatex $(P)
 	pdflatex $(P)
 
