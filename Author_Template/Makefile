@@ -110,7 +110,7 @@ aindex:
 
 DETEX = detex
 words:
-	$(DETEX) $(P).tex | grep -o -E '\w+' | sort | uniq -c | sort -n
+	$(DETEX) $(P).tex | grep -o -E '\w+' | tr '[A-Z]' '[a-z]' | sort | uniq -c | sort -n
 
 tar:
 	tar zcf $(TAR_FILE) $(FILES4AR)
