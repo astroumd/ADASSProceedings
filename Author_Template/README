@@ -1,6 +1,8 @@
 This package of files is supplied to help prepare papers for submission in the
 Proceedings for the ADASS 2018 conference held in College Park, Maryland.
 
+Last updated: 15-dec-2018 by Peter Teuben
+
 It contains the following files:
 
 README                     - this file.
@@ -34,6 +36,18 @@ asclKeywords.txt           - list of ASCL codes for the ascl.py checker
 
 manual2010.pdf             - The ASP "Instructions for Authors and Editors".
 copyrightform.pdf          - The ASP copyright form
+
+github:
+-------
+
+Although each ADASS conference will draw its proceedings preparation package, the original github
+repo from which that package is drawn, is available on https://github.com/astroumd/ADASSProceedings
+Typically each year will develop the new release on a branch (e.g. "2018" for the College Park version)
+and merge this back to the master for the next year team goes to work.
+
+Authors will not need to know about that, but you may run into some editor specific comments or
+commands in the Makefile or the python scripts. 
+
 
 Preparing your manuscript:
 -------------------------
