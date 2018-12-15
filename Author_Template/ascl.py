@@ -174,13 +174,19 @@ def parse4(file,codes,comment):
 
 if __name__ == '__main__':
     comment = '%'                        # pick '%' or ''
+    afile = 'asclKeywords.txt'
     if len(sys.argv) == 1:
-        print("Usage")
+        print("Usage: %s tex_file" % sys.argv[0])
+        print("")
+        print("Scans tex_file for occurences of ASCL code names, and prints out the ")
+        print("corresponding %\ooindex{NAME, ascl:yymm:nnn} to be cut and pasted into tex_file")
+        print("including the line number and text that triggered the match")
+        print("Lookup table of codes in %s" % afile)
         sys.exit(0)
         
     filename = sys.argv[1]
     if False:
         codes = parse1('ascl.php')
     else:
-        codes = parse2('asclKeywords.txt')
+        codes = parse2(afile)
     parse4(filename,codes,comment)
