@@ -3,15 +3,15 @@
 # at least the README file. For some smart cookies the Makefile
 # could be sufficient too.
 #
-# Version 13-dec-2018   Peter Teuben
+# Version 14-dec-2018   Peter Teuben
 #
 # See also:  http://www.adass.org/instructions/ADASS2018.tar
 #            http://adass2018.umd.edu/ADASS2018.tar
 #
-# P = paper_id    your proceedings contribution code (the one with the dash, not dot)
+# P = paper_id    your proceedings paper ID code (the one with the dash, not dot)
 # V = version     your version # (1,2,..) since you can only upload unique files
 # A = 1stauthor   your last name, e.g. Teuben
-# E = email       your contact email
+# E = email       your contact email for submission issues
 # FIGS = *eps     your EPS figures
 
                     # put your paper_id here (with dash, not dot), e.g. P10-2
@@ -51,7 +51,7 @@ export PATH := .:$(PATH)
 all:	pdf check tar
 
 
-# not for the user, for creator of the ADASS instruction tar file
+# not for authors, for creator of the ADASS instruction tar file
 export:
 	rm -rf $(TMPDIR)
 	mkdir $(TMPDIR)
@@ -63,8 +63,8 @@ export:
 
 # these targets are for most common unix systems, but YMMV. Modify if you need
 # let the editors know you have a better way for the next ADASS team
+# ASP prefers the latex;latex;dvipdfm route
 
-#                 pick dvipdfm or dvipdfmx if you like one with links and features
 DVIPDF = dvipdf
 
 pdf:	$(P).pdf
@@ -77,14 +77,14 @@ $(P).bib:                                  # bootstrap if you don't have one
 
 $(P).dvi:  $(P).tex $(P).bib
 	latex $(P)
-	bibtex $(P)
+	if [ -s $(P).bib ]; then bibtex $(P); fi
 	latex $(P)
 	latex $(P)
 
 # an alternative method (ASP does not recommend it)
 pdflatex:
 	pdflatex $(P)
-	bibtex $(P)
+	if [ -s $(P).bib ]; then bibtex $(P); fi
 	pdflatex $(P)
 	pdflatex $(P)
 

@@ -128,9 +128,12 @@ def wclean(word):
     return w
 
 
-def parse4(file,codes):
+def parse4(file,codes,comment):
     """
     codename ->   codename\ooindex{codename, ascl_id}
+
+    codename ->
+    %
     """
     fp = open(file,'r')
     lines = fp.readlines()
@@ -155,18 +158,29 @@ def parse4(file,codes):
             print(line2)
         else:
             if debug: print(line)
+    ns = 0
+    for line in lines:
+        if line.find('\ooindex{') > 0:
+            ns = ns + 1
+    if ns>0:
+        print("Warning: I already found %d ASCL entries" % ns)
+        for line in lines:
+            if line.find('\ooindex{') > 0:
+                print(line.strip())
+        
 
 
 #parse3('sample.tex',codes)
 
 if __name__ == '__main__':
-    print("CMD: ",sys.argv[0])
     comment = '%'                        # pick '%' or ''
-    if len(sys.argv) > 1:
-        filename = sys.argv[1]
-        #
-        if False:
-            codes = parse1('ascl.php')
-        else:
-            codes = parse2('asclKeywords.txt')
-        parse4(filename,codes)
+    if len(sys.argv) == 1:
+        print("Usage")
+        sys.exit(0)
+        
+    filename = sys.argv[1]
+    if False:
+        codes = parse1('ascl.php')
+    else:
+        codes = parse2('asclKeywords.txt')
+    parse4(filename,codes,comment)
