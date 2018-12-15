@@ -68,6 +68,12 @@ In your document they should appear a commented \ssindex{} entries, e.g.
 
    %\ssindex{foobar}
 
+You can also use the following word-cloud type command chain in unix:
+
+    detex $(P).tex | grep -o -E '\w+' | sort | uniq -c | sort -n
+
+If your "unix" doesn't have detex, use cat.
+
 Adding ASCL index entries
 -------------------------
 
