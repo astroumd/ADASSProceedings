@@ -33,7 +33,7 @@ def read1(filename):
     return lines
 
 triggers = []
-triggers.append([False,"%\\aindex",        0])    # has to be [1]
+triggers.append([False,"%\\aindex",        0])
 triggers.append([False,"%\\ssindex",       0])
 triggers.append([False,"%\\ooindex",       0])
 triggers.append([True,"\\documentclass",   0])
@@ -42,14 +42,6 @@ triggers.append([True,"\\begin{document}", 0])
 triggers.append([True,"\\end{document}",   0])
 triggers.append([None,"\\title{",          0])
 #triggers.append([True,"\\bibliography",   0])
-
-def no_paindex(triggers):
-    """ special hack
-    """
-    t0 = triggers[0]  # the \aindex
-    if t0[2] == 1:
-        return True
-    return False
 
 def carg(line):
     pco = line.find('{')
@@ -85,24 +77,24 @@ for l in lines:
     for t in triggers:
         if l.find(t[1]) == 0:                 # if there is a trigger on the line
             t[2] = t[2] + 1
-            if t[0] == None:
+            if t[0] == None:                                 # special, but leave alone
                 # only for \title for now
                 if t[2] == 1:
                     title = carg(l)
                 print(l.strip())
-            elif t[0]:                                      # comment it
+            elif t[0]:                                       # comment it
                 print("%%TEX2INC %s" % l.strip())
-            else:                                           # uncomment it
-                if no_paindex(triggers):
-                    # for 1st aindex add "|textbf" before the }
-                    tmp1 = "%s" % l[1:].strip()   
-                    cl1 = tmp1.rfind('}')
-                    tmp2 = tmp1[:cl1] + '|textbf}'
+            else:                                            # uncomment it
+                if t[1] == "%\\aindex":
+                    if t[2] == 1:
+                        # for 1st aindex add "|textbf" before the }
+                        tmp1 = "%s" % l[1:].strip()   
+                        cl1 = tmp1.rfind('}')
+                        tmp2 = tmp1[:cl1] + '|textbf}'
+                        print("%s" % tmp2)
+                    else:
+                        print("%s" % l[1:].strip())                                        
                     authors.append(carg(l))
-                    print("%s" % tmp2)
-                elif t[1] == "%\\aindex":
-                    authors.append(carg(l))
-                    print("%s" % l[1:].strip())                
                 else:
                     print("%s" % l[1:].strip())
             triggered = True
