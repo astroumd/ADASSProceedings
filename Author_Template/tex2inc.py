@@ -53,7 +53,7 @@ def no_paindex(triggers):
 
 def carg(line):
     pco = line.find('{')
-    pcc = line.find('}')
+    pcc = line.rfind('}')
     return line[pco+1:pcc]
     
 if len(sys.argv) == 1:
