@@ -101,6 +101,7 @@ fix:
 inc:
 	tex2inc.py $(P).tex > $(P)_inc.tex
 	@tail -1 $(P)_inc.tex
+	@cat $(P).toc
 
 dvi:
 	latex $(P)
