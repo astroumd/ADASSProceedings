@@ -1,4 +1,4 @@
-% This is the ADASS_template.tex LaTeX file, 25th Oct 2018.
+% This is the ADASS_template.tex LaTeX file, 18th Dec 2018.
 % It is based on the ASP general author template file, but modified to reflect the specific
 % requirements of the ADASS proceedings.
 % Copyright 2014, Astronomical Society of the Pacific Conference Series
@@ -37,7 +37,7 @@
 
 \begin{document}
 
-\title{ADASS Author Template}
+\title{ADASS Author Template and Long Title}
 
 % Note the position of the comma between the author name and the 
 % affiliation number.
@@ -46,14 +46,13 @@
 % The final author should be preceded by "and".
 % Affiliations should not be repeated across multiple \affil commands. If several
 % authors share an affiliation this should be in a single \affil which can then
-% be referenced for several author names.
-% See ManuscriptInstructions.pdf and ASPmanual2010.pdf 3.1.4 for more details
-\author{Sample~Author1,$^1$ Sample~Author2,$^2$ and Sample~Author3$^3$}
+% be referenced for several author names. If only one affiliation, no footnotes are needed.
+% See ManuscriptInstructions.pdf and ASP's manual2010.pdf 3.1.4 for more details
+\author{Sample~Author1,$^1$ Sample~Author2,$^2$ and Sample~Author3$^2$}
 \affil{$^1$Institution Name, Institution City, State/Province, Country; \email{AuthorEmail@email.edu}}
 \affil{$^2$Institution Name, Institution City, State/Province, Country}
-\affil{$^3$Institution Name, Institution City, State/Province, Country}
 
-% This section is for ADS Processing.  There must be one line per author.
+% This section is for ADS Processing.  There must be one line per author. paperauthor has 9 arguments.
 \paperauthor{Sample~Author1}{Author1Email@email.edu}{ORCID_Or_Blank}{Author1 Institution}{Author1 Department}{City}{State/Province}{Postal Code}{Country}
 \paperauthor{Sample~Author2}{Author2Email@email.edu}{ORCID_Or_Blank}{Author2 Institution}{Author2 Department}{City}{State/Province}{Postal Code}{Country}
 \paperauthor{Sample~Author3}{Author3Email@email.edu}{ORCID_Or_Blank}{Author3 Institution}{Author3 Department}{City}{State/Province}{Postal Code}{Country}
@@ -63,20 +62,32 @@
 % initials. Note the use of ~ before each initial to control spacing.
 % The \author entries (see above) have surname last. These \aindex entries have
 % surname first.
+% The Aindex.py command willl create them for you after you have constructed the \author
 
-%\aindex{Author,~A.~N.}
-%\aindex{Coauthor,~A.}
+%\aindex{Author1,~S.}
+%\aindex{Author2,~S.}
+%\aindex{Author3,~S.}
+
 
 \begin{abstract}
-This is the ADASS 2018 author template file.  This is based on the Astronomical Society of the Pacific (ASP) 2014 template, but has been modified to reflect the specific ADASS requirements.
+This is the ADASS 2018 author template file.  This is based on the Astronomical Society of the Pacific (ASP) 2014 template,
+but has been modified to reflect the specific ADASS requirements.
 \end{abstract}
 
 % These lines show examples of subject index entries. At this stage these have to commented
 % out, and need to be on separate lines. Eventually, they will be automatically uncommented
 % and used to generate entries in the Subject Index at the end of the Proceedings volume.
 % Don't leave these in! - replace them with ones relevant to your paper.
-%\ssindex{conference!ADASS 2018}
-%\ssindex{organisations!ASP}
+%\ssindex{FOOBAR!conference!ADASS 2018}
+%\ssindex{FOOBAR!organisations!ASP}
+
+% These lines show examples of ASCL index entries. At this stage these have to commented
+% out, and need to be on separate lines. Eventually, they will be automatically uncommented
+% and used to generate entries in the ASCL Index at the end of the Proceedings volume.
+% The ascl.py command will scan your paper on possible code names.
+% Don't leave these in! - replace them with ones relevant to your paper.
+%\ooindex{FOOBAR, ascl:1101.010}
+
 
 \section{The Template}
 To fill in this template, make sure that you read and follow the ASPCS Instructions for Authors and Editors available for download online. Further hints and tips for including graphics, tables, citations, and other formatting helps are available there. With this template, you should have received a copy of the specific ADASS manuscript instructions, and you should also read these.
@@ -193,9 +204,18 @@ There are also the landscape versions \verb"\articlelandscapefigure" and \\
 References must be provided in BibTeX format, in a .bib file, and should usually be referenced using \verb"\citet" or \verb"\citep". The file example.bib supplied with this template is taken from an ADASS 2015 paper, and includes references to previous ADASS proceedings 
 \citep[such as][]{1999ASPC..172..487P} and to papers in what was then the current 2015 proceedings (e.g.\ \citet{O11-4_adassxxv}). Note that the `TBD' entries that appear for papers in the current proceedings will be dealt with by the ADASS editors when the final volume is produced. The example .bib file has a large number of references unused by this template file; such unused references have been left in as an example, but should be removed before a paper is submitted.
 
-\acknowledgements The ASP would like to thank the dedicated researchers who are publishing with the ASP.  It will make things a lot easier if you keep this text on the same line as the \verb"\acknowledgements" command.
+\section{Conference Photographs}
+
+At the end of this template you may find a commented line with the bookpartphoto where the editors could decided to add a conference photo,
+might there be enough room at the end of your paper. Leave this comment in, do not supply your own photos in this paper but contact the editors
+if you have some interesting shots.
+
+\acknowledgements The ASP would like to thank the dedicated researchers who are publishing with the ASP.  It will make things a lot easier if you keep this text on the same line as the \verb"\acknowledgements" command. Place it just before the bibliography. It's optional of course.
 
 
 \bibliography{example}  % For BibTex
+
+% if we have space left, we might add a conference photograph here. Leave commented for now.
+% \bookpartphoto[width=1.0\textwidth]{foobar.eps}{FooBar Photo (Photo: Any Photographer)}
 
 \end{document}
