@@ -52,6 +52,10 @@ commands in the Makefile or the python scripts.
 Preparing your manuscript:
 -------------------------
 
+The best usage is to prepare your paper in this Author_Template directory. If you
+author two papers, that will work too, but preparing your tar or zip file is
+much easier if you use a parallel Author_Template.
+
 Read the ManuscriptInstructions.pdf file. The ADASS_template.tex file gives you 
 a basic template for your ADASS paper. For additional details look in the 
 first section of the ASP's "Instructions for Authors and Editors", but note
@@ -62,7 +66,8 @@ in a .bib BibTeX file like the example.bib file provided here.
 You will need to run LaTeX on your .tex file, then run BibTeX to process the
 references, and then will need to run LaTeX again up to three times to get all
 the cross-references right. The exact command on your OS may vary, but the
-included Makefile may help you guide.
+included Makefile may help you guide. ASP does not use pdflatex, so try and stick
+to latex (we only allow EPS figures, not PNG or JPG; see below)
 
 Editing your paper in overleaf (https://www.overleaf.com/) is also known to work.
 
