@@ -9,7 +9,7 @@ This needs to be done in the following files:
   ADASS_template.tex
   Makefile
   README
-  ManuscriptInstructions.docx
+  ManuscriptInstructions.docx      (and create a new pdf of course)
   adass2018.bib -> adass2019.bib   (watch out your publication year is one more than the conference year)
 
 
@@ -17,4 +17,6 @@ After this you can
 
   make export
 
-and test some "make" commands inside of the new ADASS2019_author_template
+and test some "make" commands inside of the new ADASS2019_author_template/ directory.
+When this all works you can post the ADASS2019.tar on your website, and ideally a copy
+on adass.org as well.
