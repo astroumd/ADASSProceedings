@@ -4,7 +4,7 @@ Outline what each ADASS year should do incrementally from the previous year:
 - replace the roman old number               (e.g. xxviii -> xxix)
 
 
-This needs to be done in the following files:
+We need updates for this in the following files:
 
   ADASS_template.tex               (use "make pdf" to make a new pdf)
   Makefile
@@ -13,6 +13,10 @@ This needs to be done in the following files:
   adass2018.bib -> adass2019.bib   (watch out your publication year is one more than the conference year)
   template.tex                     (personalized template, see our other git repo)
 
+and other types of updates in:
+
+  asclKeywords.txt                 (an updated list from the ASCL team is needed each year)
+  subjectKeywords.txt              (an updated list from the previous ADASS is needed each year)
 
 After this you can
 
