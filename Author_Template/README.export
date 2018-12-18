@@ -1,0 +1,20 @@
+Outline what each ADASS year should do incrementally from the previous year:
+
+- replace the old year with the new year     (e.g. 2018 -> 2019)
+- replace the roman old number               (e.g. xxviii -> xxix)
+
+
+This needs to be done in the following files:
+
+  ADASS_template.tex
+  Makefile
+  README
+  ManuscriptInstructions.docx
+  adass2018.bib -> adass2019.bib   (watch out your publication year is one more than the conference year)
+
+
+After this you can
+
+  make export
+
+and test some "make" commands inside of the new ADASS2019_author_template
