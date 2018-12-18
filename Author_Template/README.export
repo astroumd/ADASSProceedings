@@ -6,7 +6,7 @@ Outline what each ADASS year should do incrementally from the previous year:
 
 This needs to be done in the following files:
 
-  ADASS_template.tex
+  ADASS_template.tex               (use "make pdf" to make a new pdf)
   Makefile
   README
   ManuscriptInstructions.docx      (and create a new pdf of course)
