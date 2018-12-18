@@ -121,9 +121,14 @@ else:
 def flip(author):
     """    Last, F   ->   F~Last
     """
-    # todo finish this code
-    return author
-
+    lc = author.find(',')
+    if lc < 0:
+        print("%% BAD author malformed: %s" % author)
+        return author
+    tmp = author[lc+1:]
+    if tmp[0] == '~':
+        tmp = tmp[1:]
+    return tmp + '~' + author[:lc]
 
 invited = ''
 
