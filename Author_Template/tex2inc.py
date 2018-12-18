@@ -22,7 +22,7 @@
 
 import sys
 
-version = "17-dec-2018"
+version = "18-dec-2018"
 
 def read1(filename):
     """ read tex file into lines for processing
@@ -95,6 +95,9 @@ for l in lines:
                     else:
                         print("%s" % l[1:].strip())                                        
                     authors.append(carg(l))
+                elif t[1] == "%\\ooindex":
+                    l=l.replace(',','!')           # ASCL index gets an extra indentation
+                    print("%s" % l[1:].strip())                    
                 else:
                     print("%s" % l[1:].strip())
             triggered = True
