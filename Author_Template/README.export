@@ -11,6 +11,7 @@ This needs to be done in the following files:
   README
   ManuscriptInstructions.docx      (and create a new pdf of course)
   adass2018.bib -> adass2019.bib   (watch out your publication year is one more than the conference year)
+  template.tex                     (personalized template, see our other git repo)
 
 
 After this you can
