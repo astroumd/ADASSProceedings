@@ -126,11 +126,12 @@ zip:
 
 # for editors
 asp1:
-	(cd ../..; $(MAKE) asp1 PID=$(P))
+	(cd ../..; $(MAKE) asp1 PID=$(P); grep box asp1.log)
 	@echo xdg-open ../../authors/$(P).pdf
 
 TERMS = 
 index:
+	@echo Using TERMS=$(TERMS)
 	(cd ../Author_Template; Index.py ../../ADASSProceedings2018/papers/$(P)/$(P).tex $(TERMS))
 
 ascl:
