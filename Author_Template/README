@@ -69,7 +69,10 @@ the cross-references right. The exact command on your OS may vary, but the
 included Makefile may help you guide. ASP does not use pdflatex, so try and stick
 to latex (we only allow EPS figures, not PNG or JPG; see below)
 
-Editing your paper in overleaf (https://www.overleaf.com/) is also known to work.
+Editing your paper in overleaf (https://www.overleaf.com/) is also known to work:
+simply upload (as a ZIP file is the easiest) the template, the two asp2014 files,
+and optionally your BIB file and EPS figures. Don't start from scratch, or your file
+will be likely named main.tex
 
 Optionally in 2018 we have personalized templates, based on your abstract, in
 http://www.astro.umd.edu/~teuben/adass/papers/    The instructions within that
