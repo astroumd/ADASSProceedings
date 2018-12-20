@@ -103,6 +103,10 @@ inc:
 	@tail -1 $(P)_inc.tex
 	@cat $(P).toc
 
+spell:
+	aspell --mode=tex check $(P).tex
+	@echo Share your ~/.aspell.en.pws  ~/.aspell.en.prepl 
+
 dvi:
 	latex $(P)
 
