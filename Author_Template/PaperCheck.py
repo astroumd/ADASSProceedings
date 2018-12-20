@@ -2,7 +2,7 @@
 
 #                         P a p e r  C h e c k . p y
 #
-#  This script runs a few basic checks on a paper ready to be submitted.for
+#  This script runs a few basic checks on a paper ready to be submitted for
 #  inclusion in the ADASS Proceedings. It can also be run by the ADASS
 #  editors as a first quick check on a submitted paper. It does not attempt
 #  to run LaTeX on the paper, so it does not catch any LaTeX errors, nor
@@ -435,7 +435,7 @@ def CheckPaperName(Paper,Problems) :
    
    TriestePosters = True
    
-   #  Some intital checks on the leading digit, which should be O for Oral,
+   #  Some initial checks on the leading digit, which should be O for Oral,
    #  I for Invited (also oral), B for BoF, F for Focus Demo, 'D' for
    #  Demo booth or T for Tutorial.
    
