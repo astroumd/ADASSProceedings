@@ -2,3 +2,6 @@ algorithm
     harmonic sum
 distribution
     von Mises
+projects
+    StarFormMapper
+

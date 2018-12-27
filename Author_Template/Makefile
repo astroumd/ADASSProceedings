@@ -136,7 +136,7 @@ asp1:
 TERMS = 
 index:
 	@echo Using TERMS=$(TERMS)
-	(cd ../Author_Template; Index.py ../../ADASSProceedings2018/papers/$(P)/$(P).tex $(TERMS))
+	(cd ../Author_Template; Index.py $(TERMS))
 
 ascl:
 	(cd ../Author_Template; ascl.py ../../ADASSProceedings2018/papers/$(P)/$(P).tex)
