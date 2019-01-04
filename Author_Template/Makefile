@@ -48,6 +48,29 @@ FILES4AR  = $(P).tex $(P).bib $(FIGS) makedefs $(P).pdf # $(P)-copyrightform.pdf
 # ensure current directory is in the PATH
 export PATH := .:$(PATH)
 
+help:
+	@echo AUTHOR targets:
+	@echo all:   pdf check tar
+	@echo pdf:
+	@echo check:
+	@echo clean:
+	@echo tar:
+	@echo zip:
+	@echo 
+	@echo EDITOR targets:
+	@echo fix:
+	@echo inc:
+	@echo spell:
+	@echo aindex:
+	@echo words:
+	@echo asp1:
+	@echo index:
+	@echo ascl:
+	@echo pdf2:
+	@echo rsync:
+
+
+
 all:	pdf check tar
 
 
