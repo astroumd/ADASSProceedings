@@ -97,6 +97,7 @@ check:
 ENCODING =
 fix:
 	FixUnprintable.py  $(P).tex $(ENCODING)
+#	FixUnprintable.py  $(P).bib $(ENCODING)
 
 inc:
 	tex2inc.py $(P).tex > $(P)_inc.tex
