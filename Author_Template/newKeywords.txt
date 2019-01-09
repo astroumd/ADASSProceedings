@@ -4,4 +4,8 @@ distribution
     von Mises
 projects
     StarFormMapper
-
+theorem
+    Brewer
+    CAP
+    L'Huilier
+    Nyquist
