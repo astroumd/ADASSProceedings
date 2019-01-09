@@ -66,6 +66,7 @@ help:
 	@echo asp1:
 	@echo index:
 	@echo ascl:
+	@echo ascl1:
 	@echo pdf2:
 	@echo rsync:
 
@@ -163,6 +164,9 @@ index:
 
 ascl:
 	(cd ../Author_Template; ascl.py ../../ADASSProceedings2018/papers/$(P)/$(P).tex)
+
+ascl1:
+	(cd ../Author_Template; ascl.py ../../ADASSProceedings2018/papers/$(P)/$(P).tex | grep ooindex | sort | uniq -c)
 
 pdf2:   pdf asp1
 	xdg-open $(P).pdf
