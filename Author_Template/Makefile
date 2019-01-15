@@ -71,7 +71,6 @@ help:
 	@echo rsync:
 
 
-
 all:	pdf check tar
 
 
@@ -92,6 +91,7 @@ export:
 DVIPDF = dvipdf
 
 pdf:	$(P).pdf
+	@echo xdg-open $(P).pdf 
 
 $(P).pdf:  $(P).dvi $(FIGS)
 	$(DVIPDF) $(P)
@@ -129,7 +129,10 @@ inc:
 
 spell:
 	aspell --mode=tex check $(P).tex
-	@echo Share your ~/.aspell.en.pws  ~/.aspell.en.prepl 
+	@echo Share your ~/.aspell.en.pws  ~/.aspell.en.prepl
+
+aspell:
+	(cd ../..; $(MAKE) aspell)
 
 dvi:
 	latex $(P)
@@ -174,3 +177,4 @@ pdf2:   pdf asp1
 
 rsync: $(P).bib
 	rsync -av $(P)_inc.tex $(P).bib $(FIGS) ../../authors
+	rm ../../authors/$(P)_inc.{bbl,blg}
