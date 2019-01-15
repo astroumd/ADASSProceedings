@@ -177,4 +177,4 @@ pdf2:   pdf asp1
 
 rsync: $(P).bib
 	rsync -av $(P)_inc.tex $(P).bib $(FIGS) ../../authors
-	rm ../../authors/$(P)_inc.{bbl,blg}
+	rm -f ../../authors/$(P)_inc.{bbl,blg}
