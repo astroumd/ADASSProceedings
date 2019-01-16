@@ -1,5 +1,7 @@
 algorithm
     harmonic sum
+    machine learning
+        deep learning
 code
     repository
         GitLab
@@ -7,6 +9,9 @@ data formats
     ASDF
 distribution
     von Mises
+observatories
+    ground-based
+        VLA
 projects
     StarFormMapper
 theorem
