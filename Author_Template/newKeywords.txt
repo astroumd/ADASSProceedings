@@ -7,6 +7,9 @@ data formats
     ASDF
 distribution
     von Mises
+computer languages
+    Go
+    Julia
 projects
     StarFormMapper
 theorem
