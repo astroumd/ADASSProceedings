@@ -7,6 +7,8 @@ code
         GitLab
 data formats
     ASDF
+    FITS
+        WCS
 distribution
     von Mises
 computer languages
