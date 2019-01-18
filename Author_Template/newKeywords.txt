@@ -1,5 +1,7 @@
 algorithm
     harmonic sum
+    machine learning
+        deep learning
 code
     repository
         GitLab
@@ -10,6 +12,9 @@ distribution
 computer languages
     Go
     Julia
+observatories
+    ground-based
+        VLA
 projects
     StarFormMapper
 theorem
