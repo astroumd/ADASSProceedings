@@ -1,4 +1,5 @@
 algorithm
+    alpha shapes
     harmonic sum
     machine learning
         deep learning
