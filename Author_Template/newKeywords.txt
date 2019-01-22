@@ -23,6 +23,8 @@ projects
     StarFormMapper
 techniques
     convolutional neural networks (CNN)
+surveys
+    VLA Sky Survey (VLASS)
 theorem
     Brewer
     CAP
