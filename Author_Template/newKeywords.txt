@@ -20,6 +20,8 @@ observatories
         VLA
 projects
     StarFormMapper
+surveys
+    VLA Sky Survey (VLASS)
 theorem
     Brewer
     CAP
