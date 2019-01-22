@@ -15,6 +15,9 @@ distribution
 computer languages
     Go
     Julia
+images
+    tesselation
+        Voronoi
 observatories
     ground-based
         VLA
