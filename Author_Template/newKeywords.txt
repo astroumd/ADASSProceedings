@@ -15,11 +15,14 @@ distribution
 computer languages
     Go
     Julia
+hackathon
 observatories
     ground-based
         VLA
 projects
     StarFormMapper
+techniques
+    convolutional neural networks (CNN)
 theorem
     Brewer
     CAP
