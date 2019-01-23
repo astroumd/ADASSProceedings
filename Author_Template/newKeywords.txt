@@ -21,11 +21,14 @@ computer languages
 images
     tesselation
         Voronoi
+hackathon
 observatories
     ground-based
         VLA
 projects
     StarFormMapper
+techniques
+    convolutional neural networks (CNN)
 surveys
     VLA Sky Survey (VLASS)
 theorem

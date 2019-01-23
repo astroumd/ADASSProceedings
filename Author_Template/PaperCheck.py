@@ -672,6 +672,7 @@ def GetFileEncodings (TexFileName,Problems) :
 
 NumberArgs = len(sys.argv)
 if (NumberArgs < 3) :
+   print(sys.argv)
    print("Usage: PaperCheck <paper> <author>")
    print("<paper> should be the identifier for the paper, eg O5-4")
    print("<author> should be the surname of the first author")
