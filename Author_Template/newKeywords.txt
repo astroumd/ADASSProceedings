@@ -3,6 +3,9 @@ algorithm
     harmonic sum
     machine learning
         deep learning
+catalogues
+    Gaia Data Release 2
+    Gaia Data Release 3
 code
     repository
         GitLab
