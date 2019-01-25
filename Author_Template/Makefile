@@ -166,6 +166,9 @@ index:
 	@echo Using TERMS=$(TERMS)
 	(cd ../Author_Template; Index.py $(TERMS))
 
+index2:
+	(cd ../adass_paper_tagger ; detex ../$(P)/$(P).tex | python bin/subject_tagger.py)
+
 ascl:
 	(cd ../Author_Template; ascl.py ../../ADASSProceedings2018/papers/$(P)/$(P).tex)
 
