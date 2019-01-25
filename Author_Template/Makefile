@@ -167,7 +167,7 @@ index:
 	(cd ../Author_Template; Index.py $(TERMS))
 
 index2:
-	(cd ../adass_paper_tagger ; detex ../$(P)/$(P).tex | python bin/subject_tagger.py)
+	(cd ../adass_subject_recommender ; detex ../$(P)/$(P).tex |  PYTHONPATH=`pwd` bin/find_subjects.py -m 10 -j)
 
 ascl:
 	(cd ../Author_Template; ascl.py ../../ADASSProceedings2018/papers/$(P)/$(P).tex)
