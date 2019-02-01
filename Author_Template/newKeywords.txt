@@ -2,6 +2,7 @@ algorithm
     alpha shapes
     harmonic sum
     machine learning
+        k-nearest neighbors
         deep learning
 catalogues
     Gaia Data Release 2
