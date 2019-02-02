@@ -22,6 +22,9 @@ computer languages
 images
     tesselation
         Voronoi
+instruments
+    camera 
+        EIS
 hackathon
 observatories
     ground-based
@@ -30,6 +33,8 @@ projects
     StarFormMapper
 techniques
     convolutional neural networks (CNN)
+space probes
+    Europa Clipper
 surveys
     VLA Sky Survey (VLASS)
 theorem
