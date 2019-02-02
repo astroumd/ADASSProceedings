@@ -14,6 +14,7 @@ data formats
     ASDF
     FITS
         WCS
+data products
 distribution
     von Mises
 computer languages
