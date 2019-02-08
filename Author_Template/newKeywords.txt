@@ -10,6 +10,8 @@ catalogues
 code
     repository
         GitLab
+data centres
+    OV-GSO
 data formats
     ASDF
     FITS
