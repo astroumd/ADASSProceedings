@@ -1,3 +1,6 @@
+archives
+    individual
+        TESS
 algorithm
     alpha shapes
     harmonic sum
