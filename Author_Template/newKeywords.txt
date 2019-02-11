@@ -34,12 +34,14 @@ instruments
 hackathon
 observatories
     ground-based
+        National Optical Astronomy Observatory (NOAO)
         VLA
     space-based
         TESS
 projects
     StarFormMapper
 techniques
+    API
     convolutional neural networks (CNN)
 space probes
     Europa Clipper
