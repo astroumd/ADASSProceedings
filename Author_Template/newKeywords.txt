@@ -4,6 +4,8 @@ algorithm
     machine learning
         k-nearest neighbors
         deep learning
+astronomy
+    multi-messenger
 catalogues
     Gaia Data Release 2
     Gaia Data Release 3
@@ -31,6 +33,7 @@ observatories
     ground-based
         VLA
         GMRT
+        KAGRA
     space-based
         TESS
         International Space Station (ISS)
