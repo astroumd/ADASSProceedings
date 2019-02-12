@@ -12,6 +12,8 @@ catalogues
 code
     repository
         GitLab
+computer languages
+    Go
 data formats
     ASDF
     FITS
