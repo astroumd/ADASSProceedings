@@ -41,6 +41,9 @@ projects
     StarFormMapper
 space probes
     Europa Clipper
+software
+    development
+        DevOps
 surveys
     VLA Sky Survey (VLASS)
 techniques
