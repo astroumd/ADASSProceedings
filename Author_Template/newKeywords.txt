@@ -4,6 +4,7 @@ algorithm
     machine learning
         k-nearest neighbors
         deep learning
+    polygonal clipping
 astronomy
     multi-messenger
 catalogues
