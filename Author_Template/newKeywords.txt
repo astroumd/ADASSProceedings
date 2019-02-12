@@ -39,14 +39,16 @@ observatories
         International Space Station (ISS)
 projects
     StarFormMapper
-techniques
-    convolutional neural networks (CNN)
 space probes
     Europa Clipper
 surveys
     VLA Sky Survey (VLASS)
+techniques
+    convolutional neural networks (CNN)
 theorem
     Brewer
     CAP
     L'Huilier
     Nyquist
+visualisation
+    web-based
