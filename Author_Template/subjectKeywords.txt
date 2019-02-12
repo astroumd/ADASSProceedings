@@ -872,6 +872,7 @@ databases
         Impala
     query language
         ADQL
+        GMRT
         MSQL
         PostgreSQL
         SPARQL
