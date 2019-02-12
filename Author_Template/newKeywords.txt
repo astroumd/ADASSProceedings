@@ -30,6 +30,7 @@ hackathon
 observatories
     ground-based
         VLA
+        GMRT
     space-based
         TESS
 projects
