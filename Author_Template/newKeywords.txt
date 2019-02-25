@@ -14,6 +14,7 @@ catalogues
     Gaia Data Release 2
     Gaia Data Release 3
 code
+    legacy
     repository
         GitLab
 computer languages
