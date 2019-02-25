@@ -22,7 +22,7 @@
 
 import sys
 
-version = "18-dec-2018"
+version = "25-feb-2019"
 
 def read1(filename):
     """ read tex file into lines for processing
@@ -33,15 +33,16 @@ def read1(filename):
     return lines
 
 triggers = []
-triggers.append([False,"%\\aindex",        0])
-triggers.append([False,"%\\ssindex",       0])
-triggers.append([False,"%\\ooindex",       0])
-triggers.append([True,"\\documentclass",   0])
-triggers.append([True,"\\usepackage",      0])
-triggers.append([True,"\\begin{document}", 0])
-triggers.append([True,"\\end{document}",   0])
-triggers.append([None,"\\title{",          0])
-#triggers.append([True,"\\bibliography",   0])
+triggers.append([False,"%\\aindex",           0])
+triggers.append([False,"%\\ssindex",          0])
+triggers.append([False,"%\\ooindex",          0])
+triggers.append([True,"\\documentclass",      0])
+triggers.append([True,"\\usepackage",         0])
+triggers.append([True,"\\aspSuppressVolSlug", 0])
+triggers.append([True,"\\begin{document}",    0])
+triggers.append([True,"\\end{document}",      0])
+triggers.append([None,"\\title{",             0])
+#triggers.append([True,"\\bibliography",      0])
 
 def carg(line):
     pco = line.find('{')
