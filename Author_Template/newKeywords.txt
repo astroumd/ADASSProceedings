@@ -1,3 +1,4 @@
+BoFs
 archives
     individual
         TESS
@@ -7,6 +8,7 @@ algorithm
     machine learning
         k-nearest neighbors
         deep learning
+        u-net
     polygonal clipping
 astronomy
     multi-messenger
@@ -49,6 +51,10 @@ observatories
         International Space Station (ISS)
 projects
     StarFormMapper
+techniques
+    API
+    convolutional neural networks (CNN)
+    sparse modeling
 space probes
     Europa Clipper
 software
