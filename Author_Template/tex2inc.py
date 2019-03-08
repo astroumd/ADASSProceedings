@@ -1,6 +1,10 @@
 #! /usr/bin/env python
 #
 # take a self-contained ADASS paper and output the embeddable version for the book
+#          PID.tex -> PID_inc.tex
+# it also write the toc file,
+#          PID.toc
+# which gets catenated for the final authors/toc.txt 
 #
 # TODO?
 # Should it produce toc entries for inclusion, e.g.
