@@ -1,7 +1,15 @@
 # ADASSProceedings
 
-We keep the basics of the proceedings for ADASS 2012 and later. This includes material to
-prepare for authors, as well as for the editors.
+We keep the basics of the proceedings for ADASS 2012 and later, as
+this is when the ASCL index was first added. This repo includes
+material to prepare for authors, as well as for the editors. Each year
+will create a different (private probably) github repo,
+e.g. ADASSProceedings2018, as was done in College Park, for the actual
+proceedings, and from the Author_Template we derive the ADASSyyyy.tar
+file with the instructions for the authors.
+
+CAVEAT: we use git branches. The 2018 branch needs to merge to master,
+before the 2019 team continue on their own 2019 branch, etc.etc.
 
 ## Past Conferences
 
@@ -11,19 +19,19 @@ http://www.adass.org/proceedings.html
 * 2012: Urbana (Friedel) - Vol. 475.
         full (private) git repo
 * 2013: Hawaii (Manset & Forshay) - Vol 485.
-
+        ???
 * 2014: Calgary (Taylor & Rosolowsky) - Vol. 495.
         just tex files
 * 2015: Sydney (Lorente, Shortridge & Wayth) - Vol 512.
         some cloud tar file
-* 2016: Trieste (Pasian, Molinaro, Mansutti & Shortridge)
+* 2016: Trieste (Pasian, Molinaro, Mansutti & Shortridge) '515'
         ? cloud ?
-* 2017: Santiago
+* 2017: Santiago '525'
         svn
-* 2018: College Park
+* 2018: College Park '535'
         github (private repo)
 * 2019: Groningen
-* 2020: ???
+* 2020: ???Granada???
 
 
 ## Contents
@@ -33,4 +41,4 @@ http://www.adass.org/proceedings.html
 * 2018/Workflow2018.docx - notes what was changed for 2018 (Peter Teuben) - 5pp.
 * Author_Template/manual2010.pdf - Instructions for Authors and Editors (manual from ASP, 2010) - 124pp.
 * Author_Template/ManuscriptInstructions.pdf - Manuscript instructions (oct 19, 2018) - 21pp.
-* ??? - Notes on editing ADASS proceedings (Keith S., 4th August 2017) - 24pp.
+* Author_Template/EditingADASSProceedings.docs - Notes on editing ADASS proceedings (Keith S., 4th August 2017) - 24pp.
