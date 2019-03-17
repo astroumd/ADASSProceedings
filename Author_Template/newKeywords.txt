@@ -1,7 +1,4 @@
 BoFs
-archives
-    individual
-        TESS
 algorithm
     alpha shapes
     harmonic sum
@@ -10,6 +7,11 @@ algorithm
         deep learning
         u-net
     polygonal clipping
+applications
+    blender
+archives
+    individual
+        TESS
 astronomy
     multi-messenger
 catalogues
@@ -21,6 +23,7 @@ code
         GitLab
 computer languages
     Go
+    Julia
 data centres
     OV-GSO
 data formats
@@ -30,16 +33,16 @@ data formats
 data products
 distribution
     von Mises
-computer languages
-    Go
-    Julia
+hackathon
 images
     tesselation
         Voronoi
 instruments
     camera 
         EIS
-hackathon
+    Integral Field Spectrograph (IFS)
+libraries
+    tensorfit
 observatories
     ground-based
         National Optical Astronomy Observatory (NOAO)
@@ -51,20 +54,17 @@ observatories
         International Space Station (ISS)
 projects
     StarFormMapper
-techniques
-    API
-    convolutional neural networks (CNN)
-    sparse modeling
-space probes
-    Europa Clipper
 software
     development
         DevOps
+space probes
+    Europa Clipper
 surveys
     VLA Sky Survey (VLASS)
 techniques
     API
     convolutional neural networks (CNN)
+    sparse modeling
 theorem
     Brewer
     CAP
@@ -72,3 +72,4 @@ theorem
     Nyquist
 visualisation
     web-based
+    blender    
