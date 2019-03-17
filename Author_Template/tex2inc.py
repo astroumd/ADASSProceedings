@@ -4,17 +4,14 @@
 #          PID.tex -> PID_inc.tex
 # it also write the toc file,
 #          PID.toc
-# which gets catenated for the final authors/toc.txt 
+# which gets catenated for the final authors/toc.txt
 #
-# TODO?
-# Should it produce toc entries for inclusion, e.g.
-#   \tocinsertentry[r]{ FULL_TITLE }{A.~Aloisi (Invited Speaker)}{authors/I1-2_inc}
+# In debug mode adds \ssindex{ZZZ-PID!P12-2 Author|textbf}
+# except we don't have a way to turn off debug mode
 #
 # This code should make use of AdassChecks.py for parsing
 #
-#
-#
-# authors are 3 times in the tex file
+# Sigh, authors are 4 times in the tex file
 #   \markboth{A}{...}
 #   \author{a~A, b~B}
 #   \paperauthor{a~A}....
@@ -26,7 +23,7 @@
 
 import sys
 
-version = "25-feb-2019"
+version = "17-mar-2019"
 
 def read1(filename):
     """ read tex file into lines for processing
@@ -62,6 +59,8 @@ if len(sys.argv) == 1:
 paper = sys.argv[1]
 lines = read1(paper)
 
+debug = True
+
 dot = paper.rfind('.tex')
 if dot < 0:
     print("need a .tex file")
@@ -92,6 +91,9 @@ for l in lines:
             else:                                            # uncomment it
                 if t[1] == "%\\aindex":
                     if t[2] == 1:
+                        # in debug mode, add the filename to the ssindex
+                        if debug:
+                            print("\\ssindex{ZZZDEBUG!%s|textbf}" % paper)
                         # for 1st aindex add "|textbf" before the }
                         tmp1 = "%s" % l[1:].strip()   
                         cl1 = tmp1.rfind('}')
