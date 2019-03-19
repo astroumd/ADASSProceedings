@@ -93,7 +93,7 @@ for l in lines:
                     if t[2] == 1:
                         # in debug mode, add the filename to the ssindex
                         if debug:
-                            print("\\ssindex{ZZZDEBUG!%s|textbf}" % paper)
+                            print("\\ssindex{ZZZDEBUG!%s}" % paper)
                         # for 1st aindex add "|textbf" before the }
                         tmp1 = "%s" % l[1:].strip()   
                         cl1 = tmp1.rfind('}')
