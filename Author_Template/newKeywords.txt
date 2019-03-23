@@ -24,6 +24,9 @@ code
 computer languages
     Go
     Julia
+computing
+    cloud
+        Google
 data centres
     OV-GSO
 data formats
@@ -33,6 +36,8 @@ data formats
 data products
 distribution
     von Mises
+google
+    cloud
 hackathon
 images
     tesselation
