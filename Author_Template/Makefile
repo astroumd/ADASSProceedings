@@ -174,6 +174,8 @@ ascl:
 
 ascl1:
 	(cd ../Author_Template; ascl.py ../../ADASSProceedings2018/papers/$(P)/$(P).tex | grep ooindex | sort | uniq -c)
+	-detex $(P).tex > $(P).txt
+	-(cd ../Author_Template; ascl.py ../../ADASSProceedings2018/papers/$(P)/$(P).txt | grep ooindex | sort | uniq -c)
 
 pdf2:   pdf asp1
 	xdg-open $(P).pdf
