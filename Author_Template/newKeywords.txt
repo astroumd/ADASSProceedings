@@ -69,6 +69,7 @@ surveys
 techniques
     API
     convolutional neural networks (CNN)
+    generative spectrum networks (GSN)
     sparse modeling
 theorem
     Brewer
