@@ -3,7 +3,7 @@
 # at least the README file. For some smart cookies the Makefile
 # could be sufficient too.
 #
-# Version 14-dec-2018   Peter Teuben
+# Version 26-mar-2019   Peter Teuben
 #
 # See also:  http://www.adass.org/instructions/ADASS2018.tar
 #            http://adass2018.umd.edu/ADASS2018.tar
@@ -26,7 +26,7 @@ E = teuben@gmail.com
 		    # your EPS figures (can be blank, and must be base-named with $(P)_*.eps
 FIGS = example.eps
 
-# override P,V,A,E,FIGS with a "makedefs" file, this is where authors should edit, not Makefile
+# override P,V,A,E,FIGS with a "makedefs" file, this is where authors should edit, not this Makefile
 -include makedefs
 
 #  variables for proceeding editors (don't modify, for export, not for authors)
@@ -50,6 +50,7 @@ export PATH := .:$(PATH)
 
 help:
 	@echo AUTHOR targets:
+	@echo ---------------
 	@echo all:   pdf check tar
 	@echo pdf:
 	@echo check:
@@ -58,15 +59,17 @@ help:
 	@echo zip:
 	@echo 
 	@echo EDITOR targets:
+	@echo ---------------
 	@echo fix:
 	@echo inc:
 	@echo spell:
 	@echo aindex:
 	@echo words:
 	@echo asp1:
-	@echo index:
+	@echo index:   needs TERMS=
 	@echo ascl:
 	@echo ascl1:
+	@echo ascl2:   needs CODE=
 	@echo pdf2:
 	@echo rsync:
 
@@ -121,7 +124,6 @@ check:
 ENCODING =
 fix:
 	FixUnprintable.py  $(P).tex $(ENCODING)
-#	FixUnprintable.py  $(P).bib $(ENCODING)
 
 inc:
 	tex2inc.py $(P).tex > $(P)_inc.tex
@@ -161,7 +163,7 @@ asp1:
 	(cd ../..; $(MAKE) asp1 PID=$(P); grep box asp1.log)
 	@echo xdg-open ../../authors/$(P).pdf
 
-TERMS = 
+TERMS = foobar
 index:
 	@echo Using TERMS=$(TERMS)
 	(cd ../Author_Template; Index.py $(TERMS))
@@ -176,6 +178,11 @@ ascl1:
 	(cd ../Author_Template; ascl.py ../../ADASSProceedings2018/papers/$(P)/$(P).tex | grep ooindex | sort | uniq -c)
 	-detex $(P).tex > $(P).txt
 	-(cd ../Author_Template; ascl.py ../../ADASSProceedings2018/papers/$(P)/$(P).txt | grep ooindex | sort | uniq -c)
+	-grep ooindex $(P).tex
+
+CODE = foobar
+ascl2:
+        xdg-open https://ascl.net/$(CODE)
 
 pdf2:   pdf asp1
 	xdg-open $(P).pdf
@@ -184,3 +191,4 @@ pdf2:   pdf asp1
 rsync: $(P).bib
 	rsync -av $(P)_inc.tex $(P).bib $(FIGS) ../../authors
 	rm -f ../../authors/$(P)_inc.{bbl,blg}
+

@@ -14,6 +14,8 @@ archives
         TESS
 astronomy
     multi-messenger
+    radio
+        interferometer
 catalogues
     Gaia Data Release 2
     Gaia Data Release 3
@@ -73,6 +75,7 @@ surveys
 techniques
     API
     convolutional neural networks (CNN)
+    generative spectrum networks (GSN)
     sparse modeling
 theorem
     Brewer
