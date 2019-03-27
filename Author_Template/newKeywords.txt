@@ -48,6 +48,7 @@ instruments
     Integral Field Spectrograph (IFS)
 libraries
     tensorfit
+    Apache Airflow
 observatories
     ground-based
         National Optical Astronomy Observatory (NOAO)
@@ -59,6 +60,9 @@ observatories
         International Space Station (ISS)
 projects
     StarFormMapper
+satellites
+    earth observation
+        MODIS
 software
     development
         DevOps
