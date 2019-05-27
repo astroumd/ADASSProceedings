@@ -24,15 +24,15 @@ http://www.adass.org/proceedings.html
         just tex files
 * 2015: Sydney (Lorente, Shortridge & Wayth) - Vol 512.
         some cloud tar file
-* 2016: Trieste (Pasian, Molinaro, Mansutti & Shortridge) '521'
+* 2016: Trieste (Pasian, Molinaro & Shortridge) - Vol 521.
         git
-* 2017: Santiago '522'
+* 2017: Santiago  (Ibsen, Solar & Ballester) - Vol 522.
         svn
-* 2018: College Park '523'
+* 2018: College Park (Teuben, Pound, Thomas, Warner) - Vol 523.
         github (private repo)
 * 2019: Groningen
 
-* 2020: ???Granada???
+* 2020: Granada
 
 
 ## Contents
