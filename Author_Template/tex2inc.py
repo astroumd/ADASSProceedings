@@ -23,7 +23,9 @@
 
 import sys
 
-version = "17-mar-2019"
+version = "4-jun-2019"
+debug = False
+debug = True                              # comment this for final version, or read from a dot file
 
 def read1(filename):
     """ read tex file into lines for processing
@@ -43,23 +45,32 @@ triggers.append([True,"\\aspSuppressVolSlug", 0])
 triggers.append([True,"\\begin{document}",    0])
 triggers.append([True,"\\end{document}",      0])
 triggers.append([None,"\\title{",             0])
+triggers.append([None,"%toc",                 0])
 #triggers.append([True,"\\bibliography",      0])
 
 def carg(line):
+    # \title{..}       (could be 2 lines)
+    # \aindex{...}
+    # %toc ...         (needs to be 1 line)
+    if line.find('%toc') == 0:
+        return line[5:]
     pco = line.find('{')
     pcc = line.rfind('}')
+    if line[len(line)-1] == '\\':                 # two line \title, due to forced orphan?, will need a %toc directive
+        return line[pco+1:]
+    if pco<0 or pcc<0:
+        return "BAD ONE LINER"
     return line[pco+1:pcc]
     
 if len(sys.argv) == 1:
     print("Usage: %s name.tex" % sys.argv[0])
-    print("  Also writes name.toc one-liner for the TOC (@todo)")
+    print("  Also writes name.toc one-liner for the TOC")
     print("  version: %s" % version)
     sys.exit(0)
 
 paper = sys.argv[1]
 lines = read1(paper)
 
-debug = True
 
 dot = paper.rfind('.tex')
 if dot < 0:
@@ -82,9 +93,9 @@ for l in lines:
         if l.find(t[1]) == 0:                 # if there is a trigger on the line
             t[2] = t[2] + 1
             if t[0] == None:                                 # special, but leave alone
-                # only for \title for now
+                # only for \title or  %toc for now
                 if t[2] == 1:
-                    title = carg(l)
+                    title = carg(l).strip()
                 print(l.strip())
             elif t[0]:                                       # comment it
                 print("%%TEX2INC %s" % l.strip())
@@ -159,5 +170,9 @@ for a in authors:
 if pid[0] == 'I':  invited = '(Invited Speaker)'
 
 f = open(tocfile,"w")
-f.write("\\tocinsertentry[r]{%s}{%s %s}{authors/%s_inc}\n" % (title,author,invited,pid))
+if title[len(title)-1] == '\\':
+    title2 = 'TBD'
+    f.write("\\tocinsertentry[r]{%s%s}{%s %s}{authors/%s_inc}\n" % (title,title2,author,invited,pid))
+else:
+    f.write("\\tocinsertentry[r]{%s}{%s %s}{authors/%s_inc}\n" % (title,author,invited,pid))
 f.close()
