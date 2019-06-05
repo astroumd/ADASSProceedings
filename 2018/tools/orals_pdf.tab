@@ -1,0 +1,89 @@
+#    13 invited, 35 orals (1 didn't show up), 5 focus = 13+34+5 = 52
+#
+#     7 no pdf (but 4 pptx)
+# S1
+Varshney		; I3.1		; Mon 08.40 - 09.00 ; pdf
+Kent			; I3.2		; Mon 09.00 - 09.30 ; pdf
+Zapart		; O3.1	  		; Mon 09.30 - 09.45 ; pdf
+Comrie		; O3.2 			; Mon 09.45 - 10.00 ; pdf
+Ramirez		; O3.3			; Mon 10.00 - 10.15 ; pdf
+#
+Mechev          ; F1                    ; Mon 10.45 - 11.15 ; pdf
+#
+# S2
+Bosch			; I12.1		; Mon 11.15 - 11.45 ; pdf
+Kepley		; O12.1	  		; Mon 11.45 - 12.00 ; pdf
+Tavagnacco      ; O12.2			; Mon 12.00 - 12.15 ; pdf
+#
+# S3
+Dencheva	; O12.3			; Mon 14.00 - 14.15 ; pdf
+Lam		; O12.4			; Mon 14.15 - 14.30 ; pdf
+Plante			; I11.1		; Mon 14.30 - 15.00 ; pdf
+#
+Raddick         ; F2                    ; Mon 15.30 - 16.00 ; pptx
+#
+# S4
+Diaz		; O11.1			; Mon 16.00 - 16.15 ; pdf
+Landais		; O11.2			; Mon 16.15 - 16.30 ; pdf
+Bonnarel	; O11.3			; Mon 16.30 - 16.45 ; pdf
+#
+# S5 -----------------------------------------------------------
+Stoehr			; I10.1		; Tue 09.00 - 09.30 ; pdf
+Brasseur	; O10.1	  		; Tue 09.30 - 09.45 ; pdf
+Zecevic		; O10.2			; Tue 09.45 - 10.00 ; pptx
+Buchschacher	; O10.3			; Tue 10.00 - 10.15 ; pdf
+#
+Joliet          ; F3                    ; Tue 10.45 - 11.15 ; pdf
+#
+# S6
+Borne			; I4.1		; Tue 11.15 - 11.45 ; pdf
+Toledo		; O4.1	  		; Tue 11.45 - 12.00 ; pdf
+Nakazato	; O4.2			; Tue 12.00 - 12.15 ; pdf
+#
+# S7
+Lieu			; I1.1		; Tue 14.00 - 14.30 ; pdf
+Ansdell		; O1.1                  ; Tue 14.30 - 14.45 ; pdf
+Nikolic		; O1.2                  ; Tue 14.45 - 15.00 ; pdf
+#
+Good            ; F4                    ; Tue 15.30 - 16.00 ; pdf
+#
+# S8
+Gilda		; O1.3			; Tue 16.00 - 16.15 ; pdf
+Dai		; O1.4                  ; Tue 16.15 - 16.30 ; pdf
+Kuulkers		; I9.1		; Tue 16.30 - 17.00 ; pdf
+#
+# S9 ---------------------------------------------------------
+Martinez	; O10.4                 ; Wed 09.00 - 09.15 ; pdf
+O'Toole, Simon	; O10.5                 ; Wed 09.15 - 09.30 ; pdf
+Gonzalez-Nuñez	; O10.6                 ; Wed 09.30 - 09.45 ; pdf
+#Graves		; O10.7                 ; Wed 09.45 - 10.00 
+Allen, Alice	; O13.1                 ; Wed 10.00 - 10.15 ; pdf
+#
+Vahi            ; F5                    ; Wed 10.45 - 11.15 ; pdf
+#
+# S10
+Nebot			; I8.1		; Wed 11.30 - 12.00 ; pdf
+Juric 		; O8.2                  ; Wed 12.00 - 12.15 ; pptx
+#
+# S11
+Holman			; I7.1		; Wed 14.00 - 14.30 ; pdf
+Racero		; O7.1	  		; Wed 14.30 - 14.45 ; pdf
+Raugh		; O7.2			; Wed 14.45 - 15.00 ; pdf
+#
+# S12
+
+Momcheva		; I5.1		; Wed 16.00 - 16.30 ; pdf
+Fitzpatrick	; O5.1	  		; Wed 16.30 - 16.45 ; pdf
+Donaldson	; O5.2			; Wed 16.45 - 17.00 ; pdf
+#
+# S13 --------------------------------------------------------
+Guerra Noguero, Rocio	; I6.1		; Thu 09.00 - 09.30 ; pdf
+Loose  		; O6.1	  		; Thu 09.30 - 09.45 ; pdf
+Smith		; O5.3                  ; Thu 09.45 - 10.00 ; pdf
+Boussejra	; O5.4                  ; Thu 10.00 - 10.15 ; pdf
+#
+# S14
+Wise			; I2.1		; Thu 11.15 - 11.45 ; pdf
+Alexov		; O2.1	  		; Thu 11.45 - 12.00 ; pdf
+Tomasi		; O4.5                  ; Thu 12.00 - 12.15 ; pdf
+# grep -v ^# orals_pdf.tab | grep -v pdf 

@@ -1,0 +1,111 @@
+| last                   | first          |   institution                  |  session | code    | day         | start | end    | title                                                                                                           |    abstract                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+|  char                  | char           |   char                         |  char    | char    | char        | char  | char   | char                                                                                                            |    char                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+ Check-in                   Tutorials                                          0         Q         Sunday        12.00   13.00
+ Derriere                   Sebastien          CDS                             0         T1a       Sunday        13.00   15.00   All-sky Astronomy with HiPS and MOCs 
+ Young                      Michael            Indiana Univ.                   0         T1b       Sunday        13.00   15.00   Creating Astronomical Web Applications From Scratch: Introduction to modern full-stack MEAN development 
+ Break                      &nbsp;                                             0         C0        Sunday        15.00   15.30
+ Heinl                      Hendrik            Heidelberg                      0         T2a       Sunday        15.30   17.30   A comprehensive use case scenario of VO standards and protocols 
+ Momcheva                   Ivelina            STScI                           0         T2b       Sunday        15.30   17.30   Working with the Hubble Space Telescope Public Data on Amazon Web Services
+ Demo Booth/Poster Setup   Registration &                                      0         Q         Sunday        16.00   18.00
+ Reception                  Opening                                            0         Q         Sunday        18.00   20.00 
+ Demo Booth/Poster Setup   Registration &                                      0         Q         Monday        08.00   08.30
+ Breakfast                  Buffet                                             0         C         Monday        07.00   08.30
+ Remarks                    Opening                                            1         Q         Monday        08.30   08.40
+ Lorente                    Nuria                                              1         H         Monday        08.30   10.15   Astrophysical Data Visualization from Line Plots to Augmented and Virtual Reality
+ Varshney                   Amitabh         Univ. of Maryland                  1         xI3.1     Monday        08.40   09.05   Astronomy-inspired Visual Computing                                                                                 Astronomy has inspired mankind for generations to develop theories, tools, and technologies that have dramatically advanced our knowledge and practice of science. In this talk, I will give an overview of how the field of astronomy has helped advance the field of visual computing. My talk will span the advances in line integral convolutions, ambient occlusion, geometry-aware lighting, and much more. These techniques, with their origins and motivations in astronomy, are changing how we design aircraft, to rational drug design, to computer-generated games and movies.
+ Kent                       Brian               NRAO                           1         I3.2      Monday        09.05   09.35
+ Zapart                     Christopher         NAOJ                           1         O3.1      Monday        09.35   09.50 
+ Comrie                     Angus           Univ. of Cape Town                 1         O3.2      Monday        09.50   10.05
+ Ramirez                    Emanuel         Quasar Science Resources           1         O3.3      Monday        10.05   10.20
+ Poster Session                    Break/                                      0         C1        Monday        10.20   11.15
+ Mechev                     Alexandar       Leiden University                  0         F1        Monday        10.45   11.15
+ Lewis                      Jim                                                2         H         Monday        11.15   12.30   Algorithms
+ Bosch                      James           Princeton U./LSST                  2         I12.1     Monday        11.15   11.45
+ Kepley                     Amanda          NRAO                               2         O12.1     Monday        11.45   12.00
+ Tavagnacco                 Daniele         INAF-OATs                          2         O12.2     Monday        12.00   12.15
+ Talks                      Lightning       N/A                                2         LT1       Monday        12.15   12.30
+ Lunch                      Buffet                                             0         C         Monday        12.30   14.00
+ Wu                         Xiuqin                                             3         H         Monday        14.00   15.00   Quality Assurance of Science Data
+ Dencheva                   Nadia           STScI                              3         O12.3     Monday        14.00   14.15
+ Lam                        Cheuk Yin       Liverpool Telescope                3         O12.4     Monday        14.15   14.30
+ Plante                     Raymond         NIST                               3         I11.1     Monday        14.30   15.00
+ Poster Session             Break/                                             0         C2        Monday        15.00   16.00
+ Raddick                    Michael         Johns Hopkins U.                   0         F2        Monday        15.30   16.00   
+ Derriere                   Sebastien                                          4         H         Monday        16.00   17.00   Quality Assurance of Science Data (continued)
+ Diaz                       Rosa            STScI                              4         O11.1     Monday        16.00   16.15
+ Landais                    Gilles          CDS/ObAS                           4         O11.2     Monday        16.15   16.30
+ Bonnarel                   François        CDS/ObAS                           4         O11.3     Monday        16.30   16.45
+ Talks                      Lightning       N/A                                4         LT2       Monday        16.45   17.00
+ Mink                       Jessica         CfA                                0         B1        Monday        17.15   18.15   Data Formats
+ Tollerud                   Eric            STScI                              0         B2        Monday        17.15   18.15   Open Source/Development Software Projects and Large Organizations/Missions: Recommendations and Challenges 
+ Muench                     August          AAS                                0         B3        Monday        18.15   19.15   Data Citation: from Archives to Science Platforms
+ Polsterer                  Kai             HITS                               0         B4        Monday        18.15   19.15   Beginners Guide to Machine Learning in Astronomy 
+ Breakfast                  Buffet                                             0         C         Tuesday       07.00   08.30
+ Announcements              Morning                                            0         Q         Tuesday       08.55   09.00
+ Ibsen                      Jorge                                              5         H         Tuesday       09.00   10.15   Databases and Archives: Challenges and Solutions in the Big Data Era
+ Stoehr                     Felix           ESO/ALMA                           5         I10.1     Tuesday       09.00   09.30
+ Brasseur                   Clara           STScI                              5         O10.1     Tuesday       09.30   09.45
+ Zecevic                    Petar           Univ. of Zagreb                    5         O10.2     Tuesday       09.45   10.00
+ Buchschacher               Nicolas         Univ. of Geneva                    5         O10.3     Tuesday       10.00   10.15
+ Poster Session             Break/                                             0         C3        Tuesday       10.15   11.15
+ Joliet                     Emmanuel        IPAC/Caltech                       0         F3        Tuesday       10.45   11.15
+ Mink                       Jessica                                            6         H         Tuesday       11.15   12.30   Data Science: Workflows, Hardware, Software, Humanware
+ Borne                      Kirk            Booz Allen Hamilton                6         I4.1      Tuesday       11.15   11.45
+ Toledo                     Ignacio         Joint ALMA Observatory             6         O4.1      Tuesday       11.45   12.00
+ Nakazato                   Takeshi         NAOJ                               6         O4.2      Tuesday       12.00   12.15 
+ Talks                      Lightning       N/A                                0         LT3       Tuesday       12.15   12.30
+ Lunch                      Buffet                                             0         C         Tuesday       12.45   14.00
+ DuPrie                     Kimberly                                           7         H         Tuesday       14.00   15.00   Machine Learning in Astronomy
+ Lieu                       Maggie          ESA                                7         I1.1      Tuesday       14.00   14.30
+ Ansdell                    Megan           UC Berkeley                        7         O1.1      Tuesday       14.30   14.45
+ Nikolic                    Bojan           Univ. of Cambridge                 7         O1.2      Tuesday       14.45   15.00
+ Poster Session             Break/                                             0         C4        Tuesday       15.00   16.00
+ Good                       John            Caltech/IPAC-NExScI                0         F4        Tuesday       15.30   16.00
+ Shortridge                 Keith                                              8         H         Tuesday       16.00   17.00   Multi-Messenger Astronomy
+ Gilda                      Sankalp         Carnegie Mellon University         8         O1.3      Tuesday       16.00   16.15
+ Dai                        Cong            Beijing Normal University          8         O1.4      Tuesday       16.15   16.30
+ Kuulkers                   Erik            European Space Agency              8         I9.1      Tuesday       16.30   17.00
+ O'Toole                    Simon.          AAO-MQ                             0         xB5       Tuesday       17.15   18.15   How do you get the most out of your teams?                                                                          Astronomical software development is typically done in teams, especially when associated with large instrument and data archive projects or projects like AstroPy. There are many kinds of teams, small, medium or large, single- or multi-institutional, formal or informal. How well do these teams function? How can we even measure this? This BoF session will examine different types of teams and ways that we can make our teams work more effectively. We will lead with three presentations from different teams, followed by a moderated group discussion.      
+ Shawhan                    Peter           Univ. of Maryland                  0         B6        Tuesday       17.15   18.15   Data analysis challenges for multi-messenger astrophysics
+ Banquet                    Conference                                         0         Q         Tuesday       19.00   22.00
+ Breakfast                  Buffet                                             0         C         Wednesday     07.00   08.30
+ Announcements              Morning                                            0         Q         Wednesday     08.55   09.00
+ Fitzpatrick                Mike                                               9         H         Wednesday     09.00   10.00   Databases and Archives (continued)
+ Martinez                   Beatriz         Rhea Systems S.A.                  9         O10.4     Wednesday     09.00   09.15
+ O'Toole                    Simon           AAO-MQ                             9         O10.5     Wednesday     09.15   09.30
+ Gonzalez-Nuñez             Juan            European Space Agency              9         O10.6     Wednesday     09.30   09.45
+ Allen                      Alice           Astrophysics Source Code Libr      9         O13.1     Wednesday     09.45   10.00
+ Photo                      Conference                                         0         Q         Wednesday     10.00   10.30
+ Poster Session             Break/                                             0         C4        Wednesday     10.30   11.15
+ Vahi                       Karan           Pegasus Team - USC/ISI             0         F5        Wednesday     10.45   11.15
+ Pound                      Marc                                               10        H         Wednesday     11.00   12.20    Time Domain Astronomy
+ Prizewinner                Hackathon       N/A                                10        OH        Wednesday     11.15   11.30
+ Nebot                      Ada             CDS/ObAS                           10        I8.1      Wednesday     11.30   12.00
+ Juric                      Mario           Univ. of Washington                10        O8.2      Wednesday     12.00   12.15
+ Talks                      Lightning       N/A                                0         LT4       Wednesday     12.15   12.30
+ Lunch                      Buffet                                             0         C         Wednesday     12.30   14.00
+ Gwyn                       Stephen                                            11        H         Wednesday     14.00   15.00   Software for Solar System Astronomy
+ Holman                     Matthew         CfA                                11        I7.1      Wednesday     14.00   14.30
+ Racero                     Elena           ESAC - Serco                       11        O7.1      Wednesday     14.30   14.45
+ Raugh                      Anne            Univ. of Maryland                  11        O7.2      Wednesday     14.45   15.00 
+ Poster Session             Break/                                             0         C5        Wednesday     15.00   16.00
+ Arviset                    Christophe                                         12        H         Wednesday     16.00   17.00    Science Platforms: Tools for Data Discovery and Analysis from Different Angles
+ Momcheva                   Ivelina         STScI                              12        I5.1      Wednesday     16.00   16.30
+ Fitzpatrick                Michael         NOAO                               12        O5.1      Wednesday     16.30   16.45
+ Donaldson                  Tom             STScI                              12        O5.2      Wednesday     16.45   17.00
+ Allen                      Alice           Astrophysics Source Code Libr      0         B7        Wednesday     17.15   18.15   Unconference Session: I want to talk about...
+ Breakfast                  Buffet                                             0         C         Thursday      07.00   08.30
+ Announcements              Morning                                            0         Q         Thursday      08.55   09.00
+ Ballester                  Pascal                                             13        H         Thursday      09.00   10.00    DevOps Practices is Astronomy Software
+ Guerra Noguero             Rocio           European Space Agency              13        I6.1      Thursday      09.00   09.30
+ Loose                      Marcel          ASTRON                             13        O6.1      Thursday      09.30   09.45
+ Smith                      Jeffrey         SETI Institute                     13        O5.3      Thursday      09.45   10.00
+ Boussejra                  Malik Olivier   Keio Univ.                         13        O5.4      Thursday      10.00   10.15
+ Poster Session             Break/                                             0         C5        Thursday      10.15   11.15
+ Pizzo                      Roberto                                            14        H         Thursday      11.00   12.00   Management of Large Science Projects
+ Wise                       Michael         ASTRON                             14        I2.1      Thursday      11.15   11.45
+ Alexov                     Anastasia       STScI                              14        O2.1      Thursday      11.45   12.00
+ Tomasi                     Maurizio        Univ. degli Studi di Milano        14        O4.5      Thursday      12.00   12.15
+ Summaries                  BOF Lightning   N/A                                14        LT5       Thursday      12.15   12.30
+ Remarks                    Final           POC Chair                          14        Q         Thursday      12.30   12.45
+ Lunch                      Box                                                0         C         Thursday      12.45   14.00

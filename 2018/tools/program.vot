@@ -1,0 +1,1343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Produced with astropy.io.votable version 3.0.4
+     http://www.astropy.org/ -->
+<VOTABLE version="1.3" xmlns="http://www.ivoa.net/xml/VOTable/v1.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.ivoa.net/xml/VOTable/v1.3">
+ <RESOURCE type="results">
+  <TABLE>
+   <FIELD ID="last" arraysize="23" datatype="unicodeChar" name="last"/>
+   <FIELD ID="first" arraysize="14" datatype="unicodeChar" name="first"/>
+   <FIELD ID="institution" arraysize="29" datatype="unicodeChar" name="institution"/>
+   <FIELD ID="session" arraysize="2" datatype="unicodeChar" name="session"/>
+   <FIELD ID="code" arraysize="5" datatype="unicodeChar" name="code"/>
+   <FIELD ID="day" arraysize="9" datatype="unicodeChar" name="day"/>
+   <FIELD ID="start" arraysize="5" datatype="unicodeChar" name="start"/>
+   <FIELD ID="end" arraysize="5" datatype="unicodeChar" name="end"/>
+   <FIELD ID="title" arraysize="124" datatype="unicodeChar" name="title"/>
+   <FIELD ID="abstract" arraysize="*" datatype="unicodeChar" name="abstract"/>
+   <DATA>
+    <TABLEDATA>
+     <TR>
+      <TD>Check-in</TD>
+      <TD>Tutorials</TD>
+      <TD/>
+      <TD>0</TD>
+      <TD>Q</TD>
+      <TD>Sunday</TD>
+      <TD>12.00</TD>
+      <TD>13.00</TD>
+      <TD>TBD</TD>
+      <TD>TBD</TD>
+     </TR>
+     <TR>
+      <TD>Derriere</TD>
+      <TD>Sebastien</TD>
+      <TD>CDS</TD>
+      <TD>0</TD>
+      <TD>T1a</TD>
+      <TD>Sunday</TD>
+      <TD>13.00</TD>
+      <TD>15.00</TD>
+      <TD>All-sky Astronomy with HiPS and MOCs</TD>
+      <TD>None</TD>
+     </TR>
+     <TR>
+      <TD>Young</TD>
+      <TD>Michael</TD>
+      <TD>Indiana Univ.</TD>
+      <TD>0</TD>
+      <TD>T1b</TD>
+      <TD>Sunday</TD>
+      <TD>13.00</TD>
+      <TD>15.00</TD>
+      <TD>Creating Astronomical Web Applications From Scratch: Introduction to modern full-stack MEAN development</TD>
+      <TD>None</TD>
+     </TR>
+     <TR>
+      <TD>Break</TD>
+      <TD>&amp;nbsp;</TD>
+      <TD/>
+      <TD>0</TD>
+      <TD>C0</TD>
+      <TD>Sunday</TD>
+      <TD>15.00</TD>
+      <TD>15.30</TD>
+      <TD>TBD</TD>
+      <TD>TBD</TD>
+     </TR>
+     <TR>
+      <TD>Heinl</TD>
+      <TD>Hendrik</TD>
+      <TD>Heidelberg</TD>
+      <TD>0</TD>
+      <TD>T2a</TD>
+      <TD>Sunday</TD>
+      <TD>15.30</TD>
+      <TD>17.30</TD>
+      <TD>A comprehensive use case scenario of VO standards and protocols</TD>
+      <TD>None</TD>
+     </TR>
+     <TR>
+      <TD>Momcheva</TD>
+      <TD>Ivelina</TD>
+      <TD>STScI</TD>
+      <TD>0</TD>
+      <TD>T2b</TD>
+      <TD>Sunday</TD>
+      <TD>15.30</TD>
+      <TD>17.30</TD>
+      <TD>Working with the Hubble Space Telescope Public Data on Amazon Web Services</TD>
+      <TD>None</TD>
+     </TR>
+     <TR>
+      <TD>Demo Booth/Poster Setup</TD>
+      <TD>Registration &amp;</TD>
+      <TD/>
+      <TD>0</TD>
+      <TD>Q</TD>
+      <TD>Sunday</TD>
+      <TD>16.00</TD>
+      <TD>18.00</TD>
+      <TD>TBD</TD>
+      <TD>TBD</TD>
+     </TR>
+     <TR>
+      <TD>Reception</TD>
+      <TD>Opening</TD>
+      <TD/>
+      <TD>0</TD>
+      <TD>Q</TD>
+      <TD>Sunday</TD>
+      <TD>18.00</TD>
+      <TD>20.00</TD>
+      <TD>TBD</TD>
+      <TD>TBD</TD>
+     </TR>
+     <TR>
+      <TD>Demo Booth/Poster Setup</TD>
+      <TD>Registration &amp;</TD>
+      <TD/>
+      <TD>0</TD>
+      <TD>Q</TD>
+      <TD>Monday</TD>
+      <TD>08.00</TD>
+      <TD>08.30</TD>
+      <TD>TBD</TD>
+      <TD>TBD</TD>
+     </TR>
+     <TR>
+      <TD>Breakfast</TD>
+      <TD>Buffet</TD>
+      <TD/>
+      <TD>0</TD>
+      <TD>C</TD>
+      <TD>Monday</TD>
+      <TD>07.00</TD>
+      <TD>08.30</TD>
+      <TD>TBD</TD>
+      <TD>TBD</TD>
+     </TR>
+     <TR>
+      <TD>Remarks</TD>
+      <TD>Opening</TD>
+      <TD/>
+      <TD>1</TD>
+      <TD>Q</TD>
+      <TD>Monday</TD>
+      <TD>08.30</TD>
+      <TD>08.40</TD>
+      <TD>TBD</TD>
+      <TD>TBD</TD>
+     </TR>
+     <TR>
+      <TD>Lorente</TD>
+      <TD>Nuria</TD>
+      <TD/>
+      <TD>1</TD>
+      <TD>H</TD>
+      <TD>Monday</TD>
+      <TD>08.30</TD>
+      <TD>10.15</TD>
+      <TD>Astrophysical Data Visualization from Line Plots to Augmented and Virtual Reality</TD>
+      <TD>None</TD>
+     </TR>
+     <TR>
+      <TD>Varshney</TD>
+      <TD>Amitabh</TD>
+      <TD>Univ. of Maryland</TD>
+      <TD>1</TD>
+      <TD>xI3.1</TD>
+      <TD>Monday</TD>
+      <TD>08.40</TD>
+      <TD>09.05</TD>
+      <TD>Astronomy-inspired Visual Computing</TD>
+      <TD>Astronomy has inspired mankind for generations to develop theories, tools, and technologies that have dramatically advanced our knowledge and practice of science. In this talk, I will give an overview of how the field of astronomy has helped advance the field of visual computing. My talk will span the advances in line integral convolutions, ambient occlusion, geometry-aware lighting, and much more. These techniques, with their origins and motivations in astronomy, are changing how we design aircraft, to rational drug design, to computer-generated games and movies.</TD>
+     </TR>
+     <TR>
+      <TD>Kent</TD>
+      <TD>Brian</TD>
+      <TD>NRAO</TD>
+      <TD>1</TD>
+      <TD>I3.2</TD>
+      <TD>Monday</TD>
+      <TD>09.05</TD>
+      <TD>09.35</TD>
+      <TD>3D Data Visualization in Astrophysics</TD>
+      <TD>text:'We present unique methods for rendering astronomical data - 3D galaxy catalogs, planetary maps, data cubes, and simulations.  Using tools and languages including Blender, Python, and Google Spatial Media, a user can render their own science results, allowing for further analysis of their data phase space.  We aim to put these tools and methods in the hands of students and researchers so that they can bring their own data visualizations to life on different computing platforms.'</TD>
+     </TR>
+     <TR>
+      <TD>Zapart</TD>
+      <TD>Christopher</TD>
+      <TD>NAOJ</TD>
+      <TD>1</TD>
+      <TD>O3.1</TD>
+      <TD>Monday</TD>
+      <TD>09.35</TD>
+      <TD>09.50</TD>
+      <TD>An introduction to FITSWebQL</TD>
+      <TD>text:'The JVO ALMA WebQL web service - available through the JVO ALMA FITS archive - has been upgraded to include legacy data from other telescopes, for example Nobeyama NRO45M in Japan. The updated server software has been renamed FITSWebQL. In addition, a standalone desktop version supporting Linux, macOS and Windows 10 Linux Subsystem (Bash on Windows) is also available for download from http://jvo.nao.ac.jp/~chris/ .\n\nThe FITSWebQL server enables viewing of even 100GB-large FITS files in a web browser running on a PC with a limited amount of RAM. Users can interactively zoom-in to selected areas of interest with the corresponding frequency spectrum being calculated on the server in near real-time. The client (a browser) is a JavaScript application built on AJAX, WebSockets, HTML5, WebGL and SVG.\n\nThere are many challenges when providing a web browser-based real-time FITS data cube preview service over high-latency low-bandwidth network connections. The upgraded version tries to overcome the latency issue by predicting user mouse movements with a Kalman Filter in order to speculatively deliver the real-time spectrum data at a point where the user is likely to be looking at. The new version also allows one to view multiple FITS files simultaneously in an RGB composite mode (NRO45M FUGIN only), where each dataset is assigned one RGB channel to form a colour image. Spectra from multiple FITS cubes are shown together too.\n\nThe talk gives a brief tour of the FITSWebQL main features. We also touch on some of the recent developments, such as an experimental switch from C/C++ to Rust (see https://www.rust-lang.org/) for improved stability, better memory management and fearless concurrency, or attempts to display FITS data cubes in the form of interactive on-demand video streams in a web browser.'</TD>
+     </TR>
+     <TR>
+      <TD>Comrie</TD>
+      <TD>Angus</TD>
+      <TD>Univ. of Cape Town</TD>
+      <TD>1</TD>
+      <TD>O3.2</TD>
+      <TD>Monday</TD>
+      <TD>09.50</TD>
+      <TD>10.05</TD>
+      <TD>An HDF5 Schema for SKA Scale Image Cube Visualization</TD>
+      <TD>text:'In this paper, we describe work that has been performed to create an HDF5 schema to support the efficient visualization of image data cubes that will result from SKA Phase 1 and precursor observations. The schema has been developed in parallel to a prototype client-server visualization system, intended to serve as a testbed for ideas that will be implemented in replacements for the existing CyberSKA and CASA viewers.\n\nMost astronomy image files are currently packaged using the FITS standard, however this has a number of shortcomings for very large images. The HDF5 technology suite provides a data model, file format, API, library, and tools, which are are all open and distributed without charge. This enables structured schemas to be created for different applications. We will show how these can be beneficial to packaging radio astronomy (RA) data. In particular, our interest is in supporting fast interactive visualization of data cubes that will be produced by the SKA telescope. Existing HDF5 schemas developed for RA data were unable to meet our requirements. The LOFAR HDF5 schema did not meet performance requirements, due to the approach of storing each 2D image plane in a separate group. The HDFITS schema serves as a starting point for an HDF5 schema that maintains round-trip compatibility with the FITS format, but lacks the additional structures required for pre-calculated and cached datasets. Therefore, we have created a new schema designed to suite our application, though this may be advantageous for other processing and analysis applications. \n\nThe schema is similar to that of HDFITS, but extensions have been added to support a number of features required for efficient visualization of large data sets. We will discuss these extensions and provide details on performance improvements with commonly used access patterns. We will also describe real-world performance when used with our prototype visualization system.'</TD>
+     </TR>
+     <TR>
+      <TD>Ramirez</TD>
+      <TD>Emanuel</TD>
+      <TD>Quasar Science Resources</TD>
+      <TD>1</TD>
+      <TD>O3.3</TD>
+      <TD>Monday</TD>
+      <TD>10.05</TD>
+      <TD>10.20</TD>
+      <TD>Analysis of Astronomical Data using VR: the Gaia catalogue in 3D</TD>
+      <TD>text:'Since 2016, the ESAC Science Data Centre have been working on a number of Virtual Reality projects to visualise Gaia data in 3D. The Gaia mission is providing unprecedented astrometric measurements of more than 1 billion stars. Using these measurements, we can estimate the distance to these stars and therefore project their 3D positions in the Galaxy. A new application to analyse Gaia DR2 data will be publicly released for Virtual Reality devices during 2018. In this presentation we will give a demo of the latest version of the Oculus Rift application and will show specific use cases to analyse Gaia DR2 data as well as a demonstration on how can Virtual Reality be integrated into a data analysis workflow.\nWe will also show how can new input techniques such as hand-tracking can bring new levels of freedom in how we interact with data.'</TD>
+     </TR>
+     <TR>
+      <TD>Poster Session</TD>
+      <TD>Break/</TD>
+      <TD/>
+      <TD>0</TD>
+      <TD>C1</TD>
+      <TD>Monday</TD>
+      <TD>10.20</TD>
+      <TD>11.15</TD>
+      <TD>TBD</TD>
+      <TD>TBD</TD>
+     </TR>
+     <TR>
+      <TD>Mechev</TD>
+      <TD>Alexandar</TD>
+      <TD>Leiden University</TD>
+      <TD>0</TD>
+      <TD>F1</TD>
+      <TD>Monday</TD>
+      <TD>10.45</TD>
+      <TD>11.15</TD>
+      <TD>Building LOFAR As A Service: Processing Petabytes with just a click</TD>
+      <TD>text:'The LOFAR Radio Telescope produces PetaBytes of data each year. Processing such volumes is not possible at clusters provided by academic institutions, and thus needs to be launched and managed at a High Throughput Cluster. With increasing complexity of LOFAR workflows, building and maintaining new scientific workflows on a distributed architecture becomes prohibitively time consuming. To make pipeline development and deployment easy and data processing fast, we integrate cluster middleware and LOFAR software with a leading workflow orchestration software, Airflow. The result is a flexible  application that can launch and manage LOFAR processing. With Airflow, we can easily create a service for LOFAR users to process their data transparently.'</TD>
+     </TR>
+     <TR>
+      <TD>Lewis</TD>
+      <TD>Jim</TD>
+      <TD/>
+      <TD>2</TD>
+      <TD>H</TD>
+      <TD>Monday</TD>
+      <TD>11.15</TD>
+      <TD>12.30</TD>
+      <TD>Algorithms</TD>
+      <TD>None</TD>
+     </TR>
+     <TR>
+      <TD>Bosch</TD>
+      <TD>James</TD>
+      <TD>Princeton U./LSST</TD>
+      <TD>2</TD>
+      <TD>I12.1</TD>
+      <TD>Monday</TD>
+      <TD>11.15</TD>
+      <TD>11.45</TD>
+      <TD>An Overview of the LSST Image Processing Pipelines</TD>
+      <TD>text:"In this talk, I'll walk through LSST's Data Release and Alert Production pipelines, highlighting how we produce various important datasets.  I'll also call attention to the algorithms where LSST will need to push the state of the art or operate qualitatively differently from previous surveys."</TD>
+     </TR>
+     <TR>
+      <TD>Kepley</TD>
+      <TD>Amanda</TD>
+      <TD>NRAO</TD>
+      <TD>2</TD>
+      <TD>O12.1</TD>
+      <TD>Monday</TD>
+      <TD>11.45</TD>
+      <TD>12.00</TD>
+      <TD>Auto-multithresh: A General Purpose Automated Masking Algorithm for Clean</TD>
+      <TD>text:'Generating images from radio interferometer data requires deconvolving the point spread function of the array from the initial image. This process is commonly done via the clean algorithm, which iteratively models the observed emission. Because this algorithm has many degrees of freedom, producing an optimal science image typically requires the scientist to manually mask regions of real emission while cleaning. This process is a major hurdle for the creation of the automated imaging pipelines necessary to process the high data rates produced by current and future interferometers like ALMA, the JVLA, and the ngVLA. In this talk, we present a general purpose masking algorithm called ‘auto-multithresh’ that automatically masks emission during the cleaning process. This algorithm was initially implemented within the tclean task in CASA 5.1. The tclean implementation significant performance improvements in CASA 5.3. The ‘auto-multithresh’ algorithm is in production as part of the ALMA Cycle 5 and 6 imaging pipelines. It has also been shown to work with data from telescopes like the VLA and ATCA. We describe how this algorithm works, provide a variety of examples demonstrating a success of the algorithm, and discuss the performance of the algorithm. Finally, we close with some future directions for producing science ready data products that build on this algorithm.'</TD>
+     </TR>
+     <TR>
+      <TD>Tavagnacco</TD>
+      <TD>Daniele</TD>
+      <TD>INAF-OATs</TD>
+      <TD>2</TD>
+      <TD>O12.2</TD>
+      <TD>Monday</TD>
+      <TD>12.00</TD>
+      <TD>12.15</TD>
+      <TD>Performance-related aspects in the Big Data Astronomy Era: architects in software optimization</TD>
+      <TD>text:'In the last decades the amount of data collected by Astronomical Instruments and the evolution of computational demands have grown exponentially. Today it is not possible to obtain scientific\nresults without prodigious amounts of computation. For this reason, the software performance plays a key role in modern Astronomy data analysis.\nScientists tend to write code with the only goal of implementing the algorithm in order to achieve a solution. Code modifications to gain better performance always come later. However, as computing\narchitectures evolve to match the performance that is demanded, the coding task has to encompass the exploitation of the architecture design, the single-processor performance and parallelization.\nTo facilitate this task, programming languages are progressing and introducing new features to fully make use of the hardware architecture. Designing a software that meets performance, memory\nefficiency, maintainability, and scalability requirements is a complex task that should be addressed by the software architect. The complexity stems from the existence of multiple alternative solutions\nfor the same requirements, which make tradeoffs inevitable.\nIn this contribution we will present part of the activity done at the Italian Science Data Center for the ESA’s cosmological space mission Euclid which regards the software performance optimization.\nIn particular, considering the programming languages selected for the development of the Euclid scientific pipelines, we will present some C++ and Python examples focusing on the main aspects of human contribution in the optimization of the code from the performance, memory efficiency and maintainability point of view.'</TD>
+     </TR>
+     <TR>
+      <TD>Talks</TD>
+      <TD>Lightning</TD>
+      <TD>N/A</TD>
+      <TD>2</TD>
+      <TD>LT1</TD>
+      <TD>Monday</TD>
+      <TD>12.15</TD>
+      <TD>12.30</TD>
+      <TD>TBD</TD>
+      <TD>TBD</TD>
+     </TR>
+     <TR>
+      <TD>Lunch</TD>
+      <TD>Buffet</TD>
+      <TD/>
+      <TD>0</TD>
+      <TD>C</TD>
+      <TD>Monday</TD>
+      <TD>12.30</TD>
+      <TD>14.00</TD>
+      <TD>TBD</TD>
+      <TD>TBD</TD>
+     </TR>
+     <TR>
+      <TD>Wu</TD>
+      <TD>Xiuqin</TD>
+      <TD/>
+      <TD>3</TD>
+      <TD>H</TD>
+      <TD>Monday</TD>
+      <TD>14.00</TD>
+      <TD>15.00</TD>
+      <TD>Quality Assurance of Science Data</TD>
+      <TD>None</TD>
+     </TR>
+     <TR>
+      <TD>Dencheva</TD>
+      <TD>Nadia</TD>
+      <TD>STScI</TD>
+      <TD>3</TD>
+      <TD>O12.3</TD>
+      <TD>Monday</TD>
+      <TD>14.00</TD>
+      <TD>14.15</TD>
+      <TD>GWCS - A General Approach to  Astronomical World Coordinates</TD>
+      <TD>text:'GWCS is a package for managing the World Coordinate System (WCS) of astronomical data.\nIt takes a general approach to the problem of expressing arbitrary transformations\n by supporting a data model which includes the entire transformation pipeline from input \ncoordinates (detector by default) to world coordinates (standard celestial coordinates or physical quantities).\nTransformations from the detector to a standard coordinate system are combined in a way which allows for easy \nmanipulation of individual components. The framework handles \ndiscontinuous models (e.g. IFU data) and allows quantities that affect transforms to be treated as input \ncoordinates (e.g. spectral order). It provides flexibility by allowing access to intermediate coordinate frames. \nThe WCS object is serialized to a file using the language independent \nAdvanced Scientific Data Format (ASDF).Alternatively the ASDF object can be encapsulated in a FITS extension.\nThe package is written in python and is based on astropy. It is easy to extend by \nadding new models and coordinate systems.'</TD>
+     </TR>
+     <TR>
+      <TD>Lam</TD>
+      <TD>Cheuk Yin</TD>
+      <TD>Liverpool Telescope</TD>
+      <TD>3</TD>
+      <TD>O12.4</TD>
+      <TD>Monday</TD>
+      <TD>14.15</TD>
+      <TD>14.30</TD>
+      <TD>Data-Driven Pixelisation with Voronoi Tessellation</TD>
+      <TD>text:'In modern Astrophysics, Voronoi Tessellation is a rarely used as a\npixelisation scheme. While it exists, it is almost exclusively used in\nsignal enhancements and simulations. In Observational Astronomy, with\nGaia, ZTF, DES etc. data becoming available, LSST and Euclid coming\nonline in the next decade, this branch of science is becoming more and\nmore data-driven. HEALPix, HTM and Q3C offer excellent ways to\npixelise the celestial sphere, the implementations completely separate\nthe background information from the signal. There are excellent use\ncases to have them independent from each other, but there are also\ncases when this becomes a burden in computation when we have to\nprocess more pixels than necessary or require post-hoc calculations to\ngroup pixels at different resolution levels to form larger segments.\nWith Voronoi Tessellation, it can generate a one-to-one mapping of\ndata points to Voronoi cells where anywhere inside the cell is the\nclosest to the “governing” data point. We illustrate the application\nof Voronoi Tessellation in a set of magnitude and proper\nmotion-limited data how it can simplify the survey properties of the\n3pi Steradian Survey from the Pan-STARRS 1, where the footprint area\nis imaged by the 60 CCDs at ~10^5 pointings over 3.5 years.'</TD>
+     </TR>
+     <TR>
+      <TD>Plante</TD>
+      <TD>Ray</TD>
+      <TD>NIST</TD>
+      <TD>3</TD>
+      <TD>I11.1</TD>
+      <TD>Monday</TD>
+      <TD>14.30</TD>
+      <TD>15.00</TD>
+      <TD>TBD</TD>
+      <TD>TBD</TD>
+     </TR>
+     <TR>
+      <TD>Poster Session</TD>
+      <TD>Break/</TD>
+      <TD/>
+      <TD>0</TD>
+      <TD>C2</TD>
+      <TD>Monday</TD>
+      <TD>15.00</TD>
+      <TD>16.00</TD>
+      <TD>TBD</TD>
+      <TD>TBD</TD>
+     </TR>
+     <TR>
+      <TD>Raddick</TD>
+      <TD>Michael</TD>
+      <TD>Johns Hopkins U.</TD>
+      <TD>0</TD>
+      <TD>F2</TD>
+      <TD>Monday</TD>
+      <TD>15.30</TD>
+      <TD>16.00</TD>
+      <TD>SciServer: Collabroative data-driven science</TD>
+      <TD>text:'The SciServer team is pleased to announce its final production system of SciServer, offered free to the scientific community for collaborative scientific research and education.\n\nSciServer is an online environment for working with scientific big data, and specifically datasets hosted within our ecosystem. Researchers, educators, students, and citizen scientists can create a free account to get 10 GB of file storage space and access to a virtual machine computing environment. Users can run Python, R, or Matlab scripts in that environment through Jupyter notebooks. Scripts can be run either in Interactive mode, which displays results within the notebook, or in Batch mode, which writes results to the user’s personal database and/or filesystem.\n\nSciServer hosts a number of datasets from various science domains; within astronomy, it features all data releases of the Sloan Digital Sky Survey (SDSS), as well as other datasets from GALEX, Gaia, and other projects. The SciServer system also incorporates the popular SkyServer, CasJobs, SciDrive, and SkyQuery astronomy research websites, meaning that SciServer Compute offers APIs to read and write from these resources. All these features ensure that computation stays close to data, resulting in faster computation therefore faster science.\nSciServer also allows users to create and manage scientific collaborations around data and analysis resources. You can create groups and invite collaborators from around the world. You and your collaborators can use these groups as workspaces to share datasets, scripts, and plots, leading to more efficient collaboration.\n\nWe will present a highly interactive demo of SciServer, highlighting the latest features and with an emphasis on science use cases. Please bring your questions – let us know what you have not yet been able to do with SciServer, and we will help you do it. We are actively looking for new collaborations, feature requests, and scientific use cases. Please let us know how we can help you do your science!'</TD>
+     </TR>
+     <TR>
+      <TD>Derriere</TD>
+      <TD>Sebastien</TD>
+      <TD/>
+      <TD>4</TD>
+      <TD>H</TD>
+      <TD>Monday</TD>
+      <TD>16.00</TD>
+      <TD>17.00</TD>
+      <TD>Quality Assurance of Science Data (continued)</TD>
+      <TD>None</TD>
+     </TR>
+     <TR>
+      <TD>Diaz</TD>
+      <TD>Rosa</TD>
+      <TD>STScI</TD>
+      <TD>4</TD>
+      <TD>O11.1</TD>
+      <TD>Monday</TD>
+      <TD>16.00</TD>
+      <TD>16.15</TD>
+      <TD>Adding Science Validation to the  JWST Calibration Pipeline.</TD>
+      <TD>text:'The JWST Calibration Pipeline is a set of steps separated into three main stages; looking to provide the best calibration for all JWST instruments, observing modes, and a wide range of science cases. Careful scientific validation and verification are necessary to determine consistency and quality of the data produced by the calibration pipeline.  With this goal in mind, the scientist at STScI have supported validation testing for most of the major builds.  Our experience with HST and the realization of the effort it would take to consistently and reliably test after each build, even after launch, motivated us to think about streamlining the process.  We started building unit tests to verify that the calibration pipeline produced the expected results. However, the need for a more in-depth scientific validation of the wide range of science cases that will be observed by JWST requires a different strategy; one that not only validates the accuracy of the data but that also provides with reliable metrics for all science cases.  We are working on defining a more complete set of science validation tests cases and simulated data that can be integrated within an automated building and testing framework; allowing full science verification and validation of the calibration pipeline in short time scales as well as quality assurance of the calibration products. \n\nArchiving this goal has been an arduous task, not only limited by the state of development of the software and the availability of accurate data for testing, but also by the diversity of ideas coming from a large group of scientist from different teams, resources, and conflicting schedules. In this talk, I will present the integration of the science validation testing framework within the build process. I will also discuss the challenges we faced to make this possible, the steps we took, and how this work will help us support the development of the JWST Calibration Pipeline after launch.'</TD>
+     </TR>
+     <TR>
+      <TD>Landais</TD>
+      <TD>Gilles</TD>
+      <TD>CDS/ObAS</TD>
+      <TD>4</TD>
+      <TD>O11.2</TD>
+      <TD>Monday</TD>
+      <TD>16.15</TD>
+      <TD>16.30</TD>
+      <TD>Quality assurance in the ingestion of data into the CDS VizieR catalogue and data services</TD>
+      <TD>text:'VizieR is a reference service provided by the CDS for astronomical catalogues and tables published in academic journals, and also for associated data. Quality assurance is a key factor that guides the operations, development and maintenance of the data ingestion procedures. \nThe catalogue ingestion pipeline involves a number of validation steps, which must be implemented with high efficiency to process the ~1200 catalogues per year from the major astronomy journals. These processes involve an integrated teams of software engineers, specialised data librarians (documentalists) and astronomers, and various levels of interaction with the original authors and data providers. Procedures for the ingestion of associated data have recently been improved with semi-automatic mapping of metadata into the IVOA ObsCore standard, with an interactive tool to help authors submit their data (images, spectra, time series etc.). \nWe present an overview of the quality assurance procedures in place for the operation of the VizieR pipelines, and identify the future challenges of increasing volumes and complexity of data. We highlight the lessons learned from implementing the FITS metadata mapping tools for authors and data providers. We show how the quality assurance is an essential part of making the VizieR data comply with FAIR (Findable, Accessible, Interoperable and Re-useable) principles, and the necessity of quality assurance in for the operational aspects of supporting more than 300,000 VizieR queries per day through multiple interactive and programmatic interfaces.'</TD>
+     </TR>
+     <TR>
+      <TD>Bonnarel</TD>
+      <TD>François</TD>
+      <TD>CDS/ObAS</TD>
+      <TD>4</TD>
+      <TD>O11.3</TD>
+      <TD>Monday</TD>
+      <TD>16.30</TD>
+      <TD>16.45</TD>
+      <TD>ProvTAP: A TAP service for providing IVOA provenance metadata</TD>
+      <TD>text:'In the astronomical Virtual Observatory, provenance metadata provide\ninformation on the processing history of the data. This is important to\nassert quality and truthfulness of the data, and to be potentially able\nto replay some of the processing steps.\n\nThe ProvTAP specification is a recently proposed IVOA Working draft\ndefining how to serve IVOA provenance metadata via TAP, the Table Acces\nProtocol, which allows to query table and catalog services via the\nAstronomical Data Query Language (ADQL). ProvTAP services should allow\nfinding out all activities, entities, or agents that fulfil certain\nconditions.\n\nSeveral implementations and developments will be presented. The CDS\nProvTAP service describes provenance metadata for HiPS generation. The\nCTA ProvTAP service will provide access to metadata describing the\nprocessing of CTA event lists. GAVO prototyped specialised query\nfunctions that could facilitate accomplishing the goals of ProvTAP users.'</TD>
+     </TR>
+     <TR>
+      <TD>Talks</TD>
+      <TD>Lightning</TD>
+      <TD>N/A</TD>
+      <TD>4</TD>
+      <TD>LT2</TD>
+      <TD>Monday</TD>
+      <TD>16.45</TD>
+      <TD>17.00</TD>
+      <TD>TBD</TD>
+      <TD>TBD</TD>
+     </TR>
+     <TR>
+      <TD>Mink</TD>
+      <TD>Jessica</TD>
+      <TD>CfA</TD>
+      <TD>0</TD>
+      <TD>B1</TD>
+      <TD>Monday</TD>
+      <TD>17.15</TD>
+      <TD>18.15</TD>
+      <TD>Data Formats</TD>
+      <TD>None</TD>
+     </TR>
+     <TR>
+      <TD>Tollerud</TD>
+      <TD>Eric</TD>
+      <TD>STScI</TD>
+      <TD>0</TD>
+      <TD>B2</TD>
+      <TD>Monday</TD>
+      <TD>17.15</TD>
+      <TD>18.15</TD>
+      <TD>Open Source/Development Software Projects and Large Organizations/Missions: Recommendations and Challenges</TD>
+      <TD>None</TD>
+     </TR>
+     <TR>
+      <TD>Muench</TD>
+      <TD>August</TD>
+      <TD>AAS</TD>
+      <TD>0</TD>
+      <TD>B3</TD>
+      <TD>Monday</TD>
+      <TD>18.15</TD>
+      <TD>19.15</TD>
+      <TD>Data Citation: from Archives to Science Platforms</TD>
+      <TD>None</TD>
+     </TR>
+     <TR>
+      <TD>Polsterer</TD>
+      <TD>Kai</TD>
+      <TD>HITS</TD>
+      <TD>0</TD>
+      <TD>B4</TD>
+      <TD>Monday</TD>
+      <TD>18.15</TD>
+      <TD>19.15</TD>
+      <TD>Beginners Guide to Machine Learning in Astronomy</TD>
+      <TD>None</TD>
+     </TR>
+     <TR>
+      <TD>Breakfast</TD>
+      <TD>Buffet</TD>
+      <TD/>
+      <TD>0</TD>
+      <TD>C</TD>
+      <TD>Tuesday</TD>
+      <TD>07.00</TD>
+      <TD>08.30</TD>
+      <TD>TBD</TD>
+      <TD>TBD</TD>
+     </TR>
+     <TR>
+      <TD>Announcements</TD>
+      <TD>Morning</TD>
+      <TD/>
+      <TD>0</TD>
+      <TD>Q</TD>
+      <TD>Tuesday</TD>
+      <TD>08.55</TD>
+      <TD>09.00</TD>
+      <TD>TBD</TD>
+      <TD>TBD</TD>
+     </TR>
+     <TR>
+      <TD>Ibsen</TD>
+      <TD>Jorge</TD>
+      <TD/>
+      <TD>5</TD>
+      <TD>H</TD>
+      <TD>Tuesday</TD>
+      <TD>09.00</TD>
+      <TD>10.15</TD>
+      <TD>Databases and Archives: Challenges and Solutions in the Big Data Era</TD>
+      <TD>None</TD>
+     </TR>
+     <TR>
+      <TD>Stoehr</TD>
+      <TD>Felix</TD>
+      <TD>ESO/ALMA</TD>
+      <TD>5</TD>
+      <TD>I10.1</TD>
+      <TD>Tuesday</TD>
+      <TD>09.00</TD>
+      <TD>09.30</TD>
+      <TD>Astronomical archives: Serving up the Universe</TD>
+      <TD>text:'This talk first briefly reviews some of the current context of storing and making astronomical data discoverable and available. We then discuss the challenges ahead and look at the future data-landscape when the next generation of large telescopes will be online, at the next frontier in science archives where also the content of the observations will be described, at the role machine-learning can play as well as at some general aspects of the user-experience for astronomers.'</TD>
+     </TR>
+     <TR>
+      <TD>Brasseur</TD>
+      <TD>Clara</TD>
+      <TD>STScI</TD>
+      <TD>5</TD>
+      <TD>O10.1</TD>
+      <TD>Tuesday</TD>
+      <TD>09.30</TD>
+      <TD>09.45</TD>
+      <TD>AstroCut: A cutout service for TESS full-frame image sets</TD>
+      <TD>text:"The Transiting Exoplanet Survey Satellite (TESS) launched this past March and will have its first data release near the end of this year. Like that of the Kepler mission, the TESS data pipeline will return a variety of data products, from light curves and target pixel files (TPFs) to large full frame images (FFIs). Unlike Kepler, which took FFIs relatively infrequently, TESS will be taking FFIs every half hour, making them a large and incredibly valuable scientific dataset. As part of the Mikulski Archive for Space Telescope's (MAST) mission to provide high quality access to astronomical datasets, MAST is building an image cutout service for TESS FFI images.  Users can request image cutouts in the form of TESS pipeline compatible TPFs without needing to download the entire set of images (750 GB). For users who wish to have more direct control or who want to cutout every single star in the sky, the cutout software (python package) is publicly available and installable for local use.\n\nIn this talk we will present the use and design of this software, in particular how we were able to optimize the cutout step. The main barrier in writing performant TESS FFI cutout software is the number of files that must be opened and read from. To streamline the cutout process we performed a certain amount of one-time work up front, which allows individual cutouts to proceed much more efficiently. The one-time data manipulation work takes an entire sector of FFIs and builds one large (~45 GB) cube file for each camera chip, so that the cutout software need not access several thousand FFIs individually.  Additionally we transpose the image cube, putting time on the short axis, thus minimizing the number of seeks per cutout. By creating these data cubes up front we achieved a significant increase in performance. We will show examples of this tool using the currently available simulated TESS data, and discuss use cases for the first data release. We will finish by discussing future directions for this software, such as generalizing it beyond the TESS mission."</TD>
+     </TR>
+     <TR>
+      <TD>Zecevic</TD>
+      <TD>Petar</TD>
+      <TD>Univ. of Zagreb</TD>
+      <TD>5</TD>
+      <TD>O10.2</TD>
+      <TD>Tuesday</TD>
+      <TD>09.45</TD>
+      <TD>10.00</TD>
+      <TD>AXS: Making end-user petascale analyses possible, scalable, and usable</TD>
+      <TD>text:"We introduce AXS (Astronomy eXtensions for Spark), a scalable open-source astronomical data analysis framework built on Apache Spark, a state-of-the-art industry-standard engine for big data processing.\n\nIn the age when the most challenging questions of the day demand repeated, complex processing of large information-rich tabular datasets, scalable and stable tools that are easy to use by domain practitioners are crucial. Building on capabilities present in Spark, AXS enables querying and analyzing almost arbitrarily large astronomical catalogs using familiar Python/AstroPy concepts, DataFrame APIs, and SQL statements. AXS supports complex analysis workflows with astronomy-specific operations such as spatial selection or on-line cross-matching. Special attention has been given to usability, from conda packaging to enabling ready-to-use cloud deployments.\n\nAXS is regularly used within the University of Washington's DIRAC Institute, enabling the analysis of ZTF (Zwicky Transient Facility) and other datasets. As an example, AXS is able to cross-match Gaia DR2 (1.8 billion rows) and SDSS (800 million rows) in 2 minutes, with the data of interest (photometry) being passed to Python routines for further processing. Here, we will present current AXS capabilities, give an overview of future plans, and discuss some implications to analysis of LSST and similarly sized datasets. The long-term goal of AXS is to enable petascale catalog and stream analyses by individual researchers and groups."</TD>
+     </TR>
+     <TR>
+      <TD>Buchschacher</TD>
+      <TD>Nicolas</TD>
+      <TD>Univ. of Geneva</TD>
+      <TD>5</TD>
+      <TD>O10.3</TD>
+      <TD>Tuesday</TD>
+      <TD>10.00</TD>
+      <TD>10.15</TD>
+      <TD>No-SQL databases: An efficient way to store and query heterogeneous astronomical data in DACE.</TD>
+      <TD>text:'Data production is growing every day in all domains. Astronomy is particularly concerned with the recent instruments. While SQL databases have proven their performances for decades and still performs in many cases, it is sometimes difficult to store, analyse and combine data produced by different instruments which do not necessarily use the same data model. This is where No-SQL databases can help to solve our requirements: how to efficiently store heterogenous data in a common infrastructure ?\nSQL database management systems can do a lot of powerful operations like filtering, relation between tables, sub-queries etc. The storage is vertically scalable by adding more rows in the tables but the schema has to be very well defined. In the opposite, No-SQL databases are not restrictive. The scalability is horizontal by adding more shards (nodes) and the different storage engines have been designed to easily modify the structure. This is why it is well suited in the big data era.\nDACE (Data and Analysis Center for Exoplanets) is a web platform which facilitates data analysis and visualisation for the exoplanet research domain. We are collecting a lot of data from different instruments and we regularly need to adapt our database to accept new data sets with different models. We recently decided to do a major change in our infrastructure after using PostgreSQL to use CASSANDRA for the storage and Apache Solr as an indexer to do sophisticated queries among a huge number of parameters. This recent change accelerated our queries and we are now ready to accept new data sets from futur instruments and combine them with older data to do better science.\nDACE is funded by the Swiss National Centre of Competence in Research (NCCR) PlanetS, federating the Swiss expertise in exoplanet research.'</TD>
+     </TR>
+     <TR>
+      <TD>Poster Session</TD>
+      <TD>Break/</TD>
+      <TD/>
+      <TD>0</TD>
+      <TD>C3</TD>
+      <TD>Tuesday</TD>
+      <TD>10.15</TD>
+      <TD>11.15</TD>
+      <TD>TBD</TD>
+      <TD>TBD</TD>
+     </TR>
+     <TR>
+      <TD>Joliet</TD>
+      <TD>Emmanuel</TD>
+      <TD>IPAC/Caltech</TD>
+      <TD>0</TD>
+      <TD>F3</TD>
+      <TD>Tuesday</TD>
+      <TD>10.45</TD>
+      <TD>11.15</TD>
+      <TD>Visualization in IRSA Services using Firefly</TD>
+      <TD>text:"NASA/IPAC Infrared Science Archive (IRSA) curates the science products of NASA's infrared and submillimeter missions, including many large-area and all-sky surveys. IRSA offers access to digital archives through powerful query engines (including VO-compliant interfaces) and offers unique data analysis and visualization tools. IRSA exploits a re-useable architecture to deploy cost-effective archives, including 2MASS, Spitzer, WISE, Planck, and a large number of highly-used contributed data products from a diverse set of astrophysics projects.\n\nFirefly is IPAC's Advanced Astronomy WEB UI Framework. It was  open sourced in 2015, hosted at GitHub. Firefly is designed for building a web-based front end to access science archives  with advanced data visualization capabilities.The visualization provide user with an integrated experience with brushing and linking capabilities among images, catalogs, and plots.  Firefly has been used in many IPAC IRSA applications, in LSST Science Platform Portal, and in NED’s newly released interface.\n\nIn this focus demo, we will show case many data access interfaces and services provided by IRSA based on Firefly. It will demonstrate the reusability of Firefly in query, data display, and its visualization capabilities, including the newly released features of HiPS images display, MOC overlay, and the interactions between all those visualization components."</TD>
+     </TR>
+     <TR>
+      <TD>Mink</TD>
+      <TD>Jessica</TD>
+      <TD/>
+      <TD>6</TD>
+      <TD>H</TD>
+      <TD>Tuesday</TD>
+      <TD>11.15</TD>
+      <TD>12.30</TD>
+      <TD>Data Science: Workflows, Hardware, Software, Humanware</TD>
+      <TD>None</TD>
+     </TR>
+     <TR>
+      <TD>Borne</TD>
+      <TD>Kirk</TD>
+      <TD>Booz Allen Hamilton</TD>
+      <TD>6</TD>
+      <TD>I4.1</TD>
+      <TD>Tuesday</TD>
+      <TD>11.15</TD>
+      <TD>11.45</TD>
+      <TD>Massive Data Exploration in Astronomy: What Does Cognitive Have To Do With It?</TD>
+      <TD>text:'There has been a tendency for astronomers to avoid unsupervised data exploration, due to the characterization of this approach as a non-scientific fishing expedition. But, a cognitive approach to massive data exploration has the potential to amplify hypothesis formulation and question generation for greater astronomical discovery. The incorporation of contextual data from other wavelengths and other surveys provides the basis for seeing interestingness in the multi-dimensional properties of sources that might otherwise appear uninteresting in a single survey database. Some suggested methods for cognitive exploration will be presented, including computer vision algorithms that are used in robotics to see patterns in the the world, but these can be used to see emergent patterns in the multi-dimensional parameter space of astronomical data.'</TD>
+     </TR>
+     <TR>
+      <TD>Toledo</TD>
+      <TD>Ignacio</TD>
+      <TD>Joint ALMA Observatory</TD>
+      <TD>6</TD>
+      <TD>O4.1</TD>
+      <TD>Tuesday</TD>
+      <TD>11.45</TD>
+      <TD>12.00</TD>
+      <TD>Data Science =! Software Engineering. Exploring a workflow for ALMA operations.</TD>
+      <TD>text:'In the last few years Data science has emerged as a discipline of its own to address problems where data is usually heterogeneous, complex and abundant. In a nutshell, data science allows to provide answers to situations where a hypothesis can be formulated and later can be either confirmed or rejected following standard scientific methodology using data as raw material. Data science has been called differently depending of the domain (business intelligence, operational management, astroinformatics) and it has been recently in the center of a hype related to artificial intelligence and machine learning. It has been quickly adopted by the digital industry as the tool to distill information of massive operational data sets.\n\nAmong the many tools data science requires (mathematics, statistics, domain knowledge of the data sets, …), IT infrastructure and software is by far the most visible and there is at present a whole ecosystem available as open source projects. The downside of this is data science is commonly confused with IT and software development, which creates conflicts between engineering- and scientific- mindsets, and leads to wrongly applying software development methodologies to it neglecting the experimental nature of the problem. In summary, creating the data lab becomes more important than answering questions with it.\n\nIn the domain of ALMA operations, there are many instances that can be identified and described as data science cases or projects ranging from monitoring array elements to understand performances and predict faults for engineering operations to routine monitoring of calibrators for science operations purposes. We have identified already around 30 different initial questions (or data science cases) and found that several of them have been addressed through individual efforts. \n\nIn parallel, several enabling platforms or frameworks have appear in the ecosystem that provides data scientists with both the “laboratory equipment” to conduct their “experiments” as well as enabling tools for collaboration, versioning control, and deploying results in production with a quick turnaround.\n\nThis talk aims to summarize the results of our exploration to apply data science workflows to resolve ALMA operations issues, identify suitable platforms that are already in use by the industry, share our experience in addressing specific ALMA operations data cases, and discuss the technical and sociological challenges we encountered along the way.\u200b\u200b'</TD>
+     </TR>
+     <TR>
+      <TD>Nakazato</TD>
+      <TD>Takeshi</TD>
+      <TD>NAOJ</TD>
+      <TD>6</TD>
+      <TD>O4.2</TD>
+      <TD>Tuesday</TD>
+      <TD>12.00</TD>
+      <TD>12.15</TD>
+      <TD>New Synthesis Imaging Tool for ALMA based on the Sparse Modeling</TD>
+      <TD>text:'A new imaging tool for radio interferometry has been developed based on the sparse modeling approach. It has been implemented as a Python module operating on Common Astronomy Software Applications (CASA) so that the tool is able to process the data taken by Atacama Large Millimeter/submillimeter Array (ALMA). In order to handle large data of ALMA, the Fast Fourier Transform has been implemented with gridding process. The concept of the sparse modeling for the image reconstruction has been realized with two regularization terms: L1 norm term for the sparsity and Total Squared Variation (TSV) term for the smoothness of the resulting image. Since it is important to adjust the size of the regularization terms appropriately, the cross-validation routine, which is a standard method in statistics, has been implemented. This imaging tool runs even on a standard laptop PC and processes ALMA data within a reasonable time. The interface of the tool is comprehensible to CASA users and the usage is so simple that it consists of mainly three steps to obtain the result: an initialization, a configuration, and a processing. Remarkable feature of the tool is that it produces the solution without human intervention. Furthermore, the solution is robust in the sense that it is less affected by the processing parameters. For the verification of the imaging tool, we have tested it with two extreme examples from ALMA Science Verification Data: the protoplanetary disk, HL Tau as a typical smooth and filled image, and the lensed galaxy, SDP.81 as a sparse image. In our presentation, these results will be presented with some performance information. The comparison between our results and those of traditional CLEAN method will also be provided. Finally, our future improvement and enhancement plan to make our tool competitive with CLEAN will be shown.'</TD>
+     </TR>
+     <TR>
+      <TD>Talks</TD>
+      <TD>Lightning</TD>
+      <TD>N/A</TD>
+      <TD>0</TD>
+      <TD>LT3</TD>
+      <TD>Tuesday</TD>
+      <TD>12.15</TD>
+      <TD>12.30</TD>
+      <TD>TBD</TD>
+      <TD>TBD</TD>
+     </TR>
+     <TR>
+      <TD>Photo</TD>
+      <TD>Conference</TD>
+      <TD/>
+      <TD>0</TD>
+      <TD>Q</TD>
+      <TD>Tuesday</TD>
+      <TD>12.30</TD>
+      <TD>12.45</TD>
+      <TD>TBD</TD>
+      <TD>TBD</TD>
+     </TR>
+     <TR>
+      <TD>Lunch</TD>
+      <TD>Buffet</TD>
+      <TD/>
+      <TD>0</TD>
+      <TD>C</TD>
+      <TD>Tuesday</TD>
+      <TD>12.45</TD>
+      <TD>14.00</TD>
+      <TD>TBD</TD>
+      <TD>TBD</TD>
+     </TR>
+     <TR>
+      <TD>DuPrie</TD>
+      <TD>Kimberly</TD>
+      <TD/>
+      <TD>7</TD>
+      <TD>H</TD>
+      <TD>Tuesday</TD>
+      <TD>14.00</TD>
+      <TD>15.00</TD>
+      <TD>Machine Learning in Astronomy</TD>
+      <TD>None</TD>
+     </TR>
+     <TR>
+      <TD>Lieu</TD>
+      <TD>Maggie</TD>
+      <TD>ESA</TD>
+      <TD>7</TD>
+      <TD>I1.1</TD>
+      <TD>Tuesday</TD>
+      <TD>14.00</TD>
+      <TD>14.30</TD>
+      <TD>Deep learning of astronomical features with big data.</TD>
+      <TD>text:'In Astronomy, there is a tendency to build machine learning codes for very specific object detection in images. The classification of asteroids and non-asteroids should be no different than the classification of asteroids, stars, galaxies, cosmic rays, ghosts or any other artefact found in astronomical data. In computer science, it is not uncommon for machine learning to train on hundreds of thousands of object categories, so why are we not there yet? I will talk about image classification with deep learning and how we can make use of existing tools such as the ESA science archive, ESAsky and citizen science to help realise the full potential of object detection and image classification in Astronomy.'</TD>
+     </TR>
+     <TR>
+      <TD>Ansdell</TD>
+      <TD>Megan</TD>
+      <TD>UC Berkeley</TD>
+      <TD>7</TD>
+      <TD>O1.1</TD>
+      <TD>Tuesday</TD>
+      <TD>14.30</TD>
+      <TD>14.45</TD>
+      <TD>Automatic Classification of  Planet Candidates using Deep Learning</TD>
+      <TD>text:'We present results from a NASA Frontier Development Lab (FDL) project to automatically classify candidate transit signals identified by the Kepler mission and the Transiting Exoplanet Survey Satellite (TESS) using deep learning techniques applied with compute resources provided by the Google Cloud Platform. NASA FDL is an applied artificial intelligence research accelerator aimed at implementing cutting-edge machine learning techniques to challenges in the space sciences. The Kepler and TESS missions produce large datasets that need to be analyzed efficiently and systematically in order to yield accurate exoplanet statistics as well as reliably identify small, Earth-sized planets at the edge of detectability. Thus we have developed a deep neural network classification system to rapidly and reliably identify real planet transits and flag false positives. We build on the recent work of Shallue &amp; Vanderburg (2018) by adding "scientific domain knowledge" to their deep learning model architecture and input representations to significantly increase model performance on Kepler data, in particular for the lowest signal-to-noise transits that can represent the most interesting cases of rocky planets in the habitable zone. These improvements also allowed us to drastically reduce the size of the deep learning model, while still maintaining improved performance; smaller models are better for generalization, for example from Kepler to TESS data. This classification tool will be especially useful for the next generation of space-based photometry missions focused on finding small planets, such as TESS and PLATO.'</TD>
+     </TR>
+     <TR>
+      <TD>Nikolic</TD>
+      <TD>Bojan</TD>
+      <TD>Univ. of Cambridge</TD>
+      <TD>7</TD>
+      <TD>O1.2</TD>
+      <TD>Tuesday</TD>
+      <TD>14.45</TD>
+      <TD>15.00</TD>
+      <TD>Acceleration of Non-Linear Minimisation with PyTorch</TD>
+      <TD>text:'Minimisation (or, equivalently, maximisation) of non-linear functions\nis a widespread tool in astronomy, e.g., maximum likelihood or maximum\na-posteriori estimates of model parameters. Training of machine\nlearning models can also be expressed as a minimisation problem\n(although with some idiosyncrasies). This similarity opens the\npossibility of re-purposing machine learning software for general\nminimisation problems in science.\n\nI show that PyTorch, a software framework intended primarily for\ntraining of neural networks, can easily be applied to general function\nminimisation in science. I demonstrate this with an example inverse\nproblem, the Out-of-Focus Holography technique for measuring\ntelescope surfaces, where a improvement in time-to-solution of around\n300 times is achieved with respect to a conventional NumPy\nimplementation. The software engineering effort needed to achieve this\nspeed is modest, and readability and maintainability are largely\nunaffected.'</TD>
+     </TR>
+     <TR>
+      <TD>Poster Session</TD>
+      <TD>Break/</TD>
+      <TD/>
+      <TD>0</TD>
+      <TD>C4</TD>
+      <TD>Tuesday</TD>
+      <TD>15.00</TD>
+      <TD>16.00</TD>
+      <TD>TBD</TD>
+      <TD>TBD</TD>
+     </TR>
+     <TR>
+      <TD>Good</TD>
+      <TD>John</TD>
+      <TD>Caltech/IPAC-NExScI</TD>
+      <TD>0</TD>
+      <TD>F4</TD>
+      <TD>Tuesday</TD>
+      <TD>15.30</TD>
+      <TD>16.00</TD>
+      <TD>Image Processing in Python With Montage</TD>
+      <TD>text:'The Montage image mosaic engine (http://montage.ipac.caltech.edu; https://github.com/Caltech-IPAC/Montage) has found wide applicability in astronomy research, integration into processing environments, and is an examplar application for the development of advanced cyber-infrastructure. It is written in C to provide performance and portability.  Linking C/C++ libraries to the Python kernel at run time as binary extensions allows them to run under Python at compiled speeds and enables users to take advantage of all the functionality in Python.  We have built Python binary extensions of the 59 ANSI-C modules that make up version 5 of the Montage toolkit. This has involved a  turning the code into a C library, with driver code fully separated to reproduce the calling sequence of the command-line tools; and then adding Python and C linkage code with the Cython library, which acts as a bridge between general C libraries and the Python interface. \n\nWe will demonstrate how to use these Python binary extensions to perform image processing, including reprojecting and resampling images, rectifying background emission to a common level, creation of image mosaics that preserve the calibration and astrometric fidelity of the input images, creating visualizations with an adaptive stretch algorithm, processing HEALPix images, and analyzing and managing image metadata.\n\nThe material presented here will be made freely available as a set of Jupyter notebooks posted on the Montage GitHub page.\n\nMontage is funded by the U. S. National Science Foundation (NSF)  under Grant Number ACI-1642453.'</TD>
+     </TR>
+     <TR>
+      <TD>Shortridge</TD>
+      <TD>Keith</TD>
+      <TD/>
+      <TD>8</TD>
+      <TD>H</TD>
+      <TD>Tuesday</TD>
+      <TD>16.00</TD>
+      <TD>17.00</TD>
+      <TD>Multi-Messenger Astronomy</TD>
+      <TD>None</TD>
+     </TR>
+     <TR>
+      <TD>Gilda</TD>
+      <TD>Sankalp</TD>
+      <TD>Carnegie Mellon University</TD>
+      <TD>8</TD>
+      <TD>O1.3</TD>
+      <TD>Tuesday</TD>
+      <TD>16.00</TD>
+      <TD>16.15</TD>
+      <TD>Importance of Feature Selection in ML models</TD>
+      <TD>text:"Importance of Feature Selection in ML models\n\nAn ever looming threat to astronomical applications of ML, and especially DL, is the danger of overfitting data. In particular, we refer to the problem of stellar parameterization from low-mid resolution spectra. The preferred method to deal with this issue is to develop and use spectral indices - this requires careful measurements of equivalent widths of blended spectral lines. This is prone to use error, and does not often result in very accurate results wrt the output parameters. In this work, we tackle this problem using an iterative ML algorithm to sequentially prune redundant features (wavelength points) to arrive at an optimal set of features with the strongest correlation with each of the output variables (stellar parameters) - T_eff, log(g) and [Fe/H]. We find that even at high resolution with tens of thousands of pixels (wavelength values), most of them are not only redundant, but actually decrease the mean absolute errors (MAEs) of the model output wrt the true values of the parameters. Our results are particularly significant in this era of exploding astronomical observational capabilities, when we will undoubtedly be faced with the 'curse of dimensionality'. We illustrate the importance of feature selection to reduce noise, improve model predictions, and best utilize limited computational and hardware resources on various downsampled and degraded synthetic PHOENIX spectra, by convolving the raw high res (500,000) sources to low and mid res (2,000 - 15,000)."</TD>
+     </TR>
+     <TR>
+      <TD>Dai</TD>
+      <TD>Cong</TD>
+      <TD>Beijing Normal University</TD>
+      <TD>8</TD>
+      <TD>O1.4</TD>
+      <TD>Tuesday</TD>
+      <TD>16.15</TD>
+      <TD>16.30</TD>
+      <TD>A method to detect radio frequency interference based on convolutional neural networks</TD>
+      <TD>text:'Along with the rapid development of telecommunication, radio frequency interference (RFI) generated from diverse human produced sources like electronic equipment, cell phones, GPS and so on can contaminate the weak radio band data. Therefore, RFI is an important challenge for radio astronomy. RFI detection can be regarded a special task of image segmentation. As for RFI signals, they appears in the form of point, vertical or horizontal lines. However, most existing convolution neural networks (CNNs) perform classification tasks, where the output is the single classification label of an image. The U-Net enables classification of each pixel within the image, which is suitable and competitive for image segmentation. Thus, in this paper, we implement the U-Net of 14 layers with framework of Keras to detect RFI signals. The U-Net can perform the classification task of clean signal and RFI. Also, the U-Net is a kind of extended CNN with symmetric architecture, which consists of a contracting path to capture context information and extract features and an expanding path to get precise localization. It extracts the features of RFI for learning RFI distribution pattern and then calculates the probability value of RFI for each pixel. Then we set a threshold to get the results flagged by RFI. We train the parameter of the U-Net with “Tianlai” data(A radio telescope-array, the observing time is from 20:15:45 to 24:18:45 on 27th of September 2016, the frequency is from 744MHz to 756MHz and the number of baseline is 18528). The experimental results show that, compared with the traditional RFI flagging method, this approach performs better with satisfying accuracy and takes into account the relationship between different baselines, which contributes to correctly and effectively flag RFI.'</TD>
+     </TR>
+     <TR>
+      <TD>Kuulkers</TD>
+      <TD>Erik</TD>
+      <TD>European Space Agency</TD>
+      <TD>8</TD>
+      <TD>I9.1</TD>
+      <TD>Tuesday</TD>
+      <TD>16.30</TD>
+      <TD>17.00</TD>
+      <TD>Coordinating observations among ground and space-based telescopes in the multi-messenger era</TD>
+      <TD>text:'The emergence of time-domain multi-messenger (astro)physics asks for new and more efficient ways of interchanging information, as well as collaboration. Many space- and ground-based observatories have web pages dedicated to showing information about the complete observations and planned observation schedule. The aim would be to standardise the exchange of information about observational schedules and set-ups between facilities and in addition, to standardise the automation of visibility checking for multiple facilities. To reach this, we propose to use the VO protocols (ObsTAP-like) to write services to expose these data to potential client applications and to develop cross facilities visibility servers.'</TD>
+     </TR>
+     <TR>
+      <TD>O'Toole</TD>
+      <TD>Simon</TD>
+      <TD>AAO-MQ</TD>
+      <TD>0</TD>
+      <TD>B5</TD>
+      <TD>Tuesday</TD>
+      <TD>17.15</TD>
+      <TD>18.15</TD>
+      <TD>How do you get the most out of your teams?</TD>
+      <TD>None</TD>
+     </TR>
+     <TR>
+      <TD>Shawhan</TD>
+      <TD>Peter</TD>
+      <TD>Univ. of Maryland</TD>
+      <TD>0</TD>
+      <TD>B6</TD>
+      <TD>Tuesday</TD>
+      <TD>17.15</TD>
+      <TD>18.15</TD>
+      <TD>Data analysis challenges for multi-messenger astrophysics</TD>
+      <TD>None</TD>
+     </TR>
+     <TR>
+      <TD>Banquet</TD>
+      <TD>Conference</TD>
+      <TD/>
+      <TD>0</TD>
+      <TD>Q</TD>
+      <TD>Tuesday</TD>
+      <TD>19.00</TD>
+      <TD>22.00</TD>
+      <TD>TBD</TD>
+      <TD>TBD</TD>
+     </TR>
+     <TR>
+      <TD>Breakfast</TD>
+      <TD>Buffet</TD>
+      <TD/>
+      <TD>0</TD>
+      <TD>C</TD>
+      <TD>Wednesday</TD>
+      <TD>07.00</TD>
+      <TD>08.30</TD>
+      <TD>TBD</TD>
+      <TD>TBD</TD>
+     </TR>
+     <TR>
+      <TD>Announcements</TD>
+      <TD>Morning</TD>
+      <TD/>
+      <TD>0</TD>
+      <TD>Q</TD>
+      <TD>Wednesday</TD>
+      <TD>08.55</TD>
+      <TD>09.00</TD>
+      <TD>TBD</TD>
+      <TD>TBD</TD>
+     </TR>
+     <TR>
+      <TD>Fitzpatrick</TD>
+      <TD>Mike</TD>
+      <TD/>
+      <TD>9</TD>
+      <TD>H</TD>
+      <TD>Wednesday</TD>
+      <TD>09.00</TD>
+      <TD>10.00</TD>
+      <TD>Databases and Archives (continued)</TD>
+      <TD>None</TD>
+     </TR>
+     <TR>
+      <TD>Martinez</TD>
+      <TD>Beatriz</TD>
+      <TD>Rhea Systems S.A.</TD>
+      <TD>9</TD>
+      <TD>O10.4</TD>
+      <TD>Wednesday</TD>
+      <TD>09.00</TD>
+      <TD>09.15</TD>
+      <TD>Data-driven Space Science at ESA Science Data Centre</TD>
+      <TD>text:'For many scientists nowadays, the first step in doing science is exploring the data computationally. New approaches to data-driven science are needed due to the big increase of space science mission’s data in volume, heterogeneity, velocity and complexity. This applies to ESA space science missions, whose archives are hosted at the ESA Science Data Centre (ESDC). Some examples are the Gaia archive -whose size is estimated to grow up to 1PB and 6000 billion of objects-, the Solar Orbiter archive -which is expected to handle several time series with more than 500 millions of records- and the Euclid archive, which shall be able to handle up to 10PB of data.\nThe ESDC aims, as a major objective, to maximize the scientific exploitation of the archived data. Challenges are not limited to manage the large volume of data, but also to allow collaboration between scientists, to provide tools for exploring and mining the data, to integrate data (the value of data explodes when it can be linked with other data), or to manage data in context (track provenance, handle uncertainty and error).\nESDC is exploring solutions for handling those challenges in different areas. Specifically: storage of big catalogues through distributed databases (ex. Greenplum, Postgres-XL,…); storage of long time series in high resolution via time series oriented databases (TimeScaleDB); fulfil data analysis requirements via Elasticsearch or Spark/Hadoop; and enabling scientific collaboration and closer access to data via JupyterLab, Python client libraries and integration with pipelines using containers. In this presentation we are going to take a tour of these approaches.'</TD>
+     </TR>
+     <TR>
+      <TD>O'Toole</TD>
+      <TD>Simon</TD>
+      <TD>AAO-MQ</TD>
+      <TD>9</TD>
+      <TD>O10.5</TD>
+      <TD>Wednesday</TD>
+      <TD>09.15</TD>
+      <TD>09.30</TD>
+      <TD>Bringing together the Australian sky - coordination and interoperability challenges of the All-Sky Virtual Observatory</TD>
+      <TD>text:'The Australian All-Sky Virtual Observatory (ASVO) consists currently of 5 nodes. There are 2 nodes with optical astronomical data; Data Central (MQ) and Skymapper (ANU). There are 2 nodes with radio data; Murchison Wide Field Array (MWA, Curtin) and CSIRO ASKAP Science Data Archive (CASDA, CSIRO). The last node is the Theoretical Astrophysical Observatory (TAO, Swin). These 5 nodes work together under the unified ASVO. \n\nThe Australian astronomical user community is driving multi-node and multi-wavelength use cases, for example, querying Data Central spectroscopic data with Skymapper imaging data. Meeting the user requirements of the community comes with complexities and challenges. Some of the challenges we are facing include a single sign-on (unified authorisation/authentication) and the querying and representation of very different remote data, such as, overlaying GaLactic and Extragalactic All-sky MWA Survey (GLEAM) data stored in Western Australia with imaging data stored in Eastern Australian states. This presentation will discuss the challenges and successes in both co-ordinating the Australian ASVO and providing interoperability across the 5 nodes.'</TD>
+     </TR>
+     <TR>
+      <TD>Gonzalez-Nuñez</TD>
+      <TD>Juan</TD>
+      <TD>European Space Agency</TD>
+      <TD>9</TD>
+      <TD>O10.6</TD>
+      <TD>Wednesday</TD>
+      <TD>09.30</TD>
+      <TD>09.45</TD>
+      <TD>Driving Gaia Science from the ESA Archive: DR2 to DR3</TD>
+      <TD>text:'Released 25th April, Gaia DR2 hosted in the ESA Gaia archive is leading a paradigm shift in the way astronomers access and process astronomical data in ESA archives.\n\nAn unprecedented active community of thousands of scientists is making use of the latest IVOA protocols and services (TAP, DataLink) in this archive, benefitting of remote execution and persistent, authenticated, server side services to speed up data exploration and analysis. The availability of a dedicated Python library for this purpose is connecting the archive data to new data processing workflows.\n\nThe infrastructure serving this data has been upgraded from DR1, now making use of replication, clustering, high performance hardware and scalable data distribution systems in new ways for ESA astronomical archives. VO orientation of the archive has been strengthened by the provision of Time Series in DR2 through use of a VO aware format and protocol.\n\nIn order to cover the overwhelming data volume of DR3, new services will be offered to the general astronomical community. Remote execution of code, with notebook services and access to data mining infrastructure as a service are the topics under development.\n\nIn this talk, it will be described how the current archive does enable to analyse Gaia data more effectively linked to how this is changing data analysis workflows. The infrastructure created for this purpose will be described, and the architecture and plans under implementation for DR3.'</TD>
+     </TR>
+     <TR>
+      <TD>Graves</TD>
+      <TD>Sarah</TD>
+      <TD>East Asian Observatory</TD>
+      <TD>9</TD>
+      <TD>O10.7</TD>
+      <TD>Wednesday</TD>
+      <TD>09.45</TD>
+      <TD>10.00</TD>
+      <TD>Harnessing the power of archival data to increase  scientific output: the JCMT experience.</TD>
+      <TD>text:"EAO, operators of the James Clerk Maxwell Telescope (JCMT) recently\nreanalysed more than five years of publications using our data,\nidentifying which of our TAC-approved projects have gone onto be\npublished, and identifying which types of publication lead to large\nnumbers of follow-on publications. This has also allowed us to identify\nwhich observations have not been published either by their PIs or by teams using our archive.\n\n\nWe have also examined the data products and interfaces from existing,\nhighly productive data collections (both those from our own\nobservatory and from other telescopes), identifying the features that we\nbelieve have helped encourage uptake and.\n\n\nWe are currently engaged in using this information in several ways,\nWhile this includes both 'match-making' between exciting orphaned observations\nand investigators, we are also reevaluating our choice of observatory\nproduced data products and considering additional, simple interfaces\nto encourage more use of these products.\n\n\nThis paper will discuss the observatory software, databases and workflow required\nto do this work, as well as discussing the findings from our work that\nare most relevant when running or planning observatory archives."</TD>
+     </TR>
+     <TR>
+      <TD>Allen</TD>
+      <TD>Alice</TD>
+      <TD>Astrophysics Source Code Libr</TD>
+      <TD>9</TD>
+      <TD>O13.1</TD>
+      <TD>Wednesday</TD>
+      <TD>10.00</TD>
+      <TD>10.15</TD>
+      <TD>Receiving Credit for Research Software</TD>
+      <TD>text:'Though computational methods are widely used in many disciplines, those who author these methods have not always received credit for their work. This presentation will cover recent changes in astronomy, and indeed, in many other disciplines, that include new journals, policy changes for existing journals, community resources, changes to infrastructure, and availability of new workflows that make recognizing the contributions of software authors easier. This talk will include steps coders can take to increase the probability of having their software cited correctly and steps researchers can take to improve their articles by including citations for the computational methods that enabled their research.'</TD>
+     </TR>
+     <TR>
+      <TD>Poster Session</TD>
+      <TD>Break/</TD>
+      <TD/>
+      <TD>0</TD>
+      <TD>C4</TD>
+      <TD>Wednesday</TD>
+      <TD>10.15</TD>
+      <TD>11.15</TD>
+      <TD>TBD</TD>
+      <TD>TBD</TD>
+     </TR>
+     <TR>
+      <TD>Vahi</TD>
+      <TD>Karan</TD>
+      <TD>Pegasus Team - USC/ISI</TD>
+      <TD>0</TD>
+      <TD>F5</TD>
+      <TD>Wednesday</TD>
+      <TD>10.45</TD>
+      <TD>11.15</TD>
+      <TD>Workflows Management using Pegasus</TD>
+      <TD>text:'Workflows are a key technology for enabling complex scientific applications. They capture the interdependencies between processing steps in data analysis and simulation pipelines, as well as the mechanisms to execute those steps reliably and efficiently in a distributed computing environment. They also enable scientists to capture complex processes to promote method sharing and reuse and provide provenance information necessary for the verification of scientific results and scientific reproducibility. Application containers such as Docker and Singularity are increasingly becoming a preferred way for bundling user application code with complex dependencies, to be used during workflow execution. The use of application containers ensures the user scientific code is executed in a homogenous environment tailored for application, even when executing on nodes with widely varying architecture, operation systems and system libraries. This demo will focus on how to model scientific analysis as a workflow and execute them on distributed resources using the Pegasus Workflow Management System\n(http://pegasus.isi.edu).\n\nPegasus is being used in a number of scientific domains doing production grade science. In\n2016 the LIGO gravitational wave experiment used Pegasus to analyze instrumental data\nand confirm the first ever detection of a gravitational wave. The Southern California\nEarthquake Center (SCEC) based at USC, uses a Pegasus managed workflow infrastructure\ncalled Cybershake to generate hazard maps for the Southern California region. In March\n2017, SCEC conducted a CyberShake study on DOE systems ORNL Titan and NCSA\nBlueWaters to generate the latest maps for the Southern California region. Overall, the study\nrequired 450,000 node-hours of computation across the two systems. Pegasus is also being\nused in astronomy, bioinformatics, civil engineering, climate modeling, earthquake science,\nmolecular dynamics and other complex analyses.\n\nPegasus allows users to design workflows at a high-level of abstraction, that is independent\nof the resources available to execute them and the location of data and executables. It\ncompiles these abstract workflows to executable workflows that can be deployed onto\ndistributed and high-performance computing resources such as DOE LCFs like NERSC,\nXSEDE, local clusters, and clouds. During the compilation process, Pegasus WMS does\ndata discovery, locating input data files and executables. Data transfer tasks are\nautomatically added to the executable workflow. They are responsible for staging in the input\nfiles to the cluster, and for transferring the generated output files back to a user-specified\nlocation. In addition to the data transfers tasks, data cleanup (cleanup data that is no longer\nrequired) and data registration tasks (catalog the output files) are be added to the pipeline.\nFor managing user’s data, Pegasus interfaces with a wide variety of backend storage\nsystems (with different protocols). It also has variety of reliability mechanisms in-built ranging\nfrom automatic job retries, workflow-checkpointing to data reuse. Pegasus also performs\nperformance optimization as needed. Pegasus provides both a suite of command line tools\nand a web-based dashboard for users to monitor and debug their computations. Over the\nyears, Pegasus has also been integrated into higher level domain specific and workflow\ncomposition tools such as Portals, HUBzero and Wings. We also recently have added\nsupport for Jupyter notebooks, that allows users to compose and monitor workflows in a\nJupyter notebook.'</TD>
+     </TR>
+     <TR>
+      <TD>Pound</TD>
+      <TD>Marc</TD>
+      <TD/>
+      <TD>10</TD>
+      <TD>H</TD>
+      <TD>Wednesday</TD>
+      <TD>11.00</TD>
+      <TD>12.20</TD>
+      <TD>Time Domain Astronomy</TD>
+      <TD>None</TD>
+     </TR>
+     <TR>
+      <TD>Prizewinner</TD>
+      <TD>Hackathon</TD>
+      <TD>N/A</TD>
+      <TD>10</TD>
+      <TD>OH</TD>
+      <TD>Wednesday</TD>
+      <TD>11.15</TD>
+      <TD>11.30</TD>
+      <TD>TBD</TD>
+      <TD>TBD</TD>
+     </TR>
+     <TR>
+      <TD>Nebot</TD>
+      <TD>Ada</TD>
+      <TD>CDS/ObAS</TD>
+      <TD>10</TD>
+      <TD>I8.1</TD>
+      <TD>Wednesday</TD>
+      <TD>11.30</TD>
+      <TD>12.00</TD>
+      <TD>Data challenges of the VO in Time Domain Astronomy</TD>
+      <TD>text:'Surveys specifically designed to monitor the transient sky have opened the window for discovery and exploration through time domain. Source classification and transmission of the alerts for further follow-up as well as analysing possible periodicity in variable sources poses a challenge with the huge amounts of data synoptic missions are providing. We will review some of the challenges of Time Domain data and we will share some of the tools and services that are being built within the Virtual Observatory to discover, access, visualise and analyse Time Domain data, focusing in particular on Time Series.'</TD>
+     </TR>
+     <TR>
+      <TD>Juric</TD>
+      <TD>Mario</TD>
+      <TD>Univ. of Washington</TD>
+      <TD>10</TD>
+      <TD>O8.2</TD>
+      <TD>Wednesday</TD>
+      <TD>12.00</TD>
+      <TD>12.15</TD>
+      <TD>The ZTF Alert Stream: Lessons from the first six months of operating an LSST precursor</TD>
+      <TD>text:'The Zwicky Transient Facility (ZTF) is an optical time-domain survey that is currently generating about one million alerts each night for transient, variable, and moving objects. The ZTF Alert Distribution System (ZADS; Patterson et al.) packages these alerts, distributes them to the ZTF Partnership members and community brokers, and allows for filtering of the alerts to objects of interest, all in near-real time. This system builds on industry-standard real-time stream processing tools: the Apache Avro binary serialization format and the Apache Kafka distributed streaming platform. It leverages concepts and tools being developed for LSST (Python client libraries), with the source code publicly available on GitHub.\n\nThis talk will give an overview of the ZTF alert distribution system. We will examine lessons learned from ~six months of operating an LSST precursor alert stream (both from the operator and end-user perspective), discuss opportunities for standardization, and implications for the LSST.'</TD>
+     </TR>
+     <TR>
+      <TD>Talks</TD>
+      <TD>Lightning</TD>
+      <TD>N/A</TD>
+      <TD>0</TD>
+      <TD>LT4</TD>
+      <TD>Wednesday</TD>
+      <TD>12.15</TD>
+      <TD>12.30</TD>
+      <TD>TBD</TD>
+      <TD>TBD</TD>
+     </TR>
+     <TR>
+      <TD>Lunch</TD>
+      <TD>Buffet</TD>
+      <TD/>
+      <TD>0</TD>
+      <TD>C</TD>
+      <TD>Wednesday</TD>
+      <TD>12.30</TD>
+      <TD>14.00</TD>
+      <TD>TBD</TD>
+      <TD>TBD</TD>
+     </TR>
+     <TR>
+      <TD>Gwyn</TD>
+      <TD>Stephen</TD>
+      <TD/>
+      <TD>11</TD>
+      <TD>H</TD>
+      <TD>Wednesday</TD>
+      <TD>14.00</TD>
+      <TD>15.00</TD>
+      <TD>Software for Solar System Astronomy</TD>
+      <TD>None</TD>
+     </TR>
+     <TR>
+      <TD>Holman</TD>
+      <TD>Matthew</TD>
+      <TD>CfA</TD>
+      <TD>11</TD>
+      <TD>I7.1</TD>
+      <TD>Wednesday</TD>
+      <TD>14.00</TD>
+      <TD>14.30</TD>
+      <TD>The Minor Planet Center Data Processing System</TD>
+      <TD>text:"The Minor Planet Center (MPC) is the international clearing house for\nall ground-based and space-based astrometric and radar observations of\nasteroids, comets, trans-Neptunian objects, and outer satellites of the\ngiant planets. The MPC assigns designations, provides up-to-date\nephemerides, and coordinates follow-up observations for these objects.  \nTo meet the needs of the community, the MPC currently receives and\nprocesses over two million observations per month and maintains a\ncatalog of orbits of more than 700K objects.\n\nAlthough the MPC processes observations of all minor solar system\nbodies, its focus is near-Earth objects (NEOs).  All MPC operations\nare organized around this central function.  The MPC is required to\nwarn of NEOs approaching within 6 Earth Radii within the coming 6\nmonths.  Thus, the main components of the MPC's data processing system\nenable real-time identification of candidate NEOs, with possible\nimpact trajectories, within a much larger volume of asteroids and\nother solar system objects.  A few such alerts are issued each year,\nincluding that for ZLAF9B2/2018 LA.  In addition, The MPC facilitates\nfollow up observations and the coordination of observing assets for\nefficient recovery searches for NEOs.\n\nWe anticipate that the data volumne will increase to a factor of 10 to\n100 over the next decade as surveys such as LSST and NEOCam come\nonline, augmenting the already-large volume from programs such as\nPan-STARRS, the Catalina Sky Survey, NEOWISE, and ZTF.  Thus, we are\nin the process of building and testing a new MPC data processing\nsystem.  The goals are to maximize accuracy, data accessibility,\nautomation, and uptime while minimizing latency and maintaining\ndependable archives of all data received.\n\nIn this talk I will highlight the challenges faced by the MPC, demonstrate\nthe key components of our data processing system, and describe a\nnumber of algorithmic advances that support a much more efficient and\nreliable system.\n\nThe MPC operates at the Smithsonian Astrophysical Observatory, part of\nthe Harvard-Smithsonian Center for Astrophysics (CfA), under the\nauspices of the International Astronomical Union (IAU). The MPC is\n100% funded by NASA as a functional sub-node of the Small Bodies Node\n(SBN) of the NASA Planetary Data System at U. Maryland."</TD>
+     </TR>
+     <TR>
+      <TD>Racero</TD>
+      <TD>Elena</TD>
+      <TD>ESAC - Serco</TD>
+      <TD>11</TD>
+      <TD>O7.1</TD>
+      <TD>Wednesday</TD>
+      <TD>14.30</TD>
+      <TD>14.45</TD>
+      <TD>ESASky: A New Window for Solar System Data Exploration</TD>
+      <TD>text:'Allowing the solar system community fast and easy access to the astronomical data archives is a long-standing issue. Moreover, the everyday increasing amount of archival data coming from a variety of facilities, both from ground-based telescopes and space missions, leads to the need for single points of entry for exploration purposes. Efforts to tackle this issue are already in place, such as the ‘Solar System Object Image Search by the Canadian Astronomy Data Centre’ (CADC), plus a number of ephemeris services, such as Horizons (NASA-JPL), Miriade (IMCCE) or the Minor Planet &amp; Comet Ephemeris Service (MPC).\n\nWithin this context, the ESAC Science Data Centre (ESDC), located at the European Space Astronomy Centre (ESAC) has developed ESASky (http://sky.esa.int), a science driven discovery portal to explore the multi-wavelength sky providing a fast and intuitive access to all ESA astronomy archive holdings. Released in May 2016, ESASky is a new web application that sits on top of ESAC hosted archives, with the goal of serving as an interface to all high-level science products generated by ESA astronomy missions. The data spans from radio to x-ray and gamma-ray regimes, with Planck, Herschel, ISO, HST, XMM-Newton and Integral missions. \n\nWe present here the first integration of the search mechanism for solar system objects through ESASky. Based on IMCCE Eproc software for ephemeris precomputation, it allows fast discovery of photometry observations from ESA missions that potentially contain those objects within their Field Of View. In this first integration, the user is able to input a target name and retrieve on-the-fly the results for all the observations from the above-mentioned missions that match the input provided, that is, that contains within the exposure time frame the ephemerides of such objects. \n\nFinally, we will also discuss current developments and future plans in strong collaboration with some of the main actors in the field.'</TD>
+     </TR>
+     <TR>
+      <TD>Raugh</TD>
+      <TD>Anne</TD>
+      <TD>Univ. of Maryland</TD>
+      <TD>11</TD>
+      <TD>O7.2</TD>
+      <TD>Wednesday</TD>
+      <TD>14.45</TD>
+      <TD>15.00</TD>
+      <TD>The PDS Approach to Science  Data Quality Assurance</TD>
+      <TD>text:'The Planetary Data System (PDS) has been mandated by NASA not merely to preserve the bytes returned by its planetary spacecraft, but to ensure those data are usable through generations - 50-100 years into the future. When PDS accepts data for archiving, it must be complete, thoroughly documented, and as far as possible autonomous within the archive (that is, everything needed to understand and use the data must be in the archive as well).  Two pillars support the PDS mission: The PDS4 Information Model, and the mandatory External Peer Review.\n\nThe PDS4 Information Model codifies metadata not just for structure, but for provenance, interpretation, and analysis as well.  The XML document structures defined for the current implementation of the model and its various constituent namespaces define minimum requirements and present best practices for describing all these aspects of the archival data. The schematic enforcement of these requirements provides a simple, automated approach to ensuring the metadata are present and well-formed.\n\nThe PDS External Peer Review is required for all data prior to acceptance for archiving.  Equivalent to the refereeing process for journal articles, The PDS External Peer Review presents the candidate data to discipline experts unaffiliated with the creation of the data.  These reviewers exercise the data in its archival form by reproducing published results, doing comparative analysis between the candidate data and similar or correlated results, and so on, using only the archival resources.  These reviewers then determine if the data are of archival quality, and where needed, formulate a list of corrections and additions required prior to archiving.\n\nTogether, the Information Model guides data preparers to producing well-formatted, well-documented data products while the External Peer Review ensures the archive submission is complete, usable, and of sufficient quality to merit permit preservation - and support - as part of the Planetary Data System archives.'</TD>
+     </TR>
+     <TR>
+      <TD>Poster Session</TD>
+      <TD>Break/</TD>
+      <TD/>
+      <TD>0</TD>
+      <TD>C5</TD>
+      <TD>Wednesday</TD>
+      <TD>15.00</TD>
+      <TD>16.00</TD>
+      <TD>TBD</TD>
+      <TD>TBD</TD>
+     </TR>
+     <TR>
+      <TD>Arviset</TD>
+      <TD>Christophe</TD>
+      <TD/>
+      <TD>12</TD>
+      <TD>H</TD>
+      <TD>Wednesday</TD>
+      <TD>16.00</TD>
+      <TD>17.00</TD>
+      <TD>Science Platforms: Tools for Data Discovery and Analysis from Different Angles</TD>
+      <TD>None</TD>
+     </TR>
+     <TR>
+      <TD>Momcheva</TD>
+      <TD>Ivelina</TD>
+      <TD>STScI</TD>
+      <TD>12</TD>
+      <TD>I5.1</TD>
+      <TD>Wednesday</TD>
+      <TD>16.00</TD>
+      <TD>16.30</TD>
+      <TD>Hubble in the Cloud: A Prototype of a Science Platform at STScI</TD>
+      <TD>text:'The availability of high-quality, highly-usable data analysis tools is of critical importance to all astronomers as is easy access to data from our archives. In this talk I will describe the approach to developing the prototype of a new cloud-based data management environment for astronomical data reduction and analysis at STScI. I will examine the decisions we made, I will demonstrate the prototype and I will discuss what new areas of scientific exploration and discovery are opened by this platform.'</TD>
+     </TR>
+     <TR>
+      <TD>Fitzpatrick</TD>
+      <TD>Michael</TD>
+      <TD>NOAO</TD>
+      <TD>12</TD>
+      <TD>O5.1</TD>
+      <TD>Wednesday</TD>
+      <TD>16.30</TD>
+      <TD>16.45</TD>
+      <TD>The NOAO Data Lab: Design, Capabilities and Community Development</TD>
+      <TD>text:'We describe the NOAO Data Lab, a new science platform to efficiently\nutilize catalog, image and spectral data from large surveys in the era of LSST.\nData Lab provides access (through multiple interfaces) to many current NOAO,\npublic survey and external datasets to efficiently combine traditional\ntelescope image/spectral data with external archives, share results and\nworkflows with collaborators, experiment with analysis toolkits and publish\nscience-ready results for community use.  The architecture, science use-case\napproach to designing the system, its current capabilities and plans for\ncommunity-based development of analysis tools and services are presented.\nLessons learned in building and operating a science platform, challenges to\ninteroperability with emerging platforms, and scalability issues for Big Data\nscience are also discussed.'</TD>
+     </TR>
+     <TR>
+      <TD>Donaldson</TD>
+      <TD>Tom</TD>
+      <TD>STScI</TD>
+      <TD>12</TD>
+      <TD>O5.2</TD>
+      <TD>Wednesday</TD>
+      <TD>16.45</TD>
+      <TD>17.00</TD>
+      <TD>Astropy and the Virtual Observatory</TD>
+      <TD>text:'The International Virtual Observatory Alliance (IVOA) has been defining standards for interoperable astronomical data exchange since 2002.  Many of these standards are being used successfully and extensively by archives and end user tools to enable data discovery and access.  Nevertheless a skepticism persists in parts of the community about the utility and even relevance of these standards, as well as the processes by which they were written.  By contrast, the Astropy Project, with its very different processes (and somewhat different goals), has been widely embraced by the community for the usefulness and usability of its interoperable Python packages.  In this talk I will discuss what these projects might learn from each other, and how more collaboration might benefit both projects and the community in general.'</TD>
+     </TR>
+     <TR>
+      <TD>Allen</TD>
+      <TD>Alice</TD>
+      <TD>Astrophysics Source Code Libr</TD>
+      <TD>0</TD>
+      <TD>B7</TD>
+      <TD>Wednesday</TD>
+      <TD>17.15</TD>
+      <TD>18.15</TD>
+      <TD>Unconference Session: I want to talk about...</TD>
+      <TD>None</TD>
+     </TR>
+     <TR>
+      <TD>Breakfast</TD>
+      <TD>Buffet</TD>
+      <TD/>
+      <TD>0</TD>
+      <TD>C</TD>
+      <TD>Thursday</TD>
+      <TD>07.00</TD>
+      <TD>08.30</TD>
+      <TD>TBD</TD>
+      <TD>TBD</TD>
+     </TR>
+     <TR>
+      <TD>Announcements</TD>
+      <TD>Morning</TD>
+      <TD/>
+      <TD>0</TD>
+      <TD>Q</TD>
+      <TD>Thursday</TD>
+      <TD>08.55</TD>
+      <TD>09.00</TD>
+      <TD>TBD</TD>
+      <TD>TBD</TD>
+     </TR>
+     <TR>
+      <TD>Ballester</TD>
+      <TD>Pascal</TD>
+      <TD/>
+      <TD>13</TD>
+      <TD>H</TD>
+      <TD>Thursday</TD>
+      <TD>09.00</TD>
+      <TD>10.00</TD>
+      <TD>DevOps Practices is Astronomy Software</TD>
+      <TD>None</TD>
+     </TR>
+     <TR>
+      <TD>Guerra Noguero</TD>
+      <TD>Rocio</TD>
+      <TD>European Space Agency</TD>
+      <TD>13</TD>
+      <TD>I6.1</TD>
+      <TD>Thursday</TD>
+      <TD>09.00</TD>
+      <TD>09.30</TD>
+      <TD>DevOps: the perfect ally for Science Operations for a large and distributed astronomy project.</TD>
+      <TD>text:'The Gaia Science Operations Centre (SOC) is an integral part of a large consortium responsible for Gaia data processing.\nServing terabytes of processed data on a daily basis to other Processing Centres across Europe makes unique demands on the processes, procedures, as well as the team itself.\nIn this talk I will show how we have embraced the DevOps principles to achieve our goals on performance, reliability and teamwork.'</TD>
+     </TR>
+     <TR>
+      <TD>Loose</TD>
+      <TD>Marcel</TD>
+      <TD>ASTRON</TD>
+      <TD>13</TD>
+      <TD>O6.1</TD>
+      <TD>Thursday</TD>
+      <TD>09.30</TD>
+      <TD>09.45</TD>
+      <TD>Agile and DevOps from the trenches at ASTRON</TD>
+      <TD>text:'A few years ago the Software development teams at ASTRON decided to adopt the Agile/Scrum software development method. We are building instruments and software that push technological boundaries. Requirements often lack sufficient detail and are subject to constant change, whilst the first data from a new instrument or early prototype become available. The unknown unknowns largely outnumber the known unknowns. Agile/Scrum has proven to be successful in situations like these. \n\nWe stumbled and fell, but gained a lot of experience in how Agile development techniques can be used in the scientific arena. We learned what works, and what does not work. We became more and more convinced that Agile/Scrum can be very effective in the area of Scientific Software development. In this presentation I would like to take you by the hand and revisit the journey we have made, in the hope that you will learn from the mistakes that we have made, and the lessons that we have learned.'</TD>
+     </TR>
+     <TR>
+      <TD>Smith</TD>
+      <TD>Jeffrey</TD>
+      <TD>SETI Institute</TD>
+      <TD>13</TD>
+      <TD>O5.3</TD>
+      <TD>Thursday</TD>
+      <TD>09.45</TD>
+      <TD>10.00</TD>
+      <TD>Lilith: A Versatile Instrument and All-Sky Simulator for use with Space-Based Astrophysics Observatories</TD>
+      <TD>text:'To help facilitate the development of the Transiting Exoplanet Survey Satalite (TESS) data analysis pipeline, it was necessary to produce simulated flight data with sufficient fidelity and volume to exercise all the capabilities of the pipeline in an integrated way. As a generator of simulated flight data, Lilith, was developed for this purpose. We describe the capabilities of the Lilith software package, with particular attention to the interaction between the implemented features and the pipeline capabilities that it exercises.  Using a physics-based TESS instrument and sky model, Lilith creates a set of raw TESS data which includes models for the CCDs, readout electronics, camera optics, behavior of the attitude control system (ACS), spacecraft orbit, spacecraft jitter and the sky, including zodiacal light, and the TESS Input Catalog. The model also incorporates realistic instances of stellar astrophysics, including stellar variability, eclipsing binaries, background eclipsing binaries, transiting planets and diffuse light. This simulated data is then processed through the TESS pipeline generating full archivable data products. Full instrumental and astrophysics ground truth is available and can be used as a training set for TESS data analysis software, such as when training a machine learning classifier for planet candidates. Our intention is to continue to tune Lilith as real TESS flight data becomes available, allowing for an up-to-date simulated set of data products to complement the mission flight data products, thereby aiding researchers as they continue to adapt their tools to the TESS data streams. We discuss the execution performance of the resulting package, and offer some suggestions for improvements for instrument and sky simulators to be developed for other missions.'</TD>
+     </TR>
+     <TR>
+      <TD>Boussejra</TD>
+      <TD>Malik Olivier</TD>
+      <TD>Keio Univ.</TD>
+      <TD>13</TD>
+      <TD>O5.4</TD>
+      <TD>Thursday</TD>
+      <TD>10.00</TD>
+      <TD>10.15</TD>
+      <TD>aflak: Pluggable Visual Programming Environment with Quick Feedback Loop Tuned for Multi-Spectral Astrophysical Observations</TD>
+      <TD>text:'In the age of big data and data science, some may think that artificial\nintelligence would bring analytical solution to every problem. However, we argue that there is still ample room left for human insight\nand exploration thanks to visualization technologies. New discoveries are not made by AI (yet!). This is true in all scientific domains,\nincluding astrophysics. With the improvements of telescopes and\nproliferation of sky surveys there is always more data to analyze,\nbut not so many astronomers. We present aflak, a visualization\nenvironment to open astronomical datasets and analyze them. This\npaper’s contribution lies in that we leverage visual programming\ntechniques to conduct fine-grained, astronomical transformations,\nfiltering and visual analyses on multi-spectral datasets with the possibility for the astronomers to interactively fine-tune all the interacting\nparameters. By visualizing the computed results in real time as the\nvisual program is designed, aflak puts the astronomer in the loop,\nwhile managing data provenance at the same time.'</TD>
+     </TR>
+     <TR>
+      <TD>Poster Session</TD>
+      <TD>Break/</TD>
+      <TD/>
+      <TD>0</TD>
+      <TD>C5</TD>
+      <TD>Thursday</TD>
+      <TD>10.15</TD>
+      <TD>11.15</TD>
+      <TD>TBD</TD>
+      <TD>TBD</TD>
+     </TR>
+     <TR>
+      <TD>Pizzo</TD>
+      <TD>Roberto</TD>
+      <TD/>
+      <TD>14</TD>
+      <TD>H</TD>
+      <TD>Thursday</TD>
+      <TD>11.00</TD>
+      <TD>12.00</TD>
+      <TD>Management of Large Science Projects</TD>
+      <TD>None</TD>
+     </TR>
+     <TR>
+      <TD>Wise</TD>
+      <TD>Michael</TD>
+      <TD>ASTRON</TD>
+      <TD>14</TD>
+      <TD>I2.1</TD>
+      <TD>Thursday</TD>
+      <TD>11.15</TD>
+      <TD>11.45</TD>
+      <TD>Establishing the SKA Regional Centre Network: Mesh Management and Culture Change</TD>
+      <TD>text:'The Square Kilometre Array (SKA) is an ambitious project to construct the world’s most powerful radio telescope and enable transformational scientific discoveries across a wide range of topics in physics and astronomy. With two telescopes sites located in the deserts of South African and West Australia, an operational headquarters based in the UK, and 12 different member countries contributing to the design and construction, the SKA is truly a global endeavor. Once operational, the SKA is expected to produce an archive of science data products with an impressive growth rate on the order of 700 petabytes per year. Hosting the resulting SKA archive and subsequent science extraction by users will require a global research infrastructure providing additional capacity in networking, storage, computing, and support. \n\nThis research infrastructure is currently foreseen to take the form of a federated, global network of SKA Regional Centres (SRCs). These SRCs will be the primary interface for researchers in extracting scientific results from SKA data and, as such, are essential to the ultimate success of the telescope. The unprecedented scale of the expected SKA data stream, however, requires a fundamental change in the way radio astronomers approach extracting their science. Efforts are already underway in various countries around the world to define and deploy the seeds of what will grow into a community-provided research infrastructure that can deliver SKA science. In this talk, I will give an update on these initial efforts as well as the various technological, management, and sociological challenges associated with establishing the SKA Regional Centre network.'</TD>
+     </TR>
+     <TR>
+      <TD>Alexov</TD>
+      <TD>Anastasia</TD>
+      <TD>STScI</TD>
+      <TD>14</TD>
+      <TD>O2.1</TD>
+      <TD>Thursday</TD>
+      <TD>11.45</TD>
+      <TD>12.00</TD>
+      <TD>Hit the Ground Running: Data Management for JWST</TD>
+      <TD>text:"As the launch of James Webb Space Telescope (JWST) approaches a team of engineers and scientist is hard at work developing the Data Management Subsystem (DMS) for JWST with its cadre of complex imaging and spectral instruments.  DMS will perform receipt of science and engineering telemetry data; will perform reformatting, quality checking, calibration, data processing; will archive the data; will have tools for retrieving the data;  will have the capacities for reprocessing the data; will have external/public calibration tools; will provide user notification, search, and access tools for JWST science and engineering data;  will distribute data to the end user; provide extensive user analysis/visualization tools; and, will provide support for contributed data products from the community. We will give an overview of the software components, the hardware they run on, the programming languages/systems used, the complexity of the tested end to end science data flow, the current functionality of the system and what's to come for the JWST Data Management Subsystem in preparation for launch."</TD>
+     </TR>
+     <TR>
+      <TD>Tomasi</TD>
+      <TD>Maurizio</TD>
+      <TD>Univ. degli Studi di Milano</TD>
+      <TD>14</TD>
+      <TD>O4.5</TD>
+      <TD>Thursday</TD>
+      <TD>12.00</TD>
+      <TD>12.15</TD>
+      <TD>Towards new solutions for scientific computing: the case of Julia</TD>
+      <TD>text:'This year marks the consolidation of Julia (https://julialang.org/), a programming language designed for scientific computing, as the last version before 1.0 has just been released (0.7). Among its main features, expressiveness and high execution speeds are the most prominent: the performance of Julia code is similar to statically compiled languages, yet Julia provides a nice interactive shell and fully supports Jupyter; moreover, it can transparently call external codes written in C, Fortran, and even Python without the need of wrappers. The usage of Julia in the astronomical community is growing, and a GitHub organization named JuliaAstro takes care of coordinating the development of packages. In this talk, we will provide an overview of Julia and JuliaAstro. We will also provide a real-life example by discussing the implementation of a Julia-only simulation pipeline for a large-scale CMB experiment.'</TD>
+     </TR>
+     <TR>
+      <TD>Summaries</TD>
+      <TD>BOF Lightning</TD>
+      <TD>N/A</TD>
+      <TD>14</TD>
+      <TD>LT5</TD>
+      <TD>Thursday</TD>
+      <TD>12.15</TD>
+      <TD>12.30</TD>
+      <TD>TBD</TD>
+      <TD>TBD</TD>
+     </TR>
+     <TR>
+      <TD>Remarks</TD>
+      <TD>Final</TD>
+      <TD>POC Chair</TD>
+      <TD>14</TD>
+      <TD>Q</TD>
+      <TD>Thursday</TD>
+      <TD>12.30</TD>
+      <TD>12.45</TD>
+      <TD>TBD</TD>
+      <TD>TBD</TD>
+     </TR>
+     <TR>
+      <TD>Lunch</TD>
+      <TD>Box</TD>
+      <TD/>
+      <TD>0</TD>
+      <TD>C</TD>
+      <TD>Thursday</TD>
+      <TD>12.45</TD>
+      <TD>14.00</TD>
+      <TD>TBD</TD>
+      <TD>TBD</TD>
+     </TR>
+    </TABLEDATA>
+   </DATA>
+  </TABLE>
+ </RESOURCE>
+</VOTABLE>

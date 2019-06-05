@@ -1,0 +1,36 @@
+<!-- generic header for adass web pages -->
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>ADASS 2018 | Abstracts</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/modern-business.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Carrois+Gothic+SC" rel="stylesheet"> 
+    </head>
+
+    <body>
+
+        <!--#include virtual="/includes/nav_p.inc"-->
+
+        <!-- Page Content -->
+        <div class="container">
+        <br>
+        <div id="poster">
+        <h2 style="padding-top: 80px; margin-top: -80px;">
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+        Abstracts
+        </li>    
+        </ol>
+        </h2>

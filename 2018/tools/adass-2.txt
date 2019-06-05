@@ -1,0 +1,190 @@
+O Adamek, Karel karel.adamek@oerc.ox.ac.uk A GPU implementation of the harmonic sum algorithm
+P Afrin Badhan, Mahmuda afrin20m@astro.umd.edu STELLAR ACTIVITY EFFECTS ON MOIST HABITABLE TERRESTRIAL ATMOSPHERES AROUND M DWARFS
+O Albert, Kinga albert@mps.mpg.de Performance analysis of the SO/PHI software framework for on-board data reduction
+O Alesina, Fabien fabien.alesina@unige.ch Exoplanets data visualization in multidimensional plots using virtual reality in DACE
+O Alexov, Anastasia alexov@stsci.edu Hit the Ground Running: Data Management for JWST
+O Allen, Alice aallen@ascl.net Receiving Credit for Research Software
+  ABS2 Allen, Alice Unconference session: I want to talk about...
+P Allen, Christopher ceallen@cfa.harvard.edu Optimization of Aperture Photometry in the Chandra Source Catalog
+P Allen, Mark mark.allen@astro.unistra.fr Toward common solutions for data access, discovery and interoperability
+O Ansdell, Megan ansdell@berkeley.edu Automatic Classification of  Planet Candidates using Deep Learning
+P Araya, Mauricio mauricio.araya@usm.cl Cherenkov Shower Detection Combining Probability Distributions from Convolutional Neural Networks.
+X Arviset, Christophe Christophe.Arviset@esa.int ESA Science Archives and ESASky
+O Asercion, Joseph joseph.a.asercion@nasa.gov Utilizing Conda for Fermi Data Analysis Software Releases
+P Atemkeng, Marcellin m.atemkeng@gmail.com Baseline-dependent dimensional reduction techniques for radio interferometric big data compression
+P Baines, Deborah dbaines@sciops.esa.int DEAVI: Dynamic Evolution Added Value Interface
+P Baumann, Matthieu matthieu.baumann@astro.unistra.fr New Python developments to access CDS services
+P Becciani, Ugo ugo.becciani@inaf.it VisIVO Visual Analytics Tool an EOSC Science Demonstrator for data discovery
+O Berriman, Bruce gbb@ipac.caltech.edu Breathing New Life Into An Old Pipeline: Precision Radial Velocity Spectra of TESS Exoplanet Candidates
+P Blanco-Cuaresma, Sergi sblancocuaresma@cfa.harvard.edu Fundamentals of effective cloud management for the new NASA Astrophysics Data System
+P Boch, Thomas thomas.boch@astro.unistra.fr Creating and managing very large HiPS: the PanSTARRS case
+P Boisson, Catherine catherine.boisson@obspm.fr Executable user documentation for in-development software
+O Bonnarel, François francois.bonnarel@astro.unistra.fr ProvTAP: A TAP service for providing IVOA provenance metadata
+X Borne, Kirk borne_kirk@bah.com Massive Data Exploration in Astronomy: What Does Cognitive Have To Do With It?
+X Bosch, James jbosch@astro.princeton.edu An Overview of the LSST Image Processing Pipelines
+O Boussejra, Malik Olivier malik@boussejra.com aflak: Pluggable Visual Programming Environment with Quick Feedback Loop Tuned for Multi-Spectral Astrophysical Observations
+O Brasseur, Clara cbrasseur@stsci.edu AstroCut: A cutout service for TESS full-frame image sets
+P Brown, Matthew mbrown@keck.hawaii.edu Streamlining Pipeline Workflows: Using Python with an Object-Oriented Approach to Consolidate Aggregate Pipeline Processes
+O Buchschacher, Nicolas nicolas.buchschacher@unige.ch No-SQL databases: An efficient way to store and query heterogeneous astronomical data in DACE.
+O Burnier, Julien julien.burnier@unige.ch Development, tests and deployment of web application in DACE
+P Bushouse, Howard bushouse@stsci.edu The JWST Data Calibration Pipeline
+X Cai, Hongbo chb@bao.ac.cn 
+P Cardiel, Nicolás cardiel@ucm.es Rectification and wavelength calibration of EMIR spectroscopic data with Python
+P Ceballos, M.Teresa ceballos@ifca.unican.es Jitter and readout sampling frequency impact on the Athena/X-IFU performance
+O Chilingarian, Igor igor.chilingarian@cfa.harvard.edu Binospec@MMT: a database-driven model of operations, from planning of observations to data reduction and archiving
+P Chu, Selina selina.chu@jpl.nasa.gov Automatic Detection of Microlensing Events in the Galactic Bulge using Machine Learning Techniques
+O Comrie, Angus accomrie@gmail.com An HDF5 Schema for SKA Scale Image Cube Visualization
+O Coulais, Alain alain.coulais@obspm.fr GDL - GNU Data Language 1.0
+O Crawford, Steven scrawford@stsci.edu What’s new in Astropy v3.1
+O Dai, Cong daicong2014@163.com A method to detect radio frequency interference based on convolutional neural networks
+P Delgado, Arancha mdelgado@ast.cam.ac.uk Gaia Photometric Science Alerts Data Flow
+O Dencheva, Nadia dencheva@stsci.edu GWCS - A General Approach to  Astronomical World Coordinates
+P Deshpande, Shubhankar shubhand@cs.cmu.edu GMRT Archive Processing Project
+O Diaz, Rosa rdiaz@stsci.edu Adding Science Validation to the  JWST Calibration Pipeline.
+O Donaldson, Tom tdonaldson@stsci.edu Astropy and the Virtual Observatory
+P Dower, Theresa dower@stsci.edu Automating Multimission Access: rolling out a flexible Virtual Observatory-based infrastructure
+P Dowler, Patrick pdowler.cadc@gmail.com Archive-2.0: Metadata and Data Synchronisation between MAST, CADC, and ESAC
+P Dreissigacker, Christoph christoph.dreissigacker@aei.mpg.de Deep-Learning Continuous Gravitational Waves
+P Ebisawa, Ken ebisawa@isas.jaxa.jp CALET Gamma-ray Burst Monitor web-analysis system
+P Eguchi, Satoshi satoshieguchi@fukuoka-u.ac.jp Prototype Implementation of a Web-Based Gravitational Wave Signal Analyzer: SNEGRAF
+P Eisenhamer, Jonathan eisenhamer@stsci.edu JWST Association Generation: Piecing It All Together
+P Emonts, Bjorn bjornemonts@gmail.com CASA, the Common Astronomy Software Applications for Radio Astronomy
+O Fan, Dongwei fandongwei@nao.cas.cn A simple survey for cross-matching method
+P Feinstein, Carlos cfeinstein@fcaglp.unlp.edu.ar Extragalactic stellar photometry and the blending problem
+O Ferguson, Henry ferguson@stsci.edu Data Analysis Tools for JWST and Beyond
+P Fernique, Pierre Pierre.Fernique@astro.unistra.fr Time in Aladin
+O Fitzpatrick, Michael fitz@noao.edu The NOAO Data Lab: Design, Capabilities and Community Development
+P Gabriel, Carlos carlos.gabriel@sciops.esa.int The COSPAR Capacity Building Initiative: entering a new phase
+P Geers, Vincent vincent.geers@stfc.ac.uk MIRISim: the JWST-MIRI simulator
+P Giardino, Giovanna Giovanna.Giardino@esa.int Preparing for JWST: a detailed simulation of a MOS deep field with NIRSpec
+O Gilda, Sankalp s.gilda@ufl.edu Importance of Feature Selection in ML models
+O Gonzalez-Nuñez, Juan jgonzale@sciops.esa.int Driving Gaia Science from the ESA Archive: DR2 to DR3
+F Good, John jcg@ipac.caltech.edu Image Processing in Python With Montage
+P Gordon, Craig craig.a.gordon@nasa.gov The Present State of XSPEC and CFITSIO, Astronomical Analysis Packages Maintained by NASA's HEASARC.
+P Goz, David david.goz@inaf.it Astrophysical codes migration into Exascale Era
+O Gracia Abril, Gonzalo ggracia@sciops.esa.int Gaia DPAC Project Office: Coordinating the production of the largest star catalogue.
+P Grange, Yan grange@astron.nl The Dutch contribution to the ESRC
+O Graves, Sarah s.graves@eaobservatory.org Harnessing the power of archival data to increase  scientific output: the JCMT experience.
+P Grishin, Kirill kirillg6@gmail.com Open-source web tools for spectroscopic and imaging data visualization for the VOXAstro initiative
+P Guedes dos Santos, Luiz Fernando 51guedesdossantos@cua.edu Analyzing WIND data using machine learning
+X Guerra Noguero, Rocio rguerra@sciops.esa.int DevOps: the perfect ally for Science Operations for a large and distributed astronomy project.
+P Gupta, Pramod psgupta@uw.edu Computational Astrophysics with Go
+X Gwyn, Stephen gwyn.cadc@gmail.com MegaPipe 2.0: 10000 square degrees of CFHT MegaCam imaging
+P He, Helen hhe@cfa.harvard.edu Pixel mask Filtering of CXC Datamodel
+X Holman, Matthew mholman@cfa.harvard.edu The Minor Planet Center Data Processing System
+P Irby, Bryan bryan.k.irby@nasa.gov HEASOFT: A FITS Data Processing and Analysis Software Suite
+P Ireland, Jack jack.ireland@nasa.gov The SunPy Ecosystem
+O Iwasaki, Hiroyoshi h.iwasaki@rikkyo.ac.jp A new implementation of deep neural network to spatio-spectral analysis in X-ray astronomy
+P Jenness, Tim tjenness@lsst.org Abstracting the storage and retrieval of image data at the LSST
+P Johnston, Kyle kyjohnst2000@my.fit.edu Variable Star Classification Using Multi-View Metric Learning
+F Joliet, Emmanuel ejoliet@ipac.caltech.edu Visualization in IRSA Services using Firefly
+P Joncour, Isabelle isabelle.joncour@univ-grenoble-alpes.fr Multiscale spatial analysis of young stars complex using the dbscan clustering algorithm recursivel
+O Juric, Mario mjuric@astro.washington.edu The ZTF Alert Stream: Lessons from the first six months of operating an LSST precursor
+P Kaleida, Catherine ckaleida@stsci.edu JWST Data Management Subsystem Operations:  Preparing to Receive, Process, and Archive JWST Data
+P Kaplan, Kyle kfkaplan@email.arizona.edu The algorithms behind the HPF and NEID pipeline
+P Karim, Ramsey rkarim@astro.umd.edu Alpha-X: An Alpha Shape-based Hierarchical Clustering Algorithm
+P Kaufman, Zeke zkaufman@cfa.harvard.edu CIAO: A Look Under the Hood of Chandra's X-Ray Imaging and Analysis Software Configuration Management- Past, Present, and Future.
+P Kawasaki, Wataru wataru.kawasaki@nao.ac.jp Vissage: viewing polarisation data from ALMA
+P Kelley, Michael msk@astro.umd.edu ZChecker: Finding Cometary Outbursts with the Zwicky Transient Facility
+O Kent, Brian bkent@nrao.edu 3D Data Visualization in Astrophysics
+O Kepley, Amanda akepley@nrao.edu Auto-multithresh: A General Purpose Automated Masking Algorithm for Clean
+X Kitaeff, Vyacheslav slava.kitaeff@uwa.edu.au DALiuGE/CASA based processing for the extragalactic HI observations with FAST.
+P Kong, Xiao kongx@nao.cas.cn The construction of a new stellar classification template library for the LAMOST 1D Pipeline based on LAMOST DR5
+O Kosack, Karl karl.kosack@cea.fr Data Processing Challenges for CTA
+P Kosugi, George george.kosugi@nao.ac.jp Qualification of Sparse Modeling Technique for radio interferometric imaging of ALMA
+X Kuulkers, Erik erik.kuulkers@esa.int Coordinating observations among ground and space-based telescopes in the multi-messenger era
+P Labrie, Kathleen klabrie@gemini.edu DRAGONS - Data Reduction for Astronomy from Gemini Observatory North and South
+X Lacy, Mark mlacy@nrao.edu The VLA Sky Survey - operations, data processing and archiving
+O Lam, Cheuk Yin c.y.lam@ljmu.ac.uk Data-Driven Pixelisation with Voronoi Tessellation
+P Lammers, Jason jlammers0@gmail.com Optimization Strategies for running Legacy Codes
+O Landais, Gilles gilles.landais@astro.unistra.fr Quality assurance in the ingestion of data into the CDS VizieR catalogue and data services
+P Landoni, Marco marco.landoni@inaf.it Application of Google Cloud Platform in Astrophysics
+P Laurino, Omar olaurino@cfa.harvard.edu Mapping Data Models to VOTable
+X Lieu, Maggie maggie.lieu@sciops.esa.int Deep learning of astronomical features with big data.
+P Lim, Pey Lian lim@stsci.edu stginga: Ginga Plugins for Data Analysis and Quality Assurance of HST and JWST Science Data
+P Lin, Ganghua lgh@bao.ac.cn The quality assurance of Chinese solar physics historical observation data archives
+O Loose, Marcel loose@astron.nl Agile and DevOps from the trenches at ASTRON
+P Louys, Mireille mireille.louys@unistra.fr A TripleStore implementation of the IVOA Provenance Data model
+P Lu, Yuxi lucylulu12311@gmail.com Modeling Narrow Rings with a Single Chain of Gravitating Particles
+P Lundquist, Michael mlundquist@email.arizona.edu Searching for Optical Counterparts to Gravitational Wave Events with the Catalina Sky Survey
+P Lutz, Katharina katharina.lutz@astro.unistra.fr Getting ready for the fourth Asterics DADI virtual observatory school
+P Major, Brian major.brian@gmail.com Arcade: A User Focussed, Visual Compute Environment in CANFAR
+O Martinez, Beatriz beatriz.martinez@esa.int Data-driven Space Science at ESA Science Data Centre
+P McWhirter, Paul Ross P.R.McWhirter@ljmu.ac.uk Saving endangered animals with Astro-Ecology
+F Mechev, Alexandar apmechev@strw.leidenuniv.nl Building LOFAR As A Service: Processing Petabytes with just a click
+P Mellado, Pablo mellado@iram.es Realtime telescope and data visualization using web technologies
+P Michel, Laurent laurent.michel@astro.unistra.fr ALiX: An advanced search interface for AladinLite
+O Micol, Alberto amicol@eso.org The new science portal and the programmatic and VO interfaces of the ESO science archive
+P Million, Chase chase@millionconcepts.com Evaluating Methods for Flare Detection in GALEX Light Curves
+P Mink, Jessica jmink@cfa.harvard.edu Finding Your Place in the Cosmos with WCSTools
+  ABS2 Mink, Jessica Data Formats BoF
+P Molinaro, Marco marco.molinaro@inaf.it Starting up a Data Model for Exoplanetary Data
+O Momcheva, Ivelina imomcheva@stsci.edu Hubble in the Cloud: A Prototype of a Science Platform at STScI
+O Morii, Mikio morii@ism.ac.jp Image reconstruction method for an X-ray telescope with an angular resolution booster
+O Nakazato, Takeshi takeshi.nakazato@nao.ac.jp New Synthesis Imaging Tool for ALMA based on the Sparse Modeling
+O Navarro, Vicente vicente.navarro@esa.int ESAC Science Exploitation and Preservation Platform Reference Architecture
+X Nebot, Ada ada.nebot@astro.unistra.fr Data challenges of the VO in Time Domain Astronomy
+P Nie, Jianyin niejy@ihep.ac.cn HXMT Archive and Data Process System
+O Nieto, Sara sara.nieto@sciops.esa.int SCIENCE EXPLOITATION IN A BIG DATA ARCHIVE: THE EUCLID SCIENTIFIC ARCHIVE SYSTEM
+O Nikolic, Bojan b.nikolic@mrao.cam.ac.uk Acceleration of Non-Linear Minimisation with PyTorch
+P Nomaru, Junichi noumaru@naoj.org Subaru Telescope Network 5 or STN5 - The new computer and network system at Subaru Telescope
+O O'Toole, Simon simon.otoole@mq.edu.au Bringing together the Australian sky - coordination and interoperability challenges of the All-Sky Virtual Observatory
+  ABS2 O'Toole, Simon How do you get the most out of your teams?
+P Oloketuyi, Jacob jacob.oloketuyi@ynao.ac.cn The Analysis of Periodic Variation of Sunspot Groups and the X-ray Flare Classes
+P Paillassa, Maxime maxime.paillassa@u-bordeaux.fr MaxiMask: Identifying contaminants in astronomical images using convolutional neural networks
+P Parra, Jose jose.parra@alma.cl WAN OPTIMIZATION FOR ALMA DATA
+X Pascual, Sergio sergiopr@fis.ucm.es Runing GTC data reduction pipelines in Jupyter
+P Patterson, Gerald Wes.patterson@jhuapl.edu Anticipated Data Products from the Europa Imaging System (EIS) on Europa Clipper
+P Paxson, Charles cpaxson@cfa.harvard.edu Transforming Science Code into Maintainable Software, Insights into the G-CLEF Exposure Time Calculator
+P Perea-Calderon, Jose Vicente jose.perea@sciops.esa.int Reprocessing all the XMM-Newton scientific data: a challenge for the Pipeline Processing System
+P Perez, Fernando fernando.perez@esa.int Centralisation and management of science operations procedures and test cases using SOCCI
+P Pineau, Francois-Xavier francois-xavier.pineau@astro.unistra.fr The CDS HEALPix library
+X Plante, Raymond raymond.plante@nist.gov The BagIt Packaging Standard for Interoperability and Preservation
+P Polisensky, Emil emil.polisensky@nrl.navy.mil The VLITE Database Pipeline
+P Prix, Reinhard reinhard.prix@aei.mpg.de Efficient FFT-based $\mathcal{F}$-statistic implementation for continuous-gravitational-wave searches
+O Racero, Elena eracero@sciops.esa.int ESASky: A New Window for Solar System Data Exploration
+F Raddick, Michael jordan.raddick@gmail.com SciServer: Collabroative data-driven science
+O Ramirez, Emanuel eramirez@quasarsr.com Analysis of Astronomical Data using VR: the Gaia catalogue in 3D
+O Raugh, Anne araugh@umd.edu The PDS Approach to Science  Data Quality Assurance
+P Renil, Rosly rosly@ska.ac.za MeerKAT: Operational Workflow and Data Analysis
+O Roby, Trey roby@ipac.caltech.edu New visualization Features in Firefly
+O Romelli, Erik erik.romelli@inaf.it Euclidizing external tools: an example from SDC-IT on how to handle software and humanware
+P Rubtsov, Evgenii ev.rubtcov@physics.msu.ru Stellar atmospheric parameters from full spectrum fitting of intermediate and high-resolution spectra against PHOENIX/BT-Settl synthetic stellar atmospheres
+P Rutkowski, Kristin kristin.l.rutkowski@nasa.gov Science Data Pipeline of NICER
+P Ryan, P. Wesley wes@ascl.net Schroedinger’s code: Source code availability and transparency in astrophysics
+P Salgado, Jesus jesusjuansalgado@gmail.com Gaia DR2 and the Virtual Observatory: VO in operations new era
+P Sanguillon, Michele Michele.Sanguillon@umontpellier.fr An overview of the OVGSO data centre
+P Santos, Rafael rafael.santos@inpe.br A hybrid neural network approach to estimate galaxy redshifts from multi-band photometric survey.
+P Schaaff, Andre andre.schaaff@astro.unistra.fr Chatting with the astronomical data services.
+P Servillat, Mathieu mathieu.servillat@obspm.fr The IVOA Provenance Data Model
+O Shen, Robert robert.shen@astronomyaustralia.org.au ASVO MWA project: lower technical barrier to access MWA data
+P Shin, Min-Su msshin@kasi.re.kr Applications of the in-memory database Redis in processing transient event alerts
+P Shipman, Russell russ@sron.nl Pipeline Processing of Stratospheric Terahertz Observatory (STO-2) Galactic Plane Survey
+P Shirasaki, Yuji yuji.shirasaki@nao.ac.jp VO service in Japan : Registry service based on Apache Solr and SIA v2 service for Japanese Facilities
+O Smith, Jeffrey jeffrey.smith@nasa.gov Lilith: A Versatile Instrument and All-Sky Simulator for use with Space-Based Astrophysics Observatories
+O Snyder, Gregory gsnyder@stsci.edu Mock Datasets and Galaxy Merger Statistics from Cosmological Hydro Simulations
+P Solar, Martin msolar95@gmail.com Azimuthal variation of oxygen abundance in galactic stellar discs of the EAGLE simulations
+P Solar, Mauricio mauricio.solar@usm.cl Tensor Clusters for extracting and summarizing components in spectral cubes
+P Stephens, Tom thomas.stephens@nasa.gov Running the Fermi Science Tools on Windows
+X Stoehr, Felix felix.stoehr@gmx.de Astronomical archives: Serving up the Universe
+P Streicher, Ole ole@aip.de DOI in Astronomy
+P Sutrisno, Raymond rasutrisno@uh.edu A Machine Learning Approach to Detect Dark Matter Particles Under Extreme Class Imbalance and Large Datasets
+P Swade, Daryl swade@stsci.edu The TESS Science Data Archive
+O Tavagnacco, Daniele daniele.tavagnacco@inaf.it Performance-related aspects in the Big Data Astronomy Era: architects in software optimization
+P Taylor, Mark m.b.taylor@bristol.ac.uk TOPCAT and Gaia
+P Teuben, Peter teuben@astro.umd.edu QAC: Quick Array Combinations with CASA
+P Tian, Fan ftian4@jhu.edu Robust Registration of Astronomy Catalog
+O Toledo, Ignacio ignacio.toledo@alma.cl Data Science =! Software Engineering. Exploring a workflow for ALMA operations.
+O Tomasi, Maurizio maurizio.tomasi@unimi.it Towards new solutions for scientific computing: the case of Julia
+P Torres, Simón storres@ctio.noao.edu An on-site data reduction pipeline for the Goodman Spectrograph
+P Tsutsumi, Takahiro ttsutsum@nrao.edu Development of auto-multithresh: an automated masking algorithm for deconvolution in CASA
+X Vahi, Karan vahi@isi.edu Workflows Management using Pegasus
+  ABS2 Vahi, Karan Enabling Weak Gravitational Lensing Pipelines using Pegasus
+P Wang, Rui wangrui@nao.cas.cn Analysis of Stellar Spectra from LAMOST DR5 with Generative Spectrum Networks
+P Wicenec, Andreas andreas.wicenec@uwa.edu.au The Murchison Widefield Array's VO compliant archive
+X Wise, Michael wise@astron.nl Establishing the SKA Regional Centre Network: Mesh Management and Culture Change
+P Woods, Paul paul.woods@nature.com Software and data policies for Nature journals
+P Yamaguchi, Masayuki masayuki.yamaguchi@nao.ac.jp Super-resolution Imaging of the Protoplanetary Disk HD 142527 using Sparse Modeling
+X Zapart, Christopher chris.zapart@nao.ac.jp An introduction to FITSWebQL
+O Zecevic, Petar Petar.Zecevic@fer.hr AXS: Making end-user petascale analyses possible, scalable, and usable
+P da Silva, Daniel dasilva@jhu.edu CCSDSPy - Convenient Decoding of Binary Spacecraft Telemetry
