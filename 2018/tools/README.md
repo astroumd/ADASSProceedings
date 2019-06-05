@@ -1,6 +1,10 @@
 
 # ADASS 2018
 
+These are the tools and files we used between website and book production.
+
+## Ingestion
+
 Head over to https://www.certain.com , login (if cookies keep an old stale login, logout and login again)
 with adass18registration@umd.edu and you should know the password.
 
@@ -57,6 +61,7 @@ We designate
        Bn   = BoF (Birds of a Feather) (8?)      B1...
        Dn   = demo booth (11)                    D1...
        Fn   = focus demo (5)                     F1...
+       Hn   = hackathon/ivoa (2)                 H1..
        Is.c = invited talk (13)                  Is.c (by session number s=1..13)
        Os.c = oral contribtution (36?)           Os.c (s=session c=contribution)
        Ps.c = poster (???)                       Ps.c (s=session c=contribution)
