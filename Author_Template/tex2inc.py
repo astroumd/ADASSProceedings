@@ -23,7 +23,7 @@
 
 import sys
 
-version = "4-jun-2019"
+version = "6-jun-2019"
 debug = False
 debug = True                              # comment this for final version, or read from a dot file
 
@@ -49,7 +49,7 @@ triggers.append([None,"%toc",                 0])
 #triggers.append([True,"\\bibliography",      0])
 
 def carg(line):
-    # \title{..}       (could be 2 lines)
+    # \title{..}       (could be 2 lines, but those now need %toc)
     # \aindex{...}
     # %toc ...         (needs to be 1 line)
     if line.find('%toc') == 0:
@@ -59,7 +59,15 @@ def carg(line):
     if line[len(line)-1] == '\\':                 # two line \title, due to forced orphan?, will need a %toc directive
         return line[pco+1:]
     if pco<0 or pcc<0:
-        return "BAD ONE LINER"
+        return "BAD ONE LINER, use %toc"
+    return line[pco+1:pcc]
+
+def carg2(line):
+    # old one
+    pco = line.find('{')
+    pcc = line.rfind('}')
+    if pco<0 or pcc<0:
+        return "BAD ONE LINER, use %toc"
     return line[pco+1:pcc]
     
 if len(sys.argv) == 1:
@@ -111,8 +119,10 @@ for l in lines:
                         tmp2 = tmp1[:cl1] + '|textbf}'
                         print("%s" % tmp2)
                     else:
-                        print("%s" % l[1:].strip())                                        
-                    authors.append(carg(l))
+                        print("%s" % l[1:].strip())
+                    a1 = carg(l)
+                    if a1.find('textit') < 0:      # special reserved for photos
+                        authors.append(a1)
                 elif t[1] == "%\\ooindex":
                     l=l.replace(',','!')           # ASCL index gets an extra indentation
                     print("%s" % l[1:].strip())                    
@@ -171,6 +181,7 @@ if pid[0] == 'I':  invited = '(Invited Speaker)'
 
 f = open(tocfile,"w")
 if title[len(title)-1] == '\\':
+    # should never occur anymore
     title2 = 'TBD'
     f.write("\\tocinsertentry[r]{%s%s}{%s %s}{authors/%s_inc}\n" % (title,title2,author,invited,pid))
 else:
