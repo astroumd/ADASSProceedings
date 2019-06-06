@@ -25,7 +25,7 @@ import sys
 
 version = "6-jun-2019"
 debug = False
-debug = True                              # comment this for final version, or read from a dot file
+##debug = True                              # %%DEBUG comment this line for final version, or read from a dot file
 
 def read1(filename):
     """ read tex file into lines for processing
