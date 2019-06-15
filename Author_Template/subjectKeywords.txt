@@ -4,6 +4,7 @@ Apple iPhone
 Astrophysics Data System (ADS)
 Bayes factor
 Big Data
+BoFs
 COSPAR
 Centre de Donn\'ees astronomiques de Strasbourg (CDS)
 Dagik-Earth
@@ -100,6 +101,7 @@ algorithm
     Voronoi cells
     Wide Field Interferometric Synthesis (WIFISYN)
     \textit{k}-nearest neighbour regression
+    alpha shapes
     analysis
     artificial skepticism
     automatic
@@ -120,6 +122,7 @@ algorithm
     fitting
     friends-of-friends
     genetic
+    harmonic sum
     heuristic
     imaging
     k-d trees
@@ -128,17 +131,21 @@ algorithm
     least squares regression
     line finding
     machine learning
+        deep learning
+        k-nearest neighbors
         naive Bayes classifier
         random forest
         semi-supervised
         supervised
         training
+        u-net
         unsupervised
     matching
     minimisation
     optical flow
     optimisation
     parallelization
+    polygonal clipping
     search
     sky tesselation
     source finding
@@ -251,6 +258,7 @@ applications
     World Wide Telescope (WWT)
     YouASTRO
     aXe
+    blender
     ccdproc
     fpack/funpack
     iCal
@@ -318,6 +326,7 @@ archives
         SOFIA
         Spitzer Heritage Archive
         Subaru Telescope Archive System (STARS)
+        TESS
         Teide
         UKIRT
         Ulysses
@@ -439,6 +448,7 @@ astronomy
         galaxy formation
         star formation
         stellar population synthesis
+    multi-messenger
     near-infrared
     neutral hydrogen
     neutrino
@@ -470,6 +480,7 @@ astronomy
     radial velocity
     radio
         VLBI
+        interferometer
         single-dish
     redshift
         photometric
@@ -529,6 +540,8 @@ calibration
     wavelength
 catalogues
     Gaia Data Release 1
+    Gaia Data Release 2
+    Gaia Data Release 3
     X-ray
     astrometric
     individual
@@ -576,11 +589,13 @@ classification
     spectral
 code
     documentation
+    legacy
     moving to data
     repository
         CVS
         Git
         GitHub
+        GitLab
     reviews
 computer languages
     C
@@ -589,10 +604,12 @@ computer languages
     C++11
     Fortran
     GDL
+    Go
     Groovy
     IDL
     Java
     JavaScript
+    Julia
     Jython
     Objective-C
     Perl
@@ -649,6 +666,7 @@ computing
     atomic operations
     authorization
     cloud
+        Google
         Infrastructure as a Service (IaaS)
         Microsoft
         Platform as a Service (PaaS)
@@ -724,16 +742,19 @@ data centres
     IPAC
     Italian center for Astronomical Archives (IA2)
     JMMC
+    OV-GSO
     SILSO
     TAO
     TWEA-DC
     VO-PDC
     Virtual Atomic and Molecular Data Center (VAMDC)
 data formats
+    ASDF
     AST
     CSV
     FITS
         HDU
+        WCS
         headers
         keywords
         tables
@@ -753,6 +774,7 @@ data formats
     VOTable
     XML
     YAML
+data products
 data
     $1/f$ noise
     Hierarchical Progressive Surveys (HiPS)
@@ -888,6 +910,8 @@ databases
         Saada
 dice
     loaded
+distribution
+    von Mises
 e-science
 education
 education and public outreach
@@ -902,7 +926,10 @@ fault management
 footprint service
 geoinformatics
 geostatistics
+google
+    cloud
 hack day
+hackathon
 hardware
 helpdesks
 images
@@ -922,6 +949,8 @@ images
         wavelength calibration
     reconstruction
     segmentation
+    tesselation
+        Voronoi
     tessellation
         HEALPix
         HTM
@@ -935,12 +964,14 @@ information systems
 instruments
     Berkley Visible Image Tube
     CCDs
+    Integral Field Spectrograph (IFS)
     Integral Field Unit (IFU)
     PSFs
         Tiny Tim models
     all-sky camera
     bolometer
     camera
+        EIS
         submillimeter array
     configuration
     coronagraph
@@ -1059,6 +1090,7 @@ libraries
     APLpy
     AST
     ATpy Python
+    Apache Airflow
     Apache Tika
     AstroLib
     Astropy
@@ -1142,6 +1174,7 @@ libraries
     scikit-learn
     scipy
     sky spectra
+    tensorfit
     wcslib
     zvtm
 license
@@ -1236,6 +1269,7 @@ observatories
         East Asian Observatory
         Fermi Large Area Telescope (LAT)
         First G-APD Cherenkov Telescope (FACT)
+        GMRT
         GMT
         GSMT
         Gemini
@@ -1250,6 +1284,7 @@ observatories
         IceCube
         JACH
         JCMT
+        KAGRA
         KM3Net
         Keck
         Kilodegree Extremely Little Telescope (KELT)
@@ -1262,6 +1297,7 @@ observatories
         MeerKAT
         Murchison Radio Observatory (MRO)
         Murchison Widefield Array (MWA)
+        National Optical Astronomy Observatory (NOAO)
         Noto
         Observatorio Roque de los Muchachos
         Ond\v rejov Observatory
@@ -1313,6 +1349,7 @@ observatories
         IUE
         IXO
         Infrared Space Observatory (ISO)
+        International Space Station (ISS)
         JASMINE
         JWST
         Kepler
@@ -1333,6 +1370,7 @@ observatories
         Spitzer Space Telescope
         Suzaku
         Swift
+        TESS
         WFIRST
         WISE
         WMAP
@@ -1522,6 +1560,7 @@ projects
     SOCCI
     SciServer Compute
     Shibboleth
+    StarFormMapper
     VIALACTEA
     VLBI-IT
     WTF
@@ -1567,6 +1606,7 @@ satellites
     earth observation
         Aura
         ENVISAT
+        MODIS
         OCO2
 scheduling
 science portal
@@ -1618,6 +1658,7 @@ software
         templates
         user requirements
     development
+        DevOps
         agile
         design reviews
         management
@@ -1755,6 +1796,7 @@ software
         Reflex
         serializing
 space probes
+    Europa Clipper
     ExoMars
     Rosetta
     Schiaparelli
@@ -1847,6 +1889,7 @@ surveys
     VIKING)
     VIPERS
     VISTA
+    VLA Sky Survey (VLASS)
     VLSS
     VUDS
     VVDS
@@ -1858,6 +1901,7 @@ surveys
     zCOSMOS
 target of opportunity
 techniques
+    API
     Fast Holographic Deconvolution
     Fredholm integral equation
     Gaussian fitting
@@ -1871,6 +1915,7 @@ techniques
     concave hulls
     continuous ranked probability score
     continuum fitting
+    convolutional neural networks (CNN)
     cross correlation
     dark subtraction
     dashboards
@@ -1880,6 +1925,7 @@ techniques
     eggs
     event detection
     forced photometry
+    generative spectrum networks (GSN)
     image deconvolution
     line fitting
     machine learning
@@ -1906,6 +1952,7 @@ techniques
     sky subtraction
     slippy map
     source detection
+    sparse modeling
     superflat
     transpilation
     triangulation
@@ -1918,6 +1965,12 @@ telescopes
     robotic
     spiders
     vignetting
+tensorflow
+theorem
+    Brewer
+    CAP
+    L'Huilier
+    Nyquist
 unconference
     Astro Hack Week
 user interfaces
@@ -1930,9 +1983,11 @@ visualisation
     CAVE2
     Google Cardboard
     Oculus Rift
+    blender
     hybrid rendering
     immersive-3D
     multi-dimensional
+    web-based
 web
     Apache
     Linked Open Data (LOD)
