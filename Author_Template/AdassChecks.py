@@ -256,6 +256,7 @@
 #                    will now also expand intermediate archive files, and now
 #                    can return the names or removed directories and archives
 #                    if passed lists for this purpose. KS.
+#     17th Jun 2019  Prepare file for ADASS 2019 JdP.
 
 from __future__ import (print_function,division,absolute_import)
 
@@ -278,9 +279,9 @@ import TexScanner
 #  used by the various utility scripts used in the editing process for the
 #  proceedings.)
 
-__AdassConference__ = "XXVIII"
+__AdassConference__ = "XXIX"
 
-__AdassEditors__    = "Teuben,~P. and Pound,~M. and Thomas,~B. and Warner,~E."
+__AdassEditors__    = "Pizzo,~R. and Deul,~E. and Mol,~J. and de Plaa,~J. and Verkouter,~H. and Williams,~R."
 
 __AdassVolume__     = "TBD"
 

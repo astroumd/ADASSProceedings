@@ -1,7 +1,7 @@
 This package of files is supplied to help prepare papers for submission in the
-Proceedings for the ADASS 2018 conference held in College Park, Maryland.
+Proceedings for the ADASS 2019 conference held in Groningen, The Netherlands.
 
-Last updated: 20-dec-2018 by Peter Teuben
+Last updated: 17-Jun-2019 by Jelle de Plaa
 
 It contains the following files:
 
@@ -76,8 +76,8 @@ simply upload (as a ZIP file is the easiest) the template, the two asp2014 files
 and optionally your BIB file and EPS figures. Don't start from scratch, or your file
 will be likely named main.tex
 
-Optionally in 2018 we have personalized templates, based on your abstract, in
-http://www.astro.umd.edu/~teuben/adass/papers/    The instructions within that
+Optionally in 2019 we have personalized templates, based on your abstract, in
+https://www.adass2019.nl/<template_location>. The instructions within that
 template are even more terse than in ADASS_template.tex , so be warned if some
 of this material is new to you.
 
@@ -150,7 +150,7 @@ https://www.howtogeek.com/164668/how-to-electronically-sign-documents-without-pr
 
 (Zip files are also acceptable, using the same naming convention, eg P10-3_v1.zip.)
 
-Submit the .tar file as instructed on the ADASS 2018 web site. If you need to
+Submit the .tar file as instructed on the ADASS 2019 web site. If you need to
 submit a revised version, submit ALL the required files in a new .tar file - do
 not just submit the modified files - and append a version number to the name,
 eg P10-3_v2.tar.
@@ -188,6 +188,6 @@ you have the following files :
    2. ManuscriptInstructions.pdf
    3. README                       (this file)
    4. ADASS_template.tex
-   5. P1-2.tex                 (your personalized template introduced at ADASS 2018)
+   5. P1-2.tex                 (your personalized template introduced at ADASS 2019)
 
 good luck!
