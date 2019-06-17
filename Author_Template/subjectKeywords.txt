@@ -1,9 +1,11 @@
 .Astronomy
 ASCL
 Apple iPhone
+Artificial intelligence
 Astrophysics Data System (ADS)
 Bayes factor
 Big Data
+BoFs
 COSPAR
 Centre de Donn\'ees astronomiques de Strasbourg (CDS)
 Dagik-Earth
@@ -50,6 +52,7 @@ Universal Worker Service (UWS)
     standard
 Virtual Astronomical Observatory (VAO)
 Virtual Observatory (VO)
+    Data Model
     individual
         All Sky Virtual Observatory (ASVO)
         Chilean Virtual Observatory
@@ -62,6 +65,8 @@ Virtual Observatory (VO)
         VO-Paris
         Virtual Solar Observatory (VSO)
     interfaces
+    standards
+        VO Data Modeling Language (VO-DML)
 World Coordinate System (WCS)
 \texttt{astrometry.net}
 adaptive optics
@@ -100,6 +105,7 @@ algorithm
     Voronoi cells
     Wide Field Interferometric Synthesis (WIFISYN)
     \textit{k}-nearest neighbour regression
+    alpha shapes
     analysis
     artificial skepticism
     automatic
@@ -120,6 +126,7 @@ algorithm
     fitting
     friends-of-friends
     genetic
+    harmonic sum
     heuristic
     imaging
     k-d trees
@@ -128,17 +135,21 @@ algorithm
     least squares regression
     line finding
     machine learning
+        deep learning
+        k-nearest neighbors
         naive Bayes classifier
         random forest
         semi-supervised
         supervised
         training
+        u-net
         unsupervised
     matching
     minimisation
     optical flow
     optimisation
     parallelization
+    polygonal clipping
     search
     sky tesselation
     source finding
@@ -228,6 +239,7 @@ applications
     SITools2
     SPOT
     SWarp
+    SciApp
     SedImporter
     Sherpa
     SimCADO
@@ -241,6 +253,7 @@ applications
     TapHandle
     TiRiFiC
     UDON
+    UDON2
     VO Crawler
     VODance
     VOSpec
@@ -251,6 +264,7 @@ applications
     World Wide Telescope (WWT)
     YouASTRO
     aXe
+    blender
     ccdproc
     fpack/funpack
     iCal
@@ -275,6 +289,7 @@ archives
         Archive Building System Infrastructure (ABSI)
         NADIR
     individual
+        ALMA Regional Centers (ARCs)
         ALMA Science Archive
         BLAST
         CARMA
@@ -298,6 +313,7 @@ archives
         Herschel Science Archive (HSA)
         Hubble Legacy Archive (HLA)
         Huygens
+        IBIS-A
         IPAC
         ISO Data Archive (IDA)
         Integral SOC Science Data Archive (ISDA)
@@ -318,16 +334,19 @@ archives
         SOFIA
         Spitzer Heritage Archive
         Subaru Telescope Archive System (STARS)
+        TESS
         Teide
         UKIRT
         Ulysses
         VISTA Science Archive
+        ViaLactea Knowledge Base (VLKB)
         WFCAM Science Archive
         WIRCam
         WISE
         XMM-Newton
         XMM-Newton Science Archive (XSA)
     legacy
+    local
     multiple
         ESA Space Science Archives
         ESDC
@@ -340,6 +359,7 @@ archives
         National Radio Astronomy Observatory (NRAO) data archive
         Planetary Science Archive (PSA)
         Wide Field Astronomy Unit (WFAU)
+    reduced
     searching
 astroinformatics
 astronomers
@@ -439,12 +459,14 @@ astronomy
         galaxy formation
         star formation
         stellar population synthesis
+    multi-messenger
     near-infrared
     neutral hydrogen
     neutrino
     neutron stars
     novae
     periodic variables
+    photometric redshift
     photometry
         Kron
         Petrosian
@@ -470,6 +492,8 @@ astronomy
     radial velocity
     radio
         VLBI
+        interferometer
+        interferometry
         single-dish
     redshift
         photometric
@@ -483,6 +507,7 @@ astronomy
     solar flares
     solar system
     spectra
+        artificial
     spectral analysis
     star formation
     stars
@@ -513,6 +538,15 @@ astroreference
 astrostatistics
 astrotag
 atmospheric turbulence
+authentication & authorization
+    EduGAIN
+    federated identities
+    identity provider
+    protocols
+        OAuth
+        OpenID
+        SAML
+        X.509
 bibiolgraphy
 business intelligence
 business logic
@@ -529,6 +563,8 @@ calibration
     wavelength
 catalogues
     Gaia Data Release 1
+    Gaia Data Release 2
+    Gaia Data Release 3
     X-ray
     astrometric
     individual
@@ -549,14 +585,20 @@ catalogues
         USNO-B Catalog
         WISE
         XMMFITCAT
+    individuals
+        GAIA Data Release 1
     infra-red
     observing
     services
         AstroDAbis
         BLINK
+        CDS X-Match
         Gaia Archive Core Systems
+        Gaia Science Alerts
         My Catalog Builder
+        SIMBAD TAP
         Sesame
+        SimWatch
         TAPVizieR
         VizieR
     simulation
@@ -576,11 +618,14 @@ classification
     spectral
 code
     documentation
+    legacy
+    management
     moving to data
     repository
         CVS
         Git
         GitHub
+        GitLab
     reviews
 computer languages
     C
@@ -589,10 +634,12 @@ computer languages
     C++11
     Fortran
     GDL
+    Go
     Groovy
     IDL
     Java
     JavaScript
+    Julia
     Jython
     Objective-C
     Perl
@@ -649,10 +696,14 @@ computing
     atomic operations
     authorization
     cloud
+        Google
+        Infrastructure as a Service
         Infrastructure as a Service (IaaS)
         Microsoft
         Platform as a Service (PaaS)
+        Software as a Service
         Software as a Service (SaaS)
+        Virtual Private Sever
     cluster
         Docket Swarm
         Kubernetes
@@ -690,6 +741,7 @@ computing
     supercomputing
         Centro Svizzero di Calcolo Scientifico (CSCS)
         Cray
+        HYDRA (at MPCDF)
         Magnus
         National Center for Supercomputing Applications (NCSA)
         National Computational Infrastructure (NCI)
@@ -724,16 +776,19 @@ data centres
     IPAC
     Italian center for Astronomical Archives (IA2)
     JMMC
+    OV-GSO
     SILSO
     TAO
     TWEA-DC
     VO-PDC
     Virtual Atomic and Molecular Data Center (VAMDC)
 data formats
+    ASDF
     AST
     CSV
     FITS
         HDU
+        WCS
         headers
         keywords
         tables
@@ -753,13 +808,16 @@ data formats
     VOTable
     XML
     YAML
+data products
 data
     $1/f$ noise
     Hierarchical Progressive Surveys (HiPS)
     access
     acquisition
+    aggregation
     analysis
         in situ
+        real time (RTA)
         spectral
     ancillary
     background noise
@@ -770,6 +828,7 @@ data
         hyperspectral
         mosaic
     curation
+    delivery
     discovery
     error propagation
     errors
@@ -779,6 +838,7 @@ data
     heterogenous
     ingestion
     integrity
+    interoperability
     management
         DES Data Management (DESDM)
         archive
@@ -798,7 +858,9 @@ data
         ALMA Project Data Model (APDM)
         ALMA Science Data Model (SDM)
         CAOM
+        Euclid Common Data Model (ECDM)
         GOM.FITS
+        IVOA Simulation DM
         IVOA Spectrum DM
         ObsTAP
         PROV
@@ -811,6 +873,8 @@ data
         science
     preservation
     processing
+        Lambda Architecture
+        automated
         bottlenecks
         correlators
     proprietary
@@ -835,6 +899,7 @@ data
     transfer
     validation
     variance
+    volume
 databases
     DBMS
     Hive
@@ -848,11 +913,14 @@ databases
     RDBMS
     SQLAlchemy
     SQLite
+    SaadaDB
     Sesame
     Spark SQL
     Sybase
     atomic and molecular
     caching
+    engine
+        Spider
     engineering
     individual
         COSMOS
@@ -881,6 +949,7 @@ databases
         SciQL
     querying
     relational
+    sharding
     spectroscopic
         HITRAN
     terascale
@@ -888,6 +957,8 @@ databases
         Saada
 dice
     loaded
+distribution
+    von Mises
 e-science
 education
 education and public outreach
@@ -897,12 +968,16 @@ education
         Moodle
 email
 ethernet
+    White Rabbit
 exposure time calculator
 fault management
 footprint service
 geoinformatics
 geostatistics
+google
+    cloud
 hack day
+hackathon
 hardware
 helpdesks
 images
@@ -922,6 +997,8 @@ images
         wavelength calibration
     reconstruction
     segmentation
+    tesselation
+        Voronoi
     tessellation
         HEALPix
         HTM
@@ -935,12 +1012,15 @@ information systems
 instruments
     Berkley Visible Image Tube
     CCDs
+        Charge Transfer Efficiency (CTE)
+    Integral Field Spectrograph (IFS)
     Integral Field Unit (IFU)
     PSFs
         Tiny Tim models
     all-sky camera
     bolometer
     camera
+        EIS
         submillimeter array
     configuration
     coronagraph
@@ -978,6 +1058,7 @@ instruments
         FORS
         FRIDA
         Fermi LAT
+        GIRAFFE
         GMOS
         GRID
         HARMONI
@@ -1030,6 +1111,8 @@ instruments
         UVES
         UVIS
         VIMOS
+        VIRCAM
+        VIRTIS
         VIS
         VISIR
         VLT/UT2
@@ -1059,6 +1142,7 @@ libraries
     APLpy
     AST
     ATpy Python
+    Apache Airflow
     Apache Tika
     AstroLib
     Astropy
@@ -1093,6 +1177,7 @@ libraries
     MMAP
     MOSCA
     MPI
+    MPI4PY
     Mayavi
     NDF
     OpenCL
@@ -1142,6 +1227,7 @@ libraries
     scikit-learn
     scipy
     sky spectra
+    tensorfit
     wcslib
     zvtm
 license
@@ -1154,6 +1240,12 @@ markup languages
     ebXML
 metadata
     Astronomy Visualization Metadata (AVM)
+method
+    data
+        self-healing
+    discrete Chebyshev transform
+    tree
+        extremely randomized trees (Extra-Trees)
 methods
     Bayesian
         clustering
@@ -1236,6 +1328,7 @@ observatories
         East Asian Observatory
         Fermi Large Area Telescope (LAT)
         First G-APD Cherenkov Telescope (FACT)
+        GMRT
         GMT
         GSMT
         Gemini
@@ -1250,6 +1343,7 @@ observatories
         IceCube
         JACH
         JCMT
+        KAGRA
         KM3Net
         Keck
         Kilodegree Extremely Little Telescope (KELT)
@@ -1262,6 +1356,7 @@ observatories
         MeerKAT
         Murchison Radio Observatory (MRO)
         Murchison Widefield Array (MWA)
+        National Optical Astronomy Observatory (NOAO)
         Noto
         Observatorio Roque de los Muchachos
         Ond\v rejov Observatory
@@ -1283,6 +1378,7 @@ observatories
         UKIRT
         VISTA
         VLA
+        VLBA
         VLT
         VST
         WIYN
@@ -1313,6 +1409,7 @@ observatories
         IUE
         IXO
         Infrared Space Observatory (ISO)
+        International Space Station (ISS)
         JASMINE
         JWST
         Kepler
@@ -1330,9 +1427,11 @@ observatories
         SORCE
         STSci
         Solar Orbiter
+        Spektr-R
         Spitzer Space Telescope
         Suzaku
         Swift
+        TESS
         WFIRST
         WISE
         WMAP
@@ -1381,6 +1480,7 @@ packages
     AIPS
     AIPS++
     Aspera
+    Astropype
     CASSIS
     CIAO
     CUPID
@@ -1390,6 +1490,7 @@ packages
     Common Astronomy Software Applications (CASA)
     DRAMA
     DRAMA2
+    Debian Astro
     Docker
     DrizzlePac
     Elasticsearch
@@ -1467,23 +1568,30 @@ physics
     statistical equilibrium
     thermal radiation
 pipelines
+    Alma Science Pipeline
     AstrOmatic
     BAYESTAR
+    CASU
     JScanam
     LOFAR Default Pre-Processing Pipeline (DPPP)
     PICARD
     PyEmir
     Transient imaging pipeline
+    XMM-Newton Pipeline Processing System (PPS)
+    streaming
 portals
+    CDS
     ESASky
     JVO
     ODI
+    VESPA
 projects
     ADSASS
     AENEAS
     ARTEMIS
     ASCL
     ASTERICS
+    ASTRI
     ASTRODEEP
     ASTRONET
     ATHENA
@@ -1513,15 +1621,23 @@ projects
     GALFACTS
     GENIUS
     Grouper
+    Herschel Extragalactic Legacy Project (HELP)
+    Horizon 2020 (H2020)
+        StarFormMapper
+    INDIGO-DataCloud
     INDIGO_DataCloud
     Jupyter
+    Millimetron
     OBELICS
     OGLE
     PRISMA
     Quicklook
+    Radioastron
     SOCCI
+    SOLARNET
     SciServer Compute
     Shibboleth
+    StarFormMapper
     VIALACTEA
     VLBI-IT
     WTF
@@ -1567,6 +1683,7 @@ satellites
     earth observation
         Aura
         ENVISAT
+        MODIS
         OCO2
 scheduling
 science portal
@@ -1577,6 +1694,9 @@ security
     Single Sign-On (SSO)
     Transport Layer Security (TLS)
 semantics
+services
+    IAU-Transient Name Server (TNS)
+    Skybot
 simulations
     Bolshoi
     Markov Chain Monte Carlo (MCMC)
@@ -1590,10 +1710,12 @@ software
     Linux
     Linux kernel
     Linux
+        Debian
         cache buffer
         huge pages
     Mac OS X
     Unix
+    XID+
     applications
     architecture
     authentication
@@ -1618,9 +1740,11 @@ software
         templates
         user requirements
     development
+        DevOps
         agile
         design reviews
         management
+    distribution
     documentation
     error reporting
     evaluation
@@ -1630,7 +1754,10 @@ software
         Lustre
         tmpfs
     frameworks
+        ALMA Common Software (ACS)
         ASPIC
+        Apache Storm
+        Easylife
         FRIAA
         Flask
         Grails
@@ -1647,6 +1774,8 @@ software
         Tez
         Unity
         encube
+        streams
+    free
     image analysis
     image display
     image processing
@@ -1656,6 +1785,9 @@ software
         Ephestos
         JNI
         nativeBoost
+    library
+        Pandora Next Generation Software (PNGS)
+        polycomp
     licences
     locks
     logging
@@ -1711,8 +1843,12 @@ software
     threads
     tools
         AJAX
+        APERIcubes
+        ASC Correlator
         Ant
+        Automatic POrtal GEneratOr (APOGEO)
         CASANOVA
+        CASSIS
         CORBA
         COTS
         CSCView
@@ -1723,10 +1859,12 @@ software
         Finder Chart
         Flask
         Gtk
+        JS9
         KDU
         MAF
         Montage Image Mosaic Toolkit
         OpenGL
+        Phosphoros
         PyGtk
         PyKE
         PyQt
@@ -1755,6 +1893,7 @@ software
         Reflex
         serializing
 space probes
+    Europa Clipper
     ExoMars
     Rosetta
     Schiaparelli
@@ -1812,6 +1951,7 @@ surveys
     HIPASS
     HSC
     Herschel
+        SPIRE
     Hi-GAL
     LAMOST
     LINEAR
@@ -1844,9 +1984,12 @@ surveys
     THINGS
     Trans-Atlantic Exoplanet Survey (TrES)
     UKIRT Infrared Deep Sky Survey (UKIDSS)
+    VANDELS
     VIKING)
     VIPERS
+    VISION
     VISTA
+    VLA Sky Survey (VLASS)
     VLSS
     VUDS
     VVDS
@@ -1854,15 +1997,19 @@ surveys
     WENSS
     WISE
     Zwicky Transient Facility (ZTF)
+    sky
     very deep
     zCOSMOS
 target of opportunity
 techniques
+    2D correlation
+    API
     Fast Holographic Deconvolution
     Fredholm integral equation
     Gaussian fitting
     Kendall's Tau coefficient
     RFI mitigation
+    Random Forest
     Theil-Sen regression
     adaptive calibration
     autocompletion
@@ -1871,6 +2018,7 @@ techniques
     concave hulls
     continuous ranked probability score
     continuum fitting
+    convolutional neural networks (CNN)
     cross correlation
     dark subtraction
     dashboards
@@ -1880,12 +2028,14 @@ techniques
     eggs
     event detection
     forced photometry
+    generative spectrum networks (GSN)
     image deconvolution
     line fitting
     machine learning
     model fitting
     multinominal classification
     neural networks
+        artificial
     noise-based detection
     optimal extraction
     pattern matching
@@ -1903,13 +2053,20 @@ techniques
     serialization
     signal-based detection
     sky model
+    sky partitioning
     sky subtraction
     slippy map
     source detection
+    space-ground interferometry
+    sparse modeling
     superflat
+    template fitting
     transpilation
     triangulation
+    visual analytics
     web scraping
+technology
+    standards
 telescopes
     commissioning
     ghosts
@@ -1918,6 +2075,12 @@ telescopes
     robotic
     spiders
     vignetting
+tensorflow
+theorem
+    Brewer
+    CAP
+    L'Huilier
+    Nyquist
 unconference
     Astro Hack Week
 user interfaces
@@ -1930,9 +2093,11 @@ visualisation
     CAVE2
     Google Cardboard
     Oculus Rift
+    blender
     hybrid rendering
     immersive-3D
     multi-dimensional
+    web-based
 web
     Apache
     Linked Open Data (LOD)
@@ -1965,6 +2130,7 @@ web
         SOAP
     framework
         CherryPy
+        Daiquiry
         Web2Py
     gadgets
     interface
@@ -1979,6 +2145,7 @@ web
     services
     social media
     technologies
+workloads
 workshops
     ANITA
     SciCoder

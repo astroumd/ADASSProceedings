@@ -3,10 +3,10 @@
 # at least the README file. For some smart cookies the Makefile
 # could be sufficient too.
 #
-# Version 26-mar-2019   Peter Teuben
+# Version 17-jun-2019   Jelle de Plaa
 #
-# See also:  http://www.adass.org/instructions/ADASS2018.tar
-#            http://adass2018.umd.edu/ADASS2018.tar
+# See also:  http://www.adass.org/instructions/ADASS2019.tar
+#            https://www.adass2019.nl/
 #
 # P = paper_id    your proceedings paper ID code (the one with the dash, not dot)
 # V = version     your version # (1,2,..) since you can only upload unique files
@@ -30,7 +30,7 @@ FIGS = example.eps
 -include makedefs
 
 #  variables for proceeding editors (don't modify, for export, not for authors)
-YEAR   = 2018
+YEAR   = 2019
 TMPDIR = ADASS$(YEAR)_author_template
 FILES  = AdassChecks.py AdassConfig.py AdassIndex.py ADASS_template.tex \
 	 Aindex.py FixUnprintable.py \
@@ -38,7 +38,7 @@ FILES  = AdassChecks.py AdassConfig.py AdassIndex.py ADASS_template.tex \
 	 Index.py manual2010.pdf ManuscriptInstructions.pdf PaperCheck.py \
 	 README subjectKeywords.txt TexScanner.py \
 	 ascl.py asclKeywords.txt \
-	 adass2018.bib Makefile makedefs
+	 adass2019.bib Makefile makedefs
 
 #  probably don't change these either (or notify the editors you have a special paper case)
 TAR_FILE  = $(P)_v$(V).tar.gz
@@ -172,12 +172,12 @@ index2:
 	(cd ../adass_subject_recommender ; detex ../$(P)/$(P).tex |  PYTHONPATH=`pwd` bin/find_subjects.py -m 10 -j)
 
 ascl:
-	(cd ../Author_Template; ascl.py ../../ADASSProceedings2018/papers/$(P)/$(P).tex)
+	(cd ../Author_Template; ascl.py ../../ADASSProceedings2019/papers/$(P)/$(P).tex)
 
 ascl1:
-	(cd ../Author_Template; ascl.py ../../ADASSProceedings2018/papers/$(P)/$(P).tex | grep ooindex | sort | uniq -c)
+	(cd ../Author_Template; ascl.py ../../ADASSProceedings2019/papers/$(P)/$(P).tex | grep ooindex | sort | uniq -c)
 	-detex $(P).tex > $(P).txt
-	-(cd ../Author_Template; ascl.py ../../ADASSProceedings2018/papers/$(P)/$(P).txt | grep ooindex | sort | uniq -c)
+	-(cd ../Author_Template; ascl.py ../../ADASSProceedings2019/papers/$(P)/$(P).txt | grep ooindex | sort | uniq -c)
 	-grep ooindex $(P).tex
 
 CODE = foobar
