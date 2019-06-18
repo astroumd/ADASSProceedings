@@ -137,8 +137,10 @@ e.g. example P10-3_v1.tar. This should contain:
 The .tex LaTeX file
 The .bib file defining any cited references
 And .eps graphics files used by the paper
+The makedefs file 
 The resulting .pdf file for the paper, so we can see how you got it.
 A signed copyright form.
+
 
 (If there are problems typesetting your paper, your copy of the .pdf file for
 the paper will at least show the editors what you expected it to look like. If
