@@ -57,10 +57,10 @@ simply upload (as a ZIP file is the easiest) the template, the two asp2014 files
 and optionally your BIB file and EPS figures. Don't start from scratch, or your file
 will be likely named main.tex
 
-Optionally in 2019 we have personalized templates, based on your abstract, on
-https://www.adass2019.nl/. The instructions within that template are even more 
-terse than in ADASS_template.tex , so be warned if some of this material is new 
-to you.
+Optionally in 2019 we have personalized templates, based on your abstract. Please 
+see https://www.adass2019.nl/instructions/proceedings/ for more information. The 
+instructions within that template are even more terse than in ADASS_template.tex, 
+so be warned if some of this material is new to you.
 
 Using the provided Makefile
 ---------------------------
@@ -167,13 +167,11 @@ The command to build, check, and package the manuscript is:
 
       make pdf check tar
 
-(If there are problems typesetting your paper, your copy of the .pdf file for
+If there are problems typesetting your paper, your copy of the .pdf file for
 the paper will at least show the editors what you expected it to look like. If
 you have already supplied a paper copy of the copyright form, you do not need
 to include this. Note that electronic signatures are not acceptable - sign the
-form and scan it.)
-
-https://www.howtogeek.com/164668/how-to-electronically-sign-documents-without-printing-and-scanning-them/
+form and scan it.
 
 (Zip files are also acceptable, using the same naming convention, e.g. P10-3_v1.zip.)
 
@@ -208,7 +206,7 @@ you have the following files:
    2. ManuscriptInstructions.pdf
    3. README                       (this file)
    4. ADASS_template.tex
-   5. P1-2.tex                 (your personalized template introduced at ADASS 2019)
+   5. P1-2.tex                 (your personalized template)
 
 
 File index
