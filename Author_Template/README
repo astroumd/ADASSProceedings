@@ -233,10 +233,7 @@ PaperCheck.py              - a Python script used to check an ADASS paper
 Index.py                   - a Python script used to generate subject index entries
 Aindex.py                  - a Python script used helping to ...
 FixUnprintable.py          - a Python script used helping to ...
-tex2inc.py                 - a python script to process standalone tex to include version
 ascl.py                    - a python script to suggest ASCL entries
-MergeSubjectIndexes.py     - a python script to merge subjectKeyword.txt type files
-SubjectEntries2Index.py    - a python script to help with index
 AdassChecks.py             - a Python module used by PaperCheck.py
 TexScanner.py              - a Python module used by AdassChecks.py
 AdassConfig.py             - a Python module used by Index.py
