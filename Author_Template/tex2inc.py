@@ -23,7 +23,7 @@
 
 import sys
 
-version = "6-jun-2019"
+version = "26-jun-2019"
 debug = False
 ##debug = True                              # %%DEBUG comment this line for final version, or read from a dot file
 
@@ -121,7 +121,11 @@ for l in lines:
                     else:
                         print("%s" % l[1:].strip())
                     a1 = carg(l)
-                    if a1.find('textit') < 0:      # special reserved for photos
+                    # check if (foreign alphabet) author has the @ alphabetizing trick
+                    # e.g. \aindex{garzon@Garz\'{o}n,~F.} is the corrected version of \aindex{Garz\'{o}n,~F.} to get author index alphabetized
+                    ati = a1.find('@')
+                    a1 = a1[ati+1:]
+                    if a1.find('textit') < 0:      # 'textit' is reserved for photo captions so we can skip in TOC author list
                         authors.append(a1)
                 elif t[1] == "%\\ooindex":
                     l=l.replace(',','!')           # ASCL index gets an extra indentation
