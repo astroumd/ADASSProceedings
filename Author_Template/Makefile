@@ -6,7 +6,7 @@
 # Version 17-jun-2019   Jelle de Plaa
 #
 # See also:  http://www.adass.org/instructions/ADASS2019.tar
-#            https://www.adass2019.nl/
+#            https://www.adass2019.nl/proc/ADASS2019.tar
 #
 # P = paper_id    your proceedings paper ID code (the one with the dash, not dot)
 # V = version     your version # (1,2,..) since you can only upload unique files
