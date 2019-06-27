@@ -1,5 +1,5 @@
 README ADASS2019.tar
-Last updated: 20-Jun-2019 by Jelle de Plaa
+Last updated: 27-Jun-2019 by Jelle de Plaa
 
 
 Table of contents
@@ -9,7 +9,6 @@ Table of contents
   * STEP 1: Prepare your manuscript 
   * STEP 2: Check your manuscript
   * STEP 3: Package and submit your paper
-  * Additional help
   * File index
   * Github
 
@@ -24,11 +23,19 @@ needs to be delivered to ASP in print quality. The more issues are solved early
 on in the process, the more time we all save.
 
 The instructions below are intended to guide you through the process of preparing 
-and submitting your contribution. If you need additional help, please see the 
-sections at the end of this document. These include more detailed manuals from 
-the ADASS editors and ASP, and brief descriptions of the files included in this 
-tar package.
+and submitting your contribution. We realise it is a lot of information and some
+of it is duplicated. If you need additional help, please see the list of documents
+below. From "too much" to "too little" information, we provide the following 
+help documents in this tar file (except for your personal template):
 
+   1. manual2010.pdf             (ASP Instructions for Authors and Editors)
+   2. ManuscriptInstructions.pdf (Guidelines for preparing an ADASS paper)
+   3. README                     (This file)
+   4. ADASS_template.tex         (The general ADASS template)
+   5. P1-2.tex                   (Your personalized ADASS template)
+
+At the end of this README, we also provide a file index with a short description of 
+all the files present in the ADASS2019.tar file. 
 
 
 STEP 1: Prepare your manuscript
@@ -194,19 +201,6 @@ like to see:
    P1-2.pdf
 
 you really don't need to send us *any* other type files. Save the electrons!
-
-
-Additional help
-===============
-
-We realize that a lot of info is duplicated. From "too much" to "too litlle"
-you have the following files:
-
-   1. manual2010.pdf
-   2. ManuscriptInstructions.pdf
-   3. README                       (this file)
-   4. ADASS_template.tex
-   5. P1-2.tex                 (your personalized template)
 
 
 File index
