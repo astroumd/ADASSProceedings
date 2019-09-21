@@ -1,5 +1,5 @@
 README ADASS2019.tar
-Last updated: 27-Jun-2019 by Jelle de Plaa
+Last updated: 21-Sep-2019 by Peter Teuben
 
 
 Table of contents
@@ -62,7 +62,7 @@ figures, not PNG or JPG; see below).
 Editing your paper in overleaf (https://www.overleaf.com/) is also known to work:
 simply upload (as a ZIP file is the easiest) the template, the two asp2014 files,
 and optionally your BIB file and EPS figures. Don't start from scratch, or your file
-will be likely named main.tex
+will be likely named main.tex. See below if you like the "make" shortcuts.
 
 Optionally in 2019 we have personalized templates, based on your abstract. Please 
 see https://www.adass2019.nl/instructions/proceedings/ for more information. The 
@@ -99,6 +99,14 @@ you should be able to run the following make commands:
     make check  : Check the manuscript for issues
     make tar    : Build the tar file
     make all    : Do all of the above
+
+For overleaf users, you should add the Makefile and your modified
+makedefs file.  You can then use https://git.overleaf.com/<MAGIC_NUMBER>
+to clone the repo locally, to create the ZIP or TAR file for uploading
+your proceedings contribution. You can even bypass overleaf work and do
+the usual git pull/push to update, which can be useful for those who prefer
+to work on the desktop. But check with your co-authors to avoid a conflict. 
+
 
 Adding subject index entries
 ----------------------------
