@@ -100,13 +100,15 @@ you should be able to run the following make commands:
     make tar    : Build the tar file
     make all    : Do all of the above
 
-For overleaf users, you should add the Makefile and your modified
-makedefs file.  You can then use https://git.overleaf.com/<MAGIC_NUMBER>
-to clone the repo locally, to create the ZIP or TAR file for uploading
-your proceedings contribution. You can even bypass overleaf work and do
-the usual git pull/push to update, which can be useful for those who prefer
-to work on the desktop. But check with your co-authors to avoid a conflict. 
-
+For overleaf users, you can add your modified makedefs file to
+complete and track the files you will modify. You can then use
+https://git.overleaf.com/<MAGIC_NUMBER> to clone the repo locally, and
+merge it with the other files that the ADASS editors have prepared for
+you (but you should not modify).  Then you can create the ZIP or TAR
+file for uploading your proceedings contribution. You can even bypass
+overleaf work and do the usual git pull/push to update, which can be
+useful for those who prefer to work on the desktop. But check with
+your co-authors to avoid a conflict.
 
 Adding subject index entries
 ----------------------------
