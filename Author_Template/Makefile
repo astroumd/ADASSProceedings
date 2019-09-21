@@ -150,13 +150,13 @@ words:
 tar:
 	tar zcf $(TAR_FILE) $(FILES4AR)
 	@echo Submit to ftp://ftp.astro.umd.edu/incoming/adass
-	@echo e.g.   ncftpput ftp.astro.umd.edu  incoming/adass $(TAR_FILE)
+	@echo "e.g. in 2018 we used:   ncftpput ftp.astro.umd.edu  incoming/adass $(TAR_FILE)"
 
 zip:
 	rm -f $(ZIP_FILE)
 	zip $(ZIP_FILE) $(FILES4AR)
 	@echo Submit to ftp://ftp.astro.umd.edu/incoming/adass
-	@echo e.g.   ncftpput ftp.astro.umd.edu  incoming/adass $(ZIP_FILE)
+	@echo "e.g. in 2018 we used:   ncftpput ftp.astro.umd.edu  incoming/adass $(ZIP_FILE)"
 
 # for editors
 asp1:
