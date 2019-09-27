@@ -87,7 +87,7 @@ export:
 	-git branch                        >> $(TMPDIR)/VERSION
 	tar cf ADASS$(YEAR).tar $(TMPDIR)
 
-# copyright is now part of the tar/zip file
+# copyright is now part of the tar/zip file, checksum (sum) is 13785
 copyrightform_$(P)_$(A).pdf: copyrightform.pdf
 	cp copyrightform.pdf copyrightform_$(P)_$(A).pdf
 	@echo Now go edit your copyrightform_$(P)_$(A).pdf form
@@ -152,16 +152,21 @@ DETEX = detex
 words:
 	$(DETEX) $(P).tex | grep -o -E '\w+' | tr '[A-Z]' '[a-z]' | sort | uniq -c | sort -n
 
-tar:    $(FILES4AR)
+#  could add a checksum on personal copyrightform - if it's 13785,it's bad.
+tar:    $(FILES4AR) _checksum
 	tar zcf $(TAR_FILE) $(FILES4AR)
 	@echo Submit to ftp://ftp.astro.umd.edu/incoming/adass
 	@echo e.g.   ncftpput ftp.astro.umd.edu  incoming/adass $(TAR_FILE)
 
-zip:
+zip:    $(FILES4AR) _checksum
 	rm -f $(ZIP_FILE)
 	zip $(ZIP_FILE) $(FILES4AR)
 	@echo Submit to ftp://ftp.astro.umd.edu/incoming/adass
 	@echo e.g.   ncftpput ftp.astro.umd.edu  incoming/adass $(ZIP_FILE)
+
+_checksum: copyrightform_$(P)_$(A).pdf
+	@echo Checksum test
+	@sum copyrightform_$(P)_$(A).pdf
 
 # for editors
 asp1:
