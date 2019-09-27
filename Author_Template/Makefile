@@ -3,7 +3,7 @@
 # at least the README file. For some smart cookies the Makefile
 # could be sufficient too.
 #
-# Version 17-jun-2019   Jelle de Plaa
+# Version 27-sep-2019   Peter Teuben
 #
 # See also:  http://www.adass.org/instructions/ADASS2019.tar
 #            https://www.adass2019.nl/proc/ADASS2019.tar
@@ -43,7 +43,7 @@ FILES  = AdassChecks.py AdassConfig.py AdassIndex.py ADASS_template.tex \
 #  probably don't change these either (or notify the editors you have a special paper case)
 TAR_FILE  = $(P)_v$(V).tar.gz
 ZIP_FILE  = $(P)_v$(V).zip
-FILES4AR  = $(P).tex $(P).bib $(FIGS) makedefs $(P).pdf # $(P)-copyrightform.pdf
+FILES4AR  = $(P).tex $(P).bib $(FIGS) makedefs $(P).pdf copyrightform_$(P)_$(A).pdf
 
 # ensure current directory is in the PATH
 export PATH := .:$(PATH)
@@ -87,6 +87,11 @@ export:
 	-git branch                        >> $(TMPDIR)/VERSION
 	tar cf ADASS$(YEAR).tar $(TMPDIR)
 
+# copyright is now part of the tar/zip file
+copyrightform_$(P)_$(A).pdf: copyrightform.pdf
+	cp copyrightform.pdf copyrightform_$(P)_$(A).pdf
+	@echo Now go edit your copyrightform_$(P)_$(A).pdf form
+
 # these targets are for most common unix systems, but YMMV. Modify if you need
 # let the editors know you have a better way for the next ADASS team
 # ASP prefers the latex;latex;dvipdfm route
@@ -116,7 +121,7 @@ pdflatex:
 	pdflatex $(P)
 
 clean:
-	rm -f $(P).dvi $(P).bbl $(P).blg $(P).pdf $(P).aux $(P).log $(P).out $(P)_inc.tex
+	rm -f $(P).dvi $(P).bbl $(P).pdf $(P).aux $(P).log $(P).out $(P)_inc.tex
 
 check:
 	PaperCheck.py $(P) $(A)
@@ -147,16 +152,16 @@ DETEX = detex
 words:
 	$(DETEX) $(P).tex | grep -o -E '\w+' | tr '[A-Z]' '[a-z]' | sort | uniq -c | sort -n
 
-tar:
+tar:    $(FILES4AR)
 	tar zcf $(TAR_FILE) $(FILES4AR)
 	@echo Submit to ftp://ftp.astro.umd.edu/incoming/adass
-	@echo "e.g. in 2018 we used:   ncftpput ftp.astro.umd.edu  incoming/adass $(TAR_FILE)"
+	@echo e.g.   ncftpput ftp.astro.umd.edu  incoming/adass $(TAR_FILE)
 
 zip:
 	rm -f $(ZIP_FILE)
 	zip $(ZIP_FILE) $(FILES4AR)
 	@echo Submit to ftp://ftp.astro.umd.edu/incoming/adass
-	@echo "e.g. in 2018 we used:   ncftpput ftp.astro.umd.edu  incoming/adass $(ZIP_FILE)"
+	@echo e.g.   ncftpput ftp.astro.umd.edu  incoming/adass $(ZIP_FILE)
 
 # for editors
 asp1:
