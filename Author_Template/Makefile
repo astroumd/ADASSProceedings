@@ -155,14 +155,10 @@ words:
 #  could add a checksum on personal copyrightform - if it's 13785,it's bad.
 tar:    $(FILES4AR) _checksum
 	tar zcf $(TAR_FILE) $(FILES4AR)
-	#@echo Submit to ftp://ftp.astro.umd.edu/incoming/adass
-	#@echo e.g.   ncftpput ftp.astro.umd.edu  incoming/adass $(TAR_FILE)
 
 zip:    $(FILES4AR) _checksum
 	rm -f $(ZIP_FILE)
 	zip $(ZIP_FILE) $(FILES4AR)
-	#@echo Submit to ftp://ftp.astro.umd.edu/incoming/adass
-	#@echo e.g.   ncftpput ftp.astro.umd.edu  incoming/adass $(ZIP_FILE)
 
 _checksum: copyrightform_$(P)_$(A).pdf
 	@echo Checksum test
