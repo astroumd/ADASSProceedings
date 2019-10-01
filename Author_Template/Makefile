@@ -31,7 +31,7 @@ FIGS = example.eps
 
 #  variables for proceeding editors (don't modify, for export, not for authors)
 YEAR   = 2019
-TMPDIR = ADASS$(YEAR)_author_template
+ATDIR  = ADASS$(YEAR)_author_template
 FILES  = AdassChecks.py AdassConfig.py AdassIndex.py ADASS_template.tex \
 	 Aindex.py FixUnprintable.py \
 	 asp2014.bst asp2014.sty copyrightform.pdf example.bib example.eps \
@@ -79,13 +79,13 @@ all:	pdf check tar
 
 # not for authors, for creator of the ADASS instruction tar file
 export:
-	rm -rf $(TMPDIR)
-	mkdir $(TMPDIR)
-	cp -a $(FILES) $(TMPDIR)
-	echo Created on `date` by `whoami`  > $(TMPDIR)/VERSION
-	-git remote -v                     >> $(TMPDIR)/VERSION
-	-git branch                        >> $(TMPDIR)/VERSION
-	tar cf ADASS$(YEAR).tar $(TMPDIR)
+	rm -rf $(ATDIR)
+	mkdir  $(ATDIR)
+	cp -a $(FILES) $(ATDIR)
+	echo Created on `date` by `whoami`  > $(ATDIR)/VERSION
+	-git remote -v                     >> $(ATDIR)/VERSION
+	-git branch                        >> $(ATDIR)/VERSION
+	tar cf ADASS$(YEAR).tar $(ATDIR)
 
 # copyright is now part of the tar/zip file, checksum (sum) is 13785
 copyrightform_$(P)_$(A).pdf: copyrightform.pdf
