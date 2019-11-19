@@ -3,7 +3,6 @@
 % Revision:  17 September 2015
 % 9/7/2017 Removed hidelinks=true options from bookmarks and dvipdfm usepacksge
 %                lines. Prevents a warning with recent LaTeX releases. KS.
-% 11/23/2018  ASCL for object index
 
 % Some parts of this file originate from newpasp.sty.
 % For questions contact ASP Conference Series, www.aspbooks.org.
@@ -218,6 +217,17 @@
 \def\@aspaffilfive{\relax}
 \newcommand{\aspfifthaffil}[1]{\gdef\@aspaffilfive{#1}}
 \newcommand{\fifthaffil}{\@aspaffilfive}
+
+% Sixth Editor
+\def\@aspeditorsix{\relax}
+\global\let\@aspeditorsix\@empty
+\newcommand{\aspsixtheditor}[1]{\gdef\@aspeditorsix{#1}}
+\newcommand{\sixtheditor}{\@aspeditorsix}
+
+% Sixth Editor Affiliation
+\def\@aspaffilfive{\relax}
+\newcommand{\aspsixthaffil}[1]{\gdef\@aspaffilsix{#1}}
+\newcommand{\sixthaffil}{\@aspaffilsix}
 
 % Part Name (Usually either Part or Session)
 \def\@asppartname{Part}
@@ -947,13 +957,25 @@
   \fi%
 }%
 
+% Format and deliver sixth editor info if it exists
+\newcommand{\provideeditorsix}{%
+  \ifx \@aspeditorsix \@empty
+    \relax
+  \else
+    \begin{center}
+    {\bfseries \sixtheditor{}}\\
+    {\itshape \sixthaffil{}}\\
+    \end{center}
+  \fi%
+}%
+
 % Convenient macros for preparing indexes
 \newcommand{\prepareindexes}{%
   \makeindex
   \newindex{not}{ndx}{nnd}{\Large List of Notation}
   \newindex{aut}{adx}{and}{\Large Author Index}
   \newindex{sub}{sdx}{snd}{\Large Subject Index}
-  \newindex{obj}{odx}{ond}{\Large ASCL Index}
+  \newindex{obj}{odx}{ond}{\Large Object Index}
   \newindex{mol}{mdx}{mnd}{\Large Spectral Feature Index}
 }%
 
@@ -985,8 +1007,8 @@
 }%
 
 \newcommand{\printobjectindex}{%
-  \markboth{ASCL Index}{ASCL Index}
-  \tocentry{\itshape ASCL Index}{}
+  \markboth{Object Index}{Object Index}
+  \tocentry{\itshape Object Index}{}
   \printindex[obj]
 }%
 
