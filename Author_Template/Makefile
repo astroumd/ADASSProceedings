@@ -121,7 +121,7 @@ pdflatex:
 	pdflatex $(P)
 
 clean:
-	rm -f $(P).dvi $(P).bbl $(P).pdf $(P).aux $(P).log $(P).out $(P)_inc.tex
+	rm -f $(P).dvi $(P).bbl $(P).blg $(P).pdf $(P).aux $(P).log $(P).out $(P).toc $(P)_inc.tex
 
 check:
 	PaperCheck.py $(P) $(A)
