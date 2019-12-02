@@ -2,5 +2,7 @@ applications!SourceXtractor++
 astronomy!optical
 calibration!polarisation
 computer languages!Rust
+instruments!individual!TAIPAN
 planetarium
+technology!Starbugs
 Eastern Anatolia Observatory (DAG)
