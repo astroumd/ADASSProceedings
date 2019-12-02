@@ -1,4 +1,5 @@
 applications!SourceXtractor++
+astronomy!optical
 calibration!polarisation
 computer languages!Rust
 planetarium
