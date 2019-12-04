@@ -3,6 +3,8 @@ astronomy!optical
 calibration!polarisation
 computer languages!Rust
 instruments!individual!TAIPAN
+observatories!operations
 planetarium
 technology!Starbugs
 Eastern Anatolia Observatory (DAG)
+web!social media!Twitter
