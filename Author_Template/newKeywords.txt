@@ -7,4 +7,6 @@ observatories!operations
 planetarium
 technology!Starbugs
 Eastern Anatolia Observatory (DAG)
+observatories!ground-based!Eastern Anatolia Observatory (DAG)
 web!social media!Twitter
+Space--based multi--band astronomical Variable Object Monitor (SVOM)
