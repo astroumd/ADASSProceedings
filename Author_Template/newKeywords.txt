@@ -1,6 +1,9 @@
 applications!SourceXtractor++
+astronomy!optical
 calibration!polarisation
 computer languages!Rust
+instruments!individual!TAIPAN
+observatories!operations
 planetarium
+technology!Starbugs
 Eastern Anatolia Observatory (DAG)
-Space--based multi--band astronomical Variable Object Monitor (SVOM)
