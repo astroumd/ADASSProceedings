@@ -176,13 +176,13 @@ index:
 
 ssindex:
 	@echo Generating ssindex list
-	(cd ../Author_Template; ./ssindex.py $(TERMS))
+	(cd ../Author_Template; ./ssindex.py ../../ADASSProceedings2019/papers/$(P)/$(P).tex)
 
 index2:
 	(cd ../adass_subject_recommender ; detex ../$(P)/$(P).tex |  PYTHONPATH=`pwd` bin/find_subjects.py -m 10 -j)
 
 ascl:
-	(cd ../Author_Template; ascl.py ../../ADASSProceedings2019/papers/$(P)/$(P).tex)
+	(cd ../Author_Template; ./ascl-new.py ../../ADASSProceedings2019/papers/$(P)/$(P).tex)
 
 ascl1:
 	(cd ../Author_Template; ascl.py ../../ADASSProceedings2019/papers/$(P)/$(P).tex | grep ooindex | sort | uniq -c)

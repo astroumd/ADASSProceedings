@@ -64,7 +64,7 @@ get_ssindex  = lambda kw: filter(compose(Call('__contains__', kw), GetN(1)), Ent
 # the main program extracts all key words from the .tex file, looks up ssentries for those
 # uniquefies them and then print the appropriate ssindex
 main         = compose(Map(compose(print, "%\\ssindex{{{0}}}".format, GetN(0))), sorted, Reduce(set.union),
-                      Map(compose(set, get_ssindex)), get_keywords)
+                      Map(compose(set, get_ssindex)), get_keywords, DBG)
 #main         = compose(print, "total # matching entries = {0}".format, Reduce(__add__),
 #                       DBG, Map(compose(len, set, get_ssindex)), get_keywords)
 drain(map(main, sys.argv[1:]))
