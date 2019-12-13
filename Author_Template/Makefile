@@ -174,6 +174,10 @@ index:
 	@echo Using TERMS=$(TERMS)
 	(cd ../Author_Template; Index.py $(TERMS))
 
+ssindex:
+	@echo Generating ssindex list
+	(cd ../Author_Template; ./ssindex.py $(TERMS))
+
 index2:
 	(cd ../adass_subject_recommender ; detex ../$(P)/$(P).tex |  PYTHONPATH=`pwd` bin/find_subjects.py -m 10 -j)
 
@@ -187,6 +191,7 @@ ascl1:
 	-grep ooindex $(P).tex
 
 CODE = foobar
+.PHONY: ascl2
 ascl2:
         xdg-open https://ascl.net/$(CODE)
 
