@@ -40,7 +40,7 @@ sedoc = mk_sedoc(codes)
 
 # strip leading/trailing punctuation from a word
 punct   = re.escape(r".,/:;{}@()[]\\'\"!")
-wclean  = compose(partial(re.sub, r"^"+punct+'*', ''), partial(re.sub, punct+r'*$', ''))
+wclean  = compose(partial(re.sub, r"^["+punct+']*', ''), partial(re.sub, r'['+punct+r']*$', ''))
 
 # read the tex file. a line is either an %\ooindex{CODE, REF} line or not
 # if it is, parse out the CODE, if it isn't, check if any of the WORDs in the line
