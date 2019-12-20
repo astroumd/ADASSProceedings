@@ -17,3 +17,4 @@ methods!Sparse AutoEncoder
 instruments!Wide Angle Camera Array (GWAC)
 instruments!Polarimetric and Helioseismic Imager (PHI)
 %\ssindex{observatories!ground-based!Victor Blanco Telescope}
+packages!COSMILOG
