@@ -15,3 +15,4 @@ license!Apache 2.0
 algorithm!evolutionary!Multi-Objective Evolutionary Algorithms (MOEA)
 methods!Sparse AutoEncoder
 instruments!Wide Angle Camera Array (GWAC)
+instruments!Polarimetric and Helioseismic Imager (PHI)
