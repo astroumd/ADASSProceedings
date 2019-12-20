@@ -13,3 +13,4 @@ web!social media!Twitter
 Space--based multi--band astronomical Variable Object Monitor (SVOM)
 license!Apache 2.0
 algorithm!evolutionary!Multi-Objective Evolutionary Algorithms (MOEA)
+methods!Sparse AutoEncoder
