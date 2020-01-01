@@ -18,4 +18,4 @@ instruments!Wide Angle Camera Array (GWAC)
 instruments!Polarimetric and Helioseismic Imager (PHI)
 observatories!ground-based!Victor Blanco Telescope
 packages!COSMILOG
-applications:JupyterLab
+applications!JupyterLab
