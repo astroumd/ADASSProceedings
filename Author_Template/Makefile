@@ -176,7 +176,11 @@ index:
 
 ssindex:
 	@echo Generating ssindex list
-	(cd ../Author_Template; ./ssindex.py ../../ADASSProceedings2019/papers/$(P)/$(P).tex)
+	(cd ../Author_Template; ./ssindex-org.py ../../ADASSProceedings2019/papers/$(P)/$(P).tex)
+
+ssindex2:
+	@echo Generating scored ssindex list 
+	(cd ../Author_Template; ./ssindex-scored.py ../../ADASSProceedings2019/papers/$(P)/$(P).tex)
 
 index2:
 	(cd ../adass_subject_recommender ; detex ../$(P)/$(P).tex |  PYTHONPATH=`pwd` bin/find_subjects.py -m 10 -j)
