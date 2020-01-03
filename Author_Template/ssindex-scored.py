@@ -48,8 +48,6 @@ def DBG2(pfx=None):
 # in the sub-topic of the same ssindex. Just sum up those values for the whole ssindex?
 
 # transform an ssentry ("topic!sub-topic!sub-topic") into a tuple:
-#   (original-entry, ((topic-lowercased-words), (subtopic-lowercased-words), (..), ...))
-#   (original-entry, ((subsub-topic words), (sub-topic words), (topic words)))
 # ie the words in decreasing relative relevance 
 values      = [10000, 1000, 100, 10, 1]
 # depending on the length of wordlists:
@@ -69,17 +67,43 @@ def revalue(wordlists):
        rv.append( (n*val) / len(wl) )
     return tuple(rv)
 
-xform_entry = compose(Pam(identity, revalue), tuple, reversed,
-                      Map(compose(tuple, str.split)), Call('split', '!'), str.lower)
+Entry = collections.namedtuple('Entry', ['ssindex', 'wordlists', 'values', 'significant', 'all'])
+
+rx_noparens = re.compile(r'^[^(].*[^)]$').match
+
+# this function takes an entry of the form
+# transform an ssentry ("topic!sub-topic!sub-topic") into a namedtuple with
+# appropriately named fields
+def xform_entry(entry):
+    parts     = entry.lower().split('!')
+    wordlists = tuple(map(compose(set, str.split), parts))
+    # the last part is the most significant (most specific)
+    # create a set with the non-parenthesized words such that
+    # the code can test if all the words in that part are found in the
+    # tex file
+    signif    = set(filter(rx_noparens, wordlists[-1]))
+    all_      = set(reduce(__add__, Map(Filter(rx_noparens))(wordlists)))
+    return Entry(entry, wordlists, revalue(wordlists), signif, all_)
+
 
 # we don't care about master/new index, so read both and collate both lists into one set
 Details = list()
-Entries = compose(set, Map(lambda e: (e, xform_entry(e))), Reduce(__add__), Map(AdassIndex.ReadIndexList))(
+Entries = compose(Map(xform_entry), Reduce(__add__), Map(AdassIndex.ReadIndexList))(
                   [AdassConfig.MainSubjectIndexFile(Details), AdassConfig.NewSubjectIndexFile()] )
 if not Entries:
     drain(map(print, Details))
     sys.exit(-1)
 print("Read ",len(Entries)," entries")
+
+EntriesMap = collections.defaultdict(list)
+
+for entry in Entries:
+    for kw in reduce(set.union, entry.wordlists):
+        EntriesMap[ kw ].append( entry )
+
+ssindexMap = dict()
+for entry in Entries:
+    ssindexMap[ entry.ssindex ] = entry
 
 # Run the equivalent of "../pmake words"
 # detex <file> | grep -o -E '\w+' | tr '[A-Z]' '[a-z]' | sort | uniq -c | sort -n
@@ -100,29 +124,45 @@ get_score    = compose(sum, Map(GetN(1)), Filter(GetN(0)))
 def get_ssindex(kw):
     result = list()
     findkw = Map(Call('__contains__', kw))
-    for (ssindex, (wordlists, vals)) in Entries:
+    for (ssindex, wordlists, vals, parts) in Entries:
         score = get_score(zip(findkw(wordlists), vals))
         if score > 0:
             result.append( (ssindex, score) )
     return result
 
-# the main program extracts all key words from the .tex file, looks up ssentries for those
-# uniquefies them and then print the appropriate ssindex
-#main         = compose(Map(compose(print, "%\\ssindex{{{0}}}".format, GetN(0))), sorted, Reduce(set.union),
-#                      Map(compose(set, get_ssindex)), get_keywords, DBG)
 
-#main         = compose(print, "total # matching entries = {0}".format, Reduce(__add__),
-#                       DBG, Map(compose(len, set, get_ssindex)), get_keywords)
-
-# get_ssindex now returns [(original-entry, score), ...] so Map(get_ssindex) = [ [...], [...], ... ]
-# so we sort them by original-entry, then groupby and then sum the scores and finally sort by that descending
+# helper functions for collapsing a list of [(ssindex, score), (ssindex, score), ....]
+# into a list where all scores for the same ssindex are summed
 sum_values = compose(sum, Map(GetN(1)))
 post_proc  = compose(Map(lambda e: (e[0], sum_values(e[1]))), GroupBy(GetN(0)), Sorted(GetN(0)))
 
+def score_ssindex(keywords):
+    keywords = set(keywords)
+    rv       = list()
+    for kw in keywords:
+        findkw = Map(Call('__contains__', kw))
+        # look up all ssindex entries that match
+        for entry in EntriesMap[kw]:
+            score = get_score(zip(map(Call('__contains__',kw), entry.wordlists), entry.values))
+            # extra bonus if all keywords of the entry exist in the text
+            if entry.all <= keywords:
+                score += 10000
+            rv.append( (entry.ssindex, score) )
+    # now collect the results by ssindex, summing up the scores
+    rv = post_proc( rv )
+    # now we filter the list: only keep entries whose singificant
+    # is a subset of the keywords in the file
+    def filter_f(candidate):
+        # candidate = (ssindex, score)
+        return ssindexMap[candidate[0]].significant <= keywords
+    return filter(filter_f, rv)
+
 #Map(compose(print, "ssindex {0[0]} score {0[1]}".format)), 
 #main         = compose(Map(compose(print, "%\\ssindex{{{0[0]}}}".format)),
+#main         = compose(Map(compose(print, "%\\ssindex{{{0[0]}}}\t\t% score={0[1]}".format)),
+#                       Sorted(GetN(1), reverse=True), post_proc,
+#                       Reduce(__add__), Map(get_ssindex), get_keywords, DBG)
 main         = compose(Map(compose(print, "%\\ssindex{{{0[0]}}}\t\t% score={0[1]}".format)),
-                       Sorted(GetN(1), reverse=True), post_proc,
-                       Reduce(__add__), Map(get_ssindex), get_keywords, DBG)
+                       Sorted(GetN(1), reverse=True), score_ssindex, get_keywords, DBG)
 
 drain(map(main, sys.argv[1:]))
