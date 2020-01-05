@@ -20,3 +20,4 @@ observatories!ground-based!Victor Blanco Telescope
 packages!COSMILOG
 applications!JupyterLab
 packages!VieSched++
+software|frameworks!Dirac
