@@ -21,3 +21,4 @@ packages!COSMILOG
 applications!JupyterLab
 packages!VieSched++
 software|frameworks!Dirac
+web|framework!Pyramid
