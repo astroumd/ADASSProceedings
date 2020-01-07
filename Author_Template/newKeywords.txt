@@ -24,3 +24,4 @@ software!frameworks!Dirac
 web!framework!Pyramid
 web!framework!Daiquiri
 astronomy!spectra!exoplanets
+astronomy!model!light curve
