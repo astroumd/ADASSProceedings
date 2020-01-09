@@ -26,3 +26,4 @@ web!framework!Daiquiri
 astronomy!spectra!exoplanets
 astronomy!model!light curve
 software!frameworks!PyTorch
+algorithm!streaming
