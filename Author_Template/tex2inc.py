@@ -166,6 +166,7 @@ def flip(author):
             tmp = tmp[1:]
         return tmp + '~' + author[:lc]
     else:
+        print("%% ERROR: %s has no first initial???" % author)
         return author[:lc]
 
 invited = ''
