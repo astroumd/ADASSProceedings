@@ -663,6 +663,44 @@ def GetFileEncodings (TexFileName,Problems) :
 
 # ------------------------------------------------------------------------------
 
+#       C h e c k  S u b j e c t I n d e x E n t r i e s
+#
+#  Checks all ssindex{} entries are valid, i.e. exist in the subject keyword lists
+#  Does return True if no problems found at all
+#
+#  Harro Verkouter: 11 Feb 2020  Added this check
+from   operator    import truth, methodcaller, __add__
+from   functools   import reduce, partial
+from   collections import deque
+import re, AdassConfig, AdassIndex
+
+compose       = lambda *fns   : (lambda x: reduce(lambda acc, f: f(acc), reversed(fns), x))
+drain         = partial(deque, maxlen=0)
+Filter        = lambda pred: partial(filter, pred)
+Map           = lambda fn: partial(map, fn)
+Reduce        = lambda r: partial(reduce, r)
+
+def CheckSubjectIndexEntries(Paper, Problems, TexFileName = "") :
+    # Read the total list of keywords from subjectKeywords.txt and newKeywords.txt
+    Entries = compose(set, Reduce(__add__), Map(AdassIndex.ReadIndexList))(
+                      ['../Author_Template/subjectKeywords.txt', '../Author_Template/newKeywords.txt'] )
+    if not Entries:
+        Problems.add( "No subject keywords found **at all**?! (../Author_Template/{subject|new}Keywords.txt missing?" )
+        return False
+   
+    # Read all "\ssindex{...}" and "%\ssindex{...}" entries from the tex file
+    SSIndices = compose(set, Map(methodcaller('group', 1)), Filter(truth), 
+                        Map(re.compile(r'^%?\\ssindex{([^}]*)}.*$').match), open)(
+                                Paper + ".tex" if TexFileName == "" else TexFileName)
+    # entries in SSIndices that are not in Entries pose a problem!
+    missing = SSIndices - Entries
+    if missing:
+        Problems.append( "Found ssindex{} entries that are not in subjectKeywords.txt/newKeywords.txt:\n" +
+                         "".join( map("\t{0}\n".format, missing) ) )
+    return not missing
+
+# ------------------------------------------------------------------------------
+
 #                   M a i n  P a p e r  C h e c k  P r o g r a m
 #
 #  This is the main code for the program. For details of how to invoke it,
@@ -864,6 +902,18 @@ else :
                Problem = "First author does not appear to be " + PaperAuthor
                print("**",Problem,"**")
                Problems.append(Problem)
+
+      #  Check if the ssindex keywords in the file are valid
+   
+      Step = Step + 1
+      print("")
+      print("Step",Step," - Check ssindex entries ---------------------")
+
+      if not CheckSubjectIndexEntries(Paper, Problems, TexFileName) :
+          print("** There may be undefined ssindex keywords in the tex file")
+      else:
+          print("No problems found")
+
 
       #  Summarise any problems. 
 
