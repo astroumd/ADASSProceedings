@@ -679,21 +679,21 @@ drain         = partial(deque, maxlen=0)
 Filter        = lambda pred: partial(filter, pred)
 Map           = lambda fn: partial(map, fn)
 Reduce        = lambda r: partial(reduce, r)
+# Read all "\ssindex{...}" and "%\ssindex{...}" entries from a tex file
+get_ssindices = compose(set, Map(methodcaller('group', 1)), Filter(truth), 
+                        Map(re.compile(r'^%?\\ssindex{([^}]*)}.*$').match), open)
 
 def CheckSubjectIndexEntries(Paper, Problems, TexFileName = "") :
     # Read the total list of keywords from subjectKeywords.txt and newKeywords.txt
+    # Is there a better way to use AdassConfig.* methods to point at relative file paths?
     Entries = compose(set, Reduce(__add__), Map(AdassIndex.ReadIndexList))(
                       ['../Author_Template/subjectKeywords.txt', '../Author_Template/newKeywords.txt'] )
     if not Entries:
         Problems.add( "No subject keywords found **at all**?! (../Author_Template/{subject|new}Keywords.txt missing?" )
         return False
    
-    # Read all "\ssindex{...}" and "%\ssindex{...}" entries from the tex file
-    SSIndices = compose(set, Map(methodcaller('group', 1)), Filter(truth), 
-                        Map(re.compile(r'^%?\\ssindex{([^}]*)}.*$').match), open)(
-                                Paper + ".tex" if TexFileName == "" else TexFileName)
-    # entries in SSIndices that are not in Entries pose a problem!
-    missing = SSIndices - Entries
+    # ssindex entries that are not in Entries pose a problem!
+    missing = get_ssindices(Paper + ".tex" if TexFileName == "" else TexFileName) - Entries
     if missing:
         Problems.append( "Found ssindex{} entries that are not in subjectKeywords.txt/newKeywords.txt:\n" +
                          "".join( map("\t{0}\n".format, missing) ) )
@@ -942,5 +942,5 @@ else :
       Warnings = []
       Found = FindCopyrightForm(PaperAuthor,Warnings)
       print("")
-   
+      sys.exit( - len(Problems) ) 
   
