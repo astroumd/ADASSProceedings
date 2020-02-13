@@ -6,7 +6,6 @@ instruments!individual!TAIPAN
 observatories!operations
 planetarium
 technology!Starbugs
-Eastern Anatolia Observatory (DAG)
 observatories!ground-based!Eastern Anatolia Observatory (DAG)
 observatories!space-based!Hard X-ray Modulation Telescope (HXMT)
 web!social media!Twitter
