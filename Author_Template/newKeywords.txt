@@ -10,7 +10,7 @@ Eastern Anatolia Observatory (DAG)
 observatories!ground-based!Eastern Anatolia Observatory (DAG)
 observatories!space-based!Hard X-ray Modulation Telescope (HXMT)
 web!social media!Twitter
-Space--based multi--band astronomical Variable Object Monitor (SVOM)
+observatories!space-based!Space--based multi--band astronomical Variable Object Monitor (SVOM)
 license!Apache 2.0
 algorithm!evolutionary!Multi-Objective Evolutionary Algorithms (MOEA)
 methods!Sparse AutoEncoder
@@ -27,3 +27,32 @@ astronomy!model!light curve
 software!frameworks!PyTorch
 algorithm!streaming
 astronomy!masers
+software!visualisation!iDaVIE
+packages!SAGECal
+Google Colabs
+web!services!Colaboratory
+applications!Jupyter!nbgrader
+software!simulation!HSIM
+software!visualisation!CARTA
+software!license
+organisations!ASTRON
+International Virtual Observatory Alliance (IVOA)!Registry
+projects!ESCAPE
+projects!European Open Science Cloud (EOSC)
+pipelines!SKA Science Data Processor (SDP)
+protocols!HTTPS
+software!packages!Marvin
+surveys!Sloan Digital Sky Survey (SDSS)!SDSS-IV
+data!model!IVOA Simulation Data Access Layer (SimDAL)
+computing!accelerators
+catalogues!individual!Exo-MerCat
+organisations!SURF
+computing!cloud!Virtual Data Center
+computing!cloud!Spider Platform
+observatories!ground-based!CCAT-prime
+software!visualisation!OpenSpace
+astronomy!solar system!objects
+web!interactive figures
+software!tools!AAS Timeseries Tool
+packages!DRAGONS
+astronomy!minor planets

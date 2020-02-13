@@ -851,9 +851,9 @@ data
         CAOM
         Euclid Common Data Model (ECDM)
         GOM.FITS
-        IVOA Simulation DM
-        IVOA Spectrum DM
-        IVOA Characterisation DM
+        IVOA Simulation DM (SimDM)
+        IVOA Spectrum DM (SpectrumDM)
+        IVOA Characterisation DM (CharacterisationDM)
         ObsTAP
         PROV
         PyCAOM
@@ -2085,6 +2085,7 @@ visualisation
     blender
     hybrid rendering
     immersive-3D
+    immersive environment
     multi-dimensional
     web-based
 web
