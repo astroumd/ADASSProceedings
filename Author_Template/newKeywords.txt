@@ -1,0 +1,27 @@
+algorithm
+    harmonic sum
+    machine learning
+        deep learning
+code
+    repository
+        GitLab
+data formats
+    ASDF
+distribution
+    von Mises
+<<<<<<< HEAD
+computer languages
+    Go
+    Julia
+=======
+observatories
+    ground-based
+        VLA
+>>>>>>> new index entries
+projects
+    StarFormMapper
+theorem
+    Brewer
+    CAP
+    L'Huilier
+    Nyquist
