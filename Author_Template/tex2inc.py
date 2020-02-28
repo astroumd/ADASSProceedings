@@ -23,7 +23,7 @@
 
 import sys
 
-version = "26-jun-2019"
+version = "15-jan-2020"
 debug = False
 debug = True                              # %%DEBUG comment this line for final version, or read from a dot file
 
@@ -161,9 +161,13 @@ def flip(author):
         print("%% BAD author malformed: %s" % author)
         return author
     tmp = author[lc+1:]
-    if tmp[0] == '~':
-        tmp = tmp[1:]
-    return tmp + '~' + author[:lc]
+    if len(tmp) > 0:
+        if tmp[0] == '~':
+            tmp = tmp[1:]
+        return tmp + '~' + author[:lc]
+    else:
+        print("%% ERROR: %s has no first initial???" % author)
+        return author[:lc]
 
 invited = ''
 

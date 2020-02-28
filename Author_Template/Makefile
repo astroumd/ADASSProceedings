@@ -174,11 +174,19 @@ index:
 	@echo Using TERMS=$(TERMS)
 	(cd ../Author_Template; Index.py $(TERMS))
 
+ssindex:
+	@echo Generating ssindex list
+	(cd ../Author_Template; ./ssindex-org.py ../../ADASSProceedings2019/papers/$(P)/$(P).tex)
+
+ssindex2:
+	@echo Generating scored ssindex list 
+	(cd ../Author_Template; ./ssindex-scored.py ../../ADASSProceedings2019/papers/$(P)/$(P).tex)
+
 index2:
 	(cd ../adass_subject_recommender ; detex ../$(P)/$(P).tex |  PYTHONPATH=`pwd` bin/find_subjects.py -m 10 -j)
 
 ascl:
-	(cd ../Author_Template; ascl.py ../../ADASSProceedings2019/papers/$(P)/$(P).tex)
+	(cd ../Author_Template; ./ascl-new.py ../../ADASSProceedings2019/papers/$(P)/$(P).tex)
 
 ascl1:
 	(cd ../Author_Template; ascl.py ../../ADASSProceedings2019/papers/$(P)/$(P).tex | grep ooindex | sort | uniq -c)
@@ -187,6 +195,7 @@ ascl1:
 	-grep ooindex $(P).tex
 
 CODE = foobar
+.PHONY: ascl2
 ascl2:
         xdg-open https://ascl.net/$(CODE)
 

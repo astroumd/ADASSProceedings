@@ -2102,3 +2102,62 @@ ascl:1910.019	Cobaya
 ascl:1910.020	OCD
 ascl:1910.021	AOtools
 ascl:1910.022	qnm
+ascl:1911.001	PLAN
+ascl:1911.002	uvplot
+ascl:1911.003	OpenSPH
+ascl:1911.004	PypeIt
+ascl:1911.005	MARTINI
+ascl:1911.006	ATHOS
+ascl:1911.007	planetplanet
+ascl:1911.008	HeatingRate
+ascl:1911.009	frbpoppy
+ascl:1911.010	Fruitbat
+ascl:1911.011	IDG
+ascl:1911.012	Zeltron
+ascl:1911.013	ATLAS
+ascl:1911.014	MORDI
+ascl:1911.015	LATTICEEASY
+ascl:1911.016	CLUSTEREASY
+ascl:1911.017	HLattice
+ascl:1911.018	WhereWolf
+ascl:1911.019	OrbWeaver
+ascl:1911.020	VELOCIraptor-STF
+ascl:1911.021	TreeFrog
+ascl:1911.022	FFTLog-and-beyond
+ascl:1911.023	miluphcuda
+ascl:1911.024	comb
+ascl:1912.001	Polyspectrum
+ascl:1912.002	casacore
+ascl:1912.003	ASKAPsoft
+ascl:1912.004	DALiuGE: Data Activated Liu Graph Engine
+ascl:1912.005	Athena++: Radiation GR magnetohydrodynamics code
+ascl:1912.006	HSIM: HARMONI simulation pipeline
+ascl:1912.007	anesthetic: Nested sampling visualization
+ascl:1912.008	PopSyCLE: Population Synthesis for Compact object Lensing Events
+ascl:1912.009	FORSTAND: Flexible ORbit Superposition Toolbox for ANalyzing Dynamical models
+ascl:1912.010	AstroAccelerate: Accelerated software package for processing time-domain radio astronomy data
+ascl:1912.011	QSOSIM: Simulated Quasar Spectrum Generator
+ascl:1912.012	GAME: GAlaxy Machine learning for Emission lines
+ascl:1912.013	GriSPy: Fixed-radius nearest neighbors grid search in Python
+ascl:1912.014	HARMPI: 3D massively parallel general relativictic MHD code
+ascl:1912.015	ENTERPRISE: Enhanced Numerical Toolbox Enabling a Robust PulsaR Inference SuitE
+ascl:1912.016	GWpy: Python package for studying data from gravitational-wave detectors
+ascl:1912.017	PTMCMCSampler: Parallel tempering MCMC sampler package written in Python
+ascl:1912.018	Tangos: Framework and web interface for database-driven analysis of numerical structure formation simulations
+ascl:1912.019	STACKER: Stack sources in interferometric data
+ascl:1912.020	MRExo: Non-parametric mass-radius relationship for exoplanets
+ascl:2001.001	Min-CaLM: Mineral compositional analysis on debris disk spectra
+ascl:2001.002	TRANSPHERE: 1-D spherical continuum radiative transfer
+ascl:2001.003	sf3dmodels: Star-forming regions 3D modelling package
+ascl:2001.004	FragMent: Fragmentation techniques for studying filaments
+ascl:2001.005	FAKEOBS: Model visibilities generator
+ascl:2001.006	Protostellar Evolution: Stellar evolution simulator
+ascl:2001.007	BTS: Behind The Spectrum
+ascl:2001.008	DebrisDiskFM: Debris Disk Forward Modeling
+ascl:2001.009	ORCS: Analysis engine for SITELLE spectral cubes
+ascl:2001.010	CosMOPED: Compressed Planck likelihood
+ascl:2001.011	ExoTETHyS: Exoplanetary transits and eclipsing binaries modeler
+ascl:2001.012	MCMCI: Markov Chain Monte Carlo + Isochrones method for characterizing exoplanetary systems
+ascl:2001.013	RPPPS: Re-analyzing Pipeline for Parkes Pulsar Survey
+ascl:2001.014	Peasoup: C++/CUDA GPU pulsar searching library
+ascl:2001.015	gnm: The MCMC Jagger
