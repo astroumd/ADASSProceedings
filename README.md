@@ -29,9 +29,9 @@ http://www.adass.org/proceedings.html
 * 2017: Santiago  (Ibsen, Solar & Ballester) - Vol 522.
         svn
 * 2018: College Park (Teuben, Pound, Thomas, Warner) - Vol 523.
-        github (private repo)
-* 2019: Groningen
-
+        github (private astroumd repo)
+* 2019: Groningen (Pizzo, Deul, de Plaa, Verkouter, Mol) - 
+        github (private astroumd repo)
 * 2020: Granada
 
 
