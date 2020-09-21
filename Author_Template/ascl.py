@@ -7,6 +7,7 @@
 #   @todo:  terminal markers highlight?
 #           use puncuation to break words?  NO
 #           won't catch "MIRIAD's" - should we search for    KEYWORD's as well
+#           won't catch MIRIAD\footnote
 #
 #   Version:     25-jan-2014 for ADASS2013 proceedings
 #                21-aug-2016 try to find alternate ascl2.txt from the pathname if a local version not present
