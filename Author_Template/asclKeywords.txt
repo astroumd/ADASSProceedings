@@ -1,4 +1,5 @@
 # awk -F: '{printf("%s:%s\n",$1,$2)}' ~/Downloads/ascl2.txt |awk '{if(NF==2) print $0; else printf("# %s\n",$0)}'  > asclKeywords.txt
+# see also https://ascl.net/code/utility/ascl2 (need to be adm)
 # ASCL ID	Title:
 ascl:9903.001	LENSKY
 ascl:9904.001	BSGMODEL
@@ -29,7 +30,7 @@ ascl:9912.002	FTOOLS
 # ascl:9912.003	RVSAO 2.0
 ascl:9912.003	RVSAO
 ascl:0003.001	GADGET-2
-# ascl:0003.002	SAOImage DS9
+ascl:0003.002	SAOImage DS9:
 ascl:0003.002	SAOImage
 ascl:0003.002	DS9
 ascl:0008.001	DDSCAT
@@ -2161,3 +2162,174 @@ ascl:2001.012	MCMCI: Markov Chain Monte Carlo + Isochrones method for characteri
 ascl:2001.013	RPPPS: Re-analyzing Pipeline for Parkes Pulsar Survey
 ascl:2001.014	Peasoup: C++/CUDA GPU pulsar searching library
 ascl:2001.015	gnm: The MCMC Jagger
+ascl:2002.001	SDAR: Slow-Down Algorithmic Regularization code for solving few-body problems
+ascl:2002.002	RASCAS: Resonant line transfer in AMR simulations
+ascl:2002.003	ORIGIN: detectiOn and extRactIon of Galaxy emIssion liNes
+ascl:2002.004	triceratops: Candidate exoplanet rating tool
+ascl:2002.005	ODUSSEAS: Observing Dwarfs Using Stellar Spectroscopic Energy-Absorption Shapes
+ascl:2002.006	ScamPy: Sub-halo Clustering and Abundance Matching Python interface
+ascl:2002.007	ProSpect: Spectral generation package
+ascl:2002.008	ExoSim: Simulator for predicting signal and noise in transit spectroscopy observations
+ascl:2002.009	DASH: Deep Automated Supernova and Host classifier
+ascl:2002.010	Apercal: Pipeline for the Westerbork Synthesis Radio Telescope Apertif upgrade
+ascl:2002.011	PyHammer: Python spectral typing suite
+ascl:2002.012	DMRadon: Radon Transform calculation tools
+ascl:2002.013	GWecc: Calculator for pulsar timing array signals due to eccentric supermassive binaries
+ascl:2002.014	HaloAnalysis: Read and analyze halo catalogs and merger trees
+ascl:2002.015	GizmoAnalysis: Read and analyze Gizmo simulations
+ascl:2002.016	Cobra: Bayesian pulsar searching
+ascl:2002.017	libstempo: Python wrapper for Tempo2
+ascl:2002.018	Bayesfit: Command-line program for combining Tempo2 and MultiNest components
+ascl:2002.019	ExoRT: Two-stream radiative transfer code
+ascl:2002.020	ExoCAM: Exoplanet Community Atmospheric Model
+ascl:2002.021	CR-SISTEM: Symplectic integrator for lunar core-mantle and orbital dynamics
+ascl:2002.022	DISKMODs: Accretion Disk Radial Structure Models
+ascl:2003.001	TESS-Point: High precision TESS pointing tool
+ascl:2003.002	MAGNETAR: Histogram of relative orientation calculator for MHD observations
+ascl:2003.003	acorns: Agglomerative Clustering for ORganising Nested Structures
+ascl:2003.004	scousepy: Semi-automated multi-COmponent Universal Spectral-line fitting Engine
+ascl:2003.005	RHT: Rolling Hough Transform
+ascl:2003.006	PORTAL: POlarized Radiative Transfer Adapted to Lines
+ascl:2003.007	RAPID: Real-time Automated Photometric IDentification
+ascl:2003.008	CoastGuard: Automated timing data reduction pipeline
+ascl:2003.009	TOASTER: Times-Of-Arrival Tracker
+ascl:2003.010	MARGE: Machine learning Algorithm for Radiative transfer of Generated Exoplanets
+ascl:2003.011	HOMER: A Bayesian inverse modeling code
+ascl:2003.012	PYSOLATOR: Remove orbital modulation from a binary pulsar and/or its companion
+ascl:2003.013	AstroHOG: Analysis correlations using the Histograms of Oriented Gradients
+ascl:2003.014	Torch: Coupled gas and N-body dynamics simulator
+ascl:2004.001	Locus: Optimized differential photometry
+ascl:2004.002	Tangra: Software for video photometry and astrometry
+ascl:2004.003	IllinoisGRMHD: GRMHD code for dynamical spacetimes
+ascl:2004.004	WD: Wilson-Devinney binary star modeling
+ascl:2004.005	PyWD2015: Wilson-Devinney code GUI
+ascl:2004.006	ASTRAEUS: Semi-analytical semi-numerical galaxy evolution and reionization code
+ascl:2004.007	PyCosmo: Multi-purpose cosmology calculation tool
+ascl:2004.008	PPMAP: Column density mapping with extra dimensions
+ascl:2004.009	stardate: Measure precise stellar ages
+ascl:2004.010	kombine: Kernel-density-based parallel ensemble sampler
+ascl:2004.011	FUNDPAR: Deriving FUNDamental PARameters from equivalent widths
+ascl:2004.012	ArviZ: Exploratory analysis of Bayesian models
+ascl:2004.013	Finesse: Frequency domain INterfErometer Simulation SoftwarE
+ascl:2004.014	PyKat: Python interface and tools for Finesse
+ascl:2004.015	IRDAP: SPHERE-IRDIS polarimetric data reduction pipeline
+ascl:2004.016	PRECISION: Astronomical infrared observations data reduction
+ascl:2005.001	RID: Relativistic Image Doubling in water Cherenkov detectors
+ascl:2005.002	michi2: SED and SLED fitting tool
+ascl:2005.003	RM-Tools: Rotation measure (RM) synthesis and Stokes QU-fitting
+ascl:2005.004	REDFIT: Red-noise spectra directly from unevenly spaced time series
+ascl:2005.005	RoLo: Calculate radius and potential of the Roche Lobe
+ascl:2005.006	FFANCY: Fast Folding Algorithm for pulsar searching
+ascl:2005.007	Carpyncho: VVV Catalog browser toolkit
+ascl:2005.008	HiFLEx: Echelle data reduction pipeline
+ascl:2005.009	s3PCF: Compute the 3-point correlation function in the squeezed limit
+ascl:2005.010	NNKCDE: Nearest Neighbor Kernel Conditional Density Estimation
+ascl:2005.011	gotetra: Cosmic velocity fields tracking through the use of tetrahedra
+ascl:2005.012	2DBAT: 2D Bayesian Automated Tilted-ring fitter
+ascl:2005.013	qubefit: MCMC kinematic modeling
+ascl:2005.014	FETCH: Fast Extragalactic Transient Candidate Hunter
+ascl:2005.015	AMPEL: Alert Management, Photometry, and Evaluation of Light curves
+ascl:2005.016	RAPP: Robust Automated Photometry Pipeline
+ascl:2005.017	cdetools: Tools for Conditional Density Estimates
+ascl:2005.018	RFCDE: Random Forests for Conditional Density Estimation
+ascl:2005.019	MCRaT: Monte Carlo Radiation Transfer
+ascl:2005.020	HIPSTER: HIgh-k Power Spectrum EstimatoR
+ascl:2006.001	HEARSAY: Simulations for the probability of alien contact
+ascl:2006.002	PRIISM: Python module for Radio Interferometry Imaging with Sparse Modeling
+ascl:2006.003	KinMS: Three-dimensional kinematic modeling of arbitrary gas distributions
+ascl:2006.004	2D-FFTLog: Generalized FFTLog algorithm for non-Gaussian covariance matrices
+ascl:2006.005	CosmoCov: Configuration space covariances for projected galaxy 2-point statistics
+ascl:2006.006	CosmoLike: Cosmological Likelihood analyses
+ascl:2006.007	TATTER: Two-sAmple TesT EstimatoR
+ascl:2006.008	DeepSphere: Graph-based spherical convolutional neural network for cosmology
+ascl:2006.009	AxionNS: Ray-tracing in neutron stars
+ascl:2006.010	PRISim: Precision Radio Interferometer Simulator
+ascl:2006.011	SERVAL: SpEctrum Radial Velocity AnaLyser
+ascl:2006.012	pxf_kin_err: Radial velocity and velocity dispersion uncertainties estimator
+ascl:2006.013	JoXSZ: Joint X-ray and SZ fitting for galaxy clusters in Python
+ascl:2006.014	CARACal: Containerized Automated Radio Astronomy Calibration pipeline
+ascl:2006.015	ARCHI: Add-on pipeline module for background star analysis from CHEOPS data
+ascl:2006.016	SPISEA: Stellar Population Interface for Stellar Evolution and Atmospheres
+ascl:2006.017	AstroCatR: Time series reconstruction of large-scale astronomical catalogs
+ascl:2006.018	Powderday: Dust radiative transfer package
+ascl:2006.019	TATOO: Tidal-chronology Age TOOl
+ascl:2006.020	GenetIC: Initial conditions generator for cosmological simulations
+ascl:2006.021	FAMED: Extraction and mode identification of oscillation frequencies for solar-like pulsators
+ascl:2006.022	MCSED: Spectral energy distribution fitting package for galactic systems
+ascl:2006.023	deepSIP: deep learning of Supernova Ia Parameters
+ascl:2007.001	GProtation: Measuring stellar rotation periods with Gaussian processes
+ascl:2007.002	hierArc: Hierarchical analysis of strong gravitational lenses
+ascl:2007.003	SPARTA: Subhalo and PARticle Trajectory Analysis
+ascl:2007.004	spex_to_xspec: Convert SPEX output to XSPEC input
+ascl:2007.005	PeTar: ParticlE Tree & particle-particle & Algorithmic Regularization code for simulating massive star clusters
+ascl:2007.006	PoPE: Population Profile Estimator
+ascl:2007.007	PSRVoid: Statistical suite for folded pulsar data
+ascl:2007.008	MPSolve: Multiprecision Polynomial SOLVEr
+ascl:2007.009	polyMV: Multipolar coefficients converter
+ascl:2007.010	DarkHistory: Modified cosmic ionization and thermal histories calculator
+ascl:2007.011	FleCSPH: Parallel and distributed SPH implementation based on the FleCSI
+ascl:2007.012	Line-Stacker: Spectral lines stacking
+ascl:2007.013	wdtools: Spectroscopic analysis of white dwarfs
+ascl:2007.014	PARS: Paint the Atmospheres of Rotating Stars
+ascl:2007.015	MAGI: Initial-condition generator for galactic N-body simulations
+ascl:2007.016	ReadPDS: Visualization tools for PDS4 data
+ascl:2007.017	SPEX: Spectral Executive
+ascl:2007.018	OSPEX: Object Spectral Executive
+ascl:2007.019	TROVE: Theoretical ROVibrational Energies
+ascl:2007.020	pygwinc: Gravitational Wave Interferometer Noise Calculator
+ascl:2007.021	JB2008: Empirical Thermospheric Density Model
+ascl:2007.022	SPARTA: SPectroscopic vARiabiliTy Analysis
+ascl:2007.023	CosmoGRaPH: Cosmological General Relativity and (Perfect fluid | Particle) Hydrodynamics
+ascl:2007.024	CaTffs: Calcium triplet indexes
+ascl:2008.001	kinesis: Kinematic modeling of clusters
+ascl:2008.002	PhaseTracer: Cosmological phases mapping
+ascl:2008.003	KLLR: Kernel Localized Linear Regression
+ascl:2008.004	SOT: Spin-Orbit Tomography
+ascl:2008.005	PySAP: Python Sparse data Analysis Package
+ascl:2008.006	Umbrella: Asteroid detection, validation, and identification
+ascl:2008.007	sslf: A simple spectral-line finder
+ascl:2008.008	Barry: Modular BAO fitting code
+ascl:2008.009	SuperNNova: Photometric classification
+ascl:2008.010	zeus: Lightning Fast MCMC
+ascl:2008.011	Magnetizer: Computing magnetic fields of evolving galaxies
+ascl:2008.012	Ujti: Geodesics in general relativity
+ascl:2008.013	SEDBYS: Spectral Energy Distribution Builder for Young Stars
+ascl:2008.014	SuperRAENN: Supernova photometric classification pipeline
+ascl:2008.015	CMEchaser: Coronal Mass Ejection line-of-sight occultation detector
+ascl:2008.016	ParaMonte: Parallel Monte Carlo library
+ascl:2008.017	CVXOPT: Convex Optimization
+ascl:2008.018	maxsmooth: Derivative constrained function fitting
+ascl:2008.019	iFIT: 1D surface photometry code
+ascl:2008.020	Eclaire: CUDA-based Library for Astronomical Image REduction
+ascl:2008.021	ramses2hsim: RAMSES output to 3D data cube for HSIM
+ascl:2008.022	healpy: Python wrapper for HEALPix
+ascl:2008.023	DUCC: Distinctly Useful Code Collection
+ascl:2008.024	MUSIC2-monofonIC: 3LPT initial condition generator
+ascl:2008.025	TRISTAN: TRIdimensional STANford code
+ascl:2008.026	TDEmass: Tidal Disruption Event interpretor
+ascl:2008.027	HorizonGRound: Relativistic effects in ultra-large-scale clustering
+ascl:2009.001	JetSeT: Numerical modeling and SED fitting tool for relativistic jets
+ascl:2009.002	vlt-sphere: Automatic VLT/SPHERE data reduction and analysis
+ascl:2009.003	oxkat: Semi-automated imaging of MeerKAT observations
+ascl:2009.004	ISPy3: Integrated-light Spectroscopy for Python3
+ascl:2009.005	CASI-3D: Convolutional Approach to Structure Identification-3D
+ascl:2009.006	SPInS: Stellar Parameters INferred Systematically
+ascl:2009.007	J plots: Tool for characterizing 2D and 3D structures in the interstellar medium
+ascl:2009.008	Paramo: PArticle and RAdiation MOnitor
+ascl:2009.009	MADHAT: Gamma-ray emission analyzer
+ascl:2009.010	MLG: Microlensing with Gaia
+ascl:2009.011	PyWST: WST and RWST for astrophysics
+ascl:2009.012	minot: Modeling framework for diffuse components in galaxy clusters
+ascl:2009.013	AstroVaDEr: Unsupervised clustering and synthetic image generation
+ascl:2009.014	pySpectrum: Power spectrum and bispectrum calculator
+ascl:2009.015	rcosmo: Cosmic Microwave Background data analysis
+ascl:2009.016	halomod: Flexible interface for the halo model of dark matter halos
+ascl:2009.017	CosmoloPy: Cosmology package for Python
+ascl:2009.018	CRAC: Cosmology R Analysis Code
+ascl:2009.019	FLEET: Finding Luminous and Exotic Extragalactic Transients
+ascl:2009.020	cosmoFns: Functions for observational cosmology
+ascl:2009.021	Chrono: Multi-physics simulation engine
+ascl:2009.022	Harmonia: Hybrid-basis inference for large-scale galaxy clustering
+ascl:2009.023	DASTCOM5: JPL small-body data browser
+ascl:2009.024	MSL: Mining for Substructure Lenses
+ascl:2009.025	Binary-Speckle: Binary or triple star parameters
