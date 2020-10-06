@@ -8,6 +8,8 @@
 #         ./ascl.py sample.tex
 #   will return a somewhat noisy list of the lines that potentially need
 #   a set of %\ooindex{} entries for the ADASS proceedings to make the ASCL index.
+#         ./ascl.py codename
+#   returns 
 #
 #   @todo:  terminal markers highlight?
 #           use puncuation to break words?  NO
@@ -18,7 +20,7 @@
 #                21-aug-2016 try to find alternate ascl2.txt from the pathname if a local version not present
 #                            convert to python3
 #                12-dec-2018 integrating into ADASSProceedings/Author_Template for the 2018 proceedings
-#                 6-oct-2020 allow asclKeywords to contain information after an optional second :
+#                 6-oct-2020 allow asclKeywords with codes that contain a space (by using a 2nd :)
 
 from __future__ import print_function
 
