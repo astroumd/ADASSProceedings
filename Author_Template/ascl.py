@@ -4,6 +4,11 @@
 #   is really part of the git module 'teuben/ascl-tools' but placed here
 #   for convenience
 #
+#   Typical usage:
+#         ./ascl.py sample.tex
+#   will return a somewhat noisy list of the lines that potentially need
+#   a set of %\ooindex{} entries for the ADASS proceedings to make the ASCL index.
+#
 #   @todo:  terminal markers highlight?
 #           use puncuation to break words?  NO
 #           won't catch "MIRIAD's" - should we search for    KEYWORD's as well
@@ -18,6 +23,7 @@
 from __future__ import print_function
 
 import sys
+import os
 
 debug   = False
 punct   = ['.', ',', '/', ':', ';', '{', '}', '@', '(', ')', '[', ']', '\\', '\'', '"', '!']
@@ -190,10 +196,20 @@ if __name__ == '__main__':
         print("including the line number and text that triggered the match")
         print("Lookup table of codes in %s" % afile)
         sys.exit(0)
+
         
     filename = sys.argv[1]
-    if False:
-        codes = parse1('ascl.php')
+    if os.path.exists(filename):
+        if False:
+            codes = parse1('ascl.php')
+        else:
+            codes = parse2(afile)
+        parse4(filename,codes,comment)
     else:
+        # could try grepping this as a word in 'afile'
+        codename = filename.lower()
+        #
         codes = parse2(afile)
-    parse4(filename,codes,comment)
+        if codename in codes:
+            print(codename,codes[codename])
+        
