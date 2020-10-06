@@ -6,7 +6,7 @@
 # Version 5-oct-2020   Peter Teuben
 #
 # See also:  http://www.adass.org/instructions/ADASS2020.tar
-#            https://www.adass2019.nl/proc/ADASS2020.tar
+#            https://adass2020.es/static/proc/ADASS2020.tar
 #
 # P = paper_id    your proceedings paper ID code (the one with the dash, not dot)
 # V = version     your version # (1,2,..) since you can only upload unique files
