@@ -1,5 +1,5 @@
-README ADASS2019.tar
-Last updated: 21-Sep-2019 by Peter Teuben
+README ADASS2020.tar
+Last updated: 6-Oct-2020 by Peter Teuben
 
 
 Table of contents
@@ -17,7 +17,7 @@ Introduction
 ============
 
 This package of files is supplied to help you prepare papers for submission in 
-the Proceedings for the ADASS 2019 conference held in Groningen, The Netherlands.
+the Proceedings for the ADASS 2020 conference virtually held in Granada, Spain.
 Please follow the stepwise instructions below carefully, because the manuscript 
 needs to be delivered to ASP in print quality. The more issues are solved early 
 on in the process, the more time we all save.
@@ -35,7 +35,7 @@ help documents in this tar file (except for your personal template):
    5. P1-2.tex                   (Your personalized ADASS template)
 
 At the end of this README, we also provide a file index with a short description of 
-all the files present in the ADASS2019.tar file. 
+all the files present in the ADASS2020.tar file. 
 
 
 STEP 1: Prepare your manuscript
@@ -64,8 +64,8 @@ simply upload (as a ZIP file is the easiest) the template, the two asp2014 files
 and optionally your BIB file and EPS figures. Don't start from scratch, or your file
 will be likely named main.tex. See below if you like the "make" shortcuts.
 
-Optionally in 2019 we have personalized templates, based on your abstract. Please 
-see https://www.adass2019.nl/instructions/proceedings/ for more information. The 
+Optionally in 2020 we have personalized templates, based on your abstract. Please 
+see ???https://www.adass2019.nl/instructions/proceedings/??? for more information. The 
 instructions within that template are even more terse than in ADASS_template.tex, 
 so be warned if some of this material is new to you.
 
@@ -195,7 +195,7 @@ form and scan it.
 Submit the paper
 ----------------
 
-Submit the .tar file as instructed on the ADASS 2019 web site. If you need to
+Submit the .tar file as instructed on the ADASS 2020 web site. If you need to
 submit a revised version, submit ALL the required files in a new .tar file - do
 not just submit the modified files - and append a version number to the name,
 e.g. P10-3_v2.tar.
@@ -216,7 +216,7 @@ you really don't need to send us *any* other type files. Save the electrons!
 File index
 ==========
 
-The ADASS2019.tar package contains the following files:
+The ADASS2020.tar package contains the following files:
 
 README                     - this file.
 Makefile                   - useful for those who like terminal commands
@@ -255,7 +255,7 @@ Github
 
 Although each ADASS conference will draw its proceedings preparation package, the original github
 repo from which that package is drawn, is available on https://github.com/astroumd/ADASSProceedings
-Typically each year will develop the new release on a branch (e.g. "2019" for the Groningen version)
+Typically each year will develop the new release on a branch (e.g. "2020" for the Granada version)
 and merge this back to the master for the next year team goes to work.
 
 Authors will not need to know about that, but you may run into some editor specific comments or
