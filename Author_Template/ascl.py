@@ -13,6 +13,7 @@
 #                21-aug-2016 try to find alternate ascl2.txt from the pathname if a local version not present
 #                            convert to python3
 #                12-dec-2018 integrating into ADASSProceedings/Author_Template for the 2018 proceedings
+#                 6-oct-2020 allow asclKeywords to contain information after an optional second :
 
 from __future__ import print_function
 
@@ -58,14 +59,20 @@ def parse2(file):
     lines = fp.readlines()
     fp.close()
     codes = {}
-    # file has "ascl:1112.017 ASpec" style lines
+    # file has     "ascl:1234.123 Code_Name"
+    # oct-2020     "ascl:1234.123 Code Name:Comments" to deal with spaces in code names
     for line in lines:
         if line[0] == '#': continue
-        words = line.split()
-        if len(words) != 2: continue
-        # print words[0], words[1]
-        codename = words[1].lower()
-        codes[codename] = "\\ooindex{%s, %s}" % (words[1],words[0])
+        words = line.split(':')
+        aid = words[1].split()[0]                # ascl id, e.g.  "1234.123"
+        acn = ' '.join(words[1].split()[1:])     # code name, but wow, look at this construct
+        codes[acn.lower()] = "\\ooindex{%s, ascl:%s}" % (acn,aid)
+        #print(aid,acn)
+        #
+        #   OLD pre-2020 style
+        #codename = words[1].lower()
+        #codes[codename] = "\\ooindex{%s, %s}" % (words[1],words[0])
+
     return codes
 
 def parse3(file,codes):
@@ -83,7 +90,6 @@ def parse3(file,codes):
         words = line.split(' ,')
         for word in words:
             print('WORD: ',word)
-            #if codes.has_key(word):          # this is not python3
             if word in codes: 
                 has_a_code = True
                 line2 = line2 + "%s\\ooindex{%s, %s} " % (word,word,codes[word])
