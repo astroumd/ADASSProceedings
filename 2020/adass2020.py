@@ -770,6 +770,8 @@ class adass(object):
                 fp.close()
                 #msg = '\\tocinsertentry[r]{%s}{%s.~%s}{authors/%s_inc}\n' % (title1,fname[0],lname,pcode)
                 #fp1.write(msg)
+                cmd = 'cd %s/%s; tar cf ../%s.tar *' % (dirname,pcode,pcode)
+                os.system(cmd)
             else:
                 print("Warning: %s not in CSV" % c)
         #fp1.close()
