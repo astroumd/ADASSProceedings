@@ -12,3 +12,9 @@ papers:
 	./paper_writer.py papers.tab makedefs     makedefs
 	./paper_writer.py papers.tab template.bib PID.bib
 
+tar:
+	tar zcf personalized-templates.tar.gz papers/*.tar
+
+clean:
+	rm -rf papers
+
