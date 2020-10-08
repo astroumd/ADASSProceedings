@@ -9,6 +9,7 @@ from __future__ import print_function
 import xlrd
 import sys
 import io
+import os
 import csv
 import datetime
 import numpy as np
@@ -694,7 +695,7 @@ class adass(object):
         fp.write(_footer2)
         fp.close()
                     
-    def report_3c(self,o1,o2,o3, template='template.tex', comment = False, dirname='papers'):
+    def report_3c(self,o1,o2,o3, template='template.tex', newfile=None, comment = False, dirname='papers'):
         """ write a template conferences proceedings contribution
             o1 = names
             o2 = codes
@@ -757,7 +758,12 @@ class adass(object):
                 
                 
                 t1 = T_paper.substitute(**kwargs)
-                fn = dirname + '/' + pcode  + '.tex'          #   no, it should be P1-12.tex, not P1.12.tex
+
+                os.system("mkdir -p %s/%s" % (dirname,pcode))
+                if newfile == None:
+                    fn = "%s/%s/%s.tex" % (dirname,pcode,pcode)
+                else:
+                    fn = "%s/%s/%s" % (dirname, pcode, newfile.replace("PID",pcode))
                 print("Writing %s" % fn)
                 fp = open(fn,'w')
                 fp.write(t1)
