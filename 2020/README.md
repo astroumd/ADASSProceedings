@@ -1,5 +1,5 @@
 
-# ADASS 2010
+# ADASS 2020
 
 These are the tools and files we used between website and book production.
 Most notably how to get the personalized templates to work.
