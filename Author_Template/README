@@ -1,5 +1,5 @@
 README ADASS2020.tar
-Last updated: 6-Oct-2020 by Peter Teuben
+Last updated: 8-Oct-2020 by Peter Teuben
 
 
 Table of contents
@@ -32,7 +32,7 @@ help documents in this tar file (except for your personal template):
    2. ManuscriptInstructions.pdf (Guidelines for preparing an ADASS paper)
    3. README                     (This file)
    4. ADASS_template.tex         (The general ADASS template)
-   5. P1-2.tex                   (Your personalized ADASS template)
+   5. PID.tex                    (Your personalized ADASS template for your PID, e.g. P1-2
 
 At the end of this README, we also provide a file index with a short description of 
 all the files present in the ADASS2020.tar file. 
@@ -65,7 +65,7 @@ and optionally your BIB file and EPS figures. Don't start from scratch, or your 
 will be likely named main.tex. See below if you like the "make" shortcuts.
 
 Optionally in 2020 we have personalized templates, based on your abstract. Please 
-see ???https://www.adass2019.nl/instructions/proceedings/??? for more information. The 
+see https://www.astro.umd.edu/~teuben/adass2020 for more information. The 
 instructions within that template are even more terse than in ADASS_template.tex, 
 so be warned if some of this material is new to you.
 
@@ -73,10 +73,11 @@ Using the provided Makefile
 ---------------------------
 
 We provide a Makefile to help you build, check and package your paper in the 
-correct way. To use it, you need to edit the makedefs file in this directory.
+correct way. To use it, you need to edit the makedefs file in this directory,
+or use your personalized one.
 In the makedefs file, you can define the P, V, A, E and FIGS macros, for example:
 
-# Your proceedings paper ID code (the one with the dash, not dot):
+# Your proceedings PID (paper ID) code:
 P = P13-20
 
 # Your version # (1,2,..) since you can only upload unique files
@@ -95,9 +96,9 @@ Please edit the makedefs file and NOT the Makefile directly. The entries in the
 makedefs file will override the ones set in the Makefile. When set correctly,
 you should be able to run the following make commands:
 
-    make pdf    : Build the PDF file 
+    make pdf    : Build the PDF file (possibly twice to rid some errors)
     make check  : Check the manuscript for issues
-    make tar    : Build the tar file
+    make tar    : Build the tar file for submission
     make all    : Do all of the above
 
 For overleaf users, you can add your modified makedefs file to
@@ -198,9 +199,9 @@ Submit the paper
 Submit the .tar file as instructed on the ADASS 2020 web site. If you need to
 submit a revised version, submit ALL the required files in a new .tar file - do
 not just submit the modified files - and append a version number to the name,
-e.g. P10-3_v2.tar.
+e.g. P10-3_v2.tar. This version is defined in the V= parameter in the makedefs file.
 
-To sum up, here is an example of the files (no directories please) that the editors
+To sum up, here is an example of the files (no sub-directories please) that the editors
 like to see:
 
    P1-2.tex
