@@ -3,7 +3,7 @@
 # at least the README file. For some smart cookies the Makefile
 # could be sufficient too.
 #
-# Version 5-oct-2020   Peter Teuben
+# Version 12-oct-2020   Peter Teuben
 #
 # See also:  http://www.adass.org/instructions/ADASS2020.tar
 #            https://adass2020.es/static/proc/ADASS2020.tar
@@ -34,16 +34,20 @@ YEAR   = 2020
 ATDIR  = ADASS$(YEAR)_author_template
 FILES  = AdassChecks.py AdassConfig.py AdassIndex.py ADASS_template.tex \
 	 Aindex.py FixUnprintable.py \
-	 asp2014.bst asp2014.sty copyrightform.pdf example.bib example.eps \
+	 copyrightform.pdf example.bib example.eps \
 	 Index.py manual2010.pdf ManuscriptInstructions.pdf PaperCheck.py \
 	 README subjectKeywords.txt TexScanner.py \
 	 ascl.py asclKeywords.txt \
-	 adass2020.bib Makefile makedefs
+	 adass2020.bib Makefile makedefs \
+	 $(FILESASP)
 
 #  probably don't change these either (or notify the editors you have a special paper case)
 TAR_FILE  = $(P)_v$(V).tar.gz
 ZIP_FILE  = $(P)_v$(V).zip
-FILES4AR  = $(P).tex $(P).bib $(FIGS) makedefs $(P).pdf copyrightform_$(P)_$(A).pdf
+FILESPDF  = $(P).pdf copyrightform_$(P)_$(A).pdf
+FILESTEX  = $(P).tex $(P).bib $(FIGS) makedefs
+FILESASP  = asp2014.bst asp2014.sty
+FILES4AR  = $(FILESTEX) $(FILESPDF)
 
 # ensure current directory is in the PATH
 export PATH := .:$(PATH)
@@ -55,6 +59,7 @@ help:
 	@echo pdf:
 	@echo check:
 	@echo clean:
+	@echo overleaf:
 	@echo tar:
 	@echo zip:
 	@echo 
@@ -159,6 +164,14 @@ tar:    $(FILES4AR) _checksum
 zip:    $(FILES4AR) _checksum
 	rm -f $(ZIP_FILE)
 	zip $(ZIP_FILE) $(FILES4AR)
+
+overleaf:    $(FILESTEX)
+	rm -f $(ZIP_FILE)
+	zip $(ZIP_FILE) $(FILESTEX) $(FILESASP)
+	@echo You can now upload $(ZIP_FILE) as a new project into overleaf
+	@echo After import, git clone this here, and move all the git tree files here.
+	@echo "The git clone command is under overleaf's Menu"
+
 
 _checksum: copyrightform_$(P)_$(A).pdf
 	@echo Checksum test
