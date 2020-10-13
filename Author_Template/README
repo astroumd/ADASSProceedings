@@ -1,5 +1,5 @@
 README ADASS2020.tar
-Last updated: 8-Oct-2020 by Peter Teuben
+Last updated: 12-Oct-2020 by Peter Teuben
 
 
 Table of contents
@@ -96,10 +96,11 @@ Please edit the makedefs file and NOT the Makefile directly. The entries in the
 makedefs file will override the ones set in the Makefile. When set correctly,
 you should be able to run the following make commands:
 
-    make pdf    : Build the PDF file (possibly twice to rid some errors)
-    make check  : Check the manuscript for issues
-    make tar    : Build the tar file for submission
-    make all    : Do all of the above
+    make pdf      : Build the PDF file (possibly twice to rid some errors)
+    make check    : Check the manuscript for issues
+    make tar      : Build the tar file for submission
+    make all      : Do all of the above
+    make overleaf : Prepare a ZIP file to bootstrap your overleaf project
 
 For overleaf users, you can add your modified makedefs file to
 complete and track the files you will modify. You can then use
