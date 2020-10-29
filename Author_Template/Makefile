@@ -160,10 +160,15 @@ words:
 #  could add a checksum on personal copyrightform - if it's 13785,it's bad.
 tar:    $(FILES4AR) _checksum
 	tar zcf $(TAR_FILE) $(FILES4AR)
+	@echo submit with e.g.
+	@echo ncftpput www.adass2020.es  $(P) $(TAR_FILE)
 
 zip:    $(FILES4AR) _checksum
 	rm -f $(ZIP_FILE)
 	zip $(ZIP_FILE) $(FILES4AR)
+	@echo submit with e.g.
+	@echo ncftpput www.adass2020.es  $(P) $(ZIP_FILE)
+
 
 overleaf:    $(FILESTEX)
 	rm -f $(ZIP_FILE)
