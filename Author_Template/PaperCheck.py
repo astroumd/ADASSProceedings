@@ -42,8 +42,8 @@
 #
 #  The script looks for the main .tex file for the paper. If it finds it, it
 #  runs a number of checks on the files for the paper, and eventually prints
-#  out a summary of what it found. If the summary shows that problems were 
-#  found, more details will have been output as the script ran, and it should 
+#  out a summary of what it found. If the summary shows that problems were
+#  found, more details will have been output as the script ran, and it should
 #  be possible to find them by scrolling back in the terminal window.
 #
 #  If you have problems with this script, in particular if it crashes or
@@ -57,7 +57,7 @@
 #    There are times when this parser will report an unmatched '{' or '[' in
 #    the .tex file. Sometimes this is due to something like an unescaped '%'
 #    character, or some other similar problem.
-#  o It checks to see if the .tex file uses any unsupported LaTeX packages. 
+#  o It checks to see if the .tex file uses any unsupported LaTeX packages.
 #    These can have side effects that interfere with the typesetting of the
 #    complete ADASS volume.
 #  o It checks for unprintable characters. These tend to be used to typeset
@@ -73,16 +73,16 @@
 #    important, but a master .bib file for the whole volume is produced from
 #    the individual .bib files, and unused references complicate the process.
 #  o It checks for use of the old-style \cite for references. This can cause
-#    problems and later commands such as \citep and \citet should be used 
+#    problems and later commands such as \citep and \citet should be used
 #    instead.
 #  o It checks that all the figures used in the .tex file have their figures
-#    supplied, and it checks that these are supplied as .eps files, as 
+#    supplied, and it checks that these are supplied as .eps files, as
 #    required by ASP, who publish the Proceedings.
 #  o It checks that the running heads specified in \markboth have been set
 #    and not simply left as the defaults supplied by the template - a remarkably
 #    common problem.
 #  o It attempts to parse the author list given in the \author directive. Part
-#    of the editing process involves generation of an author index, and as 
+#    of the editing process involves generation of an author index, and as
 #    far as possible this is done by automatically parsing the lists given
 #    in \author. This is a complicated process, given the different forms of
 #    names in the ADASS community, and this step is the one most likely to
@@ -132,7 +132,7 @@
 #     This code should run under either python 2 or python 3, so long as
 #     the python 2 version supports the "from __future__ import" used here.
 #     It has been tested under 2.7 and 3.6.
-# 
+#
 
 from __future__ import (print_function,division,absolute_import)
 
@@ -146,7 +146,7 @@ import TexScanner
 
 # ------------------------------------------------------------------------------
 
-#                         F i n d  T e x  F i l e  
+#                         F i n d  T e x  F i l e
 #
 #  This routine looks for the main .tex file for the paper in the default
 #  directory. If it finds one that can be used, it returns its name. If not,
@@ -159,17 +159,17 @@ import TexScanner
 def FindTexFile (Paper,Problems) :
    TexFileName = Paper + ".tex"
    print("The main .tex file for the paper should be called",TexFileName)
-   
+
    #  There should be a main .tex file in the directory called <paper>.tex
-   
+
    if (os.path.exists(TexFileName)) :
       print("Found main .tex file",TexFileName,"OK")
    else :
       print("** Could not find",TexFileName,"**")
-      
+
       #  See if there is just one .tex file in the directory, and if so use
       #  it.
-      
+
       DirList = os.listdir(".")
       TexFiles = []
       for FileName in DirList :
@@ -194,11 +194,11 @@ def FindTexFile (Paper,Problems) :
             print("Unable to know which is the main .tex file for the paper")
             Problems.append("Cannot identify the correct .tex file to use")
    return TexFileName
-      
+
 
 # ------------------------------------------------------------------------------
 
-#                   F i n d  C o p y r i g h t  F o r m 
+#                   F i n d  C o p y r i g h t  F o r m
 #
 #  This routine looks for the main .tex file for the paper in the default
 #  directory. If it finds one that can be used, it returns its name. If not,
@@ -207,11 +207,11 @@ def FindTexFile (Paper,Problems) :
 #  paper copies, so a missing one is not necessarily a problem.
 
 def FindCopyrightForm (Author,Warnings) :
-      
+
    Found = False
-   
+
    CopyrightForm = "copyrightForm_" + Paper + "_" + Author + ".pdf"
-   
+
    if (os.path.exists(CopyrightForm)) :
       print("Found copyright form",CopyrightForm,"OK")
       Found = True
@@ -247,7 +247,7 @@ def FindCopyrightForm (Author,Warnings) :
             print("Unable to know which is the correct one for the paper")
             Warnings.append("Cannot identify the correct copyright form to use")
          CopyrightForm = ""
-   
+
    if (Found) :
       print("Note that copyright forms should not be signed electronically")
 
@@ -255,14 +255,14 @@ def FindCopyrightForm (Author,Warnings) :
 
 # ------------------------------------------------------------------------------
 
-#                   C h e c k  B i b  F i l e  U s a g e 
+#                   C h e c k  B i b  F i l e  U s a g e
 #
 #  This routine looks at the main .tex file for the paper and checks to see
 #  if it is using a proper \bibliography directive rather than \bibitem
 #  entries. If a .bib file is being used, it determines its name and checks
 #  that it exists. If a.bib file is being used, it returns its name - and
 #  returns a null string if not. Any problems found are appended to the list
-#  of problems passed. Note that this is only checking that the paper is 
+#  of problems passed. Note that this is only checking that the paper is
 #  using a proper .bib file for its references as opposed to the old-style
 #  \bibitem-based bibliographies. VerifyRefs() is used to check that the
 #  references cited actually match the entries in the bibliography, and that's
@@ -277,7 +277,7 @@ def CheckBibFileUsage (TexFileName,Problems) :
    BibFileExists = False
    ProblemLogged = False
    BibItemLine = 0
-   
+
    LineNumber = 0
    TexFile = open(TexFileName,mode='r')
    for TexFileLine in TexFile :
@@ -285,10 +285,10 @@ def CheckBibFileUsage (TexFileName,Problems) :
       if (not TexFileLine.startswith("%")) :
          Index = TexFileLine.find("\\bibliography{")
          if (Index >= 0) :
-         
+
             #  This is a \bibliography directive. Use it to get the name of
             #  the .bib file it refers to.
-            
+
             HasSlashBibliography = True
             Left = TexFileLine[Index:].find("{")
             Right = TexFileLine[Index:].find("}")
@@ -314,44 +314,44 @@ def CheckBibFileUsage (TexFileName,Problems) :
 
          #  Look for an old-style \bibitem bibliography - these take a lot
          #  of time to fix up.
-                        
+
          BeginBibIndex = TexFileLine.find("\\begin{thebibliography")
          EndBibIndex = TexFileLine.find("\\end{thebibliography")
          BibitemIndex = TexFileLine.find("\\bibitem")
          if (BeginBibIndex >= 0 or EndBibIndex >= 0 or BibitemIndex >= 0) :
-         
+
             #  These are all directives connected with an old-style bibliography
             #  section based on the use of \bibitem
-            
+
             HasBibItemSection = True
             if (BibItemLine == 0) : BibItemLine = LineNumber
-            
+
          if (TexFileLine.find("\\cite") >= 0) :
-         
+
             #  This line contains some sort of citation directive. We expect
             #  almost all files to have some of these. If we don't find any,
             #  then the paper doesn't need a bibliography section at all.
-            
+
             HasCitations = True
-         
+
    TexFile.close()
-     
+
    #  Having looked through the .tex file, where are we? There are a number of
    #  possible problems here, but really only one case that is exactly right..
-   
+
    if (HasCitations and HasSlashBibliography and BibFileExists \
                           and not HasBibItemSection and not ProblemLogged) :
-                          
+
       #  This is the one that's exactly what we hope for. Citations use a
       #  .bib file and that .bib file exists.
-      
+
       print("Citations use a .bib file and the .bib file exists OK")
-      
+
    else :
-   
+
       #  Having an old-style bibliography section is always going to be a
       #  problem.
-      
+
       if (HasBibItemSection) :
          print("** Tex file has \\bibitem, or has a 'thebibliography'",\
                                             "section, at line",BibItemLine,"**")
@@ -360,13 +360,13 @@ def CheckBibFileUsage (TexFileName,Problems) :
          print("**",Problem,"**")
          Problems.append(Problem)
          ProblemLogged = True
-               
+
       #  Not having any references is unusual, but is actually OK
-      
+
       if (not HasCitations) :
-      
+
          #  That is, unless it has a bibliography
-         
+
          if (HasSlashBibliography) :
             Problem = \
               "Tex file has a \\bibliography directive, but cites no references"
@@ -375,44 +375,44 @@ def CheckBibFileUsage (TexFileName,Problems) :
          else:
             print("The Tex file does not appear to cite any references at all")
             ProblemLogged = True
-         
+
       else :
 
          #  The file has references, but still has a problem. Was it with the
          #  Bib file section?
-         
+
          if (not HasSlashBibliography) :
-         
+
             Problem = "Tex file does not have a \\bibliography command"
             print("**",Problem,"**")
             Problems.append(Problem)
             ProblemLogged = True
-            
+
          else :
-               
-            if (not BibFileExists) :    
+
+            if (not BibFileExists) :
                Problem = "Bib file " + BibFileName + " specified by " + \
                                                "\\bibliography does not exist"
                print("**",Problem,"**")
                Problems.append(Problem)
                ProblemLogged = True
-               
+
       #  At this point, we didn't have the perfect state we wanted, so just
       #  make sure we've logged an error - this is a catch-all section because
       #  checking all the possible combinations of errors can be tricky and I
       #  don't want to have missed one.
-      
+
       if (not ProblemLogged) :
          Problem = "There is a problem with the way citations are referenced"
          print("**",Problem,"**")
          Problems.append(Problem)
          ProblemLogged = True
-   
+
    return BibFileName
-   
+
 # ------------------------------------------------------------------------------
 
-#                        C h e c k  P a p e r  N a m e 
+#                        C h e c k  P a p e r  N a m e
 #
 #  Checks that the paper name specified follows the ADASS conventions. This
 #  adds a description of any problem to the Problems list it is passed, and
@@ -432,20 +432,20 @@ def CheckPaperName(Paper,Problems) :
    #  There is a suggestion Trieste may number posters the same way Oral
    #  presentations are numbered, as P4-10, for example, rather than as
    #  P045 for example. If so, TriestePosters needs to be set true.
-   
+
    TriestePosters = True
-   
+
    #  Some initial checks on the leading digit, which should be O for Oral,
    #  I for Invited (also oral), B for BoF, F for Focus Demo, 'D' for
    #  Demo booth or T for Tutorial.
-   
+
    ValidSoFar = True
    if (len(Paper) <= 0) :
       Problem = "Paper name supplied is blank"
       print("**",Problem,"**")
       Problems.append(Problem)
       ValidSoFar = False
-      
+
    if (ValidSoFar) :
       Letter = Paper[0]
       if (not Letter in "IOBFPDTH") :
@@ -453,19 +453,19 @@ def CheckPaperName(Paper,Problems) :
          print("**",Problem,"**")
          Problems.append(Problem)
          ValidSoFar = False
-         
+
    if (ValidSoFar) :
-      if (len(Paper) == 1) : 
+      if (len(Paper) == 1) :
          Problem = "Paper does not have a number"
          print("**",Problem,"**")
          Problems.append(Problem)
          ValidSoFar = False
-         
+
    if (ValidSoFar) :
-   
+
       #  Valid leading letter, now decode the number, and there are different
       #  conventions for the different paper types.
-      
+
       Number = Paper[1:]
       NumChars = len(Number)
 
@@ -492,11 +492,11 @@ def CheckPaperName(Paper,Problems) :
                break
 
       if (Letter == 'P' and not TriestePosters) :
-      
-         #  This section checks for a valid poster number using the style in 
+
+         #  This section checks for a valid poster number using the style in
          #  use up to Trieste. This requires a poster number to be a 3 digit
          #  number, with leading zeros if necessary.
-         
+
          if (NumChars != 3) :
             Problem = \
              "Poster numbers must be three digits, with leading zeros if needed"
@@ -519,16 +519,16 @@ def CheckPaperName(Paper,Problems) :
                Problem = "Poster number cannot be zero"
                print("**",Problem,"**")
                Problems.append(Problem)
-               ValidSoFar = False         
-         
+               ValidSoFar = False
+
       if (Letter == 'I' or Letter == 'O' or \
                                    (Letter == 'P' and TriestePosters)) :
-                                   
+
          #  Oral presentation numbers (and posters using the Trieste convention)
-         #  have the form S-N where S is the session and N the number. Go 
+         #  have the form S-N where S is the session and N the number. Go
          #  through the digits, changing from session to number when a '-' is
-         #  found. 
-         
+         #  found.
+
          S = 0
          N = 0
          Session = True
@@ -580,24 +580,24 @@ def CheckPaperName(Paper,Problems) :
                print("**",Problem,"**")
                Problems.append(Problem)
                ValidSoFar = False
-   
+
    if (not ValidSoFar) :
       Problem = "Paper name '" + Paper + "' is invalid"
       print("**",Problem,"**")
       Problems.append(Problem)
-                 
-   return ValidSoFar               
-                     
+
+   return ValidSoFar
+
 
 # ------------------------------------------------------------------------------
 
-#                       C h e c k  U n p r i n t a b l e 
+#                       C h e c k  U n p r i n t a b l e
 #
 #  This routine looks at the main .tex file for the paper and checks to see
 #  if any of the lines in it contain unprintable characters. A number of
 #  ADASS papers are submitted with character encodings for accented characters
 #  that use an extended ASCII character set rather than the standard LaTeX
-#  sequences for these accented characters. Some LaTeX installations seem to 
+#  sequences for these accented characters. Some LaTeX installations seem to
 #  handle these better than others, but it's probably best if they aren't used
 #  at all. This returns True if any unprintable characters were found, False
 #  otherwise.
@@ -614,8 +614,8 @@ def CheckUnprintable (TexFileName,Encoding) :
                                                              None,Encoding)
          if (Problem) : ReturnOK = True
    TexFile.close()
-   
-   return ReturnOK   
+
+   return ReturnOK
 
 
 # ------------------------------------------------------------------------------
@@ -680,18 +680,18 @@ Filter        = lambda pred: partial(filter, pred)
 Map           = lambda fn: partial(map, fn)
 Reduce        = lambda r: partial(reduce, r)
 # Read all "\ssindex{...}" and "%\ssindex{...}" entries from a tex file
-get_ssindices = compose(set, Map(methodcaller('group', 1)), Filter(truth), 
+get_ssindices = compose(set, Map(methodcaller('group', 1)), Filter(truth),
                         Map(re.compile(r'^%?\\ssindex{([^}]*)}.*$').match), open)
 
 def CheckSubjectIndexEntries(Paper, Problems, TexFileName = "") :
     # Read the total list of keywords from subjectKeywords.txt and newKeywords.txt
     # Is there a better way to use AdassConfig.* methods to point at relative file paths?
     Entries = compose(set, Reduce(__add__), Map(AdassIndex.ReadIndexList))(
-                      ['../Author_Template/subjectKeywords.txt', '../Author_Template/newKeywords.txt'] )
+                      ['../ADASS2020_Author_Template/subjectKeywords.txt', '../ADASS2020_Author_Template/newKeywords.txt'] )
     if not Entries:
-        Problems.add( "No subject keywords found **at all**?! (../Author_Template/{subject|new}Keywords.txt missing?" )
+        Problems.add( "No subject keywords found **at all**?! (../ADASS2020_Author_Template/{subject|new}Keywords.txt missing?" )
         return False
-   
+
     # ssindex entries that are not in Entries pose a problem!
     missing = get_ssindices(Paper + ".tex" if TexFileName == "" else TexFileName) - Entries
     if missing:
@@ -719,7 +719,9 @@ else :
 
    Paper = sys.argv[1]
    PaperAuthor = sys.argv[2]
-   
+   if NumberArgs>3:
+       PaperAuthor = " ".join(sys.argv[2:])
+
    print("")
    print("          A D A S S   P a p e r   C h e c k")
    print("")
@@ -737,34 +739,34 @@ else :
    print("be performed by the ADASS editors, and it will save a lot of time")
    print("if you submit .tex files that pass these checks.")
    print("")
-   
+
    Problems = []
    Step = 0
-   
+
    #  Should check that we have a conforming paper name.
-   
+
    CheckPaperName(Paper,Problems)
-   
+
    #  Locate the main .tex file for the paper.
-   
+
    Step = Step + 1
    print("")
-   print("Step",Step," - Locate main .tex file for paper -------------------") 
-     
+   print("Step",Step," - Locate main .tex file for paper -------------------")
+
    TexFileName = FindTexFile(Paper,Problems)
    if (TexFileName == "") :
-   
+
       print("Unable to continue without a main .tex file for the paper")
-      
+
    else :
-   
+
       print("Found file ",TexFileName)
-      
-      
+
+
       #  Preliminary step. See if the TexParser used by AdassChecks has any
       #  problems with the .tex file. If so, it may well generate incorrect
       #  results.
-      
+
       TexFile = open(TexFileName,mode='r')
       TheScanner = TexScanner.TexScanner()
       TheScanner.SetFile(TexFile)
@@ -779,23 +781,23 @@ else :
             print(Line)
          Problems.append("There was a problem parsing the .tex file")
       TexFile.close()
-      
+
       #  Check to see if the main .tex file makes use of any non-standard
       #  LaTeX packages..
-   
+
       Step = Step + 1
       print("")
       print("Step",Step," - Check for use of unsupported LaTeX packages -------")
-   
+
       AllOK = AdassChecks.CheckPackages(Paper,TexFileName)
-      if (AllOK) : 
+      if (AllOK) :
          print("No unsupported packages used")
       else :
          Problems.append("Problems were found with the use of LaTeX packages")
-  
+
       #  Check to see if the main .tex file contains any characters some
       #  LaTeX installations might have problems with..
-   
+
       Step = Step + 1
       print("")
       print("Step",Step," - Check for unprintable characters in the .tex file -")
@@ -806,7 +808,7 @@ else :
          print(" ")
          print("Assuming file is encoded using",Encoding)
          Problem = CheckUnprintable(TexFileName,Encoding)
-         if (Problem) : 
+         if (Problem) :
             if (not Warned) : Problems.append( \
                      "Unprintable characters in the .tex file should be fixed")
             Warned = True
@@ -815,76 +817,76 @@ else :
 
       #  Check that a proper BibTeX file is being used, not an old-style
       #  bibliography using \bibitem entries..
-   
+
       Step = Step + 1
       print("")
       print("Step",Step," - Check that bibliography entries use a BibTex file -")
-   
+
       BibFileName = CheckBibFileUsage(TexFileName,Problems)
-      
+
       #  Check on the references supplied and cited in .tex file.
-   
+
       Step = Step + 1
       print("")
       print("Step",Step," - Check references against citations ---------------")
-   
+
       AllOK = AdassChecks.VerifyRefs(Paper,False,TexFileName,BibFileName)
-      if (AllOK) : 
+      if (AllOK) :
          print("No problems found")
       else :
          Problems.append("Problems were found with the use of references")
 
-         
+
       #  Check explicitly on the use of \cite for any references.
-   
+
       Step = Step + 1
       print("")
       print("Step",Step," - Check use of use of \cite for references ---------")
-   
+
       AllOK = AdassChecks.CheckCite(Paper,TexFileName)
-      if (AllOK) : 
+      if (AllOK) :
          print("No problems found")
       else :
          Problems.append(
             "References make use of \cite instead of \citep or \citet")
 
       #  Check on the graphics files supplied and used by the main .tex file.
-   
+
       Step = Step + 1
       print("")
       print("Step",Step," - Check use of graphics files ----------------------")
-   
+
       AllOK = AdassChecks.VerifyEps(Paper,TexFileName)
-      if (AllOK) : 
+      if (AllOK) :
          print("No problems found")
       else :
          Problems.append("Problems were found with the use of graphics files")
 
       #  Check the running heads for the paper specified by the main .tex file.
-   
+
       Step = Step + 1
       print("")
       print("Step",Step," - Check the running heads for the paper ------------")
-   
+
       AllOK = AdassChecks.CheckRunningHeads(Paper,TexFileName)
-      if (AllOK) : 
+      if (AllOK) :
          print("No problems found")
       else :
          Problems.append("Problems were found with the use of \\markboth")
 
-         
+
       #  Check on the parsing of the author list from the .tex file.
-   
+
       Step = Step + 1
       print("")
       print("Step",Step," - Check parsing of author list ---------------------")
-   
+
       Notes = []
       AuthorList = AdassChecks.GetAuthors(Paper,Notes,TexFileName)
       print("Author list parsed as follows (as surname, then initials):")
       for Author in AuthorList :
          print("   ",Author)
-      if (len(Notes) == 0) : 
+      if (len(Notes) == 0) :
          print("No problems found")
       else :
          print("The following possible problems were found:")
@@ -904,7 +906,7 @@ else :
                Problems.append(Problem)
 
       #  Check if the ssindex keywords in the file are valid
-   
+
       Step = Step + 1
       print("")
       print("Step",Step," - Check ssindex entries ---------------------")
@@ -915,7 +917,7 @@ else :
           print("No problems found")
 
 
-      #  Summarise any problems. 
+      #  Summarise any problems.
 
       print("")
       print("---------------- Summary ----------------------------------------")
@@ -929,8 +931,8 @@ else :
          print("typesets without any LaTeX errors or warnings, and is within")
          print("the page limits.")
 
-      else : 
-         print("Some problems were found with this paper, as follows:")     
+      else :
+         print("Some problems were found with this paper, as follows:")
          for Problem in Problems :
             print(Problem)
          print("For more details, see the earlier diagnostics from the", \
@@ -942,5 +944,4 @@ else :
       Warnings = []
       Found = FindCopyrightForm(PaperAuthor,Warnings)
       print("")
-      sys.exit( - len(Problems) ) 
-  
+      sys.exit( - len(Problems) )
