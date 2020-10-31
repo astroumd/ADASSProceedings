@@ -127,6 +127,8 @@
 #                    available AdassChecks.LocateTexFile(). And a similar note
 #                    about CheckPaperName(). KS.
 #
+#     31st Oct 2020. Fixed .add -> .append for ADASS2020
+#
 #  Python 2 and Python 3.
 #
 #     This code should run under either python 2 or python 3, so long as
@@ -689,7 +691,7 @@ def CheckSubjectIndexEntries(Paper, Problems, TexFileName = "") :
     Entries = compose(set, Reduce(__add__), Map(AdassIndex.ReadIndexList))(
                       ['../ADASS2020_Author_Template/subjectKeywords.txt', '../ADASS2020_Author_Template/newKeywords.txt'] )
     if not Entries:
-        Problems.add( "No subject keywords found **at all**?! (../ADASS2020_Author_Template/{subject|new}Keywords.txt missing?" )
+        Problems.append( "No subject keywords found **at all**?! (../ADASS2020_Author_Template/{subject|new}Keywords.txt missing?" )
         return False
 
     # ssindex entries that are not in Entries pose a problem!
