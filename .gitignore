@@ -15,6 +15,9 @@
 # ignore python pyc files
 *.pyc
 
+# ignore PyCharm editor files
+*.idea
+
 ## Intermediate documents:
 *.dvi
 *.xdv
