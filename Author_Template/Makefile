@@ -44,6 +44,7 @@ FILES  = AdassChecks.py AdassConfig.py AdassIndex.py ADASS_template.tex \
 #  probably don't change these either (or notify the editors you have a special paper case)
 TAR_FILE  = $(P)_v$(V).tar.gz
 ZIP_FILE  = $(P)_v$(V).zip
+POS_FILE  = $(P)_v$(V).pdf
 FILESPDF  = $(P).pdf copyrightform_$(P)_$(A).pdf
 FILESTEX  = $(P).tex $(P).bib $(FIGS) makedefs
 FILESASP  = asp2014.bst asp2014.sty
@@ -169,6 +170,8 @@ zip:    $(FILES4AR) _checksum
 	@echo submit with e.g.
 	@echo ncftpput www.adass2020.es  $(P) $(ZIP_FILE)
 
+poster: $(POS_FILE)
+	@echo ncftpput www.adass2020.es  $(P) $(POS_FILE)
 
 overleaf:    $(FILESTEX)
 	rm -f $(ZIP_FILE)
