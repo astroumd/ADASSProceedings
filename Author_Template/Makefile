@@ -130,14 +130,14 @@ clean:
 	rm -f $(P).dvi $(P).bbl $(P).blg $(P).pdf $(P).aux $(P).log $(P).out $(P).toc $(P)_inc.tex
 
 check:
-	./PaperCheck.py $(P) $(A)
+	PaperCheck.py $(P) $(A)
 
 ENCODING =
 fix:
-	./FixUnprintable.py  $(P).tex $(ENCODING)
+	FixUnprintable.py  $(P).tex $(ENCODING)
 
 inc:
-	./tex2inc.py $(P).tex > $(P)_inc.tex
+	tex2inc.py $(P).tex > $(P)_inc.tex
 	@tail -1 $(P)_inc.tex
 	@cat $(P).toc
 
@@ -152,7 +152,7 @@ dvi:
 	latex $(P)
 
 aindex:
-	./Aindex.py $(P)
+	Aindex.py $(P)
 
 DETEX = detex
 words:
@@ -193,27 +193,27 @@ asp1:
 TERMS = foobar
 index:
 	@echo Using TERMS=$(TERMS)
-	(cd ../Author_Template; ./Index.py $(TERMS))
+	(cd ../Author_Template; Index.py $(TERMS))
 
 ssindex:
 	@echo Generating ssindex list
-	(cd ../Author_Template; ./ssindex-org.py ../../ADASSProceedings2020/papers/$(P)/$(P).tex)
+	(cd ../Author_Template; ssindex-org.py ../../ADASSProceedings2020/papers/$(P)/$(P).tex)
 
 ssindex2:
 	@echo Generating scored ssindex list 
-	(cd ../Author_Template; ./ssindex-scored.py ../../ADASSProceedings2020/papers/$(P)/$(P).tex)
+	(cd ../Author_Template; ssindex-scored.py ../../ADASSProceedings2020/papers/$(P)/$(P).tex)
 
 index2:
 	(cd ../adass_subject_recommender ; detex ../$(P)/$(P).tex |  PYTHONPATH=`pwd` bin/find_subjects.py -m 10 -j)
 
 ascl:
-	(cd ../Author_Template; ./ascl.py ../../ADASSProceedings2020/papers/$(P)/$(P).tex)
-# 	(cd ../Author_Template; ./ascl-new.py ../../ADASSProceedings2020/papers/$(P)/$(P).tex)
+	(cd ../Author_Template; ascl.py ../../ADASSProceedings2020/papers/$(P)/$(P).tex)
+# 	(cd ../Author_Template; ascl-new.py ../../ADASSProceedings2020/papers/$(P)/$(P).tex)
 
 ascl1:
-	(cd ../Author_Template; ./ascl.py ../../ADASSProceedings2020/papers/$(P)/$(P).tex | grep ooindex | sort | uniq -c)
+	(cd ../Author_Template; ascl.py ../../ADASSProceedings2020/papers/$(P)/$(P).tex | grep ooindex | sort | uniq -c)
 	-detex $(P).tex > $(P).txt
-	-(cd ../Author_Template; ./ascl.py ../../ADASSProceedings2020/papers/$(P)/$(P).txt | grep ooindex | sort | uniq -c)
+	-(cd ../Author_Template; ascl.py ../../ADASSProceedings2020/papers/$(P)/$(P).txt | grep ooindex | sort | uniq -c)
 	-grep ooindex $(P).tex
 
 CODE = foobar
