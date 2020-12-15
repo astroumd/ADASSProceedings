@@ -29,6 +29,10 @@ FIGS = example.eps
 # override P,V,A,E,FIGS with a "makedefs" file, this is where authors should edit, not this Makefile
 -include makedefs
 
+# Which command do you use to view the PDF? This is just for convenience.
+# PDFOPEN = xdg-open
+PDFOPEN = open
+
 #  variables for proceeding editors (don't modify, for export, not for authors)
 YEAR   = 2020
 ATDIR  = ADASS$(YEAR)_author_template
@@ -105,7 +109,7 @@ copyrightform_$(P)_$(A).pdf: copyrightform.pdf
 DVIPDF = dvipdf
 
 pdf:	$(P).pdf
-	@echo xdg-open $(P).pdf 
+	@echo $(PDFOPEN) $(P).pdf 
 
 $(P).pdf:  $(P).dvi $(FIGS)
 	$(DVIPDF) $(P)
@@ -188,7 +192,7 @@ _checksum: copyrightform_$(P)_$(A).pdf
 # for editors
 asp1:
 	(cd ../..; $(MAKE) asp1 PID=$(P); grep box asp1.log)
-	@echo xdg-open ../../authors/$(P).pdf
+	@echo $(PDFOPEN) ../../authors/$(P).pdf
 
 TERMS = foobar
 index:
@@ -219,11 +223,11 @@ ascl1:
 CODE = foobar
 .PHONY: ascl2
 ascl2:
-        xdg-open https://ascl.net/$(CODE)
+        $(PDFOPEN) https://ascl.net/$(CODE)
 
 pdf2:   pdf asp1
-	xdg-open $(P).pdf
-	xdg-open ../../authors/$(P).pdf
+	$(PDFOPEN) $(P).pdf
+	$(PDFOPEN) ../../authors/$(P).pdf
 
 rsync: $(P).bib
 	rsync -av $(P)_inc.tex $(P).bib $(FIGS) ../../authors
