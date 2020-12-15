@@ -223,7 +223,7 @@ ascl1:
 CODE = foobar
 .PHONY: ascl2
 ascl2:
-        $(PDFOPEN) https://ascl.net/$(CODE)
+	$(PDFOPEN) https://ascl.net/$(CODE)
 
 pdf2:   pdf asp1
 	$(PDFOPEN) $(P).pdf
