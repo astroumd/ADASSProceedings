@@ -2333,3 +2333,37 @@ ascl:2009.022	Harmonia: Hybrid-basis inference for large-scale galaxy clustering
 ascl:2009.023	DASTCOM5: JPL small-body data browser
 ascl:2009.024	MSL: Mining for Substructure Lenses
 ascl:2009.025	Binary-Speckle: Binary or triple star parameters
+ascl:2010.001	MBF: MOLSCAT 2020, BOUND, and FIELD for atomic and molecular collisions
+ascl:2010.002	GSpec: Gamma-ray Burst Monitor analyzer
+ascl:2010.003	stsynphot: synphot for HST and JWST
+ascl:2010.004	TACHE: TensoriAl Classification of Hydrodynamic Elements
+ascl:2010.005	GRAPUS: GRAvitational instability PopUlation Synthesis
+ascl:2010.006	LaSSI: Large-Scale Structure Information
+ascl:2010.007	stella: Stellar flares identifier
+ascl:2010.008	Exo-DMC: Exoplanet Detection Map Calculator
+ascl:2010.009	plancklens: Planck 2018 lensing pipeline
+ascl:2010.010	lenspyx: Curved-sky python lensed CMB maps simulation package
+ascl:2010.011	ROGER: Automatic classification of galaxies using phase-space information
+ascl:2010.012	Astronomaly: Flexible framework for anomaly detection in astronomy
+ascl:2010.013	Legolas: Large Eigensystem Generator for One-dimensional pLASmas
+ascl:2010.014	Pix2Prof: Deep learning for textraction of useful sequential information from galaxy imagery
+ascl:2010.015	relxill: Reflection models of black hole accretion disks
+ascl:2011.001	AdaMet: Adaptive Metropolis for Bayesian analysis
+ascl:2011.002	CAPTURE: Interferometric pipeline for image creation from GMRT data
+ascl:2011.003	Kalkayotl: Inferring distances to stellar clusters from Gaia parallaxes
+ascl:2011.004	MCMCDiagnostics: Markov Chain Monte Carlo convergence diagnostics
+ascl:2011.005	DarkCapPy: Dark Matter Capture and Annihilation
+ascl:2011.006	tlpipe: Data processing pipeline for the Tianlai experiment
+ascl:2011.007	DYNAMITE: DYnamics, Age and Metallicity Indicators Tracing Evolution
+ascl:2011.008	GOTHIC: Double nuclei galaxy detector
+ascl:2011.009	HaloGen: Modular halo model code
+ascl:2011.010	ARES: Accelerated Reionization Era Simulations
+ascl:2011.011	frbcat: Fast Radio Burst CATalog querying package
+ascl:2011.012	wobble: Time-series spectra analyzer
+ascl:2011.013	TLC: Tidally Locked Coordinates
+ascl:2011.014	SEDkit: Spectral energy distribution construction and analysis tools
+ascl:2011.015	EvapMass: Minimum mass of planets predictor
+ascl:2011.016	GoFish: Molecular line detections in protoplanetary disks
+ascl:2011.017	RRATtrap: Rotating Radio Transient identifier
+ascl:2011.018	Clustering: Code for clustering single pulse events
+ascl:2011.019	Scintools: Pulsar scintillation data tools
