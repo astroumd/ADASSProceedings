@@ -146,7 +146,7 @@ inc:
 	@cat $(P).toc
 
 spell:
-	aspell --mode=tex check $(P).tex
+	aspell --mode=tex --lang=en check $(P).tex
 	@echo Share your ~/.aspell.en.pws  ~/.aspell.en.prepl
 
 aspell:
