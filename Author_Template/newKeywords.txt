@@ -2,6 +2,9 @@ algorithm
     harmonic sum
     machine learning
         deep learning
+computer languages
+    Go
+    Julia
 code
     repository
         GitLab
@@ -9,15 +12,11 @@ data formats
     ASDF
 distribution
     von Mises
-<<<<<<< HEAD
-computer languages
-    Go
-    Julia
-=======
+ESCAPE
+FAIR
 observatories
     ground-based
         VLA
->>>>>>> new index entries
 projects
     StarFormMapper
 theorem
@@ -25,3 +24,4 @@ theorem
     CAP
     L'Huilier
     Nyquist
+Unified Astronomy Thesaurus (UAT)
