@@ -1,27 +1,85 @@
 algorithm
-    harmonic sum
     machine learning
-        deep learning
-computer languages
-    Go
-    Julia
-code
-    repository
-        GitLab
-data formats
-    ASDF
-distribution
-    von Mises
-ESCAPE
+        recurrent neural network
+applications
+    CARTA
+    Google Sky Map
+    JS9
+    Jupyterhub
+    Radiopadre
+    shadeMS
+archives
+    individual
+        Anglo-Australian Telescope (AAT)
+astronomy
+    satellites
+        moon
+    solar
+        coronal heating
+        solar spectral irradiance
+catalogues
+    GALAH Data Release 2
+conference
+    virtual
+covid
+data
+    model
+        Model for Annotating Generic Objects (MANGO)
 FAIR
+instruments
+    IACTs
+    individual
+        SINFONI
+        SITELLE
+        SPICAM
+    submillimeter array
+libraries
+    Dask
+    Dask-MS
+    Datashader
 observatories
+    EAO
     ground-based
-        VLA
+        Calar Alto
+        IRAM
+        LMT
+        LST
+        NOEMA
+        Virgo
+        WST
+    space-based
+        AGILE
+organisations
+    HITS
+packages
+    CTLearn
+    PySAP
+    Singularity
+portals
+    ESA Datalabs (EDL)
 projects
-    StarFormMapper
-theorem
-    Brewer
-    CAP
-    L'Huilier
-    Nyquist
+    EOSC
+    ESCAPE
+    EXPLORE
+    Starlink
+software
+    framework
+        agilepy
+        rtapipe
+        threeML
+    tools
+        HIPSgen
+        Xova
+space probes
+    MarsExpress
+surveys
+    Deep Investigations of Neutral Gas Origins (DINGO)
+    VAST
+techniques
+    sonification
+    transfer learning
 Unified Astronomy Thesaurus (UAT)
+web
+    Apache NiFi
+    proposal
+        hedwig
