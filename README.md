@@ -30,9 +30,12 @@ http://www.adass.org/proceedings.html
         svn
 * 2018: College Park (Teuben, Pound, Thomas, Warner) - Vol 523.
         github (private astroumd repo)
-* 2019: Groningen (Pizzo, Deul, de Plaa, Verkouter, Mol) - 
+* 2019: Groningen (Pizzo, Deul, de Plaa, Verkouter, Mol) - Vol 527.
         github (private astroumd repo)
-* 2020: Granada
+* 2020: Granada (Ruiz, Pierfedereci, Teuben)
+        github (private astroumd repo)
+* 2021: Cape Town		
+
 
 
 ## Contents
