@@ -3,7 +3,7 @@
 # at least the README file. For some smart cookies the Makefile
 # could be sufficient too.
 #
-# Version 5-oct-2020   Peter Teuben & Benjamin Hugo
+# Version 5-oct-2021   Peter Teuben & Benjamin Hugo
 #
 # See also:  http://adass2021.ac.za/static/proc/ADASS2021.tar
 #
@@ -41,7 +41,7 @@ FILES  = AdassChecks.py AdassConfig.py AdassIndex.py ADASS_template.tex \
 	 Index.py manual2010.pdf ManuscriptInstructions.pdf PaperCheck.py \
 	 README subjectKeywords.txt TexScanner.py \
 	 ascl.py asclKeywords.txt \
-	 adass2020.bib Makefile makedefs \
+	 adass$(YEAR).bib Makefile makedefs \
 	 $(FILESASP)
 
 #  probably don't change these either (or notify the editors you have a special paper case)
