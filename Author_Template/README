@@ -17,7 +17,7 @@ Introduction
 ============
 
 This package of files is supplied to help you prepare papers for submission in 
-the Proceedings for the ADASS 2020 conference virtually held in Granada, Spain.
+the Proceedings for the ADASS 2021 hybrid conference held in Cape Town, South Africa.
 Please follow the stepwise instructions below carefully, because the manuscript 
 needs to be delivered to ASP in print quality. The more issues are solved early 
 on in the process, the more time we all save.
@@ -35,7 +35,7 @@ help documents in this tar file (except for your personal template):
    5. PID.tex                    (Your personalized ADASS template for your PID, e.g. P1-2
 
 At the end of this README, we also provide a file index with a short description of 
-all the files present in the ADASS2020.tar file. 
+all the files present in the ADASS2021.tar file. 
 
 
 STEP 1: Prepare your manuscript
@@ -64,8 +64,8 @@ simply upload (as a ZIP file is the easiest) the template, the two asp2014 files
 and optionally your BIB file and EPS figures. Don't start from scratch, or your file
 will be likely named main.tex. See below if you like the "make" shortcuts.
 
-Optionally in 2020 we have personalized templates, based on your abstract. Please 
-see https://www.astro.umd.edu/~teuben/adass2020 for more information. The 
+Optionally in 2021 we have personalized templates, based on your abstract. Please 
+see our web site for more information. The 
 instructions within that template are even more terse than in ADASS_template.tex, 
 so be warned if some of this material is new to you.
 
@@ -78,7 +78,7 @@ or use your personalized one.
 In the makedefs file, you can define the P, V, A, E and FIGS macros, for example:
 
 # Your proceedings PID (paper ID) code:
-P = P13-20
+P = X13-20
 
 # Your version # (1,2,..) since you can only upload unique files
 V = 1
@@ -90,7 +90,7 @@ A = Teuben
 E = teuben@gmail.com
 
 # Your EPS figures
-FIGS = P13-20_*.eps
+FIGS = X13-20_*.eps
 
 Please edit the makedefs file and NOT the Makefile directly. The entries in the
 makedefs file will override the ones set in the Makefile. When set correctly,
@@ -218,7 +218,7 @@ you really don't need to send us *any* other type files. Save the electrons!
 File index
 ==========
 
-The ADASS2020.tar package contains the following files:
+The ADASS2021.tar package contains the following files:
 
 README                     - this file.
 Makefile                   - useful for those who like terminal commands
@@ -257,7 +257,7 @@ Github
 
 Although each ADASS conference will draw its proceedings preparation package, the original github
 repo from which that package is drawn, is available on https://github.com/astroumd/ADASSProceedings
-Typically each year will develop the new release on a branch (e.g. "2020" for the Granada version)
+Typically each year will develop the new release on a branch (e.g. "2021" for the Granada version)
 and merge this back to the master for the next year team goes to work.
 
 Authors will not need to know about that, but you may run into some editor specific comments or

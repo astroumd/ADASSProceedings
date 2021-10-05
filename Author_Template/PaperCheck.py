@@ -493,7 +493,7 @@ def CheckPaperName(Paper,Problems) :
                ValidSoFar = False
                break
 
-      if (Letter == 'P' and not TriestePosters) :
+      if (Letter == 'X' and not TriestePosters) :
 
          #  This section checks for a valid poster number using the style in
          #  use up to Trieste. This requires a poster number to be a 3 digit
@@ -524,7 +524,7 @@ def CheckPaperName(Paper,Problems) :
                ValidSoFar = False
 
       if (Letter == 'I' or Letter == 'O' or \
-                                   (Letter == 'P' and TriestePosters)) :
+                                   (Letter == 'X' and TriestePosters)) :
 
          #  Oral presentation numbers (and posters using the Trieste convention)
          #  have the form S-N where S is the session and N the number. Go

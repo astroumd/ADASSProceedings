@@ -3559,7 +3559,7 @@ def CheckPaperName(Paper,Problems) :
    
    #  Disable the use of 'X' as a prefix.
    
-   XAllowed = False
+   XAllowed = True
    
    #  Some intital checks on the leading digit, which should be O for Oral,
    #  I for Invited (also oral), B for BoF, F for Focus Demo, 'D' for
@@ -3617,7 +3617,7 @@ def CheckPaperName(Paper,Problems) :
                ValidSoFar = False
                break
 
-      if (Letter == 'P' and not TriestePosters) :
+      if (Letter == 'X' and not TriestePosters) :
       
          #  This section checks for a valid poster number using the style in
          #  use up to Trieste. This requires a poster number to be a 3 digit

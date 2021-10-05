@@ -3,10 +3,9 @@
 # at least the README file. For some smart cookies the Makefile
 # could be sufficient too.
 #
-# Version 12-oct-2020   Peter Teuben
+# Version 5-oct-2020   Peter Teuben & Benjamin Hugo
 #
-# See also:  http://www.adass.org/instructions/ADASS2020.tar
-#            https://adass2020.es/static/proc/ADASS2020.tar
+# See also:  http://adass2021.ac.za/static/proc/ADASS2021.tar
 #
 # P = paper_id    your proceedings paper ID code (the one with the dash, not dot)
 # V = version     your version # (1,2,..) since you can only upload unique files
@@ -34,7 +33,7 @@ FIGS = example.eps
 PDFOPEN = open
 
 #  variables for proceeding editors (don't modify, for export, not for authors)
-YEAR   = 2020
+YEAR   = 2021
 ATDIR  = ADASS$(YEAR)_author_template
 FILES  = AdassChecks.py AdassConfig.py AdassIndex.py ADASS_template.tex \
 	 Aindex.py FixUnprintable.py \
@@ -172,10 +171,10 @@ zip:    $(FILES4AR) _checksum
 	rm -f $(ZIP_FILE)
 	zip $(ZIP_FILE) $(FILES4AR)
 	@echo submit with e.g.
-	@echo ncftpput www.adass2020.es  $(P) $(ZIP_FILE)
+	@echo sftp login ftp.adass2021.ac.za and put $(ZIP_FILE)
 
 poster: $(POS_FILE)
-	@echo ncftpput www.adass2020.es  $(P) $(POS_FILE)
+	@echo sftp login ftp.adass2021.ac.za and put  $(POS_FILE)
 
 overleaf:    $(FILESTEX)
 	rm -f $(ZIP_FILE)
