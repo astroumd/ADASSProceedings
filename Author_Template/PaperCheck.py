@@ -437,7 +437,7 @@ def CheckPaperName(Paper,Problems) :
 
    TriestePosters = True
    CapeTownPosters = True
-
+   XAllowed = True
    #  Some initial checks on the leading digit, which should be O for Oral,
    #  I for Invited (also oral), B for BoF, F for Focus Demo, 'D' for
    #  Demo booth or T for Tutorial.
