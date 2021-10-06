@@ -436,6 +436,7 @@ def CheckPaperName(Paper,Problems) :
    #  P045 for example. If so, TriestePosters needs to be set true.
 
    TriestePosters = True
+   CapeTownPosters = True
 
    #  Some initial checks on the leading digit, which should be O for Oral,
    #  I for Invited (also oral), B for BoF, F for Focus Demo, 'D' for
@@ -450,7 +451,7 @@ def CheckPaperName(Paper,Problems) :
 
    if (ValidSoFar) :
       Letter = Paper[0]
-      if (not Letter in "IOBFPDTH") :
+      if (not Letter in ("IOBFPDTH" if not CapeTownPosters else "IOBFXDTH")) :
          Problem = "'" + Letter + "' is not a valid prefix for a paper"
          print("**",Problem,"**")
          Problems.append(Problem)
@@ -493,12 +494,11 @@ def CheckPaperName(Paper,Problems) :
                ValidSoFar = False
                break
 
-      if (Letter == 'X' and not TriestePosters) :
+      if (Letter == ('X' if CapeTownPosters else 'P') and not TriestePosters) :
 
          #  This section checks for a valid poster number using the style in
          #  use up to Trieste. This requires a poster number to be a 3 digit
          #  number, with leading zeros if necessary.
-
          if (NumChars != 3) :
             Problem = \
              "Poster numbers must be three digits, with leading zeros if needed"
@@ -524,7 +524,7 @@ def CheckPaperName(Paper,Problems) :
                ValidSoFar = False
 
       if (Letter == 'I' or Letter == 'O' or \
-                                   (Letter == 'X' and TriestePosters)) :
+                                   (Letter == ('X' if CapeTownPosters else 'P') and TriestePosters)) :
 
          #  Oral presentation numbers (and posters using the Trieste convention)
          #  have the form S-N where S is the session and N the number. Go
@@ -535,9 +535,11 @@ def CheckPaperName(Paper,Problems) :
          N = 0
          Session = True
          Leading = True
+         if CapeTownPosters and len(Number) != 3:
+             Problem = "PID number should be 3 digit and should have leading zeros if needed"
          for Char in Number :
             if (Leading) :
-               if (Char == '0') :
+               if (Char == '0' and not CapeTownPosters) :
                   if (Session) :
                      Problem = "Session number should not have leading zeros"
                   else :
@@ -577,16 +579,16 @@ def CheckPaperName(Paper,Problems) :
             else :
                N = N * 10 + Value
          if (ValidSoFar) :
-            if (S == 0 or N == 0) :
+            if (S == 0 or N == 0) and not CapeTownPosters:
                Problem = "Session or paper number cannot be zero"
                print("**",Problem,"**")
                Problems.append(Problem)
                ValidSoFar = False
 
    if (not ValidSoFar) :
-      Problem = "Paper name '" + Paper + "' is invalid"
-      print("**",Problem,"**")
-      Problems.append(Problem)
+      if (not (Paper[0] == 'X' and XAllowed)) :
+         Problem = "Paper name '" + Paper + "' is invalid"
+         Problems.append(Problem)
 
    return ValidSoFar
 
