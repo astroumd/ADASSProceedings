@@ -10,6 +10,7 @@ file with the instructions for the authors.
 
 CAVEAT: we use git branches. The 2018 branch needs to merge to master,
 before the 2019 team continue on their own 2019 branch, etc.etc.
+Issues and pull request should probably refer to the latest branch.
 
 ## Past Conferences
 
