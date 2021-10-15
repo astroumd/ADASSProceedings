@@ -48,7 +48,7 @@ FILES  = AdassChecks.py AdassConfig.py AdassIndex.py ADASS_template.tex \
 TAR_FILE  = $(P)_v$(V).tar.gz
 ZIP_FILE  = $(P)_v$(V).zip
 POS_FILE  = $(P)_v$(V).pdf
-FILESPDF  = $(P).pdf copyrightform_$(P)_$(A).pdf
+FILESPDF  = $(P).pdf copyrightForm_$(P)_$(A).pdf
 FILESTEX  = $(P).tex $(P).bib $(FIGS) makedefs
 FILESASP  = asp2014.bst asp2014.sty
 FILES4AR  = $(FILESTEX) $(FILESPDF)
@@ -97,9 +97,9 @@ export:
 	tar cf ADASS$(YEAR).tar $(ATDIR)
 
 # copyright is now part of the tar/zip file, checksum (sum) is 13785
-copyrightform_$(P)_$(A).pdf: copyrightform.pdf
-	cp copyrightform.pdf copyrightform_$(P)_$(A).pdf
-	@echo Now go edit your copyrightform_$(P)_$(A).pdf form
+copyrightForm_$(P)_$(A).pdf: copyrightform.pdf
+	cp copyrightform.pdf copyrightForm_$(P)_$(A).pdf
+	@echo Now go edit your copyrightForm_$(P)_$(A).pdf form
 
 # these targets are for most common unix systems, but YMMV. Modify if you need
 # let the editors know you have a better way for the next ADASS team
@@ -165,8 +165,8 @@ words:
 tar:    $(FILES4AR) _checksum
 	tar zcf $(TAR_FILE) $(FILES4AR)
 	@echo submit with e.g.
-	@echo ncftpput www.adass2020.es  $(P) $(TAR_FILE)
-
+	@echo sftp login ftp.adass2021.ac.za and put $(ZIP_FILE)
+	
 zip:    $(FILES4AR) _checksum
 	rm -f $(ZIP_FILE)
 	zip $(ZIP_FILE) $(FILES4AR)
@@ -184,9 +184,9 @@ overleaf:    $(FILESTEX)
 	@echo "The git clone command is under overleaf's Menu"
 
 
-_checksum: copyrightform_$(P)_$(A).pdf
+_checksum: copyrightForm_$(P)_$(A).pdf
 	@echo Checksum test
-	@sum copyrightform_$(P)_$(A).pdf
+	@sum copyrightForm_$(P)_$(A).pdf
 
 # for editors
 asp1:
