@@ -140,8 +140,6 @@ from __future__ import (print_function,division,absolute_import)
 
 import os
 import sys
-import string
-import time
 
 import AdassChecks
 import TexScanner
