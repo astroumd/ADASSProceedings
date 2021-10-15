@@ -473,27 +473,27 @@ def CheckPaperName(Paper,Problems) :
       NumChars = len(Number)
 
       if (Letter == 'B' or Letter == 'F' or Letter == 'D' or Letter == 'T') :
+        if not CapeTownPosters:
+            #  BoFs, Focus Demos, Demo booths, and Tutorials just have a number,
+            #  with no leading zeros.
 
-         #  BoFs, Focus Demos, Demo booths, and Tutorials just have a number,
-         #  with no leading zeros.
-
-         Leading = True
-         for Char in Number :
-            if (Leading) :
-               if (Char == '0') :
-                  Problem = "Paper number should not have leading zeros"
-                  print("**",Problem,"**")
-                  Problems.append(Problem)
-                  ValidSoFar = False
-               Leading = False
-            Value = ord(Char) - ord('0')
-            if (Value < 0 or Value > 9) :
-               Problem = "Non-numeric character (" + Char + ") in paper number"
-               print("**",Problem,"**")
-               Problems.append(Problem)
-               ValidSoFar = False
-               break
-
+            Leading = True
+            for Char in Number :
+                if (Leading) :
+                    if (Char == '0') :
+                        Problem = "Paper number should not have leading zeros"
+                        print("**",Problem,"**")
+                        Problems.append(Problem)
+                        ValidSoFar = False
+                Leading = False
+                Value = ord(Char) - ord('0')
+                if (Value < 0 or Value > 9) :
+                    Problem = "Non-numeric character (" + Char + ") in paper number"
+                print("**",Problem,"**")
+                Problems.append(Problem)
+                ValidSoFar = False
+                break
+            
       if (Letter == ('X' if CapeTownPosters else 'P') and not TriestePosters) :
 
          #  This section checks for a valid poster number using the style in
@@ -524,7 +524,7 @@ def CheckPaperName(Paper,Problems) :
                ValidSoFar = False
 
       if (Letter == 'I' or Letter == 'O' or \
-                                   (Letter == ('X' if CapeTownPosters else 'P') and TriestePosters)) :
+         (Letter == ('X' if CapeTownPosters else 'P') or (CapeTownPosters and Letter in "BFDT") and TriestePosters)) :
 
          #  Oral presentation numbers (and posters using the Trieste convention)
          #  have the form S-N where S is the session and N the number. Go
@@ -691,9 +691,9 @@ def CheckSubjectIndexEntries(Paper, Problems, TexFileName = "") :
     # Read the total list of keywords from subjectKeywords.txt and newKeywords.txt
     # Is there a better way to use AdassConfig.* methods to point at relative file paths?
     Entries = compose(set, Reduce(__add__), Map(AdassIndex.ReadIndexList))(
-                      ['../Author_Template/subjectKeywords.txt', '../Author_Template/newKeywords.txt'] )
+                      ['../Author_template/subjectKeywords.txt', '../Author_template/newKeywords.txt'] )
     if not Entries:
-        Problems.append( "No subject keywords found **at all**?! (../Author_Template/{subject|new}Keywords.txt missing?" )
+        Problems.append( "No subject keywords found **at all**?! (../Author_template/{subject|new}Keywords.txt missing?" )
         return False
 
     # ssindex entries that are not in Entries pose a problem!
