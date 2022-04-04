@@ -47,6 +47,7 @@ observatories
         NOEMA
         Virgo
         WST
+        askap
     space-based
         AGILE
 organisations
@@ -75,6 +76,7 @@ space probes
 surveys
     Deep Investigations of Neutral Gas Origins (DINGO)
     VAST
+    wallaby
 techniques
     sonification
     transfer learning
