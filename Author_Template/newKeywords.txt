@@ -63,6 +63,7 @@ projects
     ESCAPE
     EXPLORE
     Starlink
+
 software
     framework
         agilepy
@@ -85,3 +86,6 @@ web
     Apache NiFi
     proposal
         hedwig
+computing
+    resources
+        European Open Science Cloud (EOSC)
