@@ -89,3 +89,5 @@ web
 computing
     resources
         European Open Science Cloud (EOSC)
+observatories
+    H.E.S.S.
