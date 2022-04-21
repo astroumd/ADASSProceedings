@@ -1,6 +1,7 @@
 algorithm
     machine learning
         recurrent neural network
+    LSQR
 applications
     CARTA
     Google Sky Map
@@ -89,5 +90,7 @@ web
 computing
     resources
         European Open Science Cloud (EOSC)
+    pre-exascale
+    OpenACC
 observatories
     H.E.S.S.
