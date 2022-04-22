@@ -15,7 +15,7 @@
 
                     # put your paper_id here (with dash, not dot), e.g. P10-2
                     # or find your template on http://www.astro.umd.edu/~teuben/adass/papers/
-P = ADASS_template
+P = $(shell detect_tex.py | grep -v '^%' | sed 's/.tex//g')
                     # keep incrementing this after each upload of your $(P)
 V = 1
                     # First author (for Papercheck.py)
@@ -23,7 +23,7 @@ A = Teuben
                     # contact person email
 E = teuben@gmail.com
 		    # your EPS figures (can be blank, and must be base-named with $(P)_*.eps
-FIGS = example.eps
+FIGS = $(shell ls *.eps)
 
 # override P,V,A,E,FIGS with a "makedefs" file, this is where authors should edit, not this Makefile
 -include makedefs

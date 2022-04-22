@@ -1,6 +1,7 @@
 algorithm
     machine learning
         recurrent neural network
+    LSQR
 applications
     CARTA
     Google Sky Map
@@ -47,6 +48,7 @@ observatories
         NOEMA
         Virgo
         WST
+        askap
     space-based
         AGILE
 organisations
@@ -62,6 +64,7 @@ projects
     ESCAPE
     EXPLORE
     Starlink
+
 software
     framework
         agilepy
@@ -75,6 +78,7 @@ space probes
 surveys
     Deep Investigations of Neutral Gas Origins (DINGO)
     VAST
+    wallaby
 techniques
     sonification
     transfer learning
@@ -83,3 +87,10 @@ web
     Apache NiFi
     proposal
         hedwig
+computing
+    resources
+        European Open Science Cloud (EOSC)
+    pre-exascale
+    OpenACC
+observatories
+    H.E.S.S.
