@@ -128,6 +128,7 @@
 #                    about CheckPaperName(). KS.
 #
 #     31st Oct 2020. Fixed .add -> .append for ADASS2020
+#     4 April 2022   Fixed pickup of vim temporary file buffers as tex files
 #
 #  Python 2 and Python 3.
 #
@@ -175,7 +176,7 @@ def FindTexFile (Paper,Problems) :
       DirList = os.listdir(".")
       TexFiles = []
       for FileName in DirList :
-         if (os.path.splitext(FileName)[1] == ".tex") :
+         if os.path.splitext(FileName)[1] == ".tex" and os.path.splitext(FileName)[0].find('.') != 0:
             TexFiles.append(FileName)
       if (len(TexFiles) == 1) :
          OnlyFileName = TexFiles[0]
@@ -691,9 +692,9 @@ def CheckSubjectIndexEntries(Paper, Problems, TexFileName = "") :
     # Read the total list of keywords from subjectKeywords.txt and newKeywords.txt
     # Is there a better way to use AdassConfig.* methods to point at relative file paths?
     Entries = compose(set, Reduce(__add__), Map(AdassIndex.ReadIndexList))(
-                      ['../Author_template/subjectKeywords.txt', '../Author_template/newKeywords.txt'] )
+                      ['../Author_Template/subjectKeywords.txt', '../Author_Template/newKeywords.txt'] )
     if not Entries:
-        Problems.append( "No subject keywords found **at all**?! (../Author_template/{subject|new}Keywords.txt missing?" )
+        Problems.append( "No subject keywords found **at all**?! (../Author_Template/{subject|new}Keywords.txt missing?" )
         return False
 
     # ssindex entries that are not in Entries pose a problem!
