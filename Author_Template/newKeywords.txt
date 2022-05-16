@@ -9,6 +9,7 @@ applications
     Jupyterhub
     Radiopadre
     shadeMS
+    TOM Toolkit
 archives
     individual
         Anglo-Australian Telescope (AAT)
