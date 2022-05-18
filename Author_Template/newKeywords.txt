@@ -51,6 +51,7 @@ observatories
         Virgo
         WST
         askap
+        Major Atmospheric Gamma Imaging Cherenkov (MAGIC)
     space-based
         AGILE
 organisations
