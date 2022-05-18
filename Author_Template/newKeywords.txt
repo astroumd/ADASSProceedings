@@ -19,6 +19,7 @@ astronomy
     solar
         coronal heating
         solar spectral irradiance
+    brown dwarfs
 catalogues
     GALAH Data Release 2
 conference
@@ -67,7 +68,9 @@ projects
     ESCAPE
     EXPLORE
     Starlink
-
+project
+    management
+        Electronic Document Management System (EDMS)
 software
     framework
         agilepy
@@ -97,3 +100,6 @@ computing
     OpenACC
 observatories
     H.E.S.S.
+databases
+    individual
+        SIMPLE
