@@ -55,6 +55,7 @@ observatories
         askap
         Major Atmospheric Gamma Imaging Cherenkov (MAGIC)
         NenuFAR
+        Cherenkov Telescope Array (CTA)
     space-based
         AGILE
 organisations
@@ -107,5 +108,8 @@ observatories
 databases
     individual
         SIMPLE
+    Apache
+        Cassandra
 protocols
     UDP
+Internet of Things (IoT)
