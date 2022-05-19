@@ -41,6 +41,7 @@ libraries
     Dask-MS
     Datashader
     PyCPL
+    Keras
 observatories
     EAO
     ground-based
