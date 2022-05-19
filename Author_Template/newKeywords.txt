@@ -54,6 +54,7 @@ observatories
         WST
         askap
         Major Atmospheric Gamma Imaging Cherenkov (MAGIC)
+        NenuFAR
     space-based
         AGILE
 organisations
@@ -80,6 +81,7 @@ software
     tools
         HIPSgen
         Xova
+    DPDK
 space probes
     MarsExpress
 surveys
@@ -89,6 +91,7 @@ surveys
 techniques
     sonification
     transfer learning
+    incoherent dedispersion
 Unified Astronomy Thesaurus (UAT)
 web
     Apache NiFi
@@ -104,3 +107,5 @@ observatories
 databases
     individual
         SIMPLE
+protocols
+    UDP
