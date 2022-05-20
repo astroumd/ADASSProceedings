@@ -1,6 +1,7 @@
 algorithm
     machine learning
         recurrent neural network
+        autoencoder
     LSQR
 applications
     CARTA
@@ -20,6 +21,8 @@ astronomy
         coronal heating
         solar spectral irradiance
     brown dwarfs
+    transients
+        science alert
 catalogues
     GALAH Data Release 2
 conference
