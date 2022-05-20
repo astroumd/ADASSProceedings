@@ -2,6 +2,8 @@ algorithm
     machine learning
         recurrent neural network
         autoencoder
+        logistic regression
+        support vector machines
     LSQR
 applications
     CARTA
