@@ -1,6 +1,9 @@
 algorithm
     machine learning
         recurrent neural network
+        autoencoder
+        logistic regression
+        support vector machines
     LSQR
 applications
     CARTA
@@ -20,6 +23,8 @@ astronomy
         coronal heating
         solar spectral irradiance
     brown dwarfs
+    transients
+        science alert
 catalogues
     GALAH Data Release 2
 conference
@@ -41,6 +46,7 @@ libraries
     Dask-MS
     Datashader
     PyCPL
+    Keras
 observatories
     EAO
     ground-based
@@ -53,6 +59,8 @@ observatories
         WST
         askap
         Major Atmospheric Gamma Imaging Cherenkov (MAGIC)
+        NenuFAR
+        Cherenkov Telescope Array (CTA)
     space-based
         AGILE
 organisations
@@ -79,6 +87,7 @@ software
     tools
         HIPSgen
         Xova
+    DPDK
 space probes
     MarsExpress
 surveys
@@ -88,6 +97,7 @@ surveys
 techniques
     sonification
     transfer learning
+    incoherent dedispersion
 Unified Astronomy Thesaurus (UAT)
 web
     Apache NiFi
@@ -103,3 +113,8 @@ observatories
 databases
     individual
         SIMPLE
+    Apache
+        Cassandra
+protocols
+    UDP
+Internet of Things (IoT)
