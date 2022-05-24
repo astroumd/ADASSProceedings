@@ -27,6 +27,7 @@ astronomy
         science alert
 catalogues
     GALAH Data Release 2
+    RCSED
 conference
     virtual
 covid
@@ -47,6 +48,7 @@ libraries
     Datashader
     PyCPL
     Keras
+    Angular
 observatories
     EAO
     ground-based
