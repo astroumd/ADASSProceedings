@@ -49,6 +49,7 @@ libraries
     PyCPL
     Keras
     Angular
+    pybind11
 observatories
     EAO
     ground-based
