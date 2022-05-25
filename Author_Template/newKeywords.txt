@@ -5,6 +5,7 @@ algorithm
         logistic regression
         support vector machines
     LSQR
+    non-parametric fitting
 applications
     CARTA
     Google Sky Map
@@ -16,6 +17,7 @@ applications
 archives
     individual
         Anglo-Australian Telescope (AAT)
+        CEFCA Catalogues Portal
 astronomy
     satellites
         moon
@@ -26,6 +28,7 @@ astronomy
     transients
         science alert
     asteroids
+    Line-of-sight velocity distribution (LOSVD)
 catalogues
     GALAH Data Release 2
     RCSED
@@ -65,6 +68,7 @@ observatories
         Major Atmospheric Gamma Imaging Cherenkov (MAGIC)
         NenuFAR
         Cherenkov Telescope Array (CTA)
+        Observatorio Astrofisico de Javalambre (OAJ)
     space-based
         AGILE
 organisations
@@ -98,6 +102,8 @@ surveys
     Deep Investigations of Neutral Gas Origins (DINGO)
     VAST
     wallaby
+    Javalambre Photometric Local Universe Survey (J-PLUS)
+    Javalambre Physics of the Accelerating Universe Astrophysical Survey (J-PAS) 
 techniques
     sonification
     transfer learning
@@ -123,3 +129,6 @@ protocols
     UDP
     EPN-TAP
 Internet of Things (IoT)
+Virtual Observatory (VO)
+    standards
+        Registry Interfaces
