@@ -25,6 +25,7 @@ astronomy
     brown dwarfs
     transients
         science alert
+    asteroids
 catalogues
     GALAH Data Release 2
     RCSED
@@ -120,4 +121,5 @@ databases
         Cassandra
 protocols
     UDP
+    EPN-TAP
 Internet of Things (IoT)
