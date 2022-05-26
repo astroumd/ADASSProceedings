@@ -29,6 +29,8 @@ astronomy
         science alert
     asteroids
     Line-of-sight velocity distribution (LOSVD)
+    AGNs
+        light curves
 catalogues
     GALAH Data Release 2
     RCSED
