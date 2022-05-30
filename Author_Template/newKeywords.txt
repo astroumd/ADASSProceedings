@@ -31,6 +31,7 @@ astronomy
     Line-of-sight velocity distribution (LOSVD)
     AGNs
         light curves
+    k-correction
 catalogues
     GALAH Data Release 2
     RCSED
