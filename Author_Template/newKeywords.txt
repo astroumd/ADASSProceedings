@@ -127,6 +127,7 @@ databases
         SIMPLE
     Apache
         Cassandra
+    Redis
 protocols
     UDP
     EPN-TAP
