@@ -130,6 +130,7 @@ databases
     Apache
         Cassandra
     Redis
+    Bucardo
 protocols
     UDP
     EPN-TAP
