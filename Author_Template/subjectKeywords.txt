@@ -536,7 +536,7 @@ astroreference
 astrostatistics
 astrotag
 atmospheric turbulence
-authentication & authorization
+authentication and authorization
     EduGAIN
     federated identities
     identity provider
