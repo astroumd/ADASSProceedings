@@ -141,3 +141,9 @@ Virtual Observatory (VO)
         Registry Interfaces
 computer languages
     RUST
+citation
+    software
+software
+    formats
+        CodeMeta
+        CFF
