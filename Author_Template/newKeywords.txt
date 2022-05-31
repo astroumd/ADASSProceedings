@@ -14,6 +14,7 @@ applications
     Radiopadre
     shadeMS
     TOM Toolkit
+    STILTS
 archives
     individual
         Anglo-Australian Telescope (AAT)
