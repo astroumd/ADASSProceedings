@@ -14,6 +14,7 @@ applications
     Radiopadre
     shadeMS
     TOM Toolkit
+    STILTS
 archives
     individual
         Anglo-Australian Telescope (AAT)
@@ -31,6 +32,7 @@ astronomy
     Line-of-sight velocity distribution (LOSVD)
     AGNs
         light curves
+    k-correction
 catalogues
     GALAH Data Release 2
     RCSED
@@ -47,6 +49,7 @@ instruments
         SINFONI
         SITELLE
         SPICAM
+        Namakanui
     submillimeter array
 libraries
     Dask
@@ -129,6 +132,8 @@ databases
         SIMPLE
     Apache
         Cassandra
+    Redis
+    Bucardo
 protocols
     UDP
     EPN-TAP
@@ -136,3 +141,11 @@ Internet of Things (IoT)
 Virtual Observatory (VO)
     standards
         Registry Interfaces
+computer languages
+    RUST
+citation
+    software
+software
+    formats
+        CodeMeta
+        CFF
