@@ -33,6 +33,8 @@ astronomy
     AGNs
         light curves
     k-correction
+cosmology
+    distance
 catalogues
     GALAH Data Release 2
     RCSED
