@@ -149,3 +149,7 @@ software
     formats
         CodeMeta
         CFF
+planetarium
+    formats
+        FITS
+        Speck
