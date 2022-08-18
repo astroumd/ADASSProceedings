@@ -76,6 +76,7 @@ observatories
         NenuFAR
         Cherenkov Telescope Array (CTA)
         Observatorio Astrofisico de Javalambre (OAJ)
+        HartRAO
     space-based
         AGILE
 organisations
