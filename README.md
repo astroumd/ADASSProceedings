@@ -36,8 +36,10 @@ http://www.adass.org/proceedings.html
 * 2020: Granada (Ruiz, Pierfedereci, Teuben)
         github (private astroumd repo)
 * 2021: Cape Town	(some combination of Smirnov, Oedman-Govender, Hugo)
-        ?
+        github (private astroumd repo)
+* 2022: Victoria
 
+* 2023: Tucson
 
 
 ## Contents
