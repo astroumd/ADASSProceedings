@@ -156,3 +156,6 @@ planetarium
     formats
         FITS
         Speck
+data formats
+    SDFITS
+    netCDF
