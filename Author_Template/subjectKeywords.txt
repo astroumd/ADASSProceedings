@@ -22,6 +22,7 @@ Earth
         scattering
 European Commission Framework Programmes
 European Virtual Observatory
+FAIR
 Fourth Paradigm
 German Astrophysical Virtual Observatory (GAVO)
 Google Earth
@@ -31,6 +32,7 @@ Group Membership Service (GMS)
 HELIO
 IGMP snooping
 International Virtual Observatory Alliance (IVOA)
+Internet of Things (IoT)
 Japanese Virtual Observatory (JVO)
 KIlo Degree Survey (KIDS)
 LSST
@@ -48,6 +50,7 @@ Space-Time Coordinate (STC)
 Star Trek
 Two Micron All Sky Survey (2MASS)
 US Virtual Observatory Alliance (USVOA)
+Unified Astronomy Thesaurus (UAT)
 Universal Worker Service (UWS)
     standard
 Virtual Astronomical Observatory (VAO)
@@ -66,6 +69,7 @@ Virtual Observatory (VO)
         Virtual Solar Observatory (VSO)
     interfaces
     standards
+        Registry Interfaces
         VO Data Modeling Language (VO-DML)
 World Coordinate System (WCS)
 \texttt{astrometry.net}
@@ -86,6 +90,7 @@ algorithm
     Flood-fill
     GaussClumps
     Iterative Dichotomiser 3 (ID3)
+    LSQR
     Lie-integration
     Limited memory Broyden Fletcher Goldgarb Shanno
     Lutz
@@ -135,17 +140,22 @@ algorithm
     least squares regression
     line finding
     machine learning
+        autoencoder
         deep learning
         k-nearest neighbors
+        logistic regression
         naive Bayes classifier
         random forest
+        recurrent neural network
         semi-supervised
         supervised
+        support vector machines
         training
         u-net
         unsupervised
     matching
     minimisation
+    non-parametric fitting
     optical flow
     optimisation
     parallelization
@@ -173,6 +183,7 @@ applications
     Astronomer's Workbench (AWOB)
     BLOBCAT
     C3
+    CARTA
     CIGALE
     COSIM
     CSCXmatch
@@ -203,13 +214,16 @@ applications
     Ginga
     Glnemo2
     Google Calendar
+    Google Sky Map
     HART
     IceCore
     Iris
+    JS9
     JUDO
     JUDO2
     JVO Sky
     Jupyter
+    Jupyterhub
     L-PICOLA
     LIME
     Le Phare
@@ -231,6 +245,7 @@ applications
     PyASB
     PyBDSM
     Q-FULLTREE
+    Radiopadre
     SAADA
     SAOImage DS9
     SAS
@@ -238,6 +253,7 @@ applications
     SExtractor
     SITools2
     SPOT
+    STILTS
     SWarp
     SciApp
     SedImporter
@@ -249,6 +265,7 @@ applications
     Specview
     Spotlight
     Stellarium
+    TOM Toolkit
     TOPCAT
     TapHandle
     TiRiFiC
@@ -275,6 +292,7 @@ applications
         Sanepic
         Scanamorphos
         Unimap
+    shadeMS
     specreduce
     spreadsheets
 archives
@@ -291,10 +309,12 @@ archives
     individual
         ALMA Regional Centers (ARCs)
         ALMA Science Archive
+        Anglo-Australian Telescope (AAT)
         BLAST
         CARMA
         CASDA
         CCAT Data Archive
+        CEFCA Catalogues Portal
         CFHT
         CGPS
         Calar Alto
@@ -370,6 +390,7 @@ astronomers
     tenure
 astronomy
     AGNs
+        light curves
     Baryon Acoustic Oscillations (BAO)
     Be stars
     Cosmic Microwave Background (CMB)
@@ -386,6 +407,7 @@ astronomy
     Hubble Ultra Deep Field (HUDF)
     ISM
     Kuiper Belt Objects (KBO)
+    Line-of-sight velocity distribution (LOSVD)
     Lyman-$\alpha$
     Magellanic Clouds
     Milky Way
@@ -400,10 +422,12 @@ astronomy
     absorption line systems
     active galactic nuclei
     air-Cherenkov
+    asteroids
     astrometry
     atmospheric dispersion
     black holes
         mergers
+    brown dwarfs
     cataclysmic variables
     cloud coverage
     cluster
@@ -442,6 +466,7 @@ astronomy
     hyper-velocity stars
     interstellar medium
     intracluster light (ICL)
+    k-correction
     keplerian orbit
     kinematics
     local thermodynamic equilibrium (LTE)
@@ -496,6 +521,8 @@ astronomy
     redshift
         photometric
         spectroscopic
+    satellites
+        moon
     seeing
     simulation
     sky background
@@ -504,6 +531,9 @@ astronomy
     solar activity
     solar flares
     solar system
+    solar
+        coronal heating
+        solar spectral irradiance
     spectra
         artificial
     spectral analysis
@@ -528,6 +558,7 @@ astronomy
     theory
     time domain
     transients
+        science alert
     turbulent flow
     variable sources
     variable stars
@@ -560,9 +591,11 @@ calibration
     twilight flats
     wavelength
 catalogues
+    GALAH Data Release 2
     Gaia Data Release 1
     Gaia Data Release 2
     Gaia Data Release 3
+    RCSED
     X-ray
     astrometric
     individual
@@ -602,6 +635,7 @@ catalogues
 citation
     management
     rates
+    software
 classification
     Bayesian
     algorithms
@@ -639,6 +673,7 @@ computer languages
     Pharo
     Python
     R
+    RUST
     SPP
     Scala
     Tcl/Tk
@@ -676,6 +711,7 @@ computing
     Eurolab-4-HPC
     FPGA
     GPU
+    OpenACC
     OpenMP
     architecture
         CUDA
@@ -721,12 +757,14 @@ computing
         GPI
         Xeon Phi
     parallelization
+    pre-exascale
     race conditions
     resource management
         YARN
     resources
         Amazon Elastic Cloud 2 (EC2)
         Amazon Web Services (AWS)
+        European Open Science Cloud (EOSC)
     scalability
     sky
     supercomputing
@@ -743,10 +781,14 @@ computing
     virtual machines
 conference
     .Astronomy
+    virtual
 configuration management
     Chef
 coronagraphy
 correlators
+cosmology
+    distance
+covid
 creativity
 cross-identification
 cross-matching
@@ -794,11 +836,13 @@ data formats
     Multi-MeasurementSets
     PDS
     ROOT
+    SDFITS
     STC-S
     TSV
     VOTable
     XML
     YAML
+    netCDF
 data products
 data
     $1/f$ noise
@@ -851,9 +895,10 @@ data
         CAOM
         Euclid Common Data Model (ECDM)
         GOM.FITS
+        IVOA Characterisation DM (CharacterisationDM)
         IVOA Simulation DM (SimDM)
         IVOA Spectrum DM (SpectrumDM)
-        IVOA Characterisation DM (CharacterisationDM)
+        Model for Annotating Generic Objects (MANGO)
         ObsTAP
         PROV
         PyCAOM
@@ -892,6 +937,9 @@ data
     variance
     volume
 databases
+    Apache
+        Cassandra
+    Bucardo
     DBMS
     Hive
     MariaDB
@@ -902,6 +950,7 @@ databases
     Oracle
     Postgres
     RDBMS
+    Redis
     SQLAlchemy
     SQLite
     SaadaDB
@@ -921,6 +970,7 @@ databases
         LOFAR transients
         MACHO
         NASA Extragalactic Database (NED)
+        SIMPLE
         SPHERE Target DataBase (TDB)
         Simbad
         T\"ubingen Model-Atom Database (TMAD)
@@ -951,6 +1001,7 @@ dice
 distribution
     von Mises
 e-science
+education
 education and public outreach
 education
     online
@@ -1002,6 +1053,7 @@ instruments
     Berkley Visible Image Tube
     CCDs
         Charge Transfer Efficiency (CTE)
+    IACTs
     Integral Field Spectrograph (IFS)
     Integral Field Unit (IFU)
     PSFs
@@ -1078,6 +1130,7 @@ instruments
         NIRISS
         NIRSpec
         NISP
+        Namakanui
         ODI
         OMC
         OSIRIS
@@ -1090,9 +1143,12 @@ instruments
         SAMI
         SCUBA
         SCUBA-2
+        SINFONI
+        SITELLE
         SMILES
         SPHERE
         SPI
+        SPICAM
         STIS
         STIX
         Sauron
@@ -1119,6 +1175,7 @@ instruments
     seismographs
     simulation
     stick-slip motors
+    submillimeter array
     telemetry
 international collaboration
 journals
@@ -1131,6 +1188,7 @@ libraries
     APLpy
     AST
     ATpy Python
+    Angular
     Apache Airflow
     Apache Tika
     AstroLib
@@ -1144,6 +1202,9 @@ libraries
     CMSV
     Common Pipeline Library (CPL)
     DTS
+    Dask
+    Dask-MS
+    Datashader
     ERFA
     ESO Common Pipeline Library
     Elgg
@@ -1160,6 +1221,7 @@ libraries
     JDBC
     JSAMP
     Javlin
+    Keras
     LIBSVM
     LWAS
     Leaflet JavaScript
@@ -1174,6 +1236,7 @@ libraries
     PAL
     PgSphere
     PyAST
+    PyCPL
     PyCUDA
     PyFITS
     PyMidas
@@ -1211,6 +1274,7 @@ libraries
     mpi4py
     numpy
     pyCAOM2
+    pybind11
     pycustos
     pyql
     scikit-learn
@@ -1283,7 +1347,9 @@ metrics
     flux asymmetry
     stochasticity
 observatories
+    EAO
     ESO
+    H.E.S.S.
     NAOJ
     NRAO
     ground-based
@@ -1306,10 +1372,12 @@ observatories
         CCAT
         CFHT
         CTA
+        Calar Alto
         Cerro Armazones
         Cerro Paranal
         Cerro Tololo Interamerican Observatory (CTIO)
         Chandra
+        Cherenkov Telescope Array (CTA)
         E-ELT
         EMBRACE
         EVLA
@@ -1323,12 +1391,14 @@ observatories
         Gemini
         Gran Telescopio Canarias
         Green Bank Telescope (GBT)
+        HartRAO
         Harvard College Observatory
         Hobby-Eberly Telescope
         Huairou Solar Observing Station (HSOS)
         INAF
         INAF-OAPd
         INAF-OAT
+        IRAM
         IceCube
         JACH
         JCMT
@@ -1338,15 +1408,21 @@ observatories
         Kilodegree Extremely Little Telescope (KELT)
         LBT
         LIGO
+        LMT
         LOFAR
         LSST
+        LST
         LWA
+        Major Atmospheric Gamma Imaging Cherenkov (MAGIC)
         Medicina
         MeerKAT
         Murchison Radio Observatory (MRO)
         Murchison Widefield Array (MWA)
+        NOEMA
         National Optical Astronomy Observatory (NOAO)
+        NenuFAR
         Noto
+        Observatorio Astrofisico de Javalambre (OAJ)
         Observatorio Roque de los Muchachos
         Ond\v rejov Observatory
         Palomar
@@ -1370,11 +1446,15 @@ observatories
         VLBA
         VLT
         VST
+        Virgo
         WIYN
+        WST
         Westerbork
+        askap
     lunar-based
         Lunar-based Ultraviolet Telescope (LUT)
     space-based
+        AGILE
         AGILIE
         ASCA
         ATHENA
@@ -1453,6 +1533,7 @@ organisations
     ESAC
     ESTEC
     European Strategy Forum on Research Infrastructures (ESFRI)
+    HITS
     ICRAR
     IOA
         CASU
@@ -1472,6 +1553,7 @@ packages
     Astropype
     CASSIS
     CIAO
+    CTLearn
     CUPID
     CalCOS
     CasaPy
@@ -1510,6 +1592,7 @@ packages
     ProgReg
     PyRAF
     PySALT
+    PySAP
     PyVO
     R
     RVSAO
@@ -1521,6 +1604,7 @@ packages
     STIFF
     STSDAS
     STWCS
+    Singularity
     SolarSoftWare (SSW)
     Starlink
     TMAP
@@ -1568,12 +1652,20 @@ pipelines
     Transient imaging pipeline
     XMM-Newton Pipeline Processing System (PPS)
     streaming
+planetarium
+    formats
+        FITS
+        Speck
 portals
     CDS
+    ESA Datalabs (EDL)
     ESASky
     JVO
     ODI
     VESPA
+project
+    management
+        Electronic Document Management System (EDMS)
 projects
     ADSASS
     AENEAS
@@ -1601,7 +1693,10 @@ projects
     Data Analysis Center for Exoplanets (DACE)
     ECOSCALE
     ENZO
+    EOSC
+    ESCAPE
     EVALSO
+    EXPLORE
     EuroPlaNet
     EuroServer
     ExaNeSt
@@ -1627,6 +1722,7 @@ projects
     SciServer Compute
     Shibboleth
     StarFormMapper
+    Starlink
     VIALACTEA
     VLBI-IT
     WTF
@@ -1639,6 +1735,7 @@ protocols
     CANOpen
     Cone search
     Datalink
+    EPN-TAP
     FTP
     HTTP
     IVOA Data Access Layer (DAL)
@@ -1654,6 +1751,7 @@ protocols
     SSAP
     TAP
     TCP/IP
+    UDP
     UWS
     VOEvent
     VOSI
@@ -1696,12 +1794,14 @@ simulations
 smartphone
 software
     COTS
+    DPDK
+    Linux
+    Linux kernel
     Linux
         Debian
         cache buffer
         huge pages
         kernel
-    Linux kernel
     Mac OS X
     Unix
     XID+
@@ -1742,6 +1842,13 @@ software
         HDFS
         Lustre
         tmpfs
+    formats
+        CFF
+        CodeMeta
+    framework
+        agilepy
+        rtapipe
+        threeML
     frameworks
         ALMA Common Software (ACS)
         ASPIC
@@ -1772,6 +1879,7 @@ software
     interfaces
         Added Value Interface (AVI)
         Ephestos
+        Gamification
         JNI
         nativeBoost
     library
@@ -1848,6 +1956,7 @@ software
         Finder Chart
         Flask
         Gtk
+        HIPSgen
         JS9
         KDU
         MAF
@@ -1865,6 +1974,7 @@ software
         TELELA
         VOSamp
         VisIt
+        Xova
         iRODS
         mViewer
     user interfaces
@@ -1884,6 +1994,7 @@ software
 space probes
     Europa Clipper
     ExoMars
+    MarsExpress
     Rosetta
     Schiaparelli
     Voyager
@@ -1922,6 +2033,7 @@ surveys
     DENIS
     Dark Energy Survey (DES)
     Deep Ecliptic Survey (DES)
+    Deep Investigations of Neutral Gas Origins (DINGO)
     EUCLID
     Evolutionary Map of the Universe (EMU)
     FIRST
@@ -1942,6 +2054,8 @@ surveys
     Herschel
         SPIRE
     Hi-GAL
+    Javalambre Photometric Local Universe Survey (J-PLUS)
+    Javalambre Physics of the Accelerating Universe Astrophysical Survey (J-PAS)
     LAMOST
     LINEAR
     MAGPIS
@@ -1974,6 +2088,7 @@ surveys
     Trans-Atlantic Exoplanet Survey (TrES)
     UKIRT Infrared Deep Sky Survey (UKIDSS)
     VANDELS
+    VAST
     VIKING
     VIPERS
     VISION
@@ -1988,6 +2103,7 @@ surveys
     Zwicky Transient Facility (ZTF)
     sky
     very deep
+    wallaby
     zCOSMOS
 target of opportunity
 techniques
@@ -2019,6 +2135,7 @@ techniques
     forced photometry
     generative spectrum networks (GSN)
     image deconvolution
+    incoherent dedispersion
     line fitting
     machine learning
     model fitting
@@ -2045,11 +2162,13 @@ techniques
     sky partitioning
     sky subtraction
     slippy map
+    sonification
     source detection
     space-ground interferometry
     sparse modeling
     superflat
     template fitting
+    transfer learning
     transpilation
     triangulation
     visual analytics
@@ -2084,12 +2203,13 @@ visualisation
     Oculus Rift
     blender
     hybrid rendering
-    immersive-3D
     immersive environment
+    immersive-3D
     multi-dimensional
     web-based
 web
     Apache
+    Apache NiFi
     Linked Open Data (LOD)
     Piwigo
     RDF
@@ -2126,6 +2246,7 @@ web
     interface
         APOGEO
     proposal
+        hedwig
     scraping
     search engines
     searching

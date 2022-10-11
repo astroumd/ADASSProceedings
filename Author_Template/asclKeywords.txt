@@ -2484,3 +2484,39 @@ ascl:2103.028	Astro-Fix: Correcting astronomical bad pixels in Python
 ascl:2103.029	SparseBLS: Box-Fitting Least Squares implementation for sparse data
 ascl:2103.030	DIAPHANE: Library for radiation and neutrino transport in hydrodynamical simulations
 ascl:2103.031	CARTA: Cube Analysis and Rendering Tool for Astronomy
+ascl:2104.001	hera_opm: The HERA Online Processing Module
+ascl:2104.002	Librarian: The HERA Librarian
+ascl:2104.003	Hilal-Obs: Authentication agorithm for new moon visibility report
+ascl:2104.004	Spectractor: Spectrum extraction tool for slitless spectrophotometry
+ascl:2104.005	CTR: Coronal Temperature Reconstruction
+ascl:2104.006	RJObject: Reversible Jump Objects
+ascl:2104.007	EPIC5: Lindblad orbits in ovally perturbed potentials
+ascl:2104.008	LaFuLi: NASA Langley Fu-Liou radiative transfer code
+ascl:2104.009	OpacityTool: Dust opacities for disk modeling
+ascl:2104.010	OpTool: Command-line driven tool for creating complex dust opacities
+ascl:2104.011	Freeture: Free software to capTure meteors
+ascl:2104.012	Mo'Astro: MongoDB framework for observational astronomy
+ascl:2104.013	pfits: PSRFITS-format data file processor
+ascl:2104.014	SSSpaNG: Stellar Spectra as Sparse Non-Gaussian Processes
+ascl:2104.015	dense_basis: Dense Basis SED fitting
+ascl:2104.016	Skyoffset: Sky offset optimization and mosaicing toolkit
+ascl:2104.017	Bagpipes: Bayesian Analysis of Galaxies for Physical Inference and Parameter EStimation
+ascl:2104.018	GGchem: Fast thermo-chemical equilibrium code
+ascl:2104.019	SpectRes: Simple spectral resampling
+ascl:2104.020	LAPACK: Linear Algebra PACKage
+ascl:2104.021	cmblensplus: Cosmic microwave background tools
+ascl:2104.022	RadioFisher: Fisher forecasting for 21cm intensity mapping and spectroscopic galaxy surveys
+ascl:2104.023	PyBird: Python code for biased tracers in redshift space
+ascl:2104.024	GAMMA: Relativistic hydro and local cooling on a moving mesh
+ascl:2104.025	SpaceHub: High precision few-body and large scale N-body simulations
+ascl:2104.026	Skye: Equation of state for fully ionized matter
+ascl:2104.027	linemake: Line list generator
+ascl:2104.028	globalemu: Global (sky-averaged) 21-cm signal emulation
+ascl:2104.029	TES: Terrestrial Exoplanet Simulator
+ascl:2104.030	lofti_gaiaDR2: Orbit fitting with Gaia astrometry
+ascl:2104.031	Posidonius: N-Body simulator for planetary and/or binary systems
+ascl:2105.001	BHPToolkit: Black Hole Perturbation Toolkit
+ascl:2105.002	PDM2: Phase Dispersion Minimization
+ascl:2105.003	ATARRI: A TESS Archive RR Lyrae Classifier
+ascl:2105.004	TesseRACt: Tessellation-based Recovery of Amorphous halo Concentrations
+ascl:2105.005	COMPAS: Rapid binary population synthesis code
