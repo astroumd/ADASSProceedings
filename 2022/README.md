@@ -28,6 +28,7 @@ When this all works, all one should need is:
       make papers
 
 which creates personalized-templates.tar.gz from the just filled papers/ tree. The individual
+PID.tar files can be made available to authors, in addition to the big ADASS2022.tar
 
 PID.tar files can be made available to authors, in addition to the big ADASS2022.tar
 
