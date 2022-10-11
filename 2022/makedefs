@@ -1,0 +1,6 @@
+# this is where you should define *your* macros, not in the Makefile
+P = ${PCODE}
+V = 1
+A = ${LNAME}
+E = ${EMAIL}
+#FIGS = ${PCODE}_*.eps
