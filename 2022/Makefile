@@ -1,5 +1,5 @@
 #
-#  for 2020.   Cloned of the ../2018/Makefile
+#  for 2022.   Cloned of the ../2021/Makefile
 #
 
 .PHONY: papers tar write_paperstab

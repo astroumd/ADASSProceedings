@@ -37,8 +37,8 @@ http://www.adass.org/proceedings.html
         [private astroumd github repo](https://github.com/astroumd/ADASSProceedings2020)		
 * 2021: Cape Town	(some combination of Smirnov, Oedman-Govender, Hugo)
         [private astroumd github repo](https://github.com/astroumd/ADASSProceedings2021)
-* 2022: Victoria        (Severin et al.)
-
+* 2022: Victoria        (Gaudet, Gwyn, Dowler, Bohlender, Hincks)
+        [private astroumd github repo](https://github.com/astroumd/ADASSProceedings2022)
 * 2023: Tucson
 
 

@@ -8,7 +8,7 @@ Some notes to get a head start for ADASS 2022
 If we get a CSV of all accepted contributions, the following fields are useful:  (see the report_3c function)
 (the name of the field doesn't matter, I've just made them descriptive here)
 
-      PaperID    (GMYGLN)
+      PaperID    (XNN)
       FirstName
       LastName
       Affiliation
