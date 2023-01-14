@@ -7,7 +7,7 @@
 #
 # See also:   https://www.adass2022.ca/.... / ADASS2022.tar
 #
-# P = paper_id    your proceedings paper ID code (the one with the dash, not dot)
+# P = paper_id    your proceedings paper ID code (the one with the XNN syntax, e.g., O12)
 # V = version     your version # (1,2,..) since you can only upload unique files
 # A = 1stauthor   your last name, e.g. Teuben
 # E = email       your contact email for submission issues
@@ -45,9 +45,10 @@ FILES  = AdassChecks.py AdassConfig.py AdassIndex.py ADASS_template.tex \
 	 $(FILESASP)
 
 #  probably don't change these either (or notify the editors you have a special paper case)
-TAR_FILE  = $(P)_v$(V).tar.gz
-ZIP_FILE  = $(P)_v$(V).zip
-POS_FILE  = $(P)_v$(V).pdf
+PID_URL   = "https://www.canfar.net/storage/vault/list/adass2022/upload/$(P)"
+TAR_FILE  = $(P).tar.gz
+ZIP_FILE  = $(P).zip
+POS_FILE  = $(P).pdf
 FILESPDF  = $(P).pdf copyrightForm_$(P)_$(A).pdf
 FILESTEX  = $(P).tex $(P).bib $(FIGS) makedefs
 FILESASP  = asp2014.bst asp2014.sty
@@ -164,17 +165,15 @@ words:
 #  could add a checksum on personal copyrightform - if it's 13785,it's bad.
 tar:    $(FILES4AR) _checksum
 	tar zcf $(TAR_FILE) $(FILES4AR)
-	@echo submit with e.g.
-	@echo sftp login ftp.adass2021.ac.za and put $(ZIP_FILE)
+	@echo "Login and upload $(TAR_FILE) at $(PID_URL)"
 
 zip:    $(FILES4AR) _checksum
 	rm -f $(ZIP_FILE)
 	zip $(ZIP_FILE) $(FILES4AR)
-	@echo submit with e.g.
-	@echo sftp login ftp.adass2021.ac.za and put $(ZIP_FILE)
+	@echo "Login and upload $(ZIP_FILE) at $(PID_URL)"
 
 poster: $(POS_FILE)
-	@echo sftp login ftp.adass2021.ac.za and put  $(POS_FILE)
+	@echo "Login and upload $(POS_FILE) at $(PID_URL)"
 
 overleaf:    $(FILESTEX)
 	rm -f $(ZIP_FILE)

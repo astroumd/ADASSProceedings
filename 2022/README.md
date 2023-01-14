@@ -8,7 +8,7 @@ Some notes to get a head start for ADASS 2022
 If we get a CSV of all accepted contributions, the following fields are useful:  (see the report_3c function)
 (the name of the field doesn't matter, I've just made them descriptive here)
 
-      PaperID    (GMYGLN)
+      PaperID    (XNN)
       FirstName
       LastName
       Affiliation
@@ -28,6 +28,7 @@ When this all works, all one should need is:
       make papers
 
 which creates personalized-templates.tar.gz from the just filled papers/ tree. The individual
+PID.tar files can be made available to authors, in addition to the big ADASS2022.tar
 
 PID.tar files can be made available to authors, in addition to the big ADASS2022.tar
 

@@ -16,7 +16,7 @@ import numpy as np
 from string import Template
 
 # names of the database(s)
-_p1 = 'data-1602142408446.csv'
+_p1 = 'proposals.csv'
 _p2 = None
 _p3 = None
 
@@ -53,6 +53,7 @@ class adass(object):
         self.keys1  =[]
         self.names     = dict()
         self.affils    = dict()
+        self.emails    = dict()
         self.titles    = dict()
         self.abstracts = dict()
         if False:
@@ -65,12 +66,13 @@ class adass(object):
                 self.keys1.append(key)                       # and list of "Lname, Fname"
         
         for row in self.rows:
-            # ['paper_id', 'name', 'affiliation', 'title', 'abstract']
+            # ['paper_id', 'name', 'affiliation', 'title', 'abstract', 'email']
             key = row[0]    # PID
             self.names[key] = row[1]
             self.affils[key] = row[2]
             self.titles[key] = row[3]
             self.abstracts[key] = row[4]
+            self.emails[key] = row[5]
             # ?
             self.keys1.append(key)                       # and list of "Lname, Fname"
             
@@ -730,7 +732,7 @@ class adass(object):
                 fullname  = self.names[c]
                 (fname, lname) = self.split_name(fullname)
                 iname     = self.affils[c] 
-                email     = "youremail@adass"
+                email     = self.emails[c]
                 pcode     = c
                 title1    = self.titles[c]       # latex(self.x1[key][23].value)
                 abstract1 = self.abstracts[c]    # latex(self.x1[key][24].value)
@@ -770,8 +772,8 @@ class adass(object):
                 fp.close()
                 #msg = '\\tocinsertentry[r]{%s}{%s.~%s}{authors/%s_inc}\n' % (title1,fname[0],lname,pcode)
                 #fp1.write(msg)
-                cmd = 'cd %s/%s; tar cf ../%s.tar *' % (dirname,pcode,pcode)
-                os.system(cmd)
+                #cmd = 'cd %s/%s; tar cf ../%s.tar *' % (dirname,pcode,pcode)
+                #os.system(cmd)
             else:
                 print("Warning: %s not in CSV" % c)
         #fp1.close()

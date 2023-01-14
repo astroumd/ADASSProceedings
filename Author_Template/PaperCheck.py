@@ -169,6 +169,7 @@ def FindTexFile (Paper,Problems) :
       print("Found main .tex file",TexFileName,"OK")
    else :
       print("** Could not find",TexFileName,"**")
+      Problems.append("Could not find " + TexFileName + " file to use")
 
       #  See if there is just one .tex file in the directory, and if so use
       #  it.
@@ -209,7 +210,7 @@ def FindTexFile (Paper,Problems) :
 #  the list passed as Warnings - copyright forms may have been submitted as
 #  paper copies, so a missing one is not necessarily a problem.
 
-def FindCopyrightForm (Author,Warnings) :
+def FindCopyrightForm (Paper,Author,Warnings) :
 
    Found = False
 
@@ -436,8 +437,13 @@ def CheckPaperName(Paper,Problems) :
    #  presentations are numbered, as P4-10, for example, rather than as
    #  P045 for example. If so, TriestePosters needs to be set true.
 
-   TriestePosters = True
-   CapeTownPosters = True
+   # VictoriaPosters:
+   # (B)BoF, (C)Contributed Talks, (F)Focus Demos, (I)Invited Talks, (P)Posters, (T)Tutorials
+   # are two digits with a leading zero if necessary.
+
+   TriestePosters = False
+   CapeTownPosters = False
+   VictoriaPosters = True
    XAllowed = True
    #  Some initial checks on the leading digit, which should be O for Oral,
    #  I for Invited (also oral), B for BoF, F for Focus Demo, 'D' for
@@ -452,7 +458,7 @@ def CheckPaperName(Paper,Problems) :
 
    if (ValidSoFar) :
       Letter = Paper[0]
-      if (not Letter in ("IOBFPDTH" if not CapeTownPosters else "IOBFXDTH")) :
+      if (not Letter in ("BCFIPT" if VictoriaPosters else ("IOBFPDTHC" if not CapeTownPosters else "IOBFXDTH"))) :
          Problem = "'" + Letter + "' is not a valid prefix for a paper"
          print("**",Problem,"**")
          Problems.append(Problem)
@@ -473,42 +479,125 @@ def CheckPaperName(Paper,Problems) :
       Number = Paper[1:]
       NumChars = len(Number)
 
-      if (Letter == 'B' or Letter == 'F' or Letter == 'D' or Letter == 'T') :
-        if not CapeTownPosters:
-            #  BoFs, Focus Demos, Demo booths, and Tutorials just have a number,
-            #  with no leading zeros.
-
-            Leading = True
-            for Char in Number :
-                if (Leading) :
-                    if (Char == '0') :
-                        Problem = "Paper number should not have leading zeros"
-                        print("**",Problem,"**")
-                        Problems.append(Problem)
-                        ValidSoFar = False
-                Leading = False
-                Value = ord(Char) - ord('0')
-                if (Value < 0 or Value > 9) :
-                    Problem = "Non-numeric character (" + Char + ") in paper number"
-                print("**",Problem,"**")
-                Problems.append(Problem)
-                ValidSoFar = False
-                break
-            
-      if (Letter == ('X' if CapeTownPosters else 'P') and not TriestePosters) :
-
-         #  This section checks for a valid poster number using the style in
-         #  use up to Trieste. This requires a poster number to be a 3 digit
-         #  number, with leading zeros if necessary.
-         if (NumChars != 3) :
+      if (VictoriaPosters):
+         if (NumChars != 2):
             Problem = \
-             "Poster numbers must be three digits, with leading zeros if needed"
-            print("**",Problem,"**")
+               "Poster numbers must be two digits, with leading zeros if needed"
+            print("**", Problem, "**")
             Problems.append(Problem)
             ValidSoFar = False
-         else :
+         else:
             N = 0
+            for Char in Number:
+               Value = ord(Char) - ord('0')
+               if (Value < 0 or Value > 9):
+                  Problem = "Non-numeric character (" + Char + \
+                            ") in paper number"
+                  print("**", Problem, "**")
+                  Problems.append(Problem)
+                  ValidSoFar = False
+                  break
+               N = N * 10 + Value
+            if (ValidSoFar and N == 0):
+               Problem = "Poster number cannot be zero"
+               print("**", Problem, "**")
+               Problems.append(Problem)
+               ValidSoFar = False
+      else:
+         if (Letter == 'B' or Letter == 'F' or Letter == 'D' or Letter == 'T') :
+           if not CapeTownPosters:
+               #  BoFs, Focus Demos, Demo booths, and Tutorials just have a number,
+               #  with no leading zeros.
+
+               Leading = True
+               for Char in Number :
+                   if (Leading) :
+                       if (Char == '0') :
+                           Problem = "Paper number should not have leading zeros"
+                           print("**",Problem,"**")
+                           Problems.append(Problem)
+                           ValidSoFar = False
+                   Leading = False
+                   Value = ord(Char) - ord('0')
+                   if (Value < 0 or Value > 9) :
+                       Problem = "Non-numeric character (" + Char + ") in paper number"
+                   print("**",Problem,"**")
+                   Problems.append(Problem)
+                   ValidSoFar = False
+                   break
+
+         if (Letter == ('X' if CapeTownPosters else 'P') and not TriestePosters) :
+
+            #  This section checks for a valid poster number using the style in
+            #  use up to Trieste. This requires a poster number to be a 3 digit
+            #  number, with leading zeros if necessary.
+            if (NumChars != 3) :
+               Problem = \
+                "Poster numbers must be three digits, with leading zeros if needed"
+               print("**",Problem,"**")
+               Problems.append(Problem)
+               ValidSoFar = False
+            else :
+               N = 0
+               for Char in Number :
+                  Value = ord(Char) - ord('0')
+                  if (Value < 0 or Value > 9) :
+                     Problem = "Non-numeric character (" + Char + \
+                                                          ") in paper number"
+                     print("**",Problem,"**")
+                     Problems.append(Problem)
+                     ValidSoFar = False
+                     break
+                  N = N * 10 + Value
+               if (ValidSoFar and N == 0) :
+                  Problem = "Poster number cannot be zero"
+                  print("**",Problem,"**")
+                  Problems.append(Problem)
+                  ValidSoFar = False
+
+         if (Letter == 'I' or Letter == 'O' or \
+            (Letter == ('X' if CapeTownPosters else 'P') or (CapeTownPosters and Letter in "BFDT") and TriestePosters)) :
+
+            #  Oral presentation numbers (and posters using the Trieste convention)
+            #  have the form S-N where S is the session and N the number. Go
+            #  through the digits, changing from session to number when a '-' is
+            #  found.
+
+            S = 0
+            N = 0
+            Session = True
+            Leading = True
+            if CapeTownPosters and len(Number) != 3:
+                Problem = "PID number should be 3 digit and should have leading zeros if needed"
             for Char in Number :
+               if (Leading) :
+                  if (Char == '0' and not CapeTownPosters) :
+                     if (Session) :
+                        Problem = "Session number should not have leading zeros"
+                     else :
+                        Problem = "Paper number should not have leading zeros"
+                     print("**",Problem,"**")
+                     Problems.append(Problem)
+                     ValidSoFar = False
+                     break
+                  Leading = False
+               if (Char == '.' or Char == '_') :
+                  Problem = \
+                    "Use '-' instead of '_' or '.' to separate session and number"
+                  print("**",Problem,"**")
+                  Problems.append(Problem)
+                  ValidSoFar = False
+                  break
+               if (Char == "-") :
+                  if (Session) :
+                     Session = False
+                     Leading = True
+                  else :
+                     Problem = "Multiple '-' characters in paper number" + \
+                                                       ") in paper number"
+                     print("**",Problem,"**")
+                     Problems.append(Problem)
+                  continue
                Value = ord(Char) - ord('0')
                if (Value < 0 or Value > 9) :
                   Problem = "Non-numeric character (" + Char + \
@@ -517,74 +606,16 @@ def CheckPaperName(Paper,Problems) :
                   Problems.append(Problem)
                   ValidSoFar = False
                   break
-               N = N * 10 + Value
-            if (ValidSoFar and N == 0) :
-               Problem = "Poster number cannot be zero"
-               print("**",Problem,"**")
-               Problems.append(Problem)
-               ValidSoFar = False
-
-      if (Letter == 'I' or Letter == 'O' or \
-         (Letter == ('X' if CapeTownPosters else 'P') or (CapeTownPosters and Letter in "BFDT") and TriestePosters)) :
-
-         #  Oral presentation numbers (and posters using the Trieste convention)
-         #  have the form S-N where S is the session and N the number. Go
-         #  through the digits, changing from session to number when a '-' is
-         #  found.
-
-         S = 0
-         N = 0
-         Session = True
-         Leading = True
-         if CapeTownPosters and len(Number) != 3:
-             Problem = "PID number should be 3 digit and should have leading zeros if needed"
-         for Char in Number :
-            if (Leading) :
-               if (Char == '0' and not CapeTownPosters) :
-                  if (Session) :
-                     Problem = "Session number should not have leading zeros"
-                  else :
-                     Problem = "Paper number should not have leading zeros"
+               if (Session) :
+                  S = S * 10 + Value
+               else :
+                  N = N * 10 + Value
+            if (ValidSoFar) :
+               if (S == 0 or N == 0) and not CapeTownPosters:
+                  Problem = "Session or paper number cannot be zero"
                   print("**",Problem,"**")
                   Problems.append(Problem)
                   ValidSoFar = False
-                  break
-               Leading = False
-            if (Char == '.' or Char == '_') :
-               Problem = \
-                 "Use '-' instead of '_' or '.' to separate session and number"
-               print("**",Problem,"**")
-               Problems.append(Problem)
-               ValidSoFar = False
-               break
-            if (Char == "-") :
-               if (Session) :
-                  Session = False
-                  Leading = True
-               else :
-                  Problem = "Multiple '-' characters in paper number" + \
-                                                    ") in paper number"
-                  print("**",Problem,"**")
-                  Problems.append(Problem)
-               continue
-            Value = ord(Char) - ord('0')
-            if (Value < 0 or Value > 9) :
-               Problem = "Non-numeric character (" + Char + \
-                                                    ") in paper number"
-               print("**",Problem,"**")
-               Problems.append(Problem)
-               ValidSoFar = False
-               break
-            if (Session) :
-               S = S * 10 + Value
-            else :
-               N = N * 10 + Value
-         if (ValidSoFar) :
-            if (S == 0 or N == 0) and not CapeTownPosters:
-               Problem = "Session or paper number cannot be zero"
-               print("**",Problem,"**")
-               Problems.append(Problem)
-               ValidSoFar = False
 
    if (not ValidSoFar) :
       if (not (Paper[0] == 'X' and XAllowed)) :
@@ -921,6 +952,14 @@ else :
       else:
           print("No problems found")
 
+      #  Check if there is a copyright form
+      Step = Step + 1
+      print("")
+      print("Step", Step, " - Check copyright form --------------------")
+      if (not FindCopyrightForm(Paper, Author, Problems)):
+         Problem = "CopyRight form not found"
+      else:
+         print("CopyRight form found")
 
       #  Summarise any problems.
 
@@ -945,8 +984,4 @@ else :
 
       #  See if there is a copyright form
 
-      print("")
-      Warnings = []
-      Found = FindCopyrightForm(PaperAuthor,Warnings)
-      print("")
       sys.exit( - len(Problems) )

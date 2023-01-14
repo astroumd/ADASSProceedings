@@ -279,7 +279,7 @@ import TexScanner
 #  used by the various utility scripts used in the editing process for the
 #  proceedings.)
 
-__AdassConference__ = "XXIX"
+__AdassConference__ = "XXXII"
 
 __AdassEditors__    = "Pizzo,~R. and Deul,~E. and Mol,~J. and de Plaa,~J. and Verkouter,~H. and Williams,~R."
 
@@ -3556,11 +3556,12 @@ def CheckPaperName(Paper,Problems) :
    #  2018.
    
    TriestePosters = False
-   CapeTownPosters = True
+   CapeTownPosters = False
+   VictoriaNames = True
    
    #  Disable the use of 'X' as a prefix.
    
-   XAllowed = True
+   XAllowed = FALSE
    
    #  Some intital checks on the leading digit, which should be O for Oral,
    #  I for Invited (also oral), B for BoF, F for Focus Demo, 'D' for

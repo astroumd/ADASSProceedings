@@ -1,6 +1,6 @@
 # this is where you should define *your* macros, not in the Makefile
-#P = P13-20
+#P = P12
 #V = 1
 #A = Teuben
 #E = teuben@gmail.com
-#FIGS = P13-20_*.eps
+#FIGS = P12_*.eps
