@@ -956,7 +956,7 @@ else :
       Step = Step + 1
       print("")
       print("Step", Step, " - Check copyright form --------------------")
-      if (not FindCopyrightForm(Paper, Author, Problems)):
+      if (not FindCopyrightForm(Paper, PaperAuthor, Problems)):
          Problem = "CopyRight form not found"
       else:
          print("CopyRight form found")
