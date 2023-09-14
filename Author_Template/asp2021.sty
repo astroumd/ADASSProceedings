@@ -1,6 +1,6 @@
-% This is the asp2014.sty LaTeX style file -- DO NOT CHANGE THIS FILE
+% This is the asp2021.sty LaTeX style file -- DO NOT CHANGE THIS FILE
 % Copyright 2021, Astronomical Society of the Pacific Conference Series
-% Revision:  January 2021
+% Revision:  November 2021
 
 % Some parts of this file originate from newpasp.sty.
 % For questions contact ASP Conference Series, www.aspbooks.org.
@@ -59,7 +59,7 @@
 \def\@aspcpryear{**Copyright Year**}
 \newcommand{\aspcpryear}[1]{\gdef\@aspcpryear{#1}}
 \newcommand{\cpryear}{\@aspcpryear}
-% Usage in main file:  \aspcpryear{2014} % Insert year received from ASPCS
+% Usage in main file:  \aspcpryear{2021} % Insert year received from ASPCS
 
 % Volume Title for Slug
 \def\@aspvoltitle{**Volume Title**}
@@ -949,7 +949,7 @@
         Proceedings of a \mtgtype{} held\\
 		\when{}
 	  \else
-        Proceedings of a \mtgtype{} held on\\
+        Proceedings of a \mtgtype{} held at\\
         \venue{}\\%
 		\when{}
 	  \fi%
@@ -1025,7 +1025,7 @@
   \newindex{not}{ndx}{nnd}{\Large List of Notation}
   \newindex{aut}{adx}{and}{\Large Author Index}
   \newindex{sub}{sdx}{snd}{\Large Subject Index}
-  \newindex{obj}{odx}{ond}{\Large ASCL Index}
+  \newindex{obj}{odx}{ond}{\Large Object Index}
   \newindex{mol}{mdx}{mnd}{\Large Spectral Feature Index}
 }%
 
@@ -1057,8 +1057,8 @@
 }%
 
 \newcommand{\printobjectindex}{%
-  \markboth{ASCL Index}{ASCL Index}
-  \tocentry{\itshape ASCL Index}{}
+  \markboth{Object Index}{Object Index}
+  \tocentry{\itshape Object Index}{}
   \printindex[obj]
 }%
 
@@ -1315,6 +1315,7 @@
 % Syntax:  \booklandscapephoto[options]{filename}{caption}
 \newcommand{\booklandscapephoto}[3][height=0.85\textheight]{%
   \pagestyle{empty}
+  \pagestyle{empty}
   \mbox{}
   \vfill
   \begin{center}
@@ -1453,3 +1454,8 @@
   \def\@slug{~}
 }%
 
+% Table column types that are ragged and allow \newline inside cells (L, left justified, C, centered, R, right justified)
+% Includes width:  L{3cm} or C{0.2\textwidth}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}  % p (top) m (middle) b (bottom)
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
