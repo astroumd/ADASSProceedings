@@ -30,14 +30,16 @@ http://www.adass.org/proceedings.html
 * 2017: Santiago  (Ibsen, Solar & Ballester) - Vol 522.
         svn
 * 2018: College Park (Teuben, Pound, Thomas, Warner) - Vol 523.
-        github (private astroumd repo)
+        [private astroumd github repo](https://github.com/astroumd/ADASSProceedings2018)		
 * 2019: Groningen (Pizzo, Deul, de Plaa, Verkouter, Mol) - Vol 527.
-        github (private astroumd repo)
-* 2020: Granada (Ruiz, Pierfedereci, Teuben)
-        github (private astroumd repo)
+        [private astroumd github repo](https://github.com/astroumd/ADASSProceedings2019)		
+* 2020: Granada (Ruiz, Pierfedereci, Teuben) - Vol 532.
+        [private astroumd github repo](https://github.com/astroumd/ADASSProceedings2020)		
 * 2021: Cape Town	(some combination of Smirnov, Oedman-Govender, Hugo)
-        ?
+        [private astroumd github repo](https://github.com/astroumd/ADASSProceedings2021)
+* 2022: Victoria
 
+* 2023: Tucson
 
 
 ## Contents

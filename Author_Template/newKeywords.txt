@@ -130,6 +130,11 @@ computing
     OpenACC
 observatories
     H.E.S.S.
+    ground-based
+        Rubin
+protocols
+    GCP
+    GKE
 databases
     individual
         SIMPLE
@@ -156,3 +161,6 @@ planetarium
     formats
         FITS
         Speck
+data formats
+    SDFITS
+    netCDF
