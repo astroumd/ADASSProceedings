@@ -25,3 +25,15 @@ After this you can
 and test some "make" commands inside of the new ADASS2019_author_template/ directory.
 When this all works you can post the ADASS2019.tar on your website, and ideally a copy
 on adass.org as well.
+
+NOTE:
+  1. Since 2021 the detect_tex.py file is used, and your SHELL needs to have . in $PATH, else fails
+         export PATH=.:$PATH
+  2. Example packages for different distros are listed below
+
+
+EXAMPLES:
+
+UBUNTU 22.04 packages: (2021.20220204-1)
+ texlive texlive-base texlive-binaries texlive-fonts-recommended texlive-latex-base 
+ texlive-latex-extra texlive-latex-recommended texlive-pictures texlive-plain-generic
