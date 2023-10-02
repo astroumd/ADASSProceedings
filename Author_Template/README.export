@@ -17,7 +17,9 @@ and other types of updates in:
 
   asclKeywords.txt                 (an updated list from the ASCL team is needed each year)
   subjectKeywords.txt              (an updated list from the previous ADASS is needed each year)
-
+  
+                                   MergeSubjectIndexes.py subjectKeywords.txt newKeywords.txt upd.txt
+				   mv upd.txt subjectKeywords.txt 
 After this you can
 
   make export
