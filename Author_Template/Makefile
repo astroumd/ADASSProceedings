@@ -3,9 +3,9 @@
 # at least the README file. For some smart cookies the Makefile
 # could be sufficient too.
 #
-# Version 7-oct-2022   Peter Teuben & Severin Gaudet
+# Version 2-oct-202e   Peter Teuben & XXX
 #
-# See also:   https://www.adass2022.ca/.... / ADASS2022.tar
+# See also:   https://www.adass2022.ca/.... / ADASS2022.tar    @todo    for 2023
 #
 # P = paper_id    your proceedings paper ID code (the one with the XNN syntax, e.g., O12)
 # V = version     your version # (1,2,..) since you can only upload unique files
@@ -33,17 +33,18 @@ FIGS = $(shell ls *.eps)
 PDFOPEN = open
 
 #  variables for proceeding editors (don't modify, for export, not for authors)
-YEAR   = 2022
+YEAR   = 2023
 ATDIR  = ADASS$(YEAR)_author_template
 FILES  = AdassChecks.py AdassConfig.py AdassIndex.py ADASS_template.tex \
 	 Aindex.py FixUnprintable.py \
 	 copyrightform.pdf example.bib example.eps \
 	 Index.py manual2010.pdf ManuscriptInstructions.pdf PaperCheck.py \
 	 README subjectKeywords.txt TexScanner.py \
-	 ascl.py asclKeywords.txt \
+	 ascl.py asclKeywords.txt detect_tex.py \
 	 adass$(YEAR).bib Makefile makedefs \
 	 $(FILESASP)
 
+#  @todo new PID_URL ?
 #  probably don't change these either (or notify the editors you have a special paper case)
 PID_URL   = "https://www.canfar.net/storage/vault/list/adass2022/upload/$(P)"
 TAR_FILE  = $(P).tar.gz
