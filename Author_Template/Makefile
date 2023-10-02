@@ -88,7 +88,7 @@ help:
 all:	pdf check tar
 
 
-# not for authors, for creator of the ADASS instruction tar file
+# not for authors, for creator of the ADASS instruction tar/zip file
 export:
 	rm -rf $(ATDIR)
 	mkdir  $(ATDIR)
@@ -96,7 +96,9 @@ export:
 	echo Created on `date` by `whoami`  > $(ATDIR)/VERSION
 	-git remote -v                     >> $(ATDIR)/VERSION
 	-git branch                        >> $(ATDIR)/VERSION
+	rm -f ADASS$(YEAR).tar ADASS$(YEAR).zip
 	tar cf ADASS$(YEAR).tar $(ATDIR)
+	zip -ur ADASS$(YEAR).zip $(ATDIR)
 
 # copyright is now part of the tar/zip file, checksum (sum) is 13785
 copyrightForm_$(P)_$(A).pdf: copyrightform.pdf
