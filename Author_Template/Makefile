@@ -98,7 +98,7 @@ export:
 	-git branch                        >> $(ATDIR)/VERSION
 	rm -f ADASS$(YEAR).tar ADASS$(YEAR).zip
 	tar cf ADASS$(YEAR).tar $(ATDIR)
-	zip -ur ADASS$(YEAR).zip $(ATDIR)
+	zip -urq ADASS$(YEAR).zip $(ATDIR)
 
 # copyright is now part of the tar/zip file, checksum (sum) is 13785
 copyrightForm_$(P)_$(A).pdf: copyrightform.pdf
