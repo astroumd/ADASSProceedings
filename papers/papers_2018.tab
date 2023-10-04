@@ -1,0 +1,249 @@
+# Originally 197 with B and T (13 invited)
+#  -> 197 * 4 + 13 * 8 = 892 pages, 800 is the max
+# Total: 169 
+# Final: 161 = 10 I + 31 O + 105 P    [790 pages]   82%
+# Draft:   0 =  0 I +  0 O +   1 P
+# Blank:   6 =  0 I +  1 O +   1 P
+#
+# tagnames in this file and script processor
+# in final_count:  set editors = (PJT MWP ok EMW BAT PHOTO)
+#
+Adamek, Karel                     ; P8-1     finalp v2 copy            PJT ok2
+Afrin Badhan, Mahmuda             ; P7-1     finalp v3 copy            MWP ok
+Albert, Kinga                     ; P4-1     finalp v3 copy            PJT ok2
+Alesina, Fabien                   ; P3-1     finalp v0 copy            PJT ok   PHOTO      
+Alexov				  ; O2-1     finalp v5 copy            PJT ok
+Allen, Alice			  ; O13-1    finalp v4                 PJT ok
+Allen, Christopher                ; P4-2     finalp v4 copy            PJT ok
+##NOPAPER Allen, Mark             ; P2-1     #
+Ansdell				  ; O1-1     finalp V1                 BAT ok   Copyright PDF is empty 
+Araya, Mauricio                   ; P1-1     finalp v2                 PJT ok2  utf-8
+##NOPAPER Arviset, Christophe     ; P10-1    #
+Asercion, Joseph                  ; P4-3     finalp v1                 BAT ok
+##Atemkeng, Marcellin             ; P10-2    #
+Baines, Deborah                   ; P5-1     finalp copy               PJT ok
+Baumann, Matthieu                 ; P5-2     finalp copy               PJT ok
+Becciani, Ugo                     ; P3-2     finalp v1 copy            PJT ok
+Berriman, Bruce                   ; P5-3     finalp v3 copy            MWP ok
+Blanco-Cuaresma, Sergi            ; P6-1     finalp v1                 PJT ok
+Boch, Thomas                      ; P10-3    finalp v3                 PJT ok
+Boisson, Catherine                ; P6-2     finalp v2                 PJT ok
+##Bolton, Adam                    ; P2-2     #
+Bonnarel			  ; O11-3    finalp v3  copy           PJT ok
+Borne				  ; I4-1     finalp v3                 PJT ok
+Bosch				  ; I12-1    finalp v3  copy           PJT ok
+Boussejra			  ; O5-4     finalp v6  copy    \AFLAK PJT ok      PHOTO
+Brasseur			  ; O10-1    finalp v2  copy           PJT ok 
+Brown, Matthew                    ; P4-4     finalp v2  copy           PJT ok  
+Buchschacher			  ; O10-3    finalp v0  copy           PJT ok
+Burnier, Julien                   ; P6-3     finalp v2  copy           PJT ok     3/4 PHOTO     needs grammar check
+Bushouse, Howard                  ; P12-1    finalp v0                 PJT ok
+##Cano, Juan Luis                 ; P4-5     #
+Cardiel, Nicolás                  ; P11-1    finalp v2 copy            PJT ok
+Ceballos, M.Teresa                ; P12-2    finalp v5 copy            PJT ok
+##Chen, Wei                       ; P9-1     #
+Chilingarian, Igor                ; P13-1    finalp v4                 PJT ok
+Chu, Selina                       ; P1-21    finalp v4 copy            PJT ok
+Comrie				  ; O3-2     finalp v2 copy            PJT ok
+Coulais, Alain                    ; P6-4     finalp V?       CHECK     PJT ok
+##NOPAPER Crawford, Steven        ; P2-3     #
+##Cupani, Guido                   ; P4-6     #
+Dai, Cong			  ; O1-4     finalp v4 copy            PJT ok
+##NOPAPER da Silva, Daniel        ; P7-2     #
+Delgado, Arancha                  ; P5-4     finalp v2 copy            PJT ok
+##Dempsey, James                  ; P10-4    #
+Dencheva			  ; O12-3    finalp v2 copy            PJT ok    1/2 PHOTO
+Deshpande, Shubhankar             ; P4-7     finalp v2                 MWP ok
+Diaz				  ; O11-1    finalp v2                 MWP ok     
+Donaldson			  ; O5-2     finalp v2                 MWP ok   1/2 PHOTO if we cut authors on long refs
+Dower, Theresa                    ; P6-5     finalp v2                 MWP ok
+Dowler, Patrick                   ; P10-5    finalp v2                 MWP ok
+##NOPAPER Dreissigacker, Christoph; P1-2     #                copy   
+Ebisawa, Ken                      ; P9-8     finalp v2 MWP ok
+Eguchi, Satoshi                   ; P8-2     finalp v2 copy            MWP ok        
+##NOPAPER Eisenhamer, Jonathan    ; P13-2    #        copy 
+Emonts, Bjorn                     ; P5-5     finalp v2 copy            MWP ok
+Fan, Dongwei                      ; P12-3    finalp v3 copy            MWP ok
+Feinstein, Carlos                 ; P12-4    finalp v0 copy            EMW ok
+Ferguson, Henry                   ; P5-6     finalp v1 copy            PJT ok
+Fernique, Pierre                  ; P8-3     finalp v2                 PJT ok
+Fitzpatrick			  ; O5-1     finalp v3                 PJT ok
+##NOPAPER Gabriel, Carlos         ; P13-3    #      copy
+##Gallegos, Julio                 ; P6-6     #
+Geers, Vincent                    ; P13-4    finalp v3 copy            MWP ok
+Giardino, Giovanna                ; P13-5    finalp    copy            MWP ok
+Gilda				  ; O1-3     finalp v1                 MWP ok    
+Gonzalez-Nuñez			  ; O10-6    finalp v3                 MWP ok
+Good            		  ; F4       finalp v2 copy            MWP ok 
+##NOPAPER Gordon, Craig           ; P5-7     #         copy 
+Goz, David                        ; P12-5    finalp v2                 MWP ok
+Gracia Abril, Gonzalo             ; P2-4     finalp V2                 MWP ok
+##NOPAPER Grange, Yan             ; P5-8     #
+##Graves			  ; O10-7    #                  noshow
+Grishin, Kirill                   ; P3-3     finalp v4                 MWP ok
+##NOPAPER Guedes Santos, Luiz  o  ; P1-20    #
+Guerra Noguero, Rocio		  ; I6-1     finalp v3   copy          MWP ok
+Gupta, Pramod                     ; P4-8     finalp v2   copy          MWP ok
+Gwyn, Stephen                     ; P13-6    finalp v2   copy          MWP ok
+##Hague, Peter                    ; P3-4     #
+##Han, Jun                        ; P6-7     #
+He, Helen                         ; P12-6    finalp v5                 PJT ok
+##Holman			  ; I7-1     #   feb 12   cannot make it after all
+##NOPAPER Irby, Bryan             ; P5-9     #
+##NOPAPER Ireland, Jack           ; P7-3     #
+Iwasaki, Hiroyoshi                ; P1-3     finalp v2   copy          EMW ok
+Jenness, Tim                      ; P13-7    finalp      copy          MWP ok
+Johnston, Kyle                    ; P1-4     finalp v1   copy          BAT ok
+Joliet          		  ; F3       finalp v1                 PJT ok2
+Joncour, Isabelle                 ; P1-5     finalp v?           CHECK MWP ok
+Juric 				  ; O8-2     finalp v2                 BAT ok
+Kaleida, Catherine                ; P4-9     finalp v3                 MWP ok                      1/3 PHOTO
+Kaplan, Kyle                      ; P12-7    finalp v2 copy            MWP ok
+Karim, Ramsey                     ; P12-8    finalp v1                 MWP ok
+Kaufman, Zeke                     ; P4-10    finalp v2                 MWP ok
+Kawasaki, Wataru                  ; P3-5     finalp v4  copy           MWP ok
+Kelley, Michael                   ; P7-4     finalp v3                 MWP ok
+Kent				  ; I3-2     finalp copy               PJT ok2    PHOTO
+##NOPAPER Kepley		  ; O12-1    # 
+Kitaeff, Vyacheslav               ; P4-11    finalp v2 copy            MWP ok                      full page PHOTO-PJT
+Kong, Xiao                        ; P1-6     finalp v6 copy            PJT  ok   PHOTO
+#Kosack, Karl                     ; P4-12                               email dec 7; dec 18 (on vac till Jan 3) ; jan 8
+Kosugi, George                    ; P12-9    finalp v2 copy            MWP ok  
+Kuulkers			  ; I9-1     finalp v0                 EMW ok
+##Kyprianou, Mark                 ; P2-5     #
+Labrie, Kathleen                  ; P11-2    finalp v2 copy ok         MWP ok           1/2 PHOTO
+Lacy, Mark                        ; P2-6     finalp v2                 MWP ok                    1/2 PHOTO
+Lammers, Jason                    ; P5-10    finalp v2                 PJT ok
+Lam				  ; O12-4    finalp v0                 MWP ok
+Landais				  ; O11-2    finalp v2 copy            EMW ok
+Landoni, Marco                    ; P6-8     finalp v2                 EMW ok
+Laurino, Omar                     ; P10-6    finalp v2                 EMW ok
+##Lemson, Gerard                  ; P10-7    #
+##Li, Changhua                    ; P1-7     #
+Lieu				  ; I1-1     finalp  v2 copy           EMW ok          PHOTO? fig3 full page?
+Lim, Pey Lian                     ; P11-3    finalp  v1                EMW ok
+##Lin, Ganghua                    ; P11-4    # 
+Loose  				  ; O6-1     finalp v2                 EMW ok
+Louys, Mireille                   ; P11-5    finalp v3 copy            EMW ok
+Lundquist, Michael                ; P9-3     finalp v1                 BAT ok
+Lutz, Katharina                   ; P13-8    finalp v2 copy            EMW ok
+##NOPAPER Lu, Yuxi                ; P12-10   #
+Major                             ; P5-11    finalp v3 copy            EMW ok     PHOTO
+##Marquez, Maria Jose             ; P5-12    #
+Martinez			  ; O10-4    finalp v2                 EMW ok
+##Martin, Thomas                  ; P1-8     #
+#Ma, Xiang                        ; P8-4     # 
+McWhirter, Paul Ross              ; P1-9     finalp v2                 EMW ok
+Mechev          		  ; F1       finalp v5                 EMW ok
+Mellado, Pablo                    ; P3-6     finalp v2                 EMW ok     only 2 pages
+Michel, Laurent                   ; P13-9    finalp                    EMW ok
+Micol, Alberto                    ; P10-8    finalp v3    copy         EMW ok
+##NOPAPER Million, Chase          ; P8-5     #
+Mink, Jessica                     ; P5-13    finalp  v2		       EMW ok       1/4 PHOTO?
+Molinaro, Marco                   ; P13-10   finalp  v3 copy           EMW ok
+Momcheva			  ; I5-1     finalp  V1                EMW ok
+##NOPAPER Morii, Mikio            ; P12-11   #
+Nakazato			  ; O4-2     finalp v2 copy            EMW ok
+Navarro, Vicente                  ; P5-14    finalp v5                 EMW h
+Nebot				  ; I8-1     finalp v1                 EMW          PHOTO
+###Nie, Jianyin                   ; P10-9    # 
+Nieto, Sara                       ; P10-10   finalp v8                 EMW ok
+Nikolic				  ; O1-2     finalp v2                 EMW ok
+Noumaru, Junichi                  ; P13-11   finalp v1                 EMW ok
+##Oloketuyi, Jacob                ; P7-5     #
+O'Toole, Simon			  ; O10-5    finalp                    EMW ok            full page PHOTO
+Paillassa, Maxime                 ; P1-10    finalp v2                 EMW ok
+##Parra, Jose                     ; P10-11   # no time
+Pascual, Sergio                   ; P4-13    finalp v2                 EMW ok
+Patterson, Gerald                 ; P13-12   finalp v2 copy            BAT ok
+Paxson, Charles                   ; P6-9     finalp v3 copy            EMW ok        1/4 PHOTO?
+Perea-Calderon, Jose Vicente      ; P4-14    finalp v2 copy            MWP ok        1/2 PHOTO
+Perez, Fernando                   ; P6-10    finalp v4 copy            BAT ok
+Pineau, Francois-Xavier           ; P13-13   finalp v2                 BAT ok
+Plante				  ; I11-1    finalp v4 copy            EMW ok
+Polisensky, Emil                  ; P10-12   finalp v2 copy            EMW ok
+##NOPAPER Prix, Reinhard          ; P12-12   #
+Racero				  ; O7-1     finalp v5 copy            EMW ok              UTF-8
+#Raddick         		  ; F2       #         sent email; email again dec 17; jan 9
+Ramirez				  ; O3-3     finalp v3                 EMW ok
+Raugh				  ; O7-2     finalp v2 copy            EMW ok   2/3 PHOTO
+Renil, Rosly                      ; P4-15    finalp v2                 EMW ok
+##Reustle, Alexander              ; P6-11    #
+##Roby, Trey                      ; P3-7     # 
+Romelli, Erik                     ; P4-16    finalp v2 copy            EMW ok
+Rubtsov, Evgenii                  ; P5-15    finalp v4                 BAT ok
+##NOPAPER Rutkowski, Kristin      ; P13-14   #
+Ryan, P. Wesley                   ; P13-15   finalp v2   copy          BAT ok          2/3 PHOTO?
+Salgado, Jesus                    ; P10-13   finalp v2                 BAT ok needs fix for ref \procspie 
+Sanguillon, Michele               ; P10-14   finalp v2   copy          BAT ok 
+Santos, Rafael                    ; P1-11    finalp v4   copy  	       BAT ok 
+Schaaff, Andre                    ; P1-12    finalp v2   copy  	       BAT ok
+Servillat, Mathieu                ; P11-6    finalp v2                 EMW h      SERIOUS FIGURE ISSUE OVERLAPPING EDGES - bb?
+##NOPAPER Shen, Robert            ; P5-16    #
+##NOPAPER Shin, Min-Su            ; P8-6     #                 
+Shipman, Russell                  ; P13-16   finalp v2 copy            BAT ok
+Shirasaki, Yuji                   ; P13-17   finalp  copy  	       BAT ok 
+##Sihlangu, Isaac                 ; P1-13    #
+Smith				  ; O5-3     finalp v3  copy           BAT ok
+Snyder, Gregory                   ; P1-14    finalp v1  	       BAT ok 
+##NOPAPER Solar, Martin           ; P13-18   #   sent email dec 7 ; dec 18 ->  no, now need the poster
+Solar, Mauricio                   ; P12-13   finalp V1                 PJT ok2
+#Song, Xinying                    ; P4-17    #
+##Stenborg, Travis                ; P2-7     #
+Stephens, Tom                     ; P13-19   finalp v4                 BAT ok
+#Stevens			  ; O8-1     #
+Stoehr				  ; I10-1    finalp v2                 BAT ok
+##NOPAPER Streicher, Ole          ; P11-7    #            sent email dec 7; dec 18
+Sutrisno, Raymond                 ; P1-15    finalp v5                 BAT ok 
+Swade, Daryl                      ; P10-15   finalp v2  copy 	       BAT ok 
+##Tao, Yihan                      ; P1-16    #
+Tavagnacco      		  ; O12-2    finalp v2   copy          BAT ok
+Taylor, Mark                      ; P3-8     finalp copy     	       BAT ok
+Teuben, Peter                     ; P13-20   finalp v2       	       PJT ok
+Tian, Fan                         ; P12-14   finalp v2       	       BAT ok
+#Toledo				  ; O4-1           dec-6 -> will do dec 27->soon jan 8 => vacation to FEB 4 !!
+Tomasi				  ; O4-5     finalp v3                 MWP ok
+Torres, Simón                     ; P4-18    finalp v2                 BAT ok
+Tsutsumi, Takahiro                ; P12-15   finalp v3 copy            BAT ok
+Vahi            		  ; F5       finalp v3       	       BAT ok
+##NOPAPER Varshney, Amitabh	  ; I3-1     #  jan 8 -> sorry
+##Vitello, Fabio                  ; P3-9     #
+Wang, Rui                         ; P1-17    finalp v3                 EMW ok                 PHOTO
+##NOPAPER Wicenec, Andreas        ; P10-16   #
+##NOPAPER Wise	                  ; I2-1     #
+##NOPAPER Woods, Paul             ; P13-21   #
+#Xiao, Jian                       ; P1-18    #
+Long, Min                         ; P1-18    finalp V3 copy            BAT ok
+##Xu, Yang                        ; P12-16   #
+Yamaguchi, Masayuki               ; P13-22   finalp V3 copy            BAT ok
+##Yunfei, Xu                      ; P9-4     #
+Zapart				  ; O3-1     finalp v0	copy           BAT ok
+Zecevic				  ; O10-2    finalp v3  copy           PJT ok2
+##Zhang, Yanxia                   ; P1-19    #
+#
+Derriere, Sebastien               ; T1       finalp V3 copy            BAT ok
+#Young, Michael David             ; T2                                     sent email -> he will try; jan-8
+#Heinl, Hendrik                   ; T3                                     sent email; jan-8; feb-1
+Momcheva, Ivelina                 ; T4       finalp V1                 MWP ok
+#
+Tollerud, Erik                    ; B1       finalp v1 copy            BAT ok
+Mink, Jessica                     ; B2       finalp v2 copy            BAT ok    1/4 PHOTO?
+Polsterer, Kai                    ; B3       finalp v0                 BAT ok
+Muench, August                    ; B4       finalp v1                 BAT ok
+#O'Toole, Simon                   ; B5                                      sent email; jan 18
+Shawhan, Peter                    ; B6       finalp v1                 BAT ok
+Allen, Alice                      ; B7       finalp v2                 BAT ok
+#
+Thomas, Brian                     ; H1       finalp v0 copy            EMW ok
+#
+Timmes, Frank                     ; D3       finalp v1                 BAT ok
+##NOPAPER =D1 datailku
+##NOPAPER =D7 nature
+##NOPAPER =D2 D5 geneva
+##NOPAPER =D4 stsci
+##NOPAPER =D5 cds - mark     
+##NOPAPER =D9  esa - crist
+##NOPAPER =D10 lsst - ranpal
+#    D11 sciserver - raddick                      sent email
+##Bauer, Gerbs                    ; D8        no paper after all
+Allen, Mark                       ; H2        finalp v0                MWP ok

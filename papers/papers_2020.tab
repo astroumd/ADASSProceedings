@@ -1,0 +1,221 @@
+#-Author ; PID
+#------------------------------- Theme 1: Science Platforms and Data Lakes
+# Vandana Desai ; I1-159                    JER  MISSING desai@ipac.caltech.edu
+Mark Taylor ; O1-22                         JER  indexes final ascl
+# Gijs Verdoes Kleijn ; O1-32               JER  CANCELLED
+Matthieu Baumann ; O1-68                    JER  indexes final ascl
+Fenja Kollasch ; O1-98                      JER  indexes final ascl
+Lloyd Harischandra ; O1-112                 JER  indexes final ascl              HAS A BARELY READABLE FIGURE 2
+Nick Cox ; O1-115                           JER  indexes final ascl
+Stefano Alberto Russo ; O1-124              JER  indexes final ascl
+Hugh Dickinson ; P1-59                      JER  indexes final ascl
+Alessandro Costa ; P1-121                   JER  indexes final ascl
+# Robert Nikutta ; P1-184                   JER  MISSING
+John Beasley ; P1-186                       JER  indexes final ascl
+Fulvio Gianotti ; P1-190                    JER  indexes final ascl
+Rafael Duarte Coelho dos Santos ; P1-228    JER  indexes final ascl
+# Bruno Khelifi ; P1-248                    JER  MISSING
+Sara Bertocco ; P1-255                      JER  indexes final ascl
+Oleg Smirnov ; D1-66                        JER  indexes final ascl
+Mario Juric ; D1-102                        JER  indexes final ascl
+#------------------------------- Theme 2: Cloud Computing at Different Scales
+Giuliano Taffoni ; I2-60                    JER  indexes final ascl
+G. Bruce Berriman ; B2-73                   JER  indexes final ascl
+# Vicente Navarro ; O2-14                   JER  MISSING vicente.navarro@esa.int
+# Brian Hayden ; O2-157                     JER  MISSING bhayden@stsci.edu
+Eva Sciacca ; P2-16                         JER  indexes final ascl
+Ryan Raba ; P2-205                          JER  indexes final ascl                   HAS A BARELY READABLE FIGURE 2
+# Nicholas Walton ; P2-230                  JER  MISSING
+# Jan-Willem Steeb ; P2-236                 JER  MISSING
+Marcellin Atemkeng ; P2-246                 JER  indexes final ascl
+# Susana Sánchez Expósito ; P2-259          JER  MISSING
+Guillaume Eynard Bontemps ; D2-29           JER  indexes final ascl
+# Demitri Muna ; D2-109                     JER  MISSING
+#------------------------------- Theme 3: Cross-Discipline Projects
+Samuel Farrens ; I3-20                      JER  indexes final ascl
+# Kimberly Kowal Arcand ; O3-78             JER  MISSING kkowal@cfa.harvard.edu
+Lucia Marchetti ; O3-130                    JER  indexes final ascl
+Claudia Comito ; O3-136                     JER  indexes final ascl
+Marcos López-Caniego ; O3-137               JER  indexes final ascl
+Thomas Vuillaume ; P3-162                   JER  indexes final ascl
+Deborah Baines ; P3-169                     JER  indexes final ascl
+Eric Howard ; P3-171                        JER  indexes final ascl
+Laurent Michel ; P3-181                     JER  indexes final ascl
+Mark Allen ; P3-204                         JER  indexes final ascl
+Mattia Corpora ; P3-227                     JER  indexes final ascl
+# Patrick Reichherzer ; P3-231              JER  MISSING
+Adrian Garcia Riber ; P3-257                JER  indexes final ascl
+Rosa Diaz ; P3-266                          JER  indexes final ascl
+#------------------------------- Theme 4: Multi-Messenger Astronomy
+Giuseppe Greco ; O4-79                      JER  indexes final ascl
+Aitor Ibarra Ibaibarriaga ; O4-144          JER  indexes final ascl
+# Katarzyna Wardęga ; O4-151                JER  MISSING katarzyna.wardega96@gmail.com
+Mateusz Malenta ; B4-95                     JER          draft stage copyright missing: request author mateusz.malenta@manchester.ac.uk
+# Jessica Mink ; B4-154                     JER  MISSING jmink@cfa.harvard.edu
+Nicolò Parmiggiani ; P4-24                  JER  indexes final ascl
+Carlo Burigana ; P4-34                      JER  indexes final ascl
+Massimiliano Lincetto ; P4-127              JER  indexes final ascl
+Valerio Tonelli ; P4-167                    JER  indexes final ascl
+# Aleksandra Grokhovskaya ; P4-174          JER  MISSING
+Daniel Morcuende ; P4-176                   JER  indexes final ascl
+Fabrizio Lucarelli ; P4-185                 JER  indexes final ascl
+Hisanori Furusawa ; P4-243                  JER  indexes final ascl
+Alessandra Berretta ; P4-252                JER  indexes final ascl
+#------------------------------- Theme 5: Machine Learning, Statistics, and Algorithms
+Kai Polsterer ; I5-175                      JER  indexes final ascl
+Kiri Wagstaff ; O5-36                       JER  indexes final ascl
+Colin Jacobs ; O5-37                        JER  indexes final ascl
+Sergi Blanco-Cuaresma ; O5-77               JER          draft stage: request author sblancocuaresma@cfa.harvard.edu
+# Florian List ; P5-13                      JER  MISSING
+Daniel Nieto Castaño ; P5-48                JER  indexes final ascl
+Bernardino Spisso ; P5-51                   JER  indexes final ascl
+# Hossen Teimoorinia ; P5-54                JER  MISSING
+Landman Bester ; P5-58                      JER  indexes final ascl
+Mikaël Jacquemont ; P5-62                   JER  indexes final ascl
+Guido Cupani ; P5-64                        JER  indexes final ascl
+# Suchetha Cooray ; P5-80                   JER  MISSING
+Shabbir Nuruddin Bawaji ; P5-83             JER  indexes final ascl
+# Giorgio Calderone ; P5-116                JER  MISSING
+# Sébastien Fabbro ; P5-163                 JER  MISSING
+# Jesús Vega Ferrero ; P5-168               JER  MISSING
+Brian Kent ; P5-173                         JER  indexes final ascl
+André Rodrigo da Silva ; P5-177             JER  indexes final ascl
+# Tracy Chen ; P5-183                       JER  MISSING
+Mauricio Rodríguez Alas ; P5-187            JER  indexes final ascl
+Kazumi Murata ; P5-213                      JER  indexes final ascl
+Viktor Borisov ; P5-215                     JER  indexes final ascl
+Ondřej Podsztavek ; P5-217                  JER  indexes final ascl
+Carlos Feinstein ; P5-223                   JER  indexes final ascl
+Amita Muralikrishna ; P5-225                JER  indexes final ascl
+Travis Stenborg ; P5-242                    JER  indexes final ascl
+Tomasz Różański ; P5-245                    JER  indexes final ascl 
+# Aidan Berres ; P5-260                     JER  MISSING
+Humberto Farias ; P5-262                    JER          LaTeX Error DeclareMathAlphabet copyright missing: request author humberto.farias@usm.cl
+#------------------------------- Theme 6: Time-Domain Ecosystem
+K. Azalee Bostroem ; I6-25                  JER  indexes final ascl
+# Dmitry Duev ; I6-31                       JER  MISSING duev@caltech.edu
+# Matthew J Graham ; I6-265                 JER  MISSING mjg@caltech.edu
+Kun Li ; O6-30                              JER  indexes final ascl
+# Clara Brasseur ; O6-104                   JER  MISSING cbrasseur@stsci.edu
+Brent Miszalski ; P6-43                     JER  indexes final ascl
+Jan Snigula ; P6-92                         JER  indexes final ascl
+Fabian Jankowski ; P6-125                   JER  indexes final ascl
+Susan E. Mullally ; P6-152                  JER  indexes final ascl
+David Shupe ; P6-158                        JER  indexes final ascl
+# Radek Poleski ; P6-194                    JER  MISSING
+Marco Molinaro ; P6-224                     JER  indexes final ascl
+# Bruno Sanchez ; P6-251                    JER  MISSING
+#------------------------------- Theme 7: Citizen Science Projects in Astronomy
+# Becky Smethurst ; I7-21                   JER MISSING rebecca.smethurst@physics.ox.ac.uk
+Matteo Bachetti ; O7-45                     JER indexes final ascl
+Sergio Pascual ; O7-52                      JER indexes final ascl
+# Sandor Kruk ; O7-153                      FP  MISSING sandor.kruk@esa.int
+# Joshua Peek ; O7-155                      FP  MISSING jegpeek@stsci.edu
+Graham Taylor West ; P7-74                  FP  indexes final ascl
+Heidi Thiemann ; P7-166                     FP  indexes final ascl
+Andrey Soroka ; P7-206                      FP  indexes final ascl
+# Cédric Foellmi ; D7-114                   FP  MISSING cedric@arcsecond.io
+#------------------------------- Theme 8: Data Processing Pipelines and Science-Ready Data
+Melanie Krips ; I8-57                       FP  indexes final ascl
+Eugene Magnier ; I8-105                     FP  indexes final ascl 
+Martin Kuemmel ; O8-63                      FP  indexes final ascl
+Sergio Pintaldi ; O8-111                    FP  indexes final
+Simon Perkins ; O8-131                      FP  indexes final ascl
+# Hariharan Krishnan ; P8-26                FP  MISSING
+Kristof Rozgonyi ; P8-28                    FP  indexes final ascl
+Aurelien Jarno ; P8-38                      FP  indexes final ascl
+# Stephen Gwyn ; P8-46                      FP  draft
+Jonathan Kenyon ; P8-55                     FP  indexes final ascl
+Felix Stoehr ; P8-67                        FP  indexes final ascl
+Ruben Lopez-Coto ; P8-84                    FP  indexes final ascl
+Andrea Modigliani ; P8-90                   FP  indexes final ascl
+# Bart Scheers ; P8-117                     FP  MISSING
+Leonardo Baroncelli ; P8-118                FP  indexes final ascl
+# Peter Teuben ; P8-128                     FP  MISSING           PJT: yes :-(
+Jose Enrique Ruiz ; P8-138                  FP  indexes final ascl
+Nat Comeau ; P8-142                         FP  indexes final ascl
+Nicolas Monnier ; P8-145                    FP  indexes final ascl
+# Wayne B. Hayes ; P8-148                   FP  MISSING
+Nicolás Cardiel ; P8-182                    FP  indexes final ascl
+Oleg Smirnov ; P8-191                       FP  indexes final ascl
+Bjorn Emonts ; P8-193                       FP  indexes final ascl         \paperauthor needed??? bjornemonts@gmail.com
+Vito Conforti ; P8-195                      FP  indexes final ascl
+Takeshi Nakazato ; P8-198                   FP  indexes final ascl
+Jan Novotny ; P8-221                        FP  indexes final ascl
+# Jose Sabater ; P8-222                     FP  MISSING
+Karel Adámek ; P8-235                       FP  indexes final ascl 
+# Bob Watson ; P8-238                       FP  MISSING
+# Nuria Lorente ; P8-247                    FP  draft
+# Keri Heuer ; P8-249                       FP  MISSING
+Paolo Serra ; P8-258                        FP  indexes final ascl           uses \providecommand
+Ariel Tirado ; P8-264                       FP  indexes final ascl          \paperauthor needed??? ariel.tirado@sansano.usm.cl
+Simon Perkins ; D8-132                      FP  indexes final ascl          uses \providecommand
+#------------------------------- Theme 9: Data Interoperability
+Fernique Pierre ; I9-23                     FP  indexes final ascl
+Perry Greenfield ; O9-27                    FP  indexes final ascl
+Mateusz Malenta ; O9-94                     FP  indexes final ascl
+Pilar de Teodoro ; O9-120                   FP  indexes final ascl
+Katharina Lutz ; B9-50                      FP  indexes final ascl
+Mathieu Servillat ; B9-56                   FP  indexes final ascl
+Cosimo Nigro ; B9-86                        FP  indexes final ascl
+Katharina Lutz ; P9-49                      FP  indexes final ascl
+Mireille Louys ; P9-72                      FP  indexes final ascl
+Gyula I. G. Jozsa ; P9-81                   FP  indexes final ascl
+Mathieu Servillat ; P9-89                   FP  indexes final ascl
+Siddha Mavuram ; P9-103                     FP  indexes final ascl
+Giuseppe Riccio ; P9-113                    FP  indexes final ascl
+# Filippo Quarenghi ; P9-119                FP  MISSING
+Thomas Boch ; P9-170                        FP  indexes final ascl
+# David Rodriguez ; P9-178                  FP  MISSING
+Caroline Bot ; P9-201                       FP  indexes final ascl
+Jesus Salgado ; P9-202                      FP  indexes final ascl
+Gilles Landais ; P9-216                     FP  indexes final ascl
+Jutta Schnabel ; P9-226                     FP  indexes final ascl
+Sarah Weissman ; P9-233                     FP  indexes final ascl
+Michèle Sanguillon ; P9-250                 FP  indexes final ascl
+François Bonnarel ; P9-253                  FP  indexes final ascl
+#------------------------------- Theme 10: Open Source Software and Community Development in Astronomy
+# Kelle Cruz ; I10-39                       FP  MISSING
+Henrike Fleischhack ; O10-53                FP  indexes final ascl
+Peter Teuben ; B10-129                      FP  indexes final ascl
+Yan Grange ; B10-133                        FP  indexes final ascl
+Carter Rhea ; P10-18                        FP  indexes final ascl
+# Patricio Cubillos ; P10-33                FP  MISSING
+Marina Vela Nunez ; P10-71                  FP  indexes final ascl
+# Simón Torres ; P10-75                     FP  MISSING
+# Brent Shapiro-Albert ; P10-100            FP  MISSING
+# Atreyee Sinha ; P10-101                   FP  MISSING
+Andrea Bulgarelli ; P10-123                 FP  indexes final ascl
+Elena Puga ; P10-161                        FP  indexes final ascl
+Cristina Knapic ; P10-179                   FP  indexes final ascl
+G. Bruce Berriman ; P10-192                 FP  indexes final ascl
+Athanaseus Javas Ramaila ; P10-207          FP  indexes final ascl
+Lexy Andati ; P10-209                       FP  indexes final ascl
+Alice Allen ; P10-212                       FP  indexes final ascl
+# Mattia Mancini ; P10-229                  FP  MISSING
+Marco Lam ; P10-241                         FP  indexes final ascl
+Benjamin Hugo ; P10-244                     FP  indexes final ascl   -        uses \providecommand
+#------------------------------- Theme 11: Other
+Francesco Pierfederici ; O11-35             FP  indexes final ascl
+Cristobal Bordiu ; O11-96                   FP  indexes final ascl
+# Brigitta Sipőcz ; O11-156                 FP  MISSING bsipocz@gmail.com
+# Gilles Bergond ; O11-272                  FP  MISSING gbergond@caha.es
+Jan Noordam ; B11-143                       FP  indexes final ascl
+# Cosimo Nigro ; P11-69                     FP  MISSING
+Fabio Rossi ; P11-146                       FP  indexes final ascl         FIXED 5->4 PAGES
+# Maria Henar Sarmiento Carrión ; P11-147   FP  MISSING
+David Berry ; P11-172                       FP  indexes final ascl
+Dirk Muders ; P11-180                       FP  indexes final ascl
+# Thomas Juerges ; P11-188                  FP  MISSING
+# Yoko Okada ; P11-189                      FP  MISSING
+# Gabriele Riccio ; P11-196                 FP  MISSING
+# Francesco Pistis ; P11-197                FP  MISSING
+Yuji Shirasaki ; P11-199                    FP  indexes final ascl
+# Mahmoud Hamed ; P11-203                   FP  MISSING
+Salvatore Savarese ; P11-208                FP  indexes final ascl
+Graham Bell ; P11-211                       FP  indexes final ascl
+# Kuo-Song Wang ; P11-214                   FP  MISSING
+Yohei Hayashi ; P11-220                     FP  indexes final ascl
+Anastasia Alexov ; P11-239                  FP  indexes final ascl
+# Carlos Espinosa ; P11-240                 FP  MISSING
+Miguel Sánchez-Portal ; P11-254             FP  indexes final ascl
