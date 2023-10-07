@@ -1,9 +1,9 @@
 # Example makefile to help you compile your ADASS proceedings
 # but you really should read the ManuscriptInstructions.pdf or
-# at least the README file. For some smart cookies the Makefile
-# could be sufficient too.
+# at least the README file.
+# Authors should not need to modify the Makefile, please use the makedefs file, included here
 #
-# Version 2-oct-202e   Peter Teuben & XXX
+# Version 7-oct-2023   Peter Teuben & Tyler Linder/Bob Seaman
 #
 # See also:   https://www.adass2022.ca/.... / ADASS2022.tar    @todo    for 2023
 #
@@ -15,7 +15,7 @@
 
                     # put your paper_id here (with dash, not dot), e.g. P10-2
                     # or find your template on http://www.astro.umd.edu/~teuben/adass/papers/
-P = $(shell detect_tex.py | grep -v '^%' | sed 's/.tex//g')
+P = $(shell ./detect_tex.py | grep -v '^%' | sed 's/.tex//g')
                     # keep incrementing this after each upload of your $(P)
 V = 1
                     # First author (for Papercheck.py)
@@ -25,17 +25,17 @@ E = teuben@gmail.com
 		    # your EPS figures (can be blank, and must be base-named with $(P)_*.eps
 FIGS = $(shell ls *.eps)
 
-# override P,V,A,E,FIGS with a "makedefs" file, this is where authors should edit, not this Makefile
+# override P,V,A,E,FIGS with a "makedefs" file, this is where authors should edit, not this Makefile!!!
 -include makedefs
 
-# Which command do you use to view the PDF? This is just for convenience.
+# Which command do you use to view the PDF? This is just for convenience.  (mac uses "open", linux "xdg-open")
 # PDFOPEN = xdg-open
 PDFOPEN = open
 
 #  variables for proceeding editors (don't modify, for export, not for authors)
 YEAR   = 2023
 ATDIR  = ADASS$(YEAR)_author_template
-FILES  = AdassChecks.py AdassConfig.py AdassIndex.py ADASS_template.tex \
+FILES  = AdassChecks.py AdassConfig.py AdassIndex.py ADASS_template.tex ADASS_template.pdf \
 	 Aindex.py FixUnprintable.py \
 	 copyrightform.pdf example.bib example.eps \
 	 Index.py manual2010.pdf ManuscriptInstructions.pdf PaperCheck.py \
@@ -89,7 +89,11 @@ all:	pdf check tar
 
 
 # not for authors, for creator of the ADASS instruction tar/zip file
-export:
+
+aADASS_template.pdf:
+	$(MAKE) P=ADASS_template
+
+export: ADASS_template.pdf
 	rm -rf $(ATDIR)
 	mkdir  $(ATDIR)
 	cp -a $(FILES) $(ATDIR)
