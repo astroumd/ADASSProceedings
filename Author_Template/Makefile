@@ -100,6 +100,7 @@ export: ADASS_template.pdf
 	echo Created on `date` by `whoami`  > $(ATDIR)/VERSION
 	-git remote -v                     >> $(ATDIR)/VERSION
 	-git branch                        >> $(ATDIR)/VERSION
+	-git rev-list --count HEAD         >> $(ATDIR)/VERSION
 	rm -f ADASS$(YEAR).tar ADASS$(YEAR).zip
 	tar cf ADASS$(YEAR).tar $(ATDIR)
 	zip -urq ADASS$(YEAR).zip $(ATDIR)
