@@ -32,7 +32,7 @@ help documents in this tar file (except for your personal template):
    2. ManuscriptInstructions.pdf (Guidelines for preparing an ADASS paper)
    3. README                     (This file)
    4. ADASS_template.tex         (The general ADASS template)
-   5. PID.tex                    (Your personalized ADASS template for your PID, e.g. O12
+   5. PID.tex                    (Your personalized ADASS template for your PID, e.g. P12
 
 At the end of this README, we also provide a file index with a short description of 
 all the files present in the ADASS2023.tar file. 
@@ -82,7 +82,7 @@ where X is one of:
     - T for tutorial
 and NN is a two-digit number.
 
-In this document, we will be using O12 as an example PID.
+In this document, we will be using P12 as an example PID.
 
 Using the provided Makefile
 ---------------------------
@@ -93,7 +93,7 @@ or use your personalized one.
 In the makedefs file, you can define the P, V, A, E and FIGS macros, for example:
 
 # Your proceedings PID (paper ID) code:
-P = O12
+P = P12
 
 # Your version # (1,2,..) since you can only upload unique files
 V = 1
@@ -104,8 +104,8 @@ A = Teuben
 # Your contact email address for submission issues
 E = teuben@gmail.com
 
-# Your EPS figures
-FIGS = O12_*.eps
+# Your EPS figures (leave blank if you don't have any)
+FIGS = P12_*.eps
 
 Please edit the makedefs file and NOT the Makefile directly. The entries in the
 makedefs file will override the ones set in the Makefile. When set correctly,
@@ -174,7 +174,7 @@ all you have to do is:
 
     PaperCheck.py Paper Author
 
-where Paper is the identifier for your paper, eg O10-3 or P8-2 etc, and
+where Paper is the identifier for your paper, eg O10-3 or P08-2 etc, and
 Author is the surname of the first author of the paper.
 
 
@@ -183,7 +183,7 @@ STEP 3: Package and submit your paper
 
 You should create a .tar file with a name based on the identifier for your paper and 
 including a version number, starting at 1.
-e.g. example O12_v1.tar. This should contain:
+e.g. example P12_v1.tar. This should contain:
 
   - The .tex LaTeX file
   - The .bib file defining any cited references
@@ -207,7 +207,7 @@ you have already supplied a paper copy of the copyright form, you do not need
 to include this. Note that electronic signatures are not acceptable - sign the
 form and scan it.
 
-(Zip files are also acceptable, using the same naming convention, e.g. O12_v1.zip.)
+(Zip files are also acceptable, using the same naming convention, e.g. P12_v1.zip.)
 
 Submit the paper
 ----------------
@@ -215,17 +215,17 @@ Submit the paper
 Submit the .tar file as instructed on the ADASS 2023 web site. If you need to
 submit a revised version, submit ALL the required files in a new .tar file - do
 not just submit the modified files - and append a version number to the name,
-e.g. O12_v2.tar. This version is defined in the V= parameter in the makedefs file.
+e.g. P12_v2.tar. This version is defined in the V= parameter in the makedefs file.
 
 To sum up, here is an example of the files (no sub-directories please) that the editors
 like to see:
 
-   O12.tex
-   O12.bib
-   O12_f1.eps
-   O12_f2.eps
+   P12.tex
+   P12.bib
+   P12_f1.eps
+   P12_f2.eps
    makedefs
-   O12.pdf
+   P12.pdf
 
 you really don't need to send us *any* other type files. Save the electrons!
 
