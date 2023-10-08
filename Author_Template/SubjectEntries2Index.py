@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 #                 S u b j e c t  E n t r i e s  2  I n d e x . p y
 #

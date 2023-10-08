@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 from  __future__ import (print_function,division,absolute_import)
 from   operator  import truth, contains, eq, is_not, attrgetter, itemgetter, methodcaller, __add__, is_, __truediv__
 import sys, os, re, sys, shlex, argparse, subprocess, collections, functools, string, itertools
