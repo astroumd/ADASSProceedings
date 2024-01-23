@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 #
 # take a self-contained ADASS paper and output the embeddable version for the book
 #          PID.tex -> PID_inc.tex
