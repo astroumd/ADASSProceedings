@@ -2,3 +2,15 @@ software
     notebooks
 frameworks
     HTCondor
+instruments
+    ACA Spectrometer Control (ASC)
+    ACA Spectrometer Module (ASM)
+    Atacama Compact Array (ACA)
+    camera
+        Compton
+observatories
+    ground-based
+        Atacama Large Millimeter/submillimeter Array (ALMA)
+organisations
+    Korea Astronomy and Space Science Institute (KASI)
+    National Astronomical Observatory of Japan (NAOJ)
