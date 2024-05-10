@@ -14,3 +14,11 @@ observatories
 organisations
     Korea Astronomy and Space Science Institute (KASI)
     National Astronomical Observatory of Japan (NAOJ)
+applications
+    JupyterLab
+science platform
+techniques
+    Generative Adversarial Network (GAN)
+open science
+projects
+    Gamma-Flash
