@@ -1,13 +1,36 @@
 software
     notebooks
+    frameworks
+        Bifrost
 frameworks
     HTCondor
+applications
+    ADMIT
+observatories
+    ground-based
+        NRT
+algorithm
+    machine learning
+        reinforcement learning
+libraries
+    Specutils
+data centers
+    Data Central
+archives
+    individual
+        JCMT Science Archive (JSA)
+        Integral Science Legacy Archive (ISLA)
+data
+    processing
+        ESO Data Processing System (EDPS)
 instruments
     ACA Spectrometer Control (ASC)
     ACA Spectrometer Module (ASM)
     Atacama Compact Array (ACA)
     camera
         Compton
+    individual
+        MOONS
 observatories
     ground-based
         Atacama Large Millimeter/submillimeter Array (ALMA)
