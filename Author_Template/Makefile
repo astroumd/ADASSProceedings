@@ -51,7 +51,7 @@ ZIP_FILE  = $(P).zip
 POS_FILE  = $(P).pdf
 FILESPDF  = $(P).pdf copyrightForm_$(P)_$(A).pdf
 FILESTEX  = $(P).tex $(P).bib $(FIGS) makedefs
-FILESASP  = asp2014.bst asp2014.sty
+FILESASP  = asp2021.bst asp2021.sty
 FILES4AR  = $(FILESTEX) $(FILESPDF)
 
 # ensure current directory is in the PATH
@@ -131,7 +131,7 @@ pdflatex:
 	pdflatex $(P)
 
 clean:
-	rm -f $(P).dvi $(P).bbl $(P).blg $(P).pdf $(P).aux $(P).log $(P).out $(P).toc $(P)_inc.tex
+	rm -f $(P).dvi $(P).bbl $(P).blg $(P).pdf $(P).aux $(P).log $(P).out $(P).toc $(P)_inc.tex $(P).txt
 
 check:
 	PaperCheck.py $(P) $(A)

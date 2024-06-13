@@ -644,8 +644,8 @@ def VerifyRefs (Paper,AllowBibitems = True,TexFileName = "",BibFileName = "", \
          TexFile = open(TexFileName,mode='r')
          for TexFileLine in TexFile :
             if (not TexFileLine.startswith("%")) :
-               if (TexFileLine.find("\\usepackage{./asp2014}") >= 0) :
-                  print("** .tex file has \\usepackage{./asp2014} directive **")
+               if (TexFileLine.find("\\usepackage{./asp2021}") >= 0) :
+                  print("** .tex file has \\usepackage{./asp2021} directive **")
                   Warn = True
                Index = TexFileLine.find("\\bibliography{")
                if (Index >= 0) :
@@ -3063,7 +3063,7 @@ def PackageScanCallback(Words,StandardList,NonStandard) :
                Len = len(Packages)
                if (Len > 0) :
                   for Package in Packages :
-                     if (Package != "asp2014" and Package != "./asp2014") :
+                     if (Package != "asp2021" and Package != "./asp2021") :
                         Standard = False
                         for StandardPkg in __StandardPackages__ :
                            if (Package == StandardPkg) :
