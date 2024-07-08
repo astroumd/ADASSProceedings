@@ -49,4 +49,3 @@ projects
     Gamma-Flash
 computer languages
     WebAssembly
-
