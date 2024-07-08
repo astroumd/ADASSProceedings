@@ -45,3 +45,5 @@ techniques
 open science
 projects
     Gamma-Flash
+computer languages
+    WebAssembly
