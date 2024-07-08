@@ -16,6 +16,8 @@ libraries
     Specutils
 data centers
     Data Central
+astronomy
+    !x-ray
 archives
     individual
         JCMT Science Archive (JSA)

@@ -61,7 +61,7 @@ well. ASP does not use pdflatex, so try and stick to latex (we only allow EPS
 figures, not PNG or JPG; see below).
 
 Editing your paper in overleaf (https://www.overleaf.com/) is also known to work:
-simply upload (as a ZIP file is the easiest) the template, the two asp2014 files,
+simply upload (as a ZIP file is the easiest) the template, the two asp2021 files,
 and optionally your BIB file and EPS figures. Don't start from scratch, or your file
 will be likely named main.tex. See below if you like the "make" shortcuts.
 
@@ -248,8 +248,8 @@ example.eps                - an example graphics file used by ADASS_template.tex
 
 ADASS_template.pdf         - the result of running LaTeX on ADASS_template.tex
 
-asp2014.bst                - the required ASP bibliography style file.
-asp2014.sty                - the required ASP LaTeX style file.
+asp2021.bst                - the required ASP bibliography style file.
+asp2021.sty                - the required ASP LaTeX style file.
 
 PaperCheck.py              - a Python script used to check an ADASS paper
 Index.py                   - a Python script used to generate subject index entries
