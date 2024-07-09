@@ -3181,7 +3181,7 @@ def RunningHeadsCallback(Words,Notes,Unused) :
             Problem = "Paper contains multiple \\markboth directives"
          if (NumberWords != 3) :
             Problem = "\\markboth directive has wrong number of arguments"
-            Problems.append(Problem)
+            Notes.append(Problem)
          else :
             Authors = Words[1].strip('{}')
             Title = Words[2].strip('{}')
