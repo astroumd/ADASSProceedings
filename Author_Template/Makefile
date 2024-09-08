@@ -199,23 +199,23 @@ index:
 
 ssindex:
 	@echo Generating ssindex list
-	(cd ../Author_Template; ssindex-org.py ../../ADASSProceedings2020/papers/$(P)/$(P).tex)
+	(cd ../Author_Template; ssindex-org.py ../../ADASSProceedings2022/papers/$(P)/$(P).tex)
 
 ssindex2:
 	@echo Generating scored ssindex list 
-	(cd ../Author_Template; ssindex-scored.py ../../ADASSProceedings2020/papers/$(P)/$(P).tex)
+	(cd ../Author_Template; ssindex-scored.py ../../ADASSProceedings2022/papers/$(P)/$(P).tex)
 
 index2:
 	(cd ../adass_subject_recommender ; detex ../$(P)/$(P).tex |  PYTHONPATH=`pwd` bin/find_subjects.py -m 10 -j)
 
 ascl:
-	(cd ../Author_Template; ascl.py ../../ADASSProceedings2020/papers/$(P)/$(P).tex)
+	(cd ../Author_Template; ascl.py ../../ADASSProceedings2022/papers/$(P)/$(P).tex)
 # 	(cd ../Author_Template; ascl-new.py ../../ADASSProceedings2020/papers/$(P)/$(P).tex)
 
 ascl1:
-	(cd ../Author_Template; ascl.py ../../ADASSProceedings2020/papers/$(P)/$(P).tex | grep ooindex | sort | uniq -c)
+	(cd ../Author_Template; ascl.py ../../ADASSProceedings2022/papers/$(P)/$(P).tex | grep ooindex | sort | uniq -c)
 	-detex $(P).tex > $(P).txt
-	-(cd ../Author_Template; ascl.py ../../ADASSProceedings2020/papers/$(P)/$(P).txt | grep ooindex | sort | uniq -c)
+	-(cd ../Author_Template; ascl.py ../../ADASSProceedings2022/papers/$(P)/$(P).txt | grep ooindex | sort | uniq -c)
 	-grep ooindex $(P).tex
 
 CODE = foobar
