@@ -104,27 +104,15 @@ copyrightForm_$(P)_$(A).pdf: copyrightform.pdf
 
 # these targets are for most common unix systems, but YMMV. Modify if you need
 # let the editors know you have a better way for the next ADASS team
-# ASP prefers the latex;latex;dvipdfm route
+# ASP now prefers the pdflatex route rather than the latex;latex;dvipdfm route
 
 DVIPDF = dvipdf
 
 pdf:	$(P).pdf
 	@echo $(PDFOPEN) $(P).pdf 
 
-$(P).pdf:  $(P).dvi $(FIGS)
-	$(DVIPDF) $(P)
-
-$(P).bib:                                  # bootstrap if you don't have one
-	touch $(P).bib
-
-$(P).dvi:  $(P).tex $(P).bib
-	latex $(P)
-	if [ -s $(P).bib ]; then bibtex $(P); fi
-	latex $(P)
-	latex $(P)
-
-# an alternative method (ASP does not recommend it)
-pdflatex:
+# pdflatex is now the method preferred by ASP.
+$(P).pdf:
 	pdflatex $(P)
 	if [ -s $(P).bib ]; then bibtex $(P); fi
 	pdflatex $(P)
