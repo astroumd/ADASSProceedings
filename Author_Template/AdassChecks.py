@@ -279,7 +279,7 @@ import TexScanner
 #  used by the various utility scripts used in the editing process for the
 #  proceedings.)
 
-__AdassConference__ = "XXIX"
+__AdassConference__ = "XXXII"
 
 __AdassEditors__    = "Pizzo,~R. and Deul,~E. and Mol,~J. and de Plaa,~J. and Verkouter,~H. and Williams,~R."
 
@@ -644,8 +644,8 @@ def VerifyRefs (Paper,AllowBibitems = True,TexFileName = "",BibFileName = "", \
          TexFile = open(TexFileName,mode='r')
          for TexFileLine in TexFile :
             if (not TexFileLine.startswith("%")) :
-               if (TexFileLine.find("\\usepackage{./asp2014}") >= 0) :
-                  print("** .tex file has \\usepackage{./asp2014} directive **")
+               if (TexFileLine.find("\\usepackage{./asp2021}") >= 0) :
+                  print("** .tex file has \\usepackage{./asp2021} directive **")
                   Warn = True
                Index = TexFileLine.find("\\bibliography{")
                if (Index >= 0) :
@@ -3063,7 +3063,7 @@ def PackageScanCallback(Words,StandardList,NonStandard) :
                Len = len(Packages)
                if (Len > 0) :
                   for Package in Packages :
-                     if (Package != "asp2014" and Package != "./asp2014") :
+                     if (Package != "asp2021" and Package != "./asp2021") :
                         Standard = False
                         for StandardPkg in __StandardPackages__ :
                            if (Package == StandardPkg) :
@@ -3181,7 +3181,7 @@ def RunningHeadsCallback(Words,Notes,Unused) :
             Problem = "Paper contains multiple \\markboth directives"
          if (NumberWords != 3) :
             Problem = "\\markboth directive has wrong number of arguments"
-            Problems.append(Problem)
+            Notes.append(Problem)
          else :
             Authors = Words[1].strip('{}')
             Title = Words[2].strip('{}')
@@ -3556,11 +3556,12 @@ def CheckPaperName(Paper,Problems) :
    #  2018.
    
    TriestePosters = False
-   CapeTownPosters = True
+   CapeTownPosters = False
+   VictoriaNames = True
    
    #  Disable the use of 'X' as a prefix.
    
-   XAllowed = True
+   XAllowed = FALSE
    
    #  Some intital checks on the leading digit, which should be O for Oral,
    #  I for Invited (also oral), B for BoF, F for Focus Demo, 'D' for

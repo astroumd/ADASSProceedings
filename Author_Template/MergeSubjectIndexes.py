@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 #                 M e r g e  S u b j e c t  I n d e x e s . p y
 #

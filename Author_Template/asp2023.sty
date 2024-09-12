@@ -1,12 +1,12 @@
-% This is the asp2014.sty LaTeX style file -- DO NOT CHANGE THIS FILE
-% Copyright 2014, Astronomical Society of the Pacific Conference Series
-% Revision:  17 September 2015
-% 9/7/2017 Removed hidelinks=true options from bookmarks and dvipdfm usepacksge
-%                lines. Prevents a warning with recent LaTeX releases. KS.
-% 11/23/2018  ASCL for object index
+% This is the ASP Conference Series LaTeX style file -- DO NOT CHANGE THIS FILE
+% Copyright 2023, Astronomical Society of the Pacific Conference Series
+% Revision:  December 5, 2023
 
 % Some parts of this file originate from newpasp.sty.
 % For questions contact ASP Conference Series, www.aspbooks.org.
+
+% Added virtual conference functionality
+% Added DOI and individual paper copyright year support
 
 %%% COMMENTS -- Comment style:
 % File Header information includes file name and ASPCS Copyright.
@@ -17,6 +17,13 @@
 \usepackage[T1]{fontenc}
 \usepackage{amsmath}
 \usepackage{array}
+
+\usepackage{longtable}
+\usepackage{dcolumn}
+\newcolumntype{d}[1]{D{.}{.}{#1}}
+\newcommand\mc[1]{\multicolumn{1}{c}{#1}}
+
+
 \usepackage{txfonts}
 \usepackage{ifthen}
 \usepackage{lscape}
@@ -27,9 +34,9 @@
 %\usepackage{url}
 \usepackage{ifpdf}
 \ifpdf
-  \usepackage[bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,colorlinks=false,pagebackref=false,pdfauthor={ASP Conference Series},pdftitle={ASPCS}]{hyperref}
+  \usepackage[bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,colorlinks=false,pagebackref=false,hidelinks=true,pdfauthor={ASP Conference Series},pdftitle={ASPCS}]{hyperref}
 \else
-  \usepackage[dvipdfm,bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,colorlinks=false,pagebackref=false,pdfauthor={ASP Conference Series},pdftitle={ASPCS}]{hyperref}
+  \usepackage[dvipdfm,bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,colorlinks=false,pagebackref=false,hidelinks=true,pdfauthor={ASP Conference Series},pdftitle={ASPCS}]{hyperref}
 \fi
 %\usepackage{breakurl}
 \usepackage{ncccropmark}   % For Proofing:  Use this line to show margin guides
@@ -54,6 +61,18 @@
 \newcommand{\aspcpryear}[1]{\gdef\@aspcpryear{#1}}
 \newcommand{\cpryear}{\@aspcpryear}
 % Usage in main file:  \aspcpryear{2014} % Insert year received from ASPCS
+
+% Paper Copyright Year, if different from Volume copyright year
+\def\@asppapercpryear{***Copyright Year***}
+\newcommand{\asppapercpryear}[1]{\gdef\@asppapercpryear{#1}}
+\newcommand{\papercpryear}{\@asppapercpryear}
+% Usage in main file: \asppapercpryear{2022}
+
+% DOI
+\def\@asppaperdoi{}
+\newcommand{\asppaperdoi}[1]{\gdef\@asppaperdoi{#1}}
+\newcommand{\paperdoi}{\@asppaperdoi}
+% Usage in main file: \asppaperdoi{DOI:xxx}
 
 % Volume Title for Slug
 \def\@aspvoltitle{**Volume Title**}
@@ -118,7 +137,7 @@
 % Usage in main file:
 %\aspcoverinfo{\emph{Celestial Tryst:}  The moon, Venus, and Jupiter 
 %   in the evening sky from the coastline south of Pacifica, California 
-%   on November 30, 2008.\\\mbox{}\\Photographed by James Manning, the 
+%   on November 30, 2008.\\\mbox{}\\Photographed by James Manning, former 
 %   Executive Director of the Astronomical Society of the Pacific.} % In 
 %   Mixed Case (Initial Caps)
 
@@ -146,6 +165,7 @@
 
 % Meeting Venue
 \def\@aspmtgvenue{\relax}
+\global\let\@aspmtgvenue\@empty
 \newcommand{\aspmtgvenue}[1]{\gdef\@aspmtgvenue{#1}}
 \newcommand{\venue}{\@aspmtgvenue}
 % Usage in main file: \aspmtgvenue{St. Louis, Missouri, USA}
@@ -218,17 +238,6 @@
 \def\@aspaffilfive{\relax}
 \newcommand{\aspfifthaffil}[1]{\gdef\@aspaffilfive{#1}}
 \newcommand{\fifthaffil}{\@aspaffilfive}
-
-% Sixth Editor
-\def\@aspeditorsix{\relax}
-\global\let\@aspeditorsix\@empty
-\newcommand{\aspsixtheditor}[1]{\gdef\@aspeditorsix{#1}}
-\newcommand{\sixtheditor}{\@aspeditorsix}
-
-% Sixth Editor Affiliation
-\def\@aspaffilfive{\relax}
-\newcommand{\aspsixthaffil}[1]{\gdef\@aspaffilsix{#1}}
-\newcommand{\sixthaffil}{\@aspaffilsix}
 
 % Part Name (Usually either Part or Session)
 \def\@asppartname{Part}
@@ -350,10 +359,8 @@
 
 % Order of information in slug:
 \def\@slug{{\tabcolsep\z@\begin{tabular}[t]{l}\voltitle\\
-%\@journalname, Vol.\ \@jourvol, \cpr@year\\ 
-%LR: 4/13/07 changed to insert copyright symbol
-%\@journalname, Vol.\ \@jourvol\\ \vol@author , eds.\\ {\raisebox{1.5pt}{\tiny\copyright}}\hspace{-1pt}\ \cpr@year\ Astronomical Society of the Pacific 
-\@journalname, Vol.\ \volume\\ \volauthor\\ {\raisebox{1.5pt}{\tiny\copyright}}\hspace{-1pt}\ \cpryear\ Astronomical Society of the Pacific 
+\@journalname, Vol.\ \volume\\ \volauthor\\ {\raisebox{1.5pt}{\tiny\copyright}}\hspace{-1pt}\ \papercpryear\ Astronomical Society of the Pacific \\
+{\scriptsize\paperdoi}
 \end{tabular}}
 }
 
@@ -391,6 +398,24 @@
 \def\abstract{\vspace*{1.3\baselineskip}\bgroup\leftskip\paspconf@frontindent
 \noindent{\bf\sec@upcase{\small Abstract.}}\hskip 1em\small}
 \def\endabstract{\par\egroup\vspace*{1.4\baselineskip}}
+
+\def\ConfSession#1#2#3{% 
+  \vspace*{2.5\baselineskip}
+  \@tempdima\textwidth \advance\@tempdima by-\paspconf@frontindent
+  \hfill
+  \parbox{\@tempdima}
+  {\pretolerance=10000%
+  \raggedright{\large{#1}}\\
+  \raggedright{\footnotesize{#2}}\\
+  \vspace*{0.5\baselineskip}
+  \raggedright{Conference Strand: \emph{#3}}\\
+  \vspace*{1.5\baselineskip}  
+  }\par
+  %\vspace*{1\baselineskip}
+}%
+
+
+
 
 % Distance of first footnote from bottom of text.
 \skip\footins 4ex plus 1ex minus .5ex
@@ -638,6 +663,17 @@
   \includegraphics[width=0.3\textwidth]{#3}% 
 }%
 
+\newcommand{\plotboxthree}[3]{%
+  \centering 
+  \leavevmode
+  \includegraphics[width=.45\textwidth]{#1}%
+  \hfil
+  \includegraphics[width=.45\textwidth]{#2}%
+  \vspace{1ex}
+  \includegraphics[width=.45\textwidth]{#3}%
+  \hfil
+}%
+
 \newcommand{\plotfour}[4]{%
   \centering 
   \leavevmode
@@ -681,6 +717,36 @@
 %    \fi
 %  \fi
 %\fi}
+
+% Allow \part to fill use the back side of a page
+\newcommand{\allowpartback}{%
+  \renewcommand\@endpart{%
+    \vfil
+    \if@twoside
+      \null
+      \thispagestyle{empty}%
+      \newpage
+    \fi
+    \if@tempswa
+      \twocolumn
+    \fi}%
+}%
+
+% Restore \part to the original version
+\newcommand{\restorepartback}{%
+  \renewcommand\@endpart{%
+    \vfil
+    \newpage
+    \if@twoside
+      \null
+      \thispagestyle{empty}%
+      \newpage
+    \fi
+    \if@tempswa
+      \twocolumn
+    \fi}%
+}%
+
 
 % Added 7/11/06 by Jared
 % Modified 2/18/09 by Jonathan
@@ -811,10 +877,9 @@
     {\small
     {\itshape Managing Editor:} Joseph Jensen\\
     {\itshape Associate Managing Editor:} Jonathan Barnes\\
-    {\itshape Publication Manager:} Cindy Moody\\
-    {\itshape Editorial Assistant:} Blaine Haws\\
-    {\itshape Publication Consultant:} Pepita Ridgeway\\
-		{\itshape e-Book Specialist:} Rachel Sevison-Haws\\
+    {\itshape Publication Manager:} Elizabeth Wardell\\
+    %{\itshape Publication Consultant:} Pepita Ridgeway\\
+    {\itshape e-Book Specialist:} Micah Laing\\
     %{\itshape Web Developer/Technical Consultant:} Jared M.\ Bellows\\
     %{\itshape \LaTeX\ Consultant:} T.\ J.\ Mahoney\\
     }%
@@ -841,20 +906,20 @@
   \begin{center}
     {\small
     \begin{tabular*}{1\textwidth}{x{6cm} p{0.1cm} x{6cm}} %x{5cm} x{5cm}}
-      {\centering Christine Jones, Chair} & & Marsha J. Bishop\tabularnewline
-      {\scriptsize Smithsonian Astrophysical Observatory} & & {\scriptsize National Radio Astronomy Observatory}\tabularnewline
+	  {\centering Jeff Mangum, co-Chair} & & Joseph Jensen, co-Chair\tabularnewline
+      {\scriptsize National Radio Astronomy Observatory} & & {\scriptsize Utah Valley University}\tabularnewline
       \tabularnewline
-      William Cochran & & Bruce Elmegreen\tabularnewline
-      {\scriptsize University of Texas at Austin} & & {\scriptsize IBM Watson Research Center}\tabularnewline
+      Bruce Elmegreen & & Lynne Hillenbrand\tabularnewline
+      {\scriptsize IBM Watson Research Center} & & {\scriptsize California Institute of Technology}\tabularnewline
       \tabularnewline
-      Robert Hanish & & Lynne Hillenbrand\tabularnewline
-      {\scriptsize National Institute of Standards and Technology} & & {\scriptsize California Institute of Technology}\tabularnewline
+      Doug Leonard & & Chris Packham\tabularnewline
+      {\scriptsize San Diego State University} & & {\scriptsize University of Texas at San Antonio}\tabularnewline
       \tabularnewline
-      Doug Leonard & & Charles Telesco\tabularnewline
-      {\scriptsize San Diego State University} & & {\scriptsize University of Florida}
+      %Doug Leonard & & Charles Telesco\tabularnewline
+      %{\scriptsize San Diego State University} & & {\scriptsize University of Florida}
     \end{tabular*}
     }%
-    %Ed Guinan\\ {\scriptsize Villanova University}
+    Amy Mainzer\\ {\scriptsize University of Arizona}
   \end{center}
 }%
 
@@ -884,16 +949,23 @@
 }%
 
 % Format and deliver meeting info if it exists
+% If the venue is empty, then do not include an 'at' or venue.
 \newcommand{\providemeetinginfo}{%
   \ifx \@aspmtgtype \@empty
     \relax
   \else
     \medskip
     \begin{center}
-    {Proceedings of a \mtgtype{} held at\\
-    \venue{}\\
-    \when{}
-    }
+	  \ifx \@aspmtgvenue \@empty
+        Proceedings of a \mtgtype{} held\\
+		\when{}
+	  \else
+        Proceedings of a \mtgtype{} held at\\
+        \venue{}\\%
+		\when{}
+	  \fi%
+    %\when{}
+    %}
     \end{center}
   \fi%
 }%
@@ -958,25 +1030,13 @@
   \fi%
 }%
 
-% Format and deliver sixth editor info if it exists
-\newcommand{\provideeditorsix}{%
-  \ifx \@aspeditorsix \@empty
-    \relax
-  \else
-    \begin{center}
-    {\bfseries \sixtheditor{}}\\
-    {\itshape \sixthaffil{}}\\
-    \end{center}
-  \fi%
-}%
-
 % Convenient macros for preparing indexes
 \newcommand{\prepareindexes}{%
   \makeindex
   \newindex{not}{ndx}{nnd}{\Large List of Notation}
   \newindex{aut}{adx}{and}{\Large Author Index}
   \newindex{sub}{sdx}{snd}{\Large Subject Index}
-  \newindex{obj}{odx}{ond}{\Large ASCL Index}
+  \newindex{obj}{odx}{ond}{\Large Object Index}
   \newindex{mol}{mdx}{mnd}{\Large Spectral Feature Index}
 }%
 
@@ -1008,8 +1068,8 @@
 }%
 
 \newcommand{\printobjectindex}{%
-  \markboth{ASCL Index}{ASCL Index}
-  \tocentry{\itshape ASCL Index}{}
+  \markboth{Object Index}{Object Index}
+  \tocentry{\itshape Object Index}{}
   \printindex[obj]
 }%
 
@@ -1122,6 +1182,28 @@
   \fi%
   \end{figure}
 }%
+
+% For including a three figures in a two by one square in an article
+% \articlefigureboxthreefilename1}{filename2}{filename3}{labelname}{caption}
+\newcommand{\articlefigureboxthree}[5]{%
+  \begin{figure}[!ht]
+    \plotboxthree{#1}{#2}{#3}%
+	  \ifx&#5&%
+		  \typeout{(ASP) Missing Caption: \jobname, #1}
+	    \relax
+	  \else
+      \caption{#5}%
+    \fi%
+	  \ifx&#4&%
+	    \typeout{(ASP) Missing Label: \jobname, #1}
+	 	  \relax
+	  \else
+      \label{#4}%
+    \fi%
+  \end{figure}
+}%
+
+
 
 % For including a four figures in a four by four square in an article
 % \articlefigurefour{filename1}{filename2}{filename3}{filename4}{labelname}{caption}
@@ -1274,8 +1356,9 @@
 }%
 
 % For simplifying table of contents and file include
-% Syntax:  \tocinsertentry[n or r]{Title}{Author}{Latex File}
+% Syntax:  \tocinsertentry[r or l or blank]{Title}{Author}{Latex File}
 \newcommand{\tocinsertentry}[4][n]{%
+  \asppaperdoi{}
   \ifthenelse{\equal{#1}{r}}{%  Option for right side of the page specified
     \clearpage
     \ifodd\c@page
@@ -1285,15 +1368,26 @@
       \thispagestyle{empty}%
       \newpage
     \fi%
-  }{}%
-	\typeout{(ASP) Entry Begin: #1|#2|\arabic{page}|\jobname}
-	\tocentry{#2}{#3}
-	\ifx&#4&%
-		\typeout{(ASP) Missing file: #1}
-	\else
-		\include{#4}\last
-		\typeout{(ASP) Entry End: #1|#2|\arabic{page}|\jobname}		
-	\fi%
+  }{%
+    \ifthenelse{\equal{#1}{l}}{%  Option for left side of the page specified
+      \clearpage
+      \ifodd\c@page
+        \null
+        \thispagestyle{empty}%
+        \newpage
+      \else
+    	\relax
+      \fi%
+    }{}%
+  }%
+  \typeout{(ASP) Entry Begin: #1|#2|\arabic{page}|\jobname}
+  \tocentry{#2}{#3}
+  \ifx&#4&%
+	\typeout{(ASP) Missing file: #1}
+  \else
+	\include{#4}\last
+	\typeout{(ASP) Entry End: #1|#2|\arabic{page}|\jobname}		
+  \fi%
 }%
 
 % For simplifying table of contents and directly including files

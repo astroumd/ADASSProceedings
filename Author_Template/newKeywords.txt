@@ -1,123 +1,52 @@
+software
+    notebooks
+    frameworks
+        Bifrost
+frameworks
+    HTCondor
+applications
+    ADMIT
+observatories
+    ground-based
+        NRT
 algorithm
     machine learning
-        recurrent neural network
-        autoencoder
-        logistic regression
-        support vector machines
-    LSQR
-    non-parametric fitting
-applications
-    CARTA
-    Google Sky Map
-    JS9
-    Jupyterhub
-    Radiopadre
-    shadeMS
-    TOM Toolkit
-    STILTS
+        reinforcement learning
+libraries
+    Specutils
+data centers
+    Data Central
+astronomy
+    !x-ray
 archives
     individual
-        Anglo-Australian Telescope (AAT)
-        CEFCA Catalogues Portal
-astronomy
-    satellites
-        moon
-    solar
-        coronal heating
-        solar spectral irradiance
-    brown dwarfs
-    transients
-        science alert
-    asteroids
-    Line-of-sight velocity distribution (LOSVD)
-    AGNs
-        light curves
-    k-correction
-cosmology
-    distance
-catalogues
-    GALAH Data Release 2
-    RCSED
-conference
-    virtual
-covid
+        JCMT Science Archive (JSA)
+        Integral Science Legacy Archive (ISLA)
 data
-    model
-        Model for Annotating Generic Objects (MANGO)
-FAIR
+    processing
+        ESO Data Processing System (EDPS)
 instruments
-    IACTs
+    ACA Spectrometer Control (ASC)
+    ACA Spectrometer Module (ASM)
+    Atacama Compact Array (ACA)
+    camera
+        Compton
     individual
-        SINFONI
-        SITELLE
-        SPICAM
-        Namakanui
-    submillimeter array
-libraries
-    Dask
-    Dask-MS
-    Datashader
-    PyCPL
-    Keras
-    Angular
-    pybind11
+        MOONS
 observatories
-    EAO
     ground-based
-        Calar Alto
-        IRAM
-        LMT
-        LST
-        NOEMA
-        Virgo
-        WST
-        askap
-        Major Atmospheric Gamma Imaging Cherenkov (MAGIC)
-        NenuFAR
-        Cherenkov Telescope Array (CTA)
-        Observatorio Astrofisico de Javalambre (OAJ)
-        HartRAO
-    space-based
-        AGILE
+        Atacama Large Millimeter/submillimeter Array (ALMA)
 organisations
-    HITS
-packages
-    CTLearn
-    PySAP
-    Singularity
-portals
-    ESA Datalabs (EDL)
-projects
-    EOSC
-    ESCAPE
-    EXPLORE
-    Starlink
-project
-    management
-        Electronic Document Management System (EDMS)
-software
-    framework
-        agilepy
-        rtapipe
-        threeML
-    tools
-        HIPSgen
-        Xova
-    DPDK
-    interfaces
-        Gamification
-space probes
-    MarsExpress
-surveys
-    Deep Investigations of Neutral Gas Origins (DINGO)
-    VAST
-    wallaby
-    Javalambre Photometric Local Universe Survey (J-PLUS)
-    Javalambre Physics of the Accelerating Universe Astrophysical Survey (J-PAS) 
+    Korea Astronomy and Space Science Institute (KASI)
+    National Astronomical Observatory of Japan (NAOJ)
+applications
+    JupyterLab
+science platform
 techniques
     sonification
     transfer learning
     incoherent dedispersion
+    Generative Adversarial Network (GAN)
 Unified Astronomy Thesaurus (UAT)
 web
     Apache NiFi
@@ -149,18 +78,8 @@ Internet of Things (IoT)
 Virtual Observatory (VO)
     standards
         Registry Interfaces
+open science
+projects
+    Gamma-Flash
 computer languages
-    RUST
-citation
-    software
-software
-    formats
-        CodeMeta
-        CFF
-planetarium
-    formats
-        FITS
-        Speck
-data formats
-    SDFITS
-    netCDF
+    WebAssembly

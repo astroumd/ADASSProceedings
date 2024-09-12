@@ -1,5 +1,5 @@
-README ADASS2021.tar
-Last updated: 29-Sep-2021 by Peter Teuben
+README ADASS2022.tar
+Last updated: 2022-10-12 by Severin Gaudet
 
 
 Table of contents
@@ -17,7 +17,8 @@ Introduction
 ============
 
 This package of files is supplied to help you prepare papers for submission in 
-the Proceedings for the ADASS 2021 hybrid conference held in Cape Town, South Africa.
+the Proceedings for the ADASS 2022 online conference hosted by the Canadian 
+Astronomy Data Centre, the University of Toronto and the University of Victoria.
 Please follow the stepwise instructions below carefully, because the manuscript 
 needs to be delivered to ASP in print quality. The more issues are solved early 
 on in the process, the more time we all save.
@@ -32,10 +33,10 @@ help documents in this tar file (except for your personal template):
    2. ManuscriptInstructions.pdf (Guidelines for preparing an ADASS paper)
    3. README                     (This file)
    4. ADASS_template.tex         (The general ADASS template)
-   5. PID.tex                    (Your personalized ADASS template for your PID, e.g. P1-2
+   5. PID.tex                    (Your personalized ADASS template for your PID, e.g. O12
 
 At the end of this README, we also provide a file index with a short description of 
-all the files present in the ADASS2021.tar file. 
+all the files present in the ADASS2022.tar file. 
 
 
 STEP 1: Prepare your manuscript
@@ -43,7 +44,7 @@ STEP 1: Prepare your manuscript
 
 The best usage is to prepare your paper in this Author_Template directory. If you
 author two papers, that will work too, but preparing your tar or zip file is
-much easier if you use a parallel Author_Template.
+much easier if you use a separate Author_Template directory for each paper.
 
 Read the ManuscriptInstructions.pdf file. The ADASS_template.tex file gives you 
 a basic template for your ADASS paper. For additional details look in the 
@@ -60,14 +61,29 @@ well. ASP does not use pdflatex, so try and stick to latex (we only allow EPS
 figures, not PNG or JPG; see below).
 
 Editing your paper in overleaf (https://www.overleaf.com/) is also known to work:
-simply upload (as a ZIP file is the easiest) the template, the two asp2014 files,
+simply upload (as a ZIP file is the easiest) the template, the two asp2021 files,
 and optionally your BIB file and EPS figures. Don't start from scratch, or your file
 will be likely named main.tex. See below if you like the "make" shortcuts.
 
-Optionally in 2021 we have personalized templates, based on your abstract. Please 
+Optionally in 2022 we have personalized templates, based on your abstract. Please 
 see our web site for more information. The 
 instructions within that template are even more terse than in ADASS_template.tex, 
 so be warned if some of this material is new to you.
+
+A note about Paper IDs
+----------------------
+
+Each paper will be assigned an ID known as a PID. The PID syntax in 2022 is XNN
+where X is one of:
+    - I for invited talk
+    - C for contributed talk
+    - P for poster
+    - F for focus demo
+    - B for BoF
+    - T for tutorial
+and NN is a two-digit number.
+
+In this document, we will be using O12 as an example PID.
 
 Using the provided Makefile
 ---------------------------
@@ -78,7 +94,7 @@ or use your personalized one.
 In the makedefs file, you can define the P, V, A, E and FIGS macros, for example:
 
 # Your proceedings PID (paper ID) code:
-P = X13-20
+P = O12
 
 # Your version # (1,2,..) since you can only upload unique files
 V = 1
@@ -90,7 +106,7 @@ A = Teuben
 E = teuben@gmail.com
 
 # Your EPS figures
-FIGS = X13-20_*.eps
+FIGS = O12_*.eps
 
 Please edit the makedefs file and NOT the Makefile directly. The entries in the
 makedefs file will override the ones set in the Makefile. When set correctly,
@@ -168,7 +184,7 @@ STEP 3: Package and submit your paper
 
 You should create a .tar file with a name based on the identifier for your paper and 
 including a version number, starting at 1.
-e.g. example P10-3_v1.tar. This should contain:
+e.g. example O12_v1.tar. This should contain:
 
   - The .tex LaTeX file
   - The .bib file defining any cited references
@@ -192,25 +208,25 @@ you have already supplied a paper copy of the copyright form, you do not need
 to include this. Note that electronic signatures are not acceptable - sign the
 form and scan it.
 
-(Zip files are also acceptable, using the same naming convention, e.g. P10-3_v1.zip.)
+(Zip files are also acceptable, using the same naming convention, e.g. O12_v1.zip.)
 
 Submit the paper
 ----------------
 
-Submit the .tar file as instructed on the ADASS 2020 web site. If you need to
+Submit the .tar file as instructed on the ADASS 2022 web site. If you need to
 submit a revised version, submit ALL the required files in a new .tar file - do
 not just submit the modified files - and append a version number to the name,
-e.g. P10-3_v2.tar. This version is defined in the V= parameter in the makedefs file.
+e.g. O12_v2.tar. This version is defined in the V= parameter in the makedefs file.
 
 To sum up, here is an example of the files (no sub-directories please) that the editors
 like to see:
 
-   P1-2.tex
-   P1-2.bib
-   P1-2_f1.eps
-   P1-2_f2.eps
+   O12.tex
+   O12.bib
+   O12_f1.eps
+   O12_f2.eps
    makedefs
-   P1-2.pdf
+   O12.pdf
 
 you really don't need to send us *any* other type files. Save the electrons!
 
@@ -218,7 +234,7 @@ you really don't need to send us *any* other type files. Save the electrons!
 File index
 ==========
 
-The ADASS2021.tar package contains the following files:
+The ADASS2022.tar package contains the following files:
 
 README                     - this file.
 Makefile                   - useful for those who like terminal commands
@@ -232,8 +248,8 @@ example.eps                - an example graphics file used by ADASS_template.tex
 
 ADASS_template.pdf         - the result of running LaTeX on ADASS_template.tex
 
-asp2014.bst                - the required ASP bibliography style file.
-asp2014.sty                - the required ASP LaTeX style file.
+asp2021.bst                - the required ASP bibliography style file.
+asp2021.sty                - the required ASP LaTeX style file.
 
 PaperCheck.py              - a Python script used to check an ADASS paper
 Index.py                   - a Python script used to generate subject index entries
@@ -257,7 +273,7 @@ Github
 
 Although each ADASS conference will draw its proceedings preparation package, the original github
 repo from which that package is drawn, is available on https://github.com/astroumd/ADASSProceedings
-Typically each year will develop the new release on a branch (e.g. "2021" for the Granada version)
+Typically each year will develop the new release on a branch (e.g. "2022" for the Canada version)
 and merge this back to the master for the next year team goes to work.
 
 Authors will not need to know about that, but you may run into some editor specific comments or
