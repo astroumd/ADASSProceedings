@@ -1,7 +1,7 @@
 
 #  ADASS 2023
 
-Some notes to get a head start for ADASS 2023
+Some notes to get a head start for ADASS 2023.
 
 ## Personalized Templates
 
