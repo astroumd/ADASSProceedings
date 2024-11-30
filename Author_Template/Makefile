@@ -97,6 +97,9 @@ export:
 	-git branch                        >> $(ATDIR)/VERSION
 	tar cf ADASS$(YEAR).tar $(ATDIR)
 
+# If one has created filled and renamed their copyrightform, prevent Make from failing
+.INTERMEDIATE : copyrightform.pdf
+
 # copyright is now part of the tar/zip file, checksum (sum) is 13785
 copyrightForm_$(P)_$(A).pdf: copyrightform.pdf
 	cp copyrightform.pdf copyrightForm_$(P)_$(A).pdf
