@@ -279,9 +279,9 @@ import TexScanner
 #  used by the various utility scripts used in the editing process for the
 #  proceedings.)
 
-__AdassConference__ = "XXXII"
+__AdassConference__ = "XXXIII"
 
-__AdassEditors__    = "Pizzo,~R. and Deul,~E. and Mol,~J. and de Plaa,~J. and Verkouter,~H. and Williams,~R."
+__AdassEditors__    = "Jacques,~A. and Seaman,~R. and Gandilo,~N. and Linder,~T."
 
 __AdassVolume__     = "TBD"
 
@@ -3047,6 +3047,8 @@ def LocateTexFile (PaperID = None, Details = None, Single = False) :
 #   a list of any non-standard packages found. In fact, no .tex file should
 #   need any \usepackage directives, other than \usepackage{asp2014} as that
 #   the standard package itself includes all the standard packages.
+#   EDIT 2024/12/17:
+#   Only package that should be used is \usepackage{asp2023}.
 
 __StandardPackages__ = \
    {"array","txfonts","ifthen","lscape","index","graphicx","asmsymb", \
@@ -3063,7 +3065,7 @@ def PackageScanCallback(Words,StandardList,NonStandard) :
                Len = len(Packages)
                if (Len > 0) :
                   for Package in Packages :
-                     if (Package != "asp2021" and Package != "./asp2021") :
+                     if (Package != "asp2023" and Package != "./asp2023") :
                         Standard = False
                         for StandardPkg in __StandardPackages__ :
                            if (Package == StandardPkg) :

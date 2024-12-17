@@ -57,7 +57,7 @@
 #    There are times when this parser will report an unmatched '{' or '[' in
 #    the .tex file. Sometimes this is due to something like an unescaped '%'
 #    character, or some other similar problem.
-#  o It checks to see if the .tex file uses any unsupported LaTeX packages.
+#  o It checks to see if the .tex file uses any wunsupported LaTeX packages.
 #    These can have side effects that interfere with the typesetting of the
 #    complete ADASS volume.
 #  o It checks for unprintable characters. These tend to be used to typeset
@@ -441,9 +441,15 @@ def CheckPaperName(Paper,Problems) :
    # (B)BoF, (C)Contributed Talks, (F)Focus Demos, (I)Invited Talks, (P)Posters, (T)Tutorials
    # are two digits with a leading zero if necessary.
 
+   # TucsonPosters:
+   # (B)BoF, (C)Contributed Talks, (I)Invited Talks, (P)Posters
+   # are three digits, with the leading digit (1-9) indicating the Key Theme and the
+   # other two digits indicating number.
+
    TriestePosters = False
    CapeTownPosters = False
-   VictoriaPosters = True
+   VictoriaPosters = False
+   TucsonPosters = True
    XAllowed = True
    #  Some initial checks on the leading digit, which should be O for Oral,
    #  I for Invited (also oral), B for BoF, F for Focus Demo, 'D' for
@@ -458,7 +464,7 @@ def CheckPaperName(Paper,Problems) :
 
    if (ValidSoFar) :
       Letter = Paper[0]
-      if (not Letter in ("BCFIPT" if VictoriaPosters else ("IOBFPDTHC" if not CapeTownPosters else "IOBFXDTH"))) :
+      if (not Letter in ("BCIP" if TucsonPosters else ("BCFIPT" if VictoriaPosters else ("IOBFPDTHC" if not CapeTownPosters else "IOBFXDTH")))) :
          Problem = "'" + Letter + "' is not a valid prefix for a paper"
          print("**",Problem,"**")
          Problems.append(Problem)
@@ -479,7 +485,32 @@ def CheckPaperName(Paper,Problems) :
       Number = Paper[1:]
       NumChars = len(Number)
 
-      if (VictoriaPosters):
+      if (TucsonPosters):
+         if (NumChars != 3):
+            Problem = \
+               "Poster numbers must be three digits"
+            print("**", Problem, "**")
+            Problems.append(Problem)
+            ValidSoFar = False
+         else:   
+            N = 0
+            for Char in Number:
+               Value = ord(Char) - ord('0')
+               if (Value < 0 or Value > 9):
+                  Problem = "Non-numeric character (" + Char + \
+                            ") in paper number"
+                  print("**", Problem, "**")
+                  Problems.append(Problem)
+                  ValidSoFar = False
+                  break
+               N = N * 10 + Value
+            if (ValidSoFar and N == 0):
+               Problem = "Poster number cannot be zero"
+               print("**", Problem, "**")
+               Problems.append(Problem)
+               ValidSoFar = False
+
+      elif (VictoriaPosters):
          if (NumChars != 2):
             Problem = \
                "Poster numbers must be two digits, with leading zeros if needed"
