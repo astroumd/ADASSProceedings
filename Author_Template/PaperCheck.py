@@ -442,7 +442,7 @@ def CheckPaperName(Paper,Problems) :
    # are two digits with a leading zero if necessary.
 
    # TucsonPosters:
-   # (B)BoF, (C)Contributed Talks, (I)Invited Talks, (P)Posters
+   # (B)BoF, (C)Contributed Talks, (I)Invited Talks, (P)Posters, (F)Focus Demos
    # are three digits, with the leading digit (1-9) indicating the Key Theme and the
    # other two digits indicating number.
 
@@ -464,7 +464,7 @@ def CheckPaperName(Paper,Problems) :
 
    if (ValidSoFar) :
       Letter = Paper[0]
-      if (not Letter in ("BCIP" if TucsonPosters else ("BCFIPT" if VictoriaPosters else ("IOBFPDTHC" if not CapeTownPosters else "IOBFXDTH")))) :
+      if (not Letter in ("BCIPF" if TucsonPosters else ("BCFIPT" if VictoriaPosters else ("IOBFPDTHC" if not CapeTownPosters else "IOBFXDTH")))) :
          Problem = "'" + Letter + "' is not a valid prefix for a paper"
          print("**",Problem,"**")
          Problems.append(Problem)
