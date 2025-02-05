@@ -3063,7 +3063,7 @@ def PackageScanCallback(Words,StandardList,NonStandard) :
                Len = len(Packages)
                if (Len > 0) :
                   for Package in Packages :
-                     if (Package != "asp2021" and Package != "./asp2021") :
+                     if (Package != "asp2023" and Package != "./asp2023") :
                         Standard = False
                         for StandardPkg in __StandardPackages__ :
                            if (Package == StandardPkg) :

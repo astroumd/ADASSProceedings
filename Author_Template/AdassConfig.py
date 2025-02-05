@@ -340,8 +340,8 @@ def NewSubjectIndexLocation () :
 
 #                        A s p  P i r e c t o r y
 #
-#  This routine returns a path to a directory that contains the asp2014.bst
-#  and asp2014.sty files needed by an ADASS paper.
+#  This routine returns a path to a directory that contains the asp2021.bst
+#  and asp2023.sty files needed by an ADASS paper.
 #
 #  This routine looks in various places for these files. It will start by
 #  looking for them in the current default directory. If it cannot find them
@@ -363,14 +363,14 @@ def AspDirectory (Details = None) :
 
    #  Start by looking in the current default directory.
 
-   if (os.path.exists("asp2021.sty") and os.path.exists("asp2021.bst")) :
+   if (os.path.exists("asp2023.sty") and os.path.exists("asp2021.bst")) :
       if (Details != None) :
-         Details.append ("asp2021.sty and asp2021.bst both found in " \
+         Details.append ("asp2023.sty and asp2021.bst both found in " \
                                                               + Directory)
       Found = True
    else :
       if (Details != None) :
-         Details.append ("asp2021.sty and asp2021.bst are not both in " \
+         Details.append ("asp2023.sty and asp2021.bst are not both in " \
                                                               + Directory)
 
       #  See if we have a configuration specification for AspDirectory
@@ -385,15 +385,15 @@ def AspDirectory (Details = None) :
       else :
          if (Directory.startswith('~')) :
             Directory = os.path.expanduser(Directory)
-         StyFile = os.path.join(Directory,"asp2021.sty")
+         StyFile = os.path.join(Directory,"asp2023.sty")
          BstFile = os.path.join(Directory,"asp2021.bst")
          if (os.path.exists(StyFile) and os.path.exists(BstFile)) :
             if (Details != None) : Details.append ( \
-               "asp2021.sty and asp2021.bst both found in " + Directory)
+               "asp2023.sty and asp2021.bst both found in " + Directory)
             Found = True
          else :
             if (Details != None) : Details.append ( \
-               "asp2021.sty and asp2021.bst are not both in " + Directory)
+               "asp2023.sty and asp2021.bst are not both in " + Directory)
 
    if (not Found) : Directory = ""
 
