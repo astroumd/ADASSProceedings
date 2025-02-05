@@ -2,6 +2,8 @@ software
     notebooks
     frameworks
         Bifrost
+    symbolic manipulation
+    macro instruction
 frameworks
     HTCondor
 applications
@@ -22,6 +24,7 @@ archives
     individual
         JCMT Science Archive (JSA)
         Integral Science Legacy Archive (ISLA)
+	MeerKAT
 data
     processing
         ESO Data Processing System (EDPS)
@@ -39,6 +42,7 @@ observatories
 organisations
     Korea Astronomy and Space Science Institute (KASI)
     National Astronomical Observatory of Japan (NAOJ)
+    South African Radio Astronomy Observatory (SARAO)
 applications
     JupyterLab
 science platform
@@ -52,15 +56,19 @@ web
     Apache NiFi
     proposal
         hedwig
+computers
+    Programmable Logic Controller (PLC)
 computing
     resources
         European Open Science Cloud (EOSC)
     pre-exascale
     OpenACC
+    OPCUA
 observatories
     H.E.S.S.
     ground-based
         Rubin
+        MST
 protocols
     GCP
     GKE
