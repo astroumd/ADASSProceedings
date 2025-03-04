@@ -2,6 +2,7 @@ software
     notebooks
     frameworks
         Bifrost
+        Go.esa
     symbolic manipulation
     macro instruction
 frameworks
@@ -79,6 +80,7 @@ databases
         Cassandra
     Redis
     Bucardo
+    petascale
 protocols
     UDP
     EPN-TAP
