@@ -3,9 +3,7 @@
 # at least the README file. For some smart cookies the Makefile
 # could be sufficient too.
 #
-# Version 7-oct-2022   Peter Teuben & Severin Gaudet
-#
-# See also:   https://www.adass2022.ca/.... / ADASS2022.tar
+# Version 24-oct-2025   Peter Teuben
 #
 # P = paper_id    your proceedings paper ID code (the one with the XNN syntax, e.g., O12)
 # V = version     your version # (1,2,..) since you can only upload unique files
@@ -15,7 +13,9 @@
 
                     # put your paper_id here (with dash, not dot), e.g. P10-2
                     # or find your template on http://www.astro.umd.edu/~teuben/adass/papers/
-P = $(shell detect_tex.py | grep -v '^%' | sed 's/.tex//g')
+                    # the detect_tex.py script might also find it
+P = P10-2
+P = $(shell ./detect_tex.py | grep -v '^%' | sed 's/.tex//g')
                     # keep incrementing this after each upload of your $(P)
 V = 1
                     # First author (for Papercheck.py)
@@ -33,14 +33,14 @@ FIGS = $(shell ls *.eps)
 PDFOPEN = open
 
 #  variables for proceeding editors (don't modify, for export, not for authors)
-YEAR   = 2022
+YEAR   = 2025
 ATDIR  = ADASS$(YEAR)_author_template
 FILES  = AdassChecks.py AdassConfig.py AdassIndex.py ADASS_template.tex \
 	 Aindex.py FixUnprintable.py \
-	 copyrightform.pdf example.bib example.eps \
+	 copyrightform.pdf example.bib example.jpg \
 	 Index.py manual2010.pdf ManuscriptInstructions.pdf PaperCheck.py \
 	 README subjectKeywords.txt TexScanner.py \
-	 ascl.py asclKeywords.txt \
+	 ascl.py asclKeywords.txt detect_tex.py \
 	 adass$(YEAR).bib Makefile makedefs \
 	 $(FILESASP)
 
@@ -102,36 +102,24 @@ copyrightForm_$(P)_$(A).pdf: copyrightform.pdf
 	cp copyrightform.pdf copyrightForm_$(P)_$(A).pdf
 	@echo Now go edit your copyrightForm_$(P)_$(A).pdf form
 
-# these targets are for most common unix systems, but YMMV. Modify if you need
+# these targets are for most common unix systems, but YMMV. Modify if you really need...
 # let the editors know you have a better way for the next ADASS team
-# ASP prefers the latex;latex;dvipdfm route
-
-DVIPDF = dvipdf
+# ASP prefers the pdflatex now
 
 pdf:	$(P).pdf
 	@echo $(PDFOPEN) $(P).pdf 
 
-$(P).pdf:  $(P).dvi $(FIGS)
-	$(DVIPDF) $(P)
-
 $(P).bib:                                  # bootstrap if you don't have one
 	touch $(P).bib
 
-$(P).dvi:  $(P).tex $(P).bib
-	latex $(P)
-	if [ -s $(P).bib ]; then bibtex $(P); fi
-	latex $(P)
-	latex $(P)
-
-# an alternative method (ASP does not recommend it)
-pdflatex:
+$(P).pdf:  $(P).tex $(P).bib
 	pdflatex $(P)
 	if [ -s $(P).bib ]; then bibtex $(P); fi
 	pdflatex $(P)
 	pdflatex $(P)
 
 clean:
-	rm -f $(P).dvi $(P).bbl $(P).blg $(P).pdf $(P).aux $(P).log $(P).out $(P).toc $(P)_inc.tex $(P).txt
+	rm -f $(P).bbl $(P).blg $(P).pdf $(P).aux $(P).log $(P).out $(P).toc $(P)_inc.tex $(P).txt
 
 check:
 	PaperCheck.py $(P) $(A)
