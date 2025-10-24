@@ -1,13 +1,14 @@
-% This is the ADASS_template.tex LaTeX file, 19th Sep 2019.
+% This is the ADASS_template.tex LaTeX file, 24 Oct 2025.
 % It is based on the ASP general author template file, but modified to reflect the specific
 % requirements of the ADASS proceedings.
-% Copyright 2014, Astronomical Society of the Pacific Conference Series
-% Revision:  14 August 2014
+
+% This is the aspauthor.tex LaTeX file
+% Copyright 2021, Astronomical Society of the Pacific Conference Series
+% Revision:  29 November 2021
 
 % To compile, at the command line positioned at this folder, type:
-% latex ADASS_template
-% latex ADASS_template
-% dvipdfm ADASS_template
+% pdflatex ADASS_template
+% pdflatex ADASS_template
 % This will create a file called ADASS_template.pdf
 
 \documentclass[11pt,twoside]{article}
@@ -37,7 +38,7 @@
 
 \begin{document}
 
-\title{ADASS Author Template and Long Title}
+\title{ADASS Author Template with Long Title}
 
 % Note the position of the comma between the author name and the 
 % affiliation number.
@@ -71,8 +72,9 @@
 
 
 \begin{abstract}
-This is the ADASS 2019 author template file.  This is based on the Astronomical Society of the Pacific (ASP) 2014 template,
-but has been modified to reflect the specific ADASS requirements.
+This is the ADASS 2025 author template file.  This is based on the
+Astronomical Society of the Pacific (ASP) 2021 template, but has been
+modified to reflect the specific ADASS requirements.
 \end{abstract}
 
 % These lines show examples of subject index entries. At this stage these have to commented
@@ -123,6 +125,9 @@ The following checklist should be followed when writing a submission to a confer
 \item Proofread, or have the text proofread, to check for proper English usage. In particular, note that ``allows to'' is not conventional English, and English uses articles (`a',`an',`the') in places where other languages, particularly Eastern European languages, don't have them. (See Content and Typesetting.)
 \end{itemize}
 
+\section{Compiling}
+It is highly recommended that all figures be non-`eps' format, i.e., `png' or `jpg.'  For this case, compiling this article is done simply by using the command \texttt{pdflatex} at least twice on the command line from inside the same folder as the article LaTeX `.tex' file.  If there are references to `eps' image files, pdfLaTeX will not work, and the images should be converted to a non-`eps' type of image file format.
+
 \section{Text}
 Sometimes you just need to have different styles of fonts.  \emph{Sometimes you just need to have different styles of fonts.} \textbf{Sometimes you just need to have different styles of fonts.}
 
@@ -137,6 +142,18 @@ Sometimes authors include formulas on their own lines.  This example uses the \v
 \begin{displaymath}
 c = \sqrt{a^2 + b^2} \qquad \textrm{Pythagorean Theorem}
 \end{displaymath}
+
+\section{Lists}
+\label{ex_lists}
+There are a lot of ways to make lists including itemized lists with bullets, for which you use  (\verb"\begin{itemize}"), numbered lists (\verb"\begin{enumerate}"), and description lists (\verb"\begin{description}").  This is an example of an itemized list.
+
+\subsection{Itemized Lists}
+Here is an itemized list:
+\begin{itemize}
+\item Item 1
+\item Item 2
+\end{itemize}
+
 
 \section{Table}
 Here is an example table that has three colums with various justification and row spacing.
@@ -170,31 +187,24 @@ Fifth Row First Column & Fifth Row, Second Column & Fifth Row, Third Column\\ % 
 \end{table}
 \noindent These tables can get a little messy, but this format is the most common.
 
-\section{Lists}
-\label{ex_lists}
-There are a lot of ways to make lists including itemized lists with bullets, for which you use  (\verb"\begin{itemize}"), numbered lists (\verb"\begin{enumerate}"), and description lists (\verb"\begin{description}").  This is an example of an itemized list.
-
-\subsection{Itemized Lists}
-Here is an itemized list:
-\begin{itemize}
-\item Item 1
-\item Item 2
-\item Item 3
-\end{itemize}
-
-
 \section{Images}
 For some figures, see Figures \ref{ex_fig1}- \ref{ex_fig3}.
 
-\articlefigure{example.eps}{ex_fig1}{Welcome to 1953.}
-% It is possible to reduce the size of a figure among other changes (see the instructions).  Here is an example:
-% \articlefigure[width=.5\textwidth]{example.eps}{ex_fig1_reduced}{Welcome to 1953 a little smaller.}
+These figures have been converted to the `png' image format.  Notice
+that the references to the figures do not need to include the file
+extension and that the pdfLaTeX compiler recognizes the non-`eps'
+image files.
 
-\articlefiguretwo{example.eps}{example.eps}{ex_fig2}{Now there are two of them.  \emph{Left:} An image from long ago.  \emph{Right:} The same exact thing.}
+ 
+\articlefigure[width=0.65\textwidth]{example.jpg}{ex_fig1}{Welcome to 1365.  Size adjusted to be a little smaller than full.}
+% It is possible to reduce the size of a figure among other changes (see the instructions).  Here is an example:
+% \articlefigure[width=.5\textwidth]{example_image}{ex_fig1_reduced}{Welcome to 1953 a little smaller.}
+
+\articlefiguretwo{example}{example}{ex_fig2}{Now there are two of them.  \emph{Left:} An image from long ago.  \emph{Right:} The same exact thing.}
 % There is a figure command allowing for three figures:
 % \articlefigurethree{example.eps}{example.eps}{example.eps}{ex_fig1_triple}{Now there are three of them.}
 
-\articlefigurefour{example.eps}{example.eps}{example.eps}{example.eps}{ex_fig3}{Now four of them?}
+\articlefigurefour{example}{example}{example}{example}{ex_fig3}{Now four of them?}
 
 \clearpage % To force this stuff to happen by this point in the text, otherwise these will probably end up after the references.
 
