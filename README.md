@@ -40,6 +40,8 @@ http://www.adass.org/proceedings.html
 * 2022: Victoria        (Gaudet, Gwyn, Dowler, Bohlender, Hincks)
         [private astroumd github repo](https://github.com/astroumd/ADASSProceedings2022)
 * 2023: Tucson
+* 2024: Malta
+* 2025: Gorlitz
 
 
 ## Contents
@@ -50,3 +52,7 @@ http://www.adass.org/proceedings.html
 * Author_Template/manual2010.pdf - Instructions for Authors and Editors (manual from ASP, 2010) - 124pp.
 * Author_Template/ManuscriptInstructions.pdf - Manuscript instructions (oct 19, 2018) - 21pp.
 * Author_Template/EditingADASSProceedings.docs - Notes on editing ADASS proceedings (Keith S., 4th August 2017) - 24pp.
+
+## ASP
+
+ASP keeps their templates on https://www.aspbooks.org/html/instr_temp_mac/
