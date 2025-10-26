@@ -1,5 +1,5 @@
-README ADASS2022.tar
-Last updated: 2022-10-12 by Severin Gaudet
+README ADASS2025.tar
+Last updated: 2025-10-25 by Peter Teuben
 
 
 Table of contents
@@ -11,14 +11,14 @@ Table of contents
   * STEP 3: Package and submit your paper
   * File index
   * Github
+  * Latex
 
 
 Introduction
 ============
 
 This package of files is supplied to help you prepare papers for submission in 
-the Proceedings for the ADASS 2022 online conference hosted by the Canadian 
-Astronomy Data Centre, the University of Toronto and the University of Victoria.
+the Proceedings for the ADASS 2025 online conference.
 Please follow the stepwise instructions below carefully, because the manuscript 
 needs to be delivered to ASP in print quality. The more issues are solved early 
 on in the process, the more time we all save.
@@ -36,7 +36,7 @@ help documents in this tar file (except for your personal template):
    5. PID.tex                    (Your personalized ADASS template for your PID, e.g. O12
 
 At the end of this README, we also provide a file index with a short description of 
-all the files present in the ADASS2022.tar file. 
+all the files present in the ADASS2025.tar file. 
 
 
 STEP 1: Prepare your manuscript
@@ -53,27 +53,25 @@ but note that this is now some years old and current requirements have changed
 slightly. In particular, ADASS papers that cite references MUST supply these 
 references in a .bib BibTeX file like the example.bib file provided here.
 
-You will need to run LaTeX on your .tex file, then run BibTeX to process the
-references, and then will need to run LaTeX again up to three times to get all
+You will need to run `pdflatex` on your .tex file, then run `bibtex` to process the
+references, and then will need to run `pdflatex` again up to two times to get all
 the cross-references right. We recommend that you use the provided Makefile 
 (see next subsection), but if you prefer building manually that should work as 
-well. ASP does not use pdflatex, so try and stick to latex (we only allow EPS 
-figures, not PNG or JPG; see below).
+well. ASP now uses pdflatex (no more latex), and allows JPG or PNG figures (no more EPS).
 
 Editing your paper in overleaf (https://www.overleaf.com/) is also known to work:
 simply upload (as a ZIP file is the easiest) the template, the two asp2021 files,
 and optionally your BIB file and EPS figures. Don't start from scratch, or your file
 will be likely named main.tex. See below if you like the "make" shortcuts.
 
-Optionally in 2022 we have personalized templates, based on your abstract. Please 
-see our web site for more information. The 
-instructions within that template are even more terse than in ADASS_template.tex, 
+Optionally in 2025 we may have personalized templates, based on your abstract.
+The instructions within that template are even more terse than in ADASS_template.tex, 
 so be warned if some of this material is new to you.
 
 A note about Paper IDs
 ----------------------
 
-Each paper will be assigned an ID known as a PID. The PID syntax in 2022 is XNN
+Each paper will be assigned an ID known as a PID. The PID syntax in 2025 is XNN
 where X is one of:
     - I for invited talk
     - C for contributed talk
@@ -213,7 +211,7 @@ form and scan it.
 Submit the paper
 ----------------
 
-Submit the .tar file as instructed on the ADASS 2022 web site. If you need to
+Submit the .tar file as instructed on the ADASS 2025 web site. If you need to
 submit a revised version, submit ALL the required files in a new .tar file - do
 not just submit the modified files - and append a version number to the name,
 e.g. O12_v2.tar. This version is defined in the V= parameter in the makedefs file.
@@ -234,7 +232,7 @@ you really don't need to send us *any* other type files. Save the electrons!
 File index
 ==========
 
-The ADASS2022.tar package contains the following files:
+The ADASS2025.tar package contains the following files:
 
 README                     - this file.
 Makefile                   - useful for those who like terminal commands
@@ -260,6 +258,7 @@ AdassChecks.py             - a Python module used by PaperCheck.py
 TexScanner.py              - a Python module used by AdassChecks.py
 AdassConfig.py             - a Python module used by Index.py
 AdassIndex.py              - a Python module used by Index.py
+detect_tex.py              - helper program to find your tex file. Set P= to fix conflicts.
 
 subjectKeywords.txt        - set of recent subject index entries, used by Index.py
 asclKeywords.txt           - list of ASCL codes for the ascl.py checker
@@ -273,10 +272,31 @@ Github
 
 Although each ADASS conference will draw its proceedings preparation package, the original github
 repo from which that package is drawn, is available on https://github.com/astroumd/ADASSProceedings
-Typically each year will develop the new release on a branch (e.g. "2022" for the Canada version)
+Typically each year will develop the new release on a branch (e.g. "2025" for the Canada version)
 and merge this back to the master for the next year team goes to work.
 
 Authors will not need to know about that, but you may run into some editor specific comments or
 commands in the Makefile or the python scripts. 
 
 good luck!
+
+Latex
+=====
+
+If pdflatex is not present on your system, you may need to use a package manager. Each system has
+their package manager and set of package names. **texlive** is probably the most common package.
+Here are a few:
+
+Linux/Ubuntu(debian):  "sudo apt install"
+     texlive texlive-base texlive-bibtex-extra texlive-binaries
+     texlive-fonts-recommended texlive-lang-greek texlive-latex-base
+     texlive-latex-extra texlive-latex-recommended texlive-pictures
+     texlive-plain-generic texlive-publishers texlive-science
+     texlive-xetex
+
+Linux/Redhat:  "sudo dnf install"
+     @texlive
+     
+MacOS/brew: "brew install"
+     texlive
+
