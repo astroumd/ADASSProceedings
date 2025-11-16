@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Conference Countdown Timer</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: black;
+    height: 100%;
+    width: 100%;
+    font-family: sans-serif;
+    overflow: hidden;
+  }
+
+  #timer-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  #timer {
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    user-select: none;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  #controls {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    min-width: 380px;
+  }
+
+  .control-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 18px;
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .label, button {
+    font-size: clamp(18px, 1.4vw, 24px);
+    font-weight: 500;
+  }
+
+  .label {
+    color: white;
+    min-width: 170px;
+    white-space: nowrap;
+    text-align: right;
+  }
+
+  .button-group {
+    display: flex;
+    gap: 8px;
+    min-width: 170px;
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em 1.2em;
+    cursor: pointer;
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
+    min-width: 80px;
+    height: 2.8em;
+    box-sizing: border-box;
+  }
+
+  button:hover {
+    background: white;
+    color: black;
+  }
+</style>
+</head>
+<body>
+  <div id="timer-container">
+    <div id="timer"></div>
+  </div>
+  <div id="controls">
+    <div class="control-row" id="contributedRow">
+      <span class="label">Contributed</span>
+      <div class="button-group">
+        <button id="contribReset">Reset</button>
+        <button id="contribStart">Start</button>
+      </div>
+    </div>
+    <div class="control-row" id="invitedRow">
+      <span class="label">Invited</span>
+      <div class="button-group">
+        <button id="invitedReset">Reset</button>
+        <button id="invitedStart">Start</button>
+      </div>
+    </div>
+  </div>
+
+<script>
+  // Configuration
+  const CONFIG = {
+    contributed: { durationMinutes: 12, warningMinutes: 1, questionsMinutes: 3 },
+    invited: { durationMinutes: 25, warningMinutes: 3, questionsMinutes: 5 }
+  };
+  const FLASH_INTERVAL_MS = 1000; // 1000 ms for once per second; set to 500 for twice per second flashing
+
+  const timerEl = document.getElementById("timer");
+  const controlsEl = document.getElementById("controls");
+
+  let interval = null;
+  let startTime = null;
+  let totalTime = CONFIG.contributed.durationMinutes * 60;
+  let warningTime = CONFIG.contributed.warningMinutes * 60;
+  let currentType = null;
+  let flashOn = false;
+  let secondsDisplayed = null;
+
+  function resizeTimer() {
+    const containerWidth = window.innerWidth * 0.9;
+    let fontSize = 10;
+    timerEl.style.fontSize = fontSize + "px";
+    while (timerEl.offsetWidth < containerWidth && fontSize < 1000) {
+      fontSize += 2;
+      timerEl.style.fontSize = fontSize + "px";
+    }
+    timerEl.style.fontSize = (fontSize - 2) + "px";
+  }
+  window.addEventListener("resize", resizeTimer);
+
+  function formatTime(seconds) {
+    const sign = seconds < 0 ? "-" : "";
+    const absSec = Math.abs(seconds);
+    const m = Math.floor(absSec / 60);
+    const s = absSec % 60;
+    return sign + String(m).padStart(2, "0") + ":" + String(s).padStart(2, "0");
+  }
+
+  function updateDisplay(secondsLeft) {
+    const currentSeconds = Math.floor(secondsLeft);
+    if (currentSeconds !== secondsDisplayed) {
+      secondsDisplayed = currentSeconds;
+      timerEl.textContent = formatTime(secondsLeft);
+      resizeTimer();
+    }
+  }
+
+  function startTimer(type, forceOvertime = false) {
+    if (currentType !== type || interval === null) resetTimer(type, false);
+    const conf = CONFIG[type];
+    totalTime = conf.durationMinutes * 60;
+    warningTime = conf.warningMinutes * 60;
+
+    startTime = forceOvertime
+      ? Date.now() - ((conf.durationMinutes + conf.questionsMinutes) * 60 + 1) * 1000
+      : Date.now();
+
+    controlsEl.style.display = "none";
+
+    if (interval) clearInterval(interval);
+    flashOn = false;
+    secondsDisplayed = null;
+
+    interval = setInterval(() => {
+      const elapsed = Math.floor((Date.now() - startTime) / 1000);
+      const remaining = totalTime - elapsed;
+      updateDisplay(remaining);
+
+      const questionsTime = conf.questionsMinutes * 60;
+
+      if (remaining < -questionsTime) {
+        // Flashing past question time allowed
+        flashOn = !flashOn;
+        timerEl.style.color = flashOn ? "white" : "black";
+        document.body.style.background = "red";
+      } else if (remaining < 0) {
+        // In questions period (overtime but not past grace)
+        flashOn = false;
+        timerEl.style.color = "black";
+        document.body.style.background = "red";
+      } else if (remaining <= warningTime) {
+        flashOn = false;
+        timerEl.style.color = "black";
+        document.body.style.background = "yellow";
+      } else {
+        flashOn = false;
+        timerEl.style.color = "white";
+        document.body.style.background = "black";
+      }
+    }, FLASH_INTERVAL_MS);
+  }
+
+  function resetTimer(type, showControls = true) {
+    if (interval) clearInterval(interval);
+    interval = null;
+    currentType = type;
+    secondsDisplayed = null;
+    flashOn = false;
+
+    const conf = CONFIG[type];
+    totalTime = conf.durationMinutes * 60;
+    warningTime = conf.warningMinutes * 60;
+    timerEl.textContent = formatTime(totalTime);
+
+    document.body.style.background = "black";
+    timerEl.style.color = "white";
+    if (showControls) controlsEl.style.display = "flex";
+    resizeTimer();
+  }
+
+  // Keyboard controls
+  document.addEventListener("keydown", function(event) {
+    if (event.code === "Space") {
+      event.preventDefault();
+      if (interval) {
+        controlsEl.style.display = controlsEl.style.display === "none" ? "flex" : "none";
+      } else {
+        controlsEl.style.display = "flex";
+      }
+    }
+    if ((event.code === "Enter" || event.keyCode === 13) && controlsEl.style.display === "flex") {
+      startTimer("contributed");
+    }
+    if (event.key.toLowerCase() === "i" && controlsEl.style.display === "flex") {
+      startTimer("invited");
+    }
+  });
+
+  document.getElementById("contribStart").addEventListener("click", (e) => startTimer("contributed", e.shiftKey));
+  document.getElementById("contribReset").addEventListener("click", () => resetTimer("contributed"));
+  document.getElementById("invitedStart").addEventListener("click", (e) => startTimer("invited", e.shiftKey));
+  document.getElementById("invitedReset").addEventListener("click", () => resetTimer("invited"));
+
+  document.body.addEventListener("click", (e) => {
+    if (interval && e.target.tagName !== "BUTTON" && e.target.className !== "label") {
+      controlsEl.style.display = controlsEl.style.display === "none" ? "flex" : "none";
+    } else if (!interval) {
+      controlsEl.style.display = "flex";
+    }
+  });
+
+  resetTimer("contributed");
+</script>
+</body>
+</html>
