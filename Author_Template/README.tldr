@@ -6,7 +6,7 @@ make sense, follow the instructions in the larger README file.
 
 1. Get the ADASS2025.tar file, untar and rename directory to your PID
 2. Edit the makedefs file and uncomment the variables for your case
-3. Rename the Author_template.tex to PID.tex, and edit.
+3. Rename the ADASS_template.tex to your PID.tex, and edit.
 4. If you have bibliography references, create a PID.bib, and edit.
 5. Use "make pdf" and inspect the paper until happy.
 6. Sign the copyright form
@@ -26,14 +26,4 @@ There are some other useful make targets:
     make tar      : Build the tar file for submission
     make all      : Do all of the above
     make overleaf : Prepare a ZIP file to bootstrap your overleaf project
-
-For overleaf users, you can add your modified makedefs file to
-complete and track the files you will modify. You can then use
-https://git.overleaf.com/<MAGIC_NUMBER> to clone the repo locally, and
-merge it with the other files that the ADASS editors have prepared for
-you (but you should not modify).  Then you can create the ZIP or TAR
-file for uploading your proceedings contribution. You can even bypass
-overleaf work and do the usual git pull/push to update, which can be
-useful for those who prefer to work on the desktop. But check with
-your co-authors to avoid a conflict.
 
