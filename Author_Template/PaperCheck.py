@@ -723,7 +723,9 @@ def CheckSubjectIndexEntries(Paper, Problems, TexFileName = "") :
     # Read the total list of keywords from subjectKeywords.txt and newKeywords.txt
     # Is there a better way to use AdassConfig.* methods to point at relative file paths?
     Entries = compose(set, Reduce(__add__), Map(AdassIndex.ReadIndexList))(
-                      ['../Author_Template/subjectKeywords.txt', '../Author_Template/newKeywords.txt'] )
+                       ['subjectKeywords.txt', 'newKeywords.txt'] )
+                       # ['../Author_Template/subjectKeywords.txt', '../Author_Template/newKeywords.txt'] )
+    
     if not Entries:
         Problems.append( "No subject keywords found **at all**?! (../Author_Template/{subject|new}Keywords.txt missing?" )
         return False
