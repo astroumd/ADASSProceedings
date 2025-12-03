@@ -43,7 +43,7 @@ FILES  = AdassChecks.py AdassConfig.py AdassIndex.py ADASS_template.tex \
 	 Index.py manual2010.pdf ManuscriptInstructions.pdf PaperCheck.py \
 	 README README.tldr subjectKeywords.txt TexScanner.py \
 	 ascl.py asclKeywords.txt detect_tex.py \
-	 adass$(YEAR).bib Makefile makedefs \
+	 adass$(YEAR).bib Makefile makedefs VERSION \
 	 $(FILESASP)
 
 #  probably don't change these either (or notify the editors you have a special paper case)
