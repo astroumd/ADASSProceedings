@@ -80,11 +80,11 @@ template, the two asp2021/23 sty/bst files, and optionally your BIB
 file and figures. Don't start from scratch, or your file will be
 likely named main.tex. See below if you like the "make" shortcuts.
 
-In 2025 we planned to have personalized templates, which
-would be based on your abstract in the registration database.  The
-instructions within that template are even more terse than in
-ADASS_template.tex, so be warned if some of this material is new to
-you. But alas, this never happened.
+In 2025 we planned to have personalized templates, which would be
+based on your abstract in the registration database.  The instructions
+within that template are even more terse than in ADASS_template.tex,
+so be warned if some of this material is new to you. But alas, this
+never happened.
 
 A note about Paper IDs
 ----------------------
