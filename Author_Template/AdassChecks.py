@@ -257,6 +257,8 @@
 #                    can return the names or removed directories and archives
 #                    if passed lists for this purpose. KS.
 #     17th Jun 2019  Prepare file for ADASS 2019 JdP.
+#      5th Dec 2025  Notes that EPS is no more, we can use JPG and PNG.
+#                    though we still use VerifyEps to check for JPG/PNG
 
 from __future__ import (print_function,division,absolute_import)
 
@@ -944,6 +946,8 @@ def RefsScanCallback (Words,Refs,Problems = None) :
 #   problems and warnings passed.
 #
 #   This routine returns True if everything looks OK, False otherwise.
+#
+#   Note this routine's use is now deprecated.
 
 
 def VerifyEps (Paper,TexFileName = "",Problems = None,Warnings = None) :
@@ -1031,9 +1035,9 @@ def VerifyEps (Paper,TexFileName = "",Problems = None,Warnings = None) :
          #  If so, see if they were supplied. 
          
          for FileName in FileListFromTex :
-            if (not FileName.endswith(".eps")) :
+            if (not FileName.endswith(".jpg") or not FileName.endswith(".png")):
             
-               #  It didn't end with .eps. See what it did end with.
+               #  It didn't end with .jpg/png. See what it did end with.
                
                Ext = os.path.splitext(FileName)[1]
                if (Ext == "") :
@@ -1048,7 +1052,7 @@ def VerifyEps (Paper,TexFileName = "",Problems = None,Warnings = None) :
                   for File in FileList :
                      if (File.startswith(FileName + '.')) :
                         MatchedFiles.append(File)
-                        if (os.path.splitext(File)[1] == ".eps") :
+                        if os.path.splitext(File)[1] == ".jpg" or os.path.splitext(File)[1] == ".jpg":
                            EpsMatch = True
                   if (len(MatchedFiles) != 1) : ReturnOK = False;
                   if (len(MatchedFiles) > 1) :
@@ -1061,7 +1065,7 @@ def VerifyEps (Paper,TexFileName = "",Problems = None,Warnings = None) :
                      if (BatchMode) : Problems.append(Files)
                      else : print("    ",Files)
                      if (EpsMatch) :
-                        Problem = "Only one of which is an eps file"
+                        Problem = "Only one of which is an jpg/png file"
                      else :
                         Problem = "None of which seem to be suitable"
                         if (BatchMode) : Problems.append(Problem)
@@ -1069,11 +1073,11 @@ def VerifyEps (Paper,TexFileName = "",Problems = None,Warnings = None) :
                   elif (len(MatchedFiles) == 1) :
                      if (EpsMatch) :
                         Note = "(Note: " + FileName + \
-                                                      " will default to .eps )"
+                                                      " will default to .jpg/png )"
                         if (not BatchMode) : print(Note)
                      else :
                         Problem = FileName + \
-                         " will default to the non-eps file " + MatchedFiles[0]
+                         " will default to the non-jpg/png file " + MatchedFiles[0]
                         ReturnOK = False
                         if (BatchMode) : Problems.append(Problem)
                         else : print("**",Problem,"**")
@@ -1087,7 +1091,7 @@ def VerifyEps (Paper,TexFileName = "",Problems = None,Warnings = None) :
                   #  A non-eps extension needs to be noted. See if the
                   #  file exists and if not warn about that as well.
                   
-                  Problem = FileName + " does not have a .eps extension"
+                  Problem = FileName + " does not have a .jpg/png extension"
                   if (BatchMode) : Problems.append(Problem)
                   else : print("**",Problem,"**")
                   if (not os.path.exists(FileName)) :
@@ -1098,23 +1102,24 @@ def VerifyEps (Paper,TexFileName = "",Problems = None,Warnings = None) :
                      
          if (not BatchMode) : print(" ")
       
-      #  List all the .eps files in the current directory.
+      #  List all the .jpg/png files in the current directory.
       
       EpsFileList = []
       for File in FileList :
          if (not File.startswith('.')) :
-            if (File.endswith(".eps")) : EpsFileList.append(File)
+            if (File.endswith(".jpg")) : EpsFileList.append(File)
+            if (File.endswith(".png")) : EpsFileList.append(File)
       if (not BatchMode) :
-         print(".eps files supplied:")
+         print(".jpg/png files supplied:")
          if (len(EpsFileList) > 0) :
             for FileName in EpsFileList :
                print("    ",FileName.strip())
             print(" ")
       
-      #  See if all the .eps files are used by the .tex file.
+      #  See if all the .jpg/png files are used by the .tex file.
       
       if (len(EpsFileList) == 0) :
-         if (not BatchMode) : print("No .eps files found")
+         if (not BatchMode) : print("No .jpg/png files found")
       else :
          AllFound = True
          for EpsFile in EpsFileList :
@@ -1132,10 +1137,10 @@ def VerifyEps (Paper,TexFileName = "",Problems = None,Warnings = None) :
                   else : print("**",Problem,"**")
                   break
                if (GraphicsFile.find('.') < 0) :
-                  if (GraphicsFile + ".eps" == EpsFile) :
+                  if (GraphicsFile + ".jpg" == EpsFile) :
                      Found = True
                      break
-                  if (GraphicsFile.lower() + ".eps" == EpsFile.lower()) :
+                  if (GraphicsFile.lower() + ".jpg" == EpsFile.lower()) :
                      Found = True
                      CaseProblems = True
                      Problem = GraphicsFile + " matches " + EpsFile + \
@@ -1151,13 +1156,13 @@ def VerifyEps (Paper,TexFileName = "",Problems = None,Warnings = None) :
          if (AllFound) :
             if (not BatchMode) :
                print( \
-                   "All .eps files in the directory are used by the .tex file")
+                   "All .jpg/png files in the directory are used by the .tex file")
          else :
             ReturnOK = False
       
       #  See if all the files used by the .tex file are in the directory.
       #  At this point, we assume that if no extension was specified, it
-      #  will default to .eps. Note that if we are running on a file system that
+      #  will default to .jpg/png. Note that if we are running on a file system that
       #  is case-insensitive (eg OS X in most cases), you can get away with case
       #  errors in the file names that will cause problems on other systems.
       #  File names should match properly, but we don't want to flag a file as
@@ -1171,7 +1176,7 @@ def VerifyEps (Paper,TexFileName = "",Problems = None,Warnings = None) :
          CaseProblems = False
          for GraphicsFile in FileListFromTex :
             if (os.path.splitext(GraphicsFile)[1] == "") :
-               GraphicsFile = GraphicsFile + ".eps"
+               GraphicsFile = GraphicsFile + ".jpg"
             Found = False
             for EpsFile in EpsFileList :
                if (EpsFile == GraphicsFile) :
@@ -1210,7 +1215,7 @@ def VerifyEps (Paper,TexFileName = "",Problems = None,Warnings = None) :
             if (not BatchMode) :
                print("All graphics files used by the .tex file are supplied")
             if (not AllEps) :
-               Problem = "Not all graphics files are .eps files"
+               Problem = "Not all graphics files are .jpg/png files"
                if (BatchMode) : Problems.append(Problem)
                else : print("**",Problem,"**")
                ReturnOK = False
@@ -1244,6 +1249,8 @@ def VerifyEps (Paper,TexFileName = "",Problems = None,Warnings = None) :
 #   the file names; I don't think they should really be there, but this makes
 #   things consistent with the way the files found in the directory are handled
 #   when the two are compared by VerifyEps().
+#
+#   Note again the use of this routine is deprecated
 
 def EpsScanCallback (Words,FileListFromTex,Unused) :
    if (len(Words) > 0) :

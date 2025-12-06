@@ -12,7 +12,8 @@
 #  ADASS papers. In particular it checks that the paper uses a BibTeX .bib
 #  file for references, and that the references cited in the paper match
 #  those defined in the .bib file. It checks that any figures used in the paper
-#  have been supplied, and that these are .eps files as required.
+#  have been supplied, and that these are .jpg or .png files as required.
+#  (Note since 2025 .eps is no longer supported)
 #
 #  This script should run under either Python 2 or Python 3, and has been
 #  developed on OS X. It should work equally well under Linux. It has not been
@@ -27,7 +28,7 @@
 #
 #  The default directory should have all the files needed for the ADASS
 #  paper. These should include the main .tex file, the .bib file that
-#  defines any necessary BibTeX references, and any .eps graphics files used
+#  defines any necessary BibTeX references, and any .jpg/png graphics files used
 #  by the .tex file. The files should be named following the ADASS conventions,
 #  for example if the paper is for the oral presentation O3-4, the .tex file
 #  should be called O3-4.tex. The script attempts to resolve cases where files
@@ -76,7 +77,7 @@
 #    problems and later commands such as \citep and \citet should be used
 #    instead.
 #  o It checks that all the figures used in the .tex file have their figures
-#    supplied, and it checks that these are supplied as .eps files, as
+#    supplied, and it checks that these are supplied as .jpg/png files, as
 #    required by ASP, who publish the Proceedings.
 #  o It checks that the running heads specified in \markboth have been set
 #    and not simply left as the defaults supplied by the template - a remarkably
@@ -129,6 +130,7 @@
 #
 #     31st Oct 2020. Fixed .add -> .append for ADASS2020
 #     4 April 2022   Fixed pickup of vim temporary file buffers as tex files
+#      5th Dec 2025  Note that EPS is now JPG/PNG checks
 #
 #  Python 2 and Python 3.
 #
@@ -765,7 +767,7 @@ else :
    print("")
    print("This program will run a number of checks on the files in the")
    print("default directory, assuming these include the main .tex file for")
-   print("the paper",Paper,"and any associated .eps graphics files and any")
+   print("the paper",Paper,"and any associated .jpg/png graphics files and any")
    print("supplied .bib BibTeX file.")
    print("")
    print("The surname of the main author is assumed to be",PaperAuthor)
