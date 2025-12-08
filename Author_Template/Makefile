@@ -47,7 +47,7 @@ FILES  = AdassChecks.py AdassConfig.py AdassIndex.py ADASS_template.tex \
 	 $(FILESASP)
 
 #  probably don't change these either (or notify the editors you have a special paper case)
-PID_URL   = "https://www.canfar.net/storage/vault/list/adass2022/upload/$(P)"
+PID_URL   = "https://indico.dzastro.de/event/4/contributions/mine"
 TAR_FILE  = $(P).tar.gz
 ZIP_FILE  = $(P).zip
 POS_FILE  = $(P).pdf
