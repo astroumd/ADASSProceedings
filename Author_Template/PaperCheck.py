@@ -446,6 +446,7 @@ def CheckPaperName(Paper,Problems) :
    TriestePosters = False
    CapeTownPosters = False
    VictoriaPosters = True
+   PureDigits = True
    XAllowed = True
    #  Some initial checks on the leading digit, which should be O for Oral,
    #  I for Invited (also oral), B for BoF, F for Focus Demo, 'D' for
@@ -460,8 +461,11 @@ def CheckPaperName(Paper,Problems) :
 
    if (ValidSoFar) :
       Letter = Paper[0]
-      if (not Letter in ("BCFIPT" if VictoriaPosters else ("IOBFPDTHC" if not CapeTownPosters else "IOBFXDTH"))) :
-         Problem = "'" + Letter + "' is not a valid prefix for a paper"
+      if PureDigits and Letter in "0123456789":
+         ValidSoFar = True 
+      elif (not Letter in ("BCFIPT" if VictoriaPosters else ("IOBFPDTHC" if not CapeTownPosters else "IOBFXDTH"))) :
+         
+         Problem = "'" + Letter + "' is not a valid prefix for a paper(P)"
          print("**",Problem,"**")
          Problems.append(Problem)
          ValidSoFar = False
@@ -481,8 +485,15 @@ def CheckPaperName(Paper,Problems) :
       Number = Paper[1:]
       NumChars = len(Number)
 
-      if (VictoriaPosters):
-         if (NumChars != 2):
+      if PureDigits:
+         if len(Paper) != 3:
+            Problem = \
+               "Poster numbers must be three digits, with leading zeros if needed"
+            print("**", Problem, "**")
+            Problems.append(Problem)
+            ValidSoFar = False
+      elif (VictoriaPosters):
+         if (NumChars != 3):
             Problem = \
                "Poster numbers must be two digits, with leading zeros if needed"
             print("**", Problem, "**")

@@ -1040,7 +1040,7 @@ def VerifyEps (Paper,TexFileName = "",Problems = None,Warnings = None) :
                #  It didn't end with .jpg/png. See what it did end with.
                
                Ext = os.path.splitext(FileName)[1]
-               if (Ext == "") :
+               if (Ext == ".jpg" or Ext == ".png") :
                
                   #  Here, the .tex file did not specify an extension. It will
                   #  default to any graphics file in the directory, which may
@@ -1050,9 +1050,9 @@ def VerifyEps (Paper,TexFileName = "",Problems = None,Warnings = None) :
                   MatchedFiles = []
                   EpsMatch = False
                   for File in FileList :
-                     if (File.startswith(FileName + '.')) :
+                     if (File.startswith(FileName)) :
                         MatchedFiles.append(File)
-                        if os.path.splitext(File)[1] == ".jpg" or os.path.splitext(File)[1] == ".jpg":
+                        if os.path.splitext(File)[1] == ".jpg" or os.path.splitext(File)[1] == ".png":
                            EpsMatch = True
                   if (len(MatchedFiles) != 1) : ReturnOK = False;
                   if (len(MatchedFiles) > 1) :
@@ -3587,7 +3587,7 @@ def CheckPaperName(Paper,Problems) :
                "It seems that the paper ID could not be determined from the")
             Problems.append("name used for the submitted .tar or .zip file")
          else :
-            Problem = "'" + Letter + "' is not a valid prefix for a paper"
+            Problem = "'" + Letter + "' is not a valid prefix for a paper(A)"
             Problems.append(Problem)
          ValidSoFar = False
    
