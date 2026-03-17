@@ -1,0 +1,209 @@
+#-Author ; PID
+#  /-   means no copyright form yet
+#  /C   means copyright form ok (PDF?)
+
+% 1
+\part{Science with Data Archives: Challenges in Multi-Wavelength and Time Domain Data Analysis}
+#Wu, Xiuqin                      ;  B101  ALJ  /-  -      not submitted
+de Bruijne, Jos                  ;  C101  ALJ  /C  final  current ADASS in refs
+Chilingarian, Igor               ;  C102  ALJ  /C  final
+#Krick, Jessica                  ;  C103  ALJ  /-  -      not submitted
+Kolganov, Fedor                  ;  C104  ALJ  /C  final
+Labadie-Garcia, Ixaka            ;  C105  ALJ  /C  final
+Nieto, Sara                      ;  F101  ALJ  /-  final  current ADASS in refs
+Espinosa, Javier                 ;  F102  ALJ  /C  final
+Baines, Deborah                  ;  I101  ALJ  /C  final
+Verbena, J.L.                    ;  P101  ALJ  /C  final
+Demleitner, Markus               ;  P102  ALJ  /C  final
+Galelli, C.                      ;  P103  ALJ  /C  final
+#Galluzzi, Vincenzo              ;  P104  ALJ  /-  -      incomplete
+#Grishin, Kirill                 ;  P105  ALJ  /-  -      not submitted
+Savalle, R.                      ;  P106  ALJ  /C  final
+Arévalo, Maria                   ;  P107  ALJ  /C  final
+#Shupe, David                    ;  P108  ALJ  /-  -      not submitted
+#Swarm, Dustin                   ;  P109  ALJ  /-  -      not submitted
+#Tanner, Angelle                 ;  P110  ALJ  /-  -      not submitted
+#Weiner, Benjamin                ;  P111  ALJ  /-  -      not submitted
+Michel, Laurent                  ;  P112  ALJ  /C  final
+Taylor, Mark                     ;  P113  ALJ  /C  final
+Salgado, Jesus                   ;  P114  ALJ  /C  final
+Arviset, Christophe              ;  P115  ALJ  /C  final
+Bonnarel, Francois               ;  P116  ALJ  /C  final
+Juneau, Stephanie                ;  P117  ALJ  /C  final
+Jeyakumar, Solai                 ;  P118  ALJ  /C  -      Error when doing 'p asp1': GPL Ghostscript 9.53.3: Unrecoverable error, exit code 1
+
+% 2
+\part{Ground and Space Mission Operations Software}
+Carboni, Giuseppe                ;  C201  NNG  /C  final
+Seelig, Trent                    ;  C202  NNG  /C  final
+Espinosa, Javier                 ;  C203  NNG  /C  final
+Baugh, Nicole                    ;  C204  NNG  /C  final
+#Gibbs, Alex                     ;  C205  NNG  /-  -      not submitted
+#Kremin, Anthony                 ;  C206  NNG  /-  -      not submitted
+#Bartolini, Marco                ;  I201  NNG  /-  -      not submitted
+#Asercion, Joseph                ;  P201  NNG  /-  -      not submitted
+Castaldini, Luca                 ;  P202  NNG  /C  final
+#Fausti, Angelo                  ;  P203  NNG  /-  -      not submitted
+#Higgins, Ronan                  ;  P204  NNG  /-  -      not submitted
+Keiderling, David                ;  P205  NNG  /C  final
+Otor, O. Justin                  ;  P206  NNG  /C  final
+Bulgarelli, Andrea               ;  P207  NNG  /C  final
+Schaller, Christian              ;  P208  NNG  /C  final
+Antonio Quero, Jose              ;  P209  NNG  /C  final
+Morrison, Jane                   ;  P210  ALJ  /C  final
+Del Rizzo, Dave                  ;  P211  NNG  /C  final
+#Keppler, Miriam                 ;  P212  NNG  /-  -      not submitted
+
+% 3
+\part{User Experience for Astronomical Software}
+Mink, Jessica                    ;  B301  NNG  /C  final
+Remy, Edgar                      ;  B302  NNG  /C  final
+Sick, Jonathan                   ;  C301  NNG  /C  final
+#Muna, Demitri                   ;  C302  NNG  /-  -      not submitted
+#Roby, Trey                      ;  C303  NNG  /-  -      not submitted
+Masters, Joe                     ;  I301  NNG  /C  final
+#Catlett, Victoria               ;  P301  NNG  /-  -      not submitted
+#Beroiz, Martin                  ;  P302  NNG  /-  -      not submitted
+Wright, Daniel                   ;  P303  NNG  /C  final
+Teuben, Peter                    ;  P304  PJT  /-  final      
+
+% 4
+\part{AI in Astronomy}
+Stoehr, Felix                    ;  C401  TRL  /C  final
+Riggi, Simone                    ;  C402  TRL  /C  final
+#Liu, Xiu                        ;  C403  TRL  /-  -      not submitted
+#Bidjarchian, Faezeh             ;  C404  TRL  /-  -      not submitted
+Audenaert, Jeroen                ;  C405  ALJ  /C  final
+#Sedaghat, Nima                  ;  C406  TRL  /-  -      not submitted
+Blanco-Cuaresma, Sergi           ;  C407  ALJ  /C  final
+Lieu, Maggie                     ;  I401  ALJ  /C  final
+Corral, Luis                     ;  P401  ALJ  /C  final
+Incardona, Federico              ;  P402  TRL  /C  final
+Navarro, Silvana                 ;  P403  TRL  /C  final
+Polsterer, Kai                   ;  P404  TRL  /C  final
+Taylor, Brock                    ;  P405  TRL  /C  final
+Dell'aiera, Michaël              ;  P406  TRL  /C  final 
+#Xu, Duo                         ;  P408  TRL  /-  -      not submitted  
+Yan, Ruiqing                     ;  P409  TRL  /C  final
+Parmiggiani, Nicolò              ;  P410  TRL  /C  final
+Riber, Adrián                    ;  P412  TRL  /C  -      longer than 4 pages
+#Wang, Zhuowei                   ;  P413  TRL  /-  -      not submitted, Cancelled?
+Rizzo, Alessandro                ;  P414  TRL  /C  final
+Lagoy, Dustin                    ;  P415  ALJ  /C  final
+Falco, Riccardo                  ;  P416  TRL  /C  final
+#Flores, Miguel                  ;  P417  TRL  /-  -      not submitted
+Issac, Ahab                      ;  P418  TRL  /C  final
+
+% 5
+\part{GPU Implementations for Core Astronomical Libraries}
+#Madsen, Felipe                  ;  C501  ALJ  /-  -      not submitted
+Cesare, Valentina                ;  C502  ALJ  /C  final
+#Spreeuw, Hanno                  ;  C503  ALJ  /-  -      not submitted
+De Rubeis, Emanuele              ;  C504  ALJ  /C  final
+#Romein, John                    ;  I501  ALJ  /-  -      not submitted
+Dobos, Lászlo                    ;  P501  ALJ  /C  final
+#Jagannathan, Preshanth          ;  P502  ALJ  /-  -      not submitted
+Jagwani, Gurjeet                 ;  P504  ALJ  /C  final
+
+% 6
+\part{Software, Tools, and Standards for Solar System, Heliophysics, and Planetary Research}
+#Denneau, Larry                  ;  B601  RLS  /-  -      not submitted
+Broeren, Theodore                ;  C601  RLS  /C  final  physical copyright form
+Becker, Kris                     ;  C602  RLS  /C  final
+#Trejo, Adrián                   ;  C603  RLS  /-  -      not submitted
+#Barnum, Julie                   ;  C604  RLS  /-  -      not submitted
+#Gondhalekar, Yash               ;  C605  RLS  /-  -      not submitted
+Allen, Alice                     ;  C606  RLS  /C  final  physical copyright form
+#Hsieh, Genie                    ;  C607  RLS  /-  -      not submitted
+#Juric, Mario                    ;  C608  RLS  /-  -      not submitted, Cancelled?
+Sarmiento, Maria                 ;  C609  RLS  /C  final
+#Darg, Daniel                    ;  C610  RLS  /-  -      not submitted
+Smith, Peter                     ;  C611  RLS  /C  final
+Ye, Quanzhi                      ;  C612  RLS  /C  final
+Cecconi, Baptiste                ;  I601  RLS  /C  final
+#Mamoutkine, Andrei              ;  P601  RLS  /-  -      not submitted
+#Martínez-Palomera, Jorge        ;  P602  RLS  /-  -      not submitted
+Rauch, Manuela                   ;  P603  RLS  /C  final
+Le Sidaner, Pierre               ;  P605  RLS  /C  final
+Tudisco, Giuseppe                ;  P606  RLS  /C  final  current ADASS in refs
+#Vandegriff, Jon                 ;  P607  RLS  /-  -      not submitted 
+#Weigel, Robert                  ;  P608  RLS  /-  -      not submitted
+Hugo, Benjamin                   ;  P609  RLS  /C  final
+#Prema, Paresh                   ;  P610  RLS  /-  -      not submitted
+Haigron, Regis                   ;  P611  RLS  /C  final
+Erard, Stéphane                  ;  P612  RLS  /C  final
+Jerse, Giovanna                  ;  P613  RLS  /C  final
+#Cruz, Kelle                     ;  P614  RLS  /-  -      not submitted
+Marmo, Chiara                    ;  P615  RLS  /C  final
+Oluyide, Toba                    ;  P616  RLS  /C  final
+#Bell, David                     ;  P617  RLS  /-  -      not submitted  
+#Chauvin, Cyril                  ;  P618  RLS  /-  -      not submitted
+
+% 7
+\part{Research Software Engineering as a Career Path}
+#Lorente, Nuria                  ;  C701  RLS  /C  -       Incomplete; physical copyright form
+Balestra, Andrea                 ;  I701  RLS  /C  final   Copyright form uploaded separately from tar
+Diaz, Rosa                       ;  P701  ALJ  /C  final
+
+% 8
+\part{Cloud Infrastructures for Astronomical Data Analysis}
+Taffoni, Giuliano                ;  B801  TRL  /C  final
+Fraser, Wesley                   ;  C801  ALJ  /C  final
+#Smirnov, Oleg                   ;  C802  TRL  /-  -      not submitted
+#Chan, Chi-kwan                  ;  C803  TRL  /-  -      not submitted
+Ibarra, Aitor                    ;  C804  TRL  /C  final
+#Falk, Ben                       ;  C805  TRL  /-  -      not submitted
+#Sekhar, Srikrishna              ;  C806  TRL  /-  -      not submitted
+#Zoghbi, Abdu                    ;  C807  TRL  /-  -      not submitted
+#Berriman, Bruce                 ;  C808  TRL  /C  -      Cancelled? Not included. Only contains an abstract
+Mainetti, Gabriele               ;  C809  TRL  /C  final
+#Economou, Frossie               ;  C810  TRL  /-  -      not submitted
+Parra-Royón, Manuel              ;  F802  ALJ  /C  final  maybe weird spacing on footnote?
+#Crawford, Steven                ;  I801  TRL  /-  -      not submitted
+Valé, Guillermo                  ;  P801  TRL  /C  final
+Becciani, Ugo                    ;  P803  TRL  /C  final
+German, Gordon                   ;  P804  ALJ  /C  final
+Joliet, Emmanuel                 ;  P805  TRL  /C  final
+Marcos, Jose                     ;  P806  TRL  /C  final
+#Reerink, Jan                    ;  P807  TRL  /-  -      not submitted
+#Jeschke, Christopher            ;  P808  TRL  /-  -      not submitted
+Collinson, James                 ;  P809  TRL  /C  final
+Morris, Dave                     ;  P810  TRL  /C  final
+#Major, Brian                    ;  P811  TRL  /-  -      not submitted
+#Elliott, Courey                 ;  P812  TRL  /-  -      not submitted
+
+% 9
+\part{Other Creative Topics in Astronomical Software}
+Rawls, Meredith                  ;  B901  ALJ  /C  final
+Brodheim, Max                    ;  B902  ALJ  /C  final
+#Fuls, Carson                    ;  C901  ALJ  /-  -      not submitted
+Sciacca, Eva                     ;  C902  ALJ  /C  final
+Lacy, Mark                       ;  C903  ALJ  /C  final
+van der Wild, Matthijs           ;  C904  ALJ  /C  final
+Casura, Sarah                    ;  C905  ALJ  /C  final
+Tocknell, James                  ;  F901  ALJ  /C  final
+Accomazzi, Alberto               ;  I901  ALJ  /C  final
+#Buchbender, Christof            ;  P901  ALJ  /-  -      not submitted
+Demianenko, Mariia               ;  P902  ALJ  /C  final
+#Donath, Axel                    ;  P903  ALJ  /-  -      not submitted
+#Kettenis, Mark                  ;  P904  ALJ  /-  -      not submitted
+Kochanthara, Sangeeth            ;  P906  ALJ  /C  final
+Mink, Jessica                    ;  P907  ALJ  /C  final
+Molinaro, Marco                  ;  P908  ALJ  /C  final
+Pineau, F.                       ;  P909  ALJ  /C  final
+Ranabhat, Arianna                ;  P910  ALJ  /C  final
+Squicciarini, Vito               ;  P911  ALJ  /C  final
+#Svoboda, Brian                  ;  P912  ALJ  /-  -      not submitted
+Tocknell, James                  ;  P913  ALJ  /C  final
+Fitzpatrick, Michael             ;  P914  ALJ  /C  final
+#Hwang, Yu-Hsuan                 ;  P915  ALJ  /-  -      not submitted
+Landais, Gilles                  ;  P916  ALJ  /C  final
+Ramaila, Athanaseus              ;  P917  ALJ  /C  final
+Bruce, Nicholas                  ;  P918  ALJ  /C  final
+Mantelet, Gregory                ;  P919  ALJ  /C  final
+#Talbot, Michael                 ;  P920  ALJ  /-  -      not submitted
+Barrett, Paul                    ;  P921  ALJ  /C  final
+Stenborg, Travis                 ;  P922  ALJ  /C  final
+Deshpande, Mrunmayi              ;  P923  ALJ  /C  final
+Bazkiaei, Amir                   ;  P924  ALJ  /C  final
+Dadighat, Michelle               ;  P925  ALJ  /C  final

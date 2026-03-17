@@ -1,0 +1,109 @@
+#-Author ; PID ; comments (add final to include in book)			
+Shen, A. ; O0-003                 BH  NO_ASCL; NO_LANG; final
+Grezes, F. ; O1-001		  BH NO_ASCL; final			
+Ntampaka, M.; O1-002		  BH NO_ASCL; NO_LANG; final
+Guido, C.; O1-003                 BH ; final			
+Samorodova, E.; O1-004		  BH NO_LANG; NO_ASCL; final
+Borisov, S. ; O2-003		  BH NO_LANG; NO_ASCL; final
+Hostetler, T. ; O3-001		  BH NO_ASCL; final				
+Mullane, W. ; O3-002              BH NO_LANG; NO_ASCL; final
+Miszalski, B. ; O3-003            BH NO_LANG; NO_ASCL; final
+Venustiano, S. ; O3-004		  BH NO_ASCL; final			
+Katkov, I. ; O3-005		  BH NO_LANG; NO_ASCL; final
+Klochkov, V. ; O3-006             BH NO_LANG; NO_ASCL; final
+Ar\'evalo, M. ; O3-008            BH NO_LANG; NO_ASCL; final
+Molinaro, M. ; O4-001             BH NO_LANG; NO_ASCL; final
+Servillat, M. ; O4-002            BH NO_LANG; NO_ASCL; final
+Jim\'{e}nez-Esteban, F. ; O5-001  BH NO_LANG; NO_ASCL; final
+Grishin, K ; O6-001		  BH NO_LANG; NO_ASCL; final
+Picouet, V ; O6-002               BH NO_LANG; NO_ASCL; final
+Salgado, J ; O7-003               BH NO_ASCL; final				
+Cesare, V ; O7-004                BH NO_LANG; NO_ASCL; final
+Boulanger, A ; O7-006             BH NO_LANG; NO_ASCL; final
+Kenyon, J ; O7-007                BH NO_LANG; NO_ASCL; final
+Toptun, V. ; O7-009               BH NO_LANG; NO_ASCL; final
+Street, R. ; I0-002               BH NO_LANG; NO_ASCL; final
+O'Toole, S. ; I4-001              BH NO_LANG; NO_ASCL; final
+Lochner, M. ; I7-001              BH NO_LANG; NO_ASCL; final
+Usuda-Sato, K. ; I8-001           BH NO_LANG; NO_ASCL; final
+Michel, L. ; B3-001               BH NO_LANG; NO_ASCL; final
+Berriman, G. B. ; D0-001          BH NO_LANG; NO_ASCL; final
+Glorian, J. ; D3-001              BH NO_LANG; final
+Horton, A. ; D3-002               BH NO_LANG; final
+Basset, A. ; X0-001               BH NO_ASCL; final			
+Miener, T. ; X0-006               BH NO_LANG; NO_ASCL; final
+Miener, T. ; X0-007               BH NO_LANG; NO_ASCL; final
+Swinbank, J. ; X0-010             BH NO_LANG; NO_ASCL; final
+Alexov, A. ; X0-011               BH NO_LANG; NO_ASCL; final
+Rodriguez, D. ; X0-012            BH NO_LANG; NO_ASCL; final
+Long, M. ; X0-013                 BH NO_LANG; NO_ASCL; final
+Haase, J. ; X0-014                BH NO_LANG; NO_ASCL; final
+Moldon, J. ; X0-015               BH NO_LANG; NO_ASCL; final
+Kollasch, F. ; X0-016             BH NO_LANG; NO_ASCL; final
+Cabral, J. ; X0-017               BH NO_ASCL; final				
+Terrell, M. ; X0-018              BH NO_LANG; NO_ASCL; final
+Cecconello, T. ; X0-019           BH NO_LANG; NO_ASCL; final
+Vuillaume, T. ; X5-001            BH NO_ASCL; final				
+Sob, U. ; X6-001                  BH NO_ASCL; final				
+Kunsági-Máté, S. ; X6-002         BH NO_LANG; NO_ASCL; final
+Wolk, N. ; X6-003                 BH NO_LANG; NO_ASCL; final
+Bester, H. ; X6-004               BH NO_LANG; NO_ASCL; final
+Plante, J. ; X2-001               BH NO_LANG; NO_ASCL; final
+Incardona, F. ; X2-002            BH NO_ASCL; final				
+Savarese, S. ; X2-003             BH NO_LANG; NO_ASCL; final
+Juryšek, J. ; X1-001              BH NO_ASCL; final				
+Parmiggiani, N. ; X1-007          BH NO_LANG; NO_ASCL; final
+Podsztavek, O. ; X1-008           BH NO_LANG; NO_ASCL; final
+Lee, A. ; X1-010                  BH NO_LANG; NO_ASCL; final
+Riggi, S. ; X1-011                BH NO_LANG; final
+Vavilova, I. ; X1-012             BH NO_LANG; NO_ASCL; final
+Barrientos, A. ; X1-013           BH NO_LANG; NO_ASCL; final
+Różański, T. ; X1-014             BH NO_LANG; NO_ASCL; final
+Škoda, P. ; X1-015                BH NO_ASCL; final				
+Reichherzer, P. ; X3-001          BH NO_ASCL; final				
+Espinosa, J. ; X3-004             BH NO_LANG; NO_ASCL; final
+Knapic, C. ; X3-005               BH NO_LANG; NO_ASCL; final
+Knapic, C. ; X3-006               BH NO_LANG; NO_ASCL; final
+Goradzhanov, V. ; X3-007          BH NO_LANG; NO_ASCL; final
+Chilingarian, I. ; X3-008         BH NO_LANG; NO_ASCL; final
+Heng, A. ; X3-009                 BH NO_LANG; NO_ASCL; final
+Louys, M. ; X3-010                BH NO_LANG; NO_ASCL; final
+Sciacca, E. ; X3-012              BH NO_LANG; NO_ASCL; final
+Stoehr, F. ; X3-014               BH ;	       final		
+Erard, S. ; X3-015                BH NO_LANG; NO_ASCL; final
+Salomé, P. ; X3-016               BH NO_LANG; NO_ASCL; final
+Bulgarelli, A. ; X3-017           BH NO_LANG; NO_ASCL; final
+Tudisco, G. ; X3-018              BH NO_LANG; final
+Abdati, L. ; X3-019               BH NO_LANG; NO_ASCL; final
+van Zyl, P. ; X3-023              BH NO_ASCL; final				
+Civera, T. ; X4-001               BH NO_ASCL; final				
+Gasymov, D. ; X4-002              BH NO_LANG; NO_ASCL; final
+Demianenko, M. ; X4-003           BH NO_LANG; NO_ASCL; final
+Berriman, G. ; X4-004             BH NO_ASCL; final			
+Landais, G. ; X4-007              BH NO_LANG; NO_ASCL; final
+Butora, R. ; X4-008               BH NO_LANG; NO_ASCL; final
+Cartechini, E. ; X4-009           BH NO_LANG; NO_ASCL; final
+Bronnarel, F. ; X4-010            BH NO_LANG; NO_ASCL; final
+Bartolomei, A. ; X4-006           BH NO_LANG; NO_ASCL; final
+Conforti, V. ; X7-001             BH NO_ASCL; final			
+Rubtsov, E. ; X7-003              BH NO_LANG; NO_ASCL; final
+Kasparova, A. ; X7-004            BH NO_LANG; NO_ASCL; final
+Tallada-Crespí, P. ; X7-006       BH NO_ASCL; final				
+Kent, B. ; X7-007                 BH NO_LANG; NO_ASCL; final
+Taylor, M. ; X7-008               BH NO_LANG; final
+Parra-Royon, M. ; X7-009          BH NO_LANG; NO_ASCL; final
+Taffoni, G.  ; X7-012             BH NO_LANG; NO_ASCL; final
+Pastore, V.  ; X9-001		  BH NO_LANG; NO_ASCL; final
+Grange, Y.   ; X9-002             BH NO_LANG; NO_ASCL; final
+Petry, D.    ; X9-005             BH NO_LANG; final
+Barrett, P.  ; X9-006             BH NO_LANG; NO_ASCL; final
+Zhelenkova, O. ; X9-007           BH NO_LANG; NO_ASCL; final
+Calabria, N.   ; X9-008           BH NO_LANG; NO_ASCL; final
+Bell, G.       ; X9-009           BH NO_LANG; final
+Stenborg, T.   ; X9-010           BH NO_LANG; final
+Pineau, F.-X.  ; X9-011           BH NO_LANG; NO_ASCL; final
+Allen, A.      ; X9-012           BH NO_LANG; final
+Ramaila, A.    ; O0-004           BH NO_ASCL; final
+Flores R., M.  ; X1-004           BH NO_ASCL; final
+Teuben, P.     ; X2-004           BH ; final
+Hugo, B.       ; X9-999           BH ; final 
