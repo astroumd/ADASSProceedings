@@ -1,0 +1,148 @@
+# To editors: uncomment a paper when it is ready to be included in building the linear book
+# 312 pages now
+# First Author ; PID                         Reviewer	  State
+#-------------------------------             --------     --------
+James Tocknell ; B07                         AH           final
+Matthieu Baumann ; C10                       AH           final
+Yashil Sukurdeep ; C27                       AH           final
+F.-X. Pineau ; I05                           AH           final
+Anna Anku ; I12                              AH           final
+Vladimir Dergachev ; P06                     AH           final
+Venkatessh Ramakrishnan ; P12                AH           final
+Paolo Estrada ; P14                          AH           final
+Antonio Addis ; P20                          AH           final
+Anne Buckner ; P21                           AH           final
+Tammo Jan Dijkema ; P23                      AH           final
+Alice Allen ; P31                            AH           final
+Felix Grezes ; P45                           AH           final
+Florian Leitgeb ; P47                        AH           final
+Alberto Accomazzi ; P53                      AH           final
+Kristof Rozgonyi ; P56                       AH           final
+Yuzuki Koga ; P65                            AH           final
+Kgomotso Monnakgotla ; P68                   AH           final
+Paul Barrett ; T03                           AH           final
+Alice Allen ; B01                            final DB
+Anaïs Oberto ; C07                           final DB
+Stefano Zampieri ; C14                       final DB
+Marco Fumana ; C19                           final DB
+Jayce Dowell ; C21                           final DB
+Brent Miszalski ; C23                        final DB
+David Law ; C26                              final DB
+Susanna Bisogni ; F03                        final DB
+Monica Fernandez Barreiro ; I07              final DB
+Joao Bento ; P08                             final DB
+Fausto Navarro ; P11                         final DB
+Felix Stoehr ; P13                           final DB
+Francisco Ballester Arenas; P26              final DB
+James Tocknell ; P27                         final DB
+Miguel Flores ; P33                          final DB
+Paolo Franzetti ; P38                        final DB
+Mike Birchall ; P40                          final DB
+Tamara Civera ; P50                          final DB
+Graham Bell ; P74                            final DB
+Min Long ; P77                               final DB	
+Manuela Rauch ; C11                          final PT
+Gijs Verdoes Kleijn ; C18                    final PT
+Maria Arevalo Sanchez ; F05                  final PT
+Nick Cox ; P09                               final PT
+Brian R. Kent ; P17                          final PT
+Peter J. Teuben ; P19                        final PT ed
+Marco Molinaro ; P22                         final PT 
+Travis Stenborg ; P32                        final PT
+Thomas Vuillaume ; P34                       final PT    LONGLOG
+Kalyani Pedamkar ; P35                       final PT
+Alexander Sivitilli ; P36                    final PT
+Mathieu Servillat ; P49                      final PT
+Michelle Gower ; P52                         final PT
+Kieran Leschinski ; P55                      final PT
+Manuel Parra-Royón ; P62                     final PT
+Giuliano Taffoni ; P73                       final PT
+François Bonnarel ; P75                      final PT
+Manon Marchand ; P81                         final PT    LONGLOG
+Alice Allen ; T01                            final PT
+Peter K. G. Williams ; C02                   final SGa
+D. Thatte ; C05                              final SGa
+Thomas Boch ; C12                            final SGa
+Petr Skoda ; C22                             final SGa
+Bjorn Emonts ; C28                           final SGa
+Sara Bertocco ; I01                          final SGa
+Brian Major ; I06                            final SGa
+Bruce Berriman ; P04                         final SGa
+Eva Sciacca ; P10                            final SGa
+Jutta Schnabel ; P16                         final SGa
+Lior Shamir ; P41                            final SGa
+Andrea Bulgarelli ; P42                      final SGa
+Nicolò Parmiggiani ; P46                     final SGa
+Satoshi Takashima ; P60                      final SGa
+Carlos Feinstein ; P67                       final SGa
+Makoto Shizugami ; P69                       final SGa
+Ashkbiz Danehkar ; P76                       final SGa
+Enrique Garcia ; P79                         final SGa
+Ashkbiz Danehkar ; P82                       final SGa
+Fabio Pasian ; B02                           final SGa
+Marcos Lopez-Caniego ; C03                   final SGw	SGa - major fixing but now clean
+Anastasia Laity ; C09                        final SGw  SGa - fixed bibstyle, minor corrections; check is clean; copyright form good
+Fritz Mueller ; C15                          final SGw	SGa - check is clean; copyright form good
+Jack White ; C16                             final SGw 	SGa - check is clean; copyright form good
+Nate Lust ; C24                              final SGw	SGa - minor fixing; check is clean; copyright form good
+Suhasini S Rao ; C30                         final SGw	SGa - minor fixing; check is clean; copyright form good
+Hunter Goddard ; C33                         final SGw	SGa - minor fixing; check is clean; copyright form good
+Martin Kuemmel ; F06                         final SGw	SGa - minor fixing; check is clean; copyright form good
+Jürgen Knödlseder ; I04                      final SGw	SGa - minor fixing; check is clean; copyright form good; 2 bibliography entries exceed boundary
+William O'Mullane ; I08                      final SGw  SGa - corrections applied
+Bruce Berriman ; P03                         final SGw	SGa - minor fixing; check is clean; copyright form good NEEDS better figures
+Pierre Fernique ; P05                        final SGw	SGa - minor fixing; check is clean; copyright form good acceptable, but could use another pass.
+Sara Nieto Rodriguez ; P18                   final SGw	SGa - minor fixing; check is clean; copyright form good
+Eric Jeschke ; P25                           final SGw	SGa - minor fixing; check is clean; copyright form good
+Mark Taylor ; P28                            final SGw	SGa - check is clean; copyright form good 
+Marcos Lopez-Caniego ; P44                   final SGw	SGa - minor fixing; pdfs converted to eps; check is clean; copyright form pending
+Dustin Lagoy ; P70                           final SGw 	SGa - check is clean; copyright form good
+YAGI Masafumi ; P72                          final SGw	SGa - check is clean; copyright form good; needs to be shortened; shortened by shrinking a figure and removing one sentence; content is sketchy. There was also controversy as to the originality of the work. 
+Takafumi Ootsubo ; P80                       final SGw	SGa - check is clean; copyright form good
+# Fanna Lautenbach ; B03                       Missing
+# Ben Rusholme ; B04                           Missing
+# Peter J. Teuben ; B05                        PT failing compile, this was a test
+# Nuria Lorente ; B06                          Missing
+# Anja Bekkelien ; C01                         Missing
+# Alexander Reustle ; C04                      Missing
+# Gregory Dubois-Felsmann ; C06                Missing
+# Wesley Fraser ; C08                          Missing
+# Yan Grange ; C13                             Missing
+# andrea belfiore ; C17                        Missing
+# Jan David Mol ; C20                          Missing
+# Brigitta Sipőcz ; C25                        Missing
+# Aleksandra Avdeeva ; C29                     Missing
+# Humberto Farias Aroca ; C31                  Missing
+# Nate Tellis ; C32                            Missing
+# Andreas Wicenec ; C34                        Missing
+# Vicente Navarro ; F01                        Missing
+# Benoit Carry ; F02                           Missing
+# Judy Racusin ; F04                           Missing
+# Ole Streicher ; I02                          Missing bad
+#Pilar de Teodoro ; I03                        AH withdrawn: paper needed extensive revisions and first author unable to do so
+# Eric Tollerud ; I09                          Missing bad
+# Neil Ernst ; I10                             Missing bad
+# SANJAY BHATNAGAR ; I11                       Missing bad
+# Jan David Mol ; P01                          Missing
+# Stephen Gwyn ; P02                           Missing
+# Guido Cupani ; P07                           Missing
+# Yusuke Nakakoji ; P15                        Missing
+# Jonathan Davis ; P24                         Copyright form requested multiple times with no response
+# Adam Zadrożny ; P29                          Missing
+# Arpan Das ; P30                              Missing
+# David Rodriguez ; P37                        Missing
+# Eduardo Bojórquez Martínez ; P39             Missing
+# Giorgio Calderone ; P43                      Missing
+# Elizabeth Mannering ; P48                    Missing
+# Jeremy Webb ; P51                            Missing
+# Peter Tenenbaum ; P54                        Missing
+# Samira Rezaei ; P57                          Missing
+# Austin Shen ; P58                            Missing
+# Axel Donath ; P59                            Missing
+# Mattia Mancini ; P61                         Missing
+# Gianluca Marotta ; P63                       Missing
+# Aidan Berres ; P64                           Missing
+# Matthias Schartner ; P66                     Missing
+# Jae-Joon Lee ; P71                           Missing
+# Frederic Lemmel ; P78                        Missing
+# Francisco Förster ; T02                      Missing
