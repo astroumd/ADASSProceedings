@@ -292,7 +292,7 @@ Linux/Ubuntu(debian):  "sudo apt install"
      texlive-fonts-recommended texlive-lang-greek texlive-latex-base
      texlive-latex-extra texlive-latex-recommended texlive-pictures
      texlive-plain-generic texlive-publishers texlive-science
-     texlive-xetex
+     texlive-xetex texlive-font-utils
 
 Linux/Redhat:  "sudo dnf install"
      @texlive
