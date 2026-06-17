@@ -1,0 +1,29 @@
+
+Here is your super short reminder for black belt users how to prepare
+your ADASS contribution. The writeup applies to each PID (Paper
+ID). For 2025 this is a 3-digit code, e.g.  193.  If these notes don't
+make sense, follow the instructions in the larger README file.
+
+1. Get the ADASS2025.tar file, untar and rename directory to your PID
+2. Edit the makedefs file and uncomment the variables for your case
+3. Rename the ADASS_template.tex to your PID.tex, and edit.
+4. If you have bibliography references, create a PID.bib, and edit.
+5. Use "make pdf" and inspect the paper until happy.
+6. Sign the copyright form
+7. Make your tar (or zip) submission via "make tar" (or "make zip")
+   and upload the resulting PID.tar (or PID.zip) for the editors to review.
+
+If you use overleaf, steps 5 and on change: 
+
+5. Use "make overleaf" to make PID.zip and import into overleaf
+6. To export back, git clone it and ....
+
+There are some other useful make targets:
+
+
+    make pdf      : Build the PDF file
+    make check    : Check the manuscript for issues
+    make tar      : Build the tar file for submission
+    make all      : Do all of the above
+    make overleaf : Prepare a ZIP file to bootstrap your overleaf project
+

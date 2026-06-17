@@ -1,15 +1,17 @@
-# Example makefile to help you compile your ADASS proceedings
+# -- do not edit this Makefile, edit the makedefs file
+#
+# This example makefile to help you compile your ADASS proceedings
 # but you really should read the ManuscriptInstructions.pdf or
 # at least the README file. For some smart cookies the Makefile
 # could be sufficient too.
 #
-# Version 24-oct-2025   Peter Teuben
+# Version 14-nov-2025   Peter Teuben
 #
 # P = paper_id    your proceedings paper ID code (the one with the XNN syntax, e.g., O12)
 # V = version     your version # (1,2,..) since you can only upload unique files
 # A = 1stauthor   your last name, e.g. Teuben
 # E = email       your contact email for submission issues
-# FIGS = *eps     your EPS figures
+# FIGS = *jpg     your figures
 
                     # put your paper_id here (with dash, not dot), e.g. P10-2
                     # or find your template on http://www.astro.umd.edu/~teuben/adass/papers/
@@ -22,8 +24,8 @@ V = 1
 A = Teuben
                     # contact person email
 E = teuben@gmail.com
-		    # your EPS figures (can be blank, and must be base-named with $(P)_*.eps
-FIGS = $(shell ls *.eps)
+		    # your figures (can be blank, and must be base-named with $(P)_*.jpg
+FIGS = $(shell ls *.jpg *.png)
 
 # override P,V,A,E,FIGS with a "makedefs" file, this is where authors should edit, not this Makefile
 -include makedefs
@@ -39,13 +41,13 @@ FILES  = AdassChecks.py AdassConfig.py AdassIndex.py ADASS_template.tex \
 	 Aindex.py FixUnprintable.py \
 	 copyrightform.pdf example.bib example.jpg \
 	 Index.py manual2010.pdf ManuscriptInstructions.pdf PaperCheck.py \
-	 README subjectKeywords.txt TexScanner.py \
+	 README README.tldr subjectKeywords.txt TexScanner.py \
 	 ascl.py asclKeywords.txt detect_tex.py \
-	 adass$(YEAR).bib Makefile makedefs \
+	 adass$(YEAR).bib Makefile makedefs VERSION \
 	 $(FILESASP)
 
 #  probably don't change these either (or notify the editors you have a special paper case)
-PID_URL   = "https://www.canfar.net/storage/vault/list/adass2022/upload/$(P)"
+PID_URL   = "https://indico.dzastro.de/event/4/contributions/mine"
 TAR_FILE  = $(P).tar.gz
 ZIP_FILE  = $(P).zip
 POS_FILE  = $(P).pdf

@@ -1,5 +1,5 @@
 README ADASS2025.tar
-Last updated: 2025-10-25 by Peter Teuben
+Last updated: 2026-01-23 by Peter Teuben
 
 
 Table of contents
@@ -17,71 +17,82 @@ Table of contents
 Introduction
 ============
 
-This package of files is supplied to help you prepare papers for submission in 
-the Proceedings for the ADASS 2025 online conference.
+This package of files is supplied to help you prepare papers for
+submission in the Proceedings for the ADASS 2025 conference. It is
+part of the package that in the end will produce the full proceedings.
+
 Please follow the stepwise instructions below carefully, because the manuscript 
 needs to be delivered to ASP in print quality. The more issues are solved early 
 on in the process, the more time we all save.
 
-The instructions below are intended to guide you through the process of preparing 
-and submitting your contribution. We realise it is a lot of information and some
-of it is duplicated. If you need additional help, please see the list of documents
-below. From "too much" to "too little" information, we provide the following 
-help documents in this tar file (except for your personal template):
+The instructions below are intended to guide you through the process
+of preparing and submitting your contribution. We realise it is a lot
+of information and some of it is duplicated. If you need additional
+help, please see the list of documents below. From "too much" to "too
+little" information, we provide the following help documents in this
+tar file (except for your personal template):
 
    1. manual2010.pdf             (ASP Instructions for Authors and Editors)
    2. ManuscriptInstructions.pdf (Guidelines for preparing an ADASS paper)
-   3. README                     (This file)
+   3. README                     (This file) - as well as the README.tldr
    4. ADASS_template.tex         (The general ADASS template)
-   5. PID.tex                    (Your personalized ADASS template for your PID, e.g. O12
+   5. PID.tex                    (Your personalized ADASS template for your PID, e.g. 193) [optional]
 
-At the end of this README, we also provide a file index with a short description of 
-all the files present in the ADASS2025.tar file. 
+At the end of this README, we also provide a file index with a short
+description of all the files that should be present in the
+ADASS2025.tar file.
 
 
 STEP 1: Prepare your manuscript
 ===============================
 
-The best usage is to prepare your paper in this Author_Template directory. If you
-author two papers, that will work too, but preparing your tar or zip file is
-much easier if you use a separate Author_Template directory for each paper.
+The best usage is to prepare your paper in this Author_Template
+directory. If you author two papers, that will work too, but preparing
+your tar or zip file is much easier if you use a separate
+Author_Template directory for each paper.  We advice you to rename
+the Author_Template directory to your PID (e.g. 193).
 
-Read the ManuscriptInstructions.pdf file. The ADASS_template.tex file gives you 
-a basic template for your ADASS paper. For additional details look in the 
-first section of the ASP's "Instructions for Authors and Editors" (manual2010.pdf), 
-but note that this is now some years old and current requirements have changed 
-slightly. In particular, ADASS papers that cite references MUST supply these 
-references in a .bib BibTeX file like the example.bib file provided here.
+Read the ManuscriptInstructions.pdf file. The ADASS_template.tex file
+gives you a basic template for your ADASS paper. For additional
+details look in the first section of the ASP's "Instructions for
+Authors and Editors" (manual2010.pdf), but note that this is now some
+years old and current requirements have changed slightly. In
+particular, ADASS papers that cite references MUST supply these
+references in a .bib BibTeX file like the example.bib file provided
+here.
 
-You will need to run `pdflatex` on your .tex file, then run `bibtex` to process the
-references, and then will need to run `pdflatex` again up to two times to get all
-the cross-references right. We recommend that you use the provided Makefile 
-(see next subsection), but if you prefer building manually that should work as 
-well. ASP now uses pdflatex (no more latex), and allows JPG or PNG figures (no more EPS).
+You will need to run `pdflatex` on your .tex file, then run `bibtex`
+to process the references, and then will need to run `pdflatex` again
+up to two times to get all the cross-references right. We recommend
+that you use the provided Makefile (see next subsection), but if you
+prefer building manually that should work as well. Overleaf is also
+supported (see below).  ASP now uses pdflatex (no more latex), and
+allows JPG or PNG figures (no more EPS).
 
-Editing your paper in overleaf (https://www.overleaf.com/) is also known to work:
-simply upload (as a ZIP file is the easiest) the template, the two asp2021 files,
-and optionally your BIB file and EPS figures. Don't start from scratch, or your file
-will be likely named main.tex. See below if you like the "make" shortcuts.
+You can also use the Makefile (be sure to edit the makedefs file) and
+type
 
-Optionally in 2025 we may have personalized templates, based on your abstract.
-The instructions within that template are even more terse than in ADASS_template.tex, 
-so be warned if some of this material is new to you.
+       make pdf
+
+Editing your paper in overleaf (https://www.overleaf.com/) is also
+known to work: simply upload (as a ZIP file is the easiest) the
+template, the two asp2021/23 sty/bst files, and optionally your BIB
+file and figures. Don't start from scratch, or your file will be
+likely named main.tex. See below if you like the "make" shortcuts.
+
+In 2025 we planned to have personalized templates, which would be
+based on your abstract in the registration database.  The instructions
+within that template are even more terse than in ADASS_template.tex,
+so be warned if some of this material is new to you. But alas, this
+never happened.
 
 A note about Paper IDs
 ----------------------
 
-Each paper will be assigned an ID known as a PID. The PID syntax in 2025 is XNN
-where X is one of:
-    - I for invited talk
-    - C for contributed talk
-    - P for poster
-    - F for focus demo
-    - B for BoF
-    - T for tutorial
-and NN is a two-digit number.
+Each paper will be assigned an ID known as a PID. The PID syntax in 2025 is
+a 3 digit code, which is your abstract index. 
 
-In this document, we will be using O12 as an example PID.
+In this document, we will be using 193 as an example PID.
 
 Using the provided Makefile
 ---------------------------
@@ -103,8 +114,8 @@ A = Teuben
 # Your contact email address for submission issues
 E = teuben@gmail.com
 
-# Your EPS figures
-FIGS = O12_*.eps
+# Your figures
+FIGS = O12_*.jpg
 
 Please edit the makedefs file and NOT the Makefile directly. The entries in the
 makedefs file will override the ones set in the Makefile. When set correctly,
@@ -186,7 +197,7 @@ e.g. example O12_v1.tar. This should contain:
 
   - The .tex LaTeX file
   - The .bib file defining any cited references
-  - And .eps graphics files used by the paper
+  - And .jpg (or .png) graphics files used by the paper
   - The makedefs file 
   - The resulting .pdf file for the paper, so we can see how you got it.
   - A signed copyright form.
@@ -221,8 +232,8 @@ like to see:
 
    O12.tex
    O12.bib
-   O12_f1.eps
-   O12_f2.eps
+   O12_f1.jpg
+   O12_f2.jpg
    makedefs
    O12.pdf
 
@@ -235,6 +246,7 @@ File index
 The ADASS2025.tar package contains the following files:
 
 README                     - this file.
+README.tldr                - an even shorter reminder how to submit
 Makefile                   - useful for those who like terminal commands
 makedefs                   - author macros to be included by the Makefile
 
@@ -242,7 +254,7 @@ ManuscriptInstructions.pdf - Guidelines for preparing an ADASS paper
 
 ADASS_template.tex         - an example template file for an ADASS 2018 paper.
 example.bib                - an example BibTeX file used by ADASS_template.tex
-example.eps                - an example graphics file used by ADASS_template.tex
+example.jpg                - an example graphics file used by ADASS_template.tex
 
 ADASS_template.pdf         - the result of running LaTeX on ADASS_template.tex
 
