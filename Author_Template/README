@@ -280,3 +280,23 @@ Authors will not need to know about that, but you may run into some editor speci
 commands in the Makefile or the python scripts. 
 
 good luck!
+Latex
+=====
+
+If pdflatex is not present on your system, you may need to use a package manager. Each system has
+their package manager and set of package names. **texlive** is probably the most common package.
+Here are a few:
+
+Linux/Ubuntu(debian):  "sudo apt install"
+     texlive texlive-base texlive-bibtex-extra texlive-binaries
+     texlive-fonts-recommended texlive-lang-greek texlive-latex-base
+     texlive-latex-extra texlive-latex-recommended texlive-pictures
+     texlive-plain-generic texlive-publishers texlive-science
+     texlive-xetex texlive-font-utils
+
+Linux/Redhat:  "sudo dnf install"
+     @texlive
+     
+MacOS/brew: "brew install"
+     texlive
+
