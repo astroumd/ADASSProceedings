@@ -1,6 +1,11 @@
 # this is where you should define *your* macros, not in the Makefile
-#P = P12
+#
+# "make pdf" will create your paper
+# "make check" performs various checks
+#
+
+#P = P999
 #V = 1
 #A = Teuben
-#E = teuben@gmail.com
-#FIGS = P12_*.eps
+#E = teuben@umd.edu
+#FIGS = P999_*.png
