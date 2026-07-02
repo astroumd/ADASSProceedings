@@ -77,6 +77,7 @@ help:
 	@echo spell:
 	@echo aindex:
 	@echo words:
+	@echo words2:
 	@echo asp1:
 	@echo index:   needs TERMS=
 	@echo ascl:
@@ -151,6 +152,9 @@ aindex:
 DETEX = detex
 words:
 	$(DETEX) $(P).tex | grep -o -E '\w+' | tr '[A-Z]' '[a-z]' | sort | uniq -c | sort -n
+
+words2:
+	$(DETEX) $(P).tex | grep -o -E '\w+' | tr '[A-Z]' '[a-z]' | sort | uniq -c | sort -nr
 
 #  could add a checksum on personal copyrightform - if it's 13785,it's bad.
 tar:    $(FILES4AR) _checksum
