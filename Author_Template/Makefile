@@ -5,7 +5,7 @@
 # at least the README file. For some smart cookies the Makefile
 # could be sufficient too.
 #
-# Version 14-nov-2025   Peter Teuben
+# Version 16-jul-2026   Peter Teuben
 #
 # P = paper_id    your proceedings paper ID code (the one with the XNN syntax, e.g., O12)
 # V = version     your version # (1,2,..) since you can only upload unique files
@@ -31,8 +31,8 @@ FIGS = $(shell ls *.jpg *.png)
 -include makedefs
 
 # Which command do you use to view the PDF? This is just for convenience.
-# PDFOPEN = xdg-open
-PDFOPEN = open
+PDFOPEN = xdg-open
+#PDFOPEN = open
 
 #  variables for proceeding editors (don't modify, for export, not for authors)
 YEAR   = 2025
@@ -193,23 +193,25 @@ index:
 
 ssindex:
 	@echo Generating ssindex list
-	(cd ../Author_Template; ssindex-org.py ../../ADASSProceedings2020/papers/$(P)/$(P).tex)
+	(cd ../Author_Template; ssindex-org.py ../../papers/$(P)/$(P).tex)
 
 ssindex2:
 	@echo Generating scored ssindex list 
-	(cd ../Author_Template; ssindex-scored.py ../../ADASSProceedings2020/papers/$(P)/$(P).tex)
+	(cd ../Author_Template; ssindex-scored.py ../../papers/$(P)/$(P).tex)
 
 index2:
 	(cd ../adass_subject_recommender ; detex ../$(P)/$(P).tex |  PYTHONPATH=`pwd` bin/find_subjects.py -m 10 -j)
-
+#
 ascl:
-	(cd ../Author_Template; ascl.py ../../ADASSProceedings2020/papers/$(P)/$(P).tex)
-# 	(cd ../Author_Template; ascl-new.py ../../ADASSProceedings2020/papers/$(P)/$(P).tex)
+	(cd ../Author_Template; ascl.py ../../papers/$(P)/$(P).tex)
+
+ascl0:
+	(cd ../Author_Template; ascl-new.py ../../papers/$(P)/$(P).tex)
 
 ascl1:
-	(cd ../Author_Template; ascl.py ../../ADASSProceedings2020/papers/$(P)/$(P).tex | grep ooindex | sort | uniq -c)
+	(cd ../Author_Template; ascl.py ../../papers/$(P)/$(P).tex | grep ooindex | sort | uniq -c)
 	-detex $(P).tex > $(P).txt
-	-(cd ../Author_Template; ascl.py ../../ADASSProceedings2020/papers/$(P)/$(P).txt | grep ooindex | sort | uniq -c)
+	-(cd ../Author_Template; ascl.py ../../papers/$(P)/$(P).txt | grep ooindex | sort | uniq -c)
 	-grep ooindex $(P).tex
 
 CODE = foobar
